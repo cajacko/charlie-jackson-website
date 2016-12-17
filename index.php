@@ -6,7 +6,7 @@
  * @package WordPress
  */
 
-print_r($_SERVER);
+print_r($_ENV);
 exit;
 
 /**
