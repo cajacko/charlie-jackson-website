@@ -13,7 +13,7 @@
  *
  * @package WordPress
  */
- 
+
 // Include local configuration
 if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 	include(dirname(__FILE__) . '/local-config.php');
@@ -24,10 +24,10 @@ if (!defined('DB_NAME')) {
 	define('DB_NAME', 'charliejackson');
 }
 if (!defined('DB_USER')) {
-	define('DB_USER', 'charliejackson');
+	define('DB_USER', 'root');
 }
 if (!defined('DB_PASSWORD')) {
-	define('DB_PASSWORD', 'D3X4{A7N8>7>4,^2=K7;24?>?');
+	define('DB_PASSWORD', null);
 }
 if (!defined('DB_HOST')) {
 	define('DB_HOST', 'localhost');

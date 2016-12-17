@@ -6,9 +6,6 @@
  * @package WordPress
  */
 
-print_r($_ENV);
-exit;
-
 /**
  * Tells WordPress to load the WordPress theme and output it.
  *
