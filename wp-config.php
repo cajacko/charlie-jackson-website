@@ -84,7 +84,6 @@ $table_prefix  = 'cj_';
  */
 define('WPLANG', '');
 
-
 /**
  * Set custom paths
  *
@@ -103,7 +102,6 @@ if (!defined('WP_CONTENT_URL')) {
 	define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/content');
 }
 
-
 /**
  * For developers: WordPress debugging mode.
  *
@@ -114,6 +112,16 @@ if (!defined('WP_CONTENT_URL')) {
 if (!defined('WP_DEBUG')) {
 	define('WP_DEBUG', true);
 }
+
+define('DISABLE_WP_CRON', true);
+
+// if ($_SERVER['SERVER_NAME'] == 'charliejackson.com') {
+// 	/** SSL */
+// 	define('FORCE_SSL_ADMIN', true);
+//
+// 	// in some setups HTTP_X_FORWARDED_PROTO might contain  // a comma-separated list e.g. http,https  // so check for https existence  if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+// 	$_SERVER['HTTPS'] = 'on';
+// }
 
 /* That's all, stop editing! Happy blogging. */
 
