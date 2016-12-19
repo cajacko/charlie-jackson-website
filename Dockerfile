@@ -1,5 +1,5 @@
-FROM tutum/lamp:latest
-RUN rm -fr /app && git clone --recursive -b develop https://github.com/cajacko/charlie-jackson-website /app
-RUN echo "create database charliejackson" | mysql -u root
-EXPOSE 80 3306
-CMD ["/run.sh"]
+FROM php:7.0-apache
+RUN docker-php-source extract
+RUN docker-php-ext-install mysqli
+RUN docker-php-source delete
+COPY . /var/www/html/

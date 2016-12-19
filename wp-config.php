@@ -21,16 +21,19 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 
 // Global DB config
 if (!defined('DB_NAME')) {
-	define('DB_NAME', 'charliejackson');
+	define('DB_NAME', $_ENV['WORDPRESS_DB']);
 }
+
 if (!defined('DB_USER')) {
-	define('DB_USER', 'root');
+	define('DB_USER', $_ENV['WORDPRESS_DB_USER']);
 }
+
 if (!defined('DB_PASSWORD')) {
-	define('DB_PASSWORD', null);
+	define('DB_PASSWORD', $_ENV['WORDPRESS_DB_PASSWORD']);
 }
+
 if (!defined('DB_HOST')) {
-	define('DB_HOST', 'localhost');
+	define('DB_HOST', $_ENV['WORDPRESS_DB_HOST']);
 }
 
 /** Database Charset to use in creating database tables. */
@@ -109,7 +112,7 @@ if (!defined('WP_CONTENT_URL')) {
  * in their development environments.
  */
 if (!defined('WP_DEBUG')) {
-	define('WP_DEBUG', false);
+	define('WP_DEBUG', true);
 }
 
 /* That's all, stop editing! Happy blogging. */
