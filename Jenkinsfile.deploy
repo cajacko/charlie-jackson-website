@@ -1,0 +1,28 @@
+node {
+   // 1 Prep - Pull repo locally
+   // 2 Build - Run docker locally
+   // 3 Test - Test locally
+   // 4 Init - Create droplet
+   // 5 Prep - Pull repo
+   // 6 Build - Run docker and copy data
+   // 7 Test - Test
+   // 8 Deploy - Switch DNS
+   // 9 Test - Test live site
+
+   // 1 Prep local
+   stage('Prep Local') {
+      git url: 'https://github.com/cajacko/charlie-jackson-website.git', branch: 'develop'
+   }
+
+   // 5 Prep Droplet
+   stage('Prep Droplet') {
+      sh 'chmod +x scripts/prep-droplet'
+      sh './scripts/prep-droplet'
+   }
+
+   // 6 Build on Droplet
+   stage('Build on Droplet') {
+      sh 'chmod +x scripts/build-droplet'
+      sh './scripts/build-droplet'
+   }
+}
