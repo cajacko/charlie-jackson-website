@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ssh root@178.62.88.113 <<EOF
+  git clone -b develop https://github.com/cajacko/charlie-jackson-website.git
+  exit
+EOF
