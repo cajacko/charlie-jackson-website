@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ssh root@178.62.88.113 <<EOF
+  touch server-1.txt
+  exit
+EOF

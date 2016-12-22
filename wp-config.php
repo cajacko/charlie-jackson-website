@@ -110,10 +110,16 @@ if (!defined('WP_CONTENT_URL')) {
  * in their development environments.
  */
 if (!defined('WP_DEBUG')) {
-	define('WP_DEBUG', true);
+	define('WP_DEBUG', false);
 }
 
 define('DISABLE_WP_CRON', true);
+define('WP_DEFAULT_THEME', 'charliejackson');
+define('TEMPLATEPATH', dirname(__FILE__) . '/content/themes/charliejackson');
+define('STYLESHEETPATH', dirname(__FILE__) . '/content/themes/charliejackson');
+
+define( 'SAVEQUERIES', true );
+
 
 // if ($_SERVER['SERVER_NAME'] == 'charliejackson.com') {
 // 	/** SSL */

@@ -39,3 +39,4 @@ content/wp-cache-config.php
 
 # Custom ignore
 .env
+vendor
