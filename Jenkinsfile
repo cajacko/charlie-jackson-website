@@ -1,32 +1,16 @@
-#!groovy
+node {
+   def mvnHome
 
-node('node') {
-
-
-    currentBuild.result = "SUCCESS"
-
-    try {
-
-       stage 'Checkout'
-
-            checkout scm
-
-       stage 'Deploy'
-
-            echo 'Run deploy script'
-            sh 'chmod +x scripts/deploy'
-            sh './scripts/deploy'
-
-        }
-
-
-    catch (err) {
-
-        currentBuild.result = "FAILURE"
-
-        echo 'Error!!!'
-
-        throw err
-    }
-
+   stage('Preparation') { // for display purposes
+      echo 'prep'
+      git url: 'https://github.com/cajacko/charlie-jackson-website.git', branch: 'develop'
+   }
+   stage('Build') {
+      echo 'build'
+      sh 'chmod +x scripts/deploy'
+      sh './scripts/deploy'
+   }
+   stage('Results') {
+      echo 'result'
+   }
 }
