@@ -15,10 +15,13 @@ $digitalocean = new DigitalOceanV2($adapter);
 // return the account api
 $droplet = $digitalocean->droplet();
 
-print_r($droplet);
-
 $created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
 
+$id = $created['id'];
+
+$new_droplet = $droplet->getById($id);
+
 print_r($created);
+print_r($new_droplet);
 
 putenv("TEST_ID=YAY");
