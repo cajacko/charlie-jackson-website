@@ -1,7 +1,6 @@
 {
     "require": {
         "toin0u/digitalocean-v2": "~2.0",
-        "kriswallsmith/buzz": "~0.10",
-        "vlucas/phpdotenv": "^2.4"
+        "kriswallsmith/buzz": "~0.10"
     }
 }
