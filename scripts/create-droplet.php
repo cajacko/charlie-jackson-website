@@ -19,11 +19,8 @@ $created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', fal
 
 $id = $created->id;
 
-print_r($created);
-
 function doesIpExist($droplet, $id) {
     $new_droplet = $droplet->getById($id);
-    print_r($new_droplet);
 
     if (!$new_droplet->networks) {
         return false;
@@ -41,7 +38,9 @@ function doesIpExist($droplet, $id) {
 }
 
 for ($i = 0; $i < 10; $i++) {
-    sleep(1);
+    if ($i != 0) {
+        sleep(1);
+    }
 
     $ip = doesIpExist($droplet, $id);
 
@@ -54,7 +53,4 @@ if (!$ip) {
     throw new Exception('Could not get IP');
 }
 
-print_r($ip);
-
-
-putenv("TEST_ID=YAY");
+echo $ip;
