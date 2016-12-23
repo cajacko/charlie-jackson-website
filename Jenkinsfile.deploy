@@ -20,6 +20,10 @@ node {
       sh 'php ./scripts/create-droplet.php'
    }
 
+   stage('Test env') {
+      sh 'php ./scripts/test.php'
+   }
+
    // 5 Prep Droplet
    stage('Prep Droplet') {
       sh 'chmod +x scripts/prep-droplet'

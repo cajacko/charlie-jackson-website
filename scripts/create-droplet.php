@@ -17,6 +17,8 @@ $droplet = $digitalocean->droplet();
 
 print_r($droplet);
 
-// $created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
+$created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
 
-// print_r($created);
+print_r($created);
+
+putenv("TEST_ID=YAY");
