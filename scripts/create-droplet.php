@@ -17,7 +17,7 @@ $droplet = $digitalocean->droplet();
 
 $created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
 
-$id = $created['id'];
+$id = $created->id;
 
 $new_droplet = $droplet->getById($id);
 
