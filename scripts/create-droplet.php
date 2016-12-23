@@ -18,6 +18,8 @@ $digitalocean = new DigitalOceanV2($adapter);
 // return the account api
 $droplet = $digitalocean->droplet();
 
-$created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
+print_r($droplet);
 
-print_r($created);
+// $created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
+
+// print_r($created);
