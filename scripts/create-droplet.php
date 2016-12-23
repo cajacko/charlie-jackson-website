@@ -22,6 +22,8 @@ $id = $created->id;
 $new_droplet = $droplet->getById($id);
 
 print_r($created);
-print_r($new_droplet);
+print_r($new_droplet->networks);
+print_r($new_droplet->networks[0]);
+print_r($new_droplet->networks[0]->ipAddress);
 
 putenv("TEST_ID=YAY");
