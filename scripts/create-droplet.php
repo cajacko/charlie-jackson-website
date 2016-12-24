@@ -12,6 +12,12 @@ $adapter = new BuzzAdapter($_SERVER['DIGITAL_OCEAN_API_KEY']);
 // create a digital ocean object with the previous adapter
 $digitalocean = new DigitalOceanV2($adapter);
 
+$key = $digitalocean->key();
+$keys = $key->getAll();
+
+print_r($keys);
+exit;
+
 // return the account api
 $droplet = $digitalocean->droplet();
 
