@@ -17,7 +17,8 @@ node {
    // 4 Create droplet
    stage('Create droplet') {
       sh 'composer install'
-      sh 'echo "DROPLET_IP_ADDRESS=`php ./scripts/create-droplet.php`" >> ip.txt'
+      sh 'rm ip.txt'
+      sh 'echo "`php ./scripts/create-droplet.php`" >> ip.txt'
       sh 'cat ip.txt'
    }
 
