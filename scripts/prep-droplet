@@ -1,10 +1,8 @@
 #!/bin/sh
 
 ERR=1 # or some non zero error number you want
-MAX_TRIES=5
-COUNT=0
 
-while [  $COUNT -lt $MAX_TRIES ]; do
+for i in {1..5}; do
    ./scripts/prep-droplet-ssh `cat ip.txt`
 
    if [ "$?" -eq "0" ]; then
@@ -13,8 +11,6 @@ while [  $COUNT -lt $MAX_TRIES ]; do
    fi
 
    echo "Failed attempt at ./scripts/prep-droplet-ssh"
-
-   COUNT=COUNT+1
    sleep 5
 done
 
