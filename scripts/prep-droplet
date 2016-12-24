@@ -3,7 +3,7 @@
 ERR=1 # or some non zero error number you want
 
 x=1
-while [ $x -le 3 ]
+while [ $x -le 20 ]
 do
    echo "Attempt at ./scripts/prep-droplet-ssh"
    ./scripts/prep-droplet-ssh `cat ip.txt`
@@ -14,7 +14,7 @@ do
    fi
 
    echo "Failed attempt at ./scripts/prep-droplet-ssh"
-   sleep 5
+   sleep 3
    x=$(( $x + 1 ))
 done
 
