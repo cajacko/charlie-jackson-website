@@ -1,10 +1,22 @@
 #!/bin/sh
 
-./scripts/prep-droplet-ssh `cat ip.txt`
+ERR=1 # or some non zero error number you want
+MAX_TRIES=5
+COUNT=0
 
-if [ "$?" -eq "0" ]
-then
-  echo "ok"
-else
-  echo "Fail"
-fi
+while [  $COUNT -lt $MAX_TRIES ]; do
+   ./scripts/prep-droplet-ssh `cat ip.txt`
+
+   if [ "$?" -eq "0" ]; then
+     echo "Successfully ran ./scripts/prep-droplet-ssh"
+     exit 0
+   fi
+
+   echo "Failed attempt at ./scripts/prep-droplet-ssh"
+
+   let COUNT=COUNT+1
+   sleep 5
+done
+
+echo "COULD NOT RUN ./scripts/prep-droplet-ssh"
+exit $ERR
