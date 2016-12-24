@@ -15,7 +15,12 @@ $digitalocean = new DigitalOceanV2($adapter);
 $key = $digitalocean->key();
 $keys = $key->getAll();
 
-print_r($keys);
+foreach ($keys as $key) {
+  print_r($key);
+  print_r($key->name);
+  print_r($key->id);
+}
+
 exit;
 
 // return the account api
