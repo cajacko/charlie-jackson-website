@@ -2,7 +2,9 @@
 
 ERR=1 # or some non zero error number you want
 
-for i in {1..5}; do
+x=1
+while [ $x -le 3 ]
+do
    echo "Attempt at ./scripts/prep-droplet-ssh"
    ./scripts/prep-droplet-ssh `cat ip.txt`
 
@@ -13,6 +15,7 @@ for i in {1..5}; do
 
    echo "Failed attempt at ./scripts/prep-droplet-ssh"
    sleep 5
+   x=$(( $x + 1 ))
 done
 
 echo "COULD NOT RUN ./scripts/prep-droplet-ssh"
