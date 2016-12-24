@@ -18,7 +18,7 @@ $ssh_ids = array();
 
 foreach ($keys as $key) {
   if (strpos($key->name, 'jenkins') !== false) {
-    $ssh_ids[] = $key->id
+    $ssh_ids[] = $key->id;
   }
 }
 
