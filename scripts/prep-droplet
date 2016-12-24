@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ssh root@178.62.88.113 <<EOF
+ssh root@$1 <<EOF
   sudo apt-get -y update
   cd /home
   git clone -b develop --recursive https://github.com/cajacko/charlie-jackson-website.git
