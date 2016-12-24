@@ -3,6 +3,7 @@
 ERR=1 # or some non zero error number you want
 
 for i in {1..5}; do
+   echo "Attempt at ./scripts/prep-droplet-ssh"
    ./scripts/prep-droplet-ssh `cat ip.txt`
 
    if [ "$?" -eq "0" ]; then
