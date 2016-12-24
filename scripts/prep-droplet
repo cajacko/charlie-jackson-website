@@ -1,19 +1,10 @@
 #!/bin/sh
 
-if ssh root@$1 <<EOF;
+./prep-droplet-ssh `cat ip.txt`
+
+if [ "$?" -eq "0" ]
 then
-  sudo apt-get -y update
-  cd /home
-  git clone -b develop --recursive https://github.com/cajacko/charlie-jackson-website.git
-  cd /home/charlie-jackson-website
-  echo "MYSQL_ROOT_PASSWORD=testpassword" >> .env
-  echo "MYSQL_DATABASE=charliejackson" >> .env
-  echo "MYSQL_USER=testuser" >> .env
-  echo "MYSQL_PASSWORD=testpassword" >> .env
-  exit
-  EOF
-  echo "SUCCESS"
+  echo "ok"
 else
-  EOF
-  echo "FAILURE"
+  echo "Fail"
 fi

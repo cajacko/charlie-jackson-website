@@ -25,7 +25,8 @@ node {
    // 5 Prep Droplet
    stage('Prep Droplet') {
       sh 'chmod +x scripts/prep-droplet'
-      sh './scripts/prep-droplet `cat ip.txt`'
+      sh 'chmod +x scripts/prep-droplet-ssh'
+      sh './scripts/prep-droplet'
    }
 
    // 6 Build on Droplet
