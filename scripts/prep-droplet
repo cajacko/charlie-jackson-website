@@ -1,6 +1,6 @@
 #!/bin/sh
 
-./prep-droplet-ssh `cat ip.txt`
+./scripts/prep-droplet-ssh `cat ip.txt`
 
 if [ "$?" -eq "0" ]
 then
