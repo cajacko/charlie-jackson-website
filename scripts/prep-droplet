@@ -14,7 +14,7 @@ while [  $COUNT -lt $MAX_TRIES ]; do
 
    echo "Failed attempt at ./scripts/prep-droplet-ssh"
 
-   let COUNT=COUNT+1
+   COUNT=COUNT+1
    sleep 5
 done
 
