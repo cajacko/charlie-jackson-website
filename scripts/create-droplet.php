@@ -14,19 +14,22 @@ $digitalocean = new DigitalOceanV2($adapter);
 
 $key = $digitalocean->key();
 $keys = $key->getAll();
+$ssh_ids = array();
 
 foreach ($keys as $key) {
-  print_r($key);
-  print_r($key->name);
-  print_r($key->id);
+  if (strpos($key->name, 'jenkins') !== false) {
+    $ssh_ids[] = $key->id
+  }
 }
 
-exit;
+if (!count($ssh_ids)) {
+  throw new Exception('Could not get ssh key id');
+}
 
 // return the account api
 $droplet = $digitalocean->droplet();
 
-$created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, array(5389992));
+$created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, $ssh_ids);
 
 $id = $created->id;
 
