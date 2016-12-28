@@ -22,6 +22,8 @@ foreach ($keys as $key) {
   }
 }
 
+print_r($keys); exit;
+
 if (!count($ssh_ids)) {
   throw new Exception('Could not get ssh key id');
 }
