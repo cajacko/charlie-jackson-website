@@ -24,7 +24,6 @@ foreach ($keys as $key) {
 
 print_r($keys);
 print_r($ssh_ids);
-exit;
 
 if (!count($ssh_ids)) {
   throw new Exception('Could not get ssh key id');
@@ -34,6 +33,8 @@ if (!count($ssh_ids)) {
 $droplet = $digitalocean->droplet();
 
 $created = $droplet->create('charliejackson-dev', 'lon1', '512mb', 'docker', false, false, false, $ssh_ids);
+
+print_r($created); exit;
 
 $id = $created->id;
 
