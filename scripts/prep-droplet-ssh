@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# ssh -t -t -o StrictHostKeyChecking root@$1 <<EOF
-ssh -t -t root@$1 <<EOF
+# ssh -t -t root@$1 <<EOF
+ssh -t -t -o StrictHostKeyChecking root@$1 <<EOF
   sudo apt-get -y update
   cd /home
   git clone -b develop --recursive https://github.com/cajacko/charlie-jackson-website.git
