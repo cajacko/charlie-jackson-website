@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# ssh -t -t root@$1 <<EOF
 ssh -t -t -o StrictHostKeyChecking=no root@$1 <<EOF
   sudo apt-get -y update
   cd /home

@@ -20,8 +20,6 @@ node {
       sh 'rm -rf ip.txt'
       sh 'echo "`php ./scripts/create-droplet.php`" >> ip.txt'
       sh 'cat ip.txt'
-      sh 'ssh-keyscan `cat ip.txt` >> ~/.ssh/known_hosts'
-      sh 'cat ~/.ssh/known_hosts'
    }
 
    // 5 Prep Droplet
@@ -32,8 +30,8 @@ node {
    }
 
    // 6 Build on Droplet
-   //stage('Build on Droplet') {
-   //    sh 'chmod +x scripts/build-droplet'
-   //    sh './scripts/build-droplet'
-   //}
+   stage('Build on Droplet') {
+       sh 'chmod +x scripts/build-droplet'
+       sh './scripts/build-droplet'
+   }
 }
