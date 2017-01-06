@@ -2,9 +2,10 @@ version: '2'
 
 services:
    db:
+     container_name: db
      image: mysql:5.7
      volumes:
-       - db_data:/var/lib/mysql
+      - ./data-dump.sql:/docker-entrypoint-initdb.d/data-dump.sql
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -13,16 +14,19 @@ services:
        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
    wordpress:
+     container_name: web
      depends_on:
        - db
      build: .
      ports:
        - "80:80"
      restart: always
+     working_dir: /var/www/html
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
        WORDPRESS_DB: ${MYSQL_DATABASE}
        WORDPRESS_DB_USER: ${MYSQL_USER}
-volumes:
-    db_data:
+     volumes:
+       - ./content:/var/www/html/content
+       - ./wp-config.php:/var/www/html/wp-config.php

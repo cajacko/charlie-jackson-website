@@ -114,10 +114,6 @@ if (!defined('WP_DEBUG')) {
 }
 
 define('DISABLE_WP_CRON', true);
-define('WP_DEFAULT_THEME', 'charliejackson');
-define('TEMPLATEPATH', dirname(__FILE__) . '/content/themes/charliejackson');
-define('STYLESHEETPATH', dirname(__FILE__) . '/content/themes/charliejackson');
-
 define( 'SAVEQUERIES', true );
 
 
