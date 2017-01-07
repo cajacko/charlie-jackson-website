@@ -7,7 +7,7 @@
 		</div>
 	<?php endif; ?>
 
-  <a href="<?php cj_the_post_permalink(); ?>"><?php the_title( '<h2>', '</h2>' ); ?></a>
+  <a href="<?php cj_the_post_permalink(); ?>"><?php the_title( '<h3>', '</h3>' ); ?></a>
   <div>
     <p>Last Updated: <?php the_date(); ?></p>
   </div>
