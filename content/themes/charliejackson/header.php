@@ -9,7 +9,14 @@
 <body>
 
   <header>
-    <img src="<?php echo get_avatar_url(get_user_by('login', 'charlie')->ID); ?>" />
+    <?php
+    $author_id = get_user_by('login', 'charlie')->ID;
+    mt_profile_img( $author_id, array(
+        'size' => 'thumbnail',
+        'attr' => array( 'alt' => 'Alternative Text' ),
+        'echo' => true )
+    );
+    ?>
     <h1><?php bloginfo( 'name' ); ?></h1>
     <p><?php bloginfo( 'description', 'display' ); ?><p>
   </header>
