@@ -1,0 +1,35 @@
+{
+  "name": "charlie-jackson-website",
+  "version": "1.0.0",
+  "description": "Wordpress site for charliejackson.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docker-compose up -d --force-recreate --build",
+    "stop": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)",
+    "backup": "docker exec db sh -c 'exec mysqldump --all-databases -uroot -p\"$MYSQL_ROOT_PASSWORD\"' > `echo $PWD`/data-dump.sql",
+    "dbLogs": "docker logs --follow db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cajacko/charlie-jackson-website.git"
+  },
+  "keywords": [
+    "wordpress",
+    "php",
+    "sass",
+    "docker",
+    "jenkins",
+    "javascript"
+  ],
+  "author": {
+    "name": "Charlie Jackson",
+    "email": "contact@charliejackson.com",
+    "url": "https://charliejackson.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cajacko/charlie-jackson-website/issues"
+  },
+  "homepage": "https://github.com/cajacko/charlie-jackson-website#readme"
+}
