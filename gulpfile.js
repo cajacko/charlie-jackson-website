@@ -7,6 +7,7 @@ var rename = require("gulp-rename");
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var cleanCSS = require('gulp-clean-css');
+var moduleImporter = require('sass-module-importer');
 
 var themeRoot = './content/themes/charliejackson/';
 var styleRoot = themeRoot + 'styles/';
@@ -20,6 +21,7 @@ var paths = {
 gulp.task('sass', function () {
   return gulp
     .src(paths.sassFiles)
+    .pipe(sass({importer: moduleImporter()}))
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer())

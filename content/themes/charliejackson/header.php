@@ -4,7 +4,8 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/style.css"
+  <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/lib.css">
+  <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/style.css">
 </head>
 
 <body>

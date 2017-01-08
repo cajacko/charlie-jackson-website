@@ -1,1 +1,1 @@
-{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAEA,KACE,UAHS,CAIV","file":"../sass/style.css","sourcesContent":["$blue: blue;\n\nhtml {\n  color: $blue;\n}\n"]}
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,KACE,UAAW,CAAI","file":"../sass/style.css","sourcesContent":["html {\n  color: pink; }\n"]}
