@@ -8,6 +8,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var cleanCSS = require('gulp-clean-css');
 var moduleImporter = require('sass-module-importer');
+var watch = require('gulp-watch');
+var batch = require('gulp-batch');
 
 var themeRoot = './content/themes/charliejackson/';
 var styleRoot = themeRoot + 'styles/';
@@ -35,8 +37,14 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(paths.sassFiles, ['sass']);
-  gulp.watch(paths.phpFiles).on('change', browserSync.reload);
+  watch(paths.sassFiles, batch(function (events, done) {
+    gulp.start('sass', done);
+  }));
+
+  watch(paths.phpFiles, batch(function (events, done) {
+    browserSync.reload();
+    done();
+  }));
 });
 
 gulp.task('browsersync', function() {

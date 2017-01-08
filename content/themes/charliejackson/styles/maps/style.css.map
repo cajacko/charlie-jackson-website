@@ -1,1 +1,1 @@
-{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,KACE,UAAW,CAAI","file":"../sass/style.css","sourcesContent":["html {\n  color: pink; }\n"]}
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,KACE,+BACA,eAAgB,CAAI","file":"../sass/style.css","sourcesContent":["html {\n  font-family: 'Lato', sans-serif;\n  line-height: 1.5; }\n"]}
