@@ -23,9 +23,8 @@ var paths = {
 gulp.task('sass', function () {
   return gulp
     .src(paths.sassFiles)
-    .pipe(sass({importer: moduleImporter()}))
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({importer: moduleImporter()}).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(paths.css))
@@ -53,4 +52,4 @@ gulp.task('browsersync', function() {
     });
 });
 
-gulp.task('default', ['browsersync', 'watch']);
+gulp.task('default', ['browsersync', 'watch', 'sass']);

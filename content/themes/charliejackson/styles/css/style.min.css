@@ -1,1 +1,1 @@
-html{font-family:Lato,sans-serif;line-height:1.5}
+.Html{font-family:Lato,sans-serif;line-height:1.5}.Body{max-width:600px;margin:0 auto}.SiteHeader{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.SiteHeader-imageLink{max-height:100px;max-width:100px;display:block}.SiteHeader-image{max-width:100%;max-height:100%;width:100%;height:auto}.SiteHeader-text{padding-left:20px}.SiteHeader-title{margin:0;padding:0}

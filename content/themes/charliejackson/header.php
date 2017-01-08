@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
+<html <?php language_attributes(); ?> class="Html">
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,17 +9,26 @@
   <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/style.css">
 </head>
 
-<body>
+<body class="Body">
 
-  <header>
-    <?php
-    $author_id = get_user_by('login', 'charlie')->ID;
-    mt_profile_img( $author_id, array(
-        'size' => 'thumbnail',
-        'attr' => array( 'alt' => 'Alternative Text' ),
-        'echo' => true )
-    );
-    ?>
-    <h1><?php bloginfo( 'name' ); ?></h1>
-    <p><?php bloginfo( 'description', 'display' ); ?><p>
+  <header class="SiteHeader">
+    <a class="SiteHeader-imageLink" href="/">
+      <?php
+      $author_id = get_user_by('login', 'charlie')->ID;
+      mt_profile_img( $author_id, array(
+          'size' => 'thumbnail',
+          'attr' => array(
+            'alt' => 'Charlie Jackson profile picture',
+            'class' => 'SiteHeader-image'
+          ),
+          'echo' => true )
+      );
+      ?>
+    </a>
+    <div class="SiteHeader-text">
+      <a class="SiteHeader-titleLink" href="/">
+        <h1 class="SiteHeader-title"><?php bloginfo( 'name' ); ?></h1>
+      </a>
+      <p class="SiteHeader-description"><?php bloginfo( 'description', 'display' ); ?><p>
+    </div>
   </header>
