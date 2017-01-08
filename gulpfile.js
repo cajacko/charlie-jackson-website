@@ -25,6 +25,7 @@ gulp.task('sass', function () {
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(paths.css))
+    .pipe(browserSync.stream())
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest(paths.css))
