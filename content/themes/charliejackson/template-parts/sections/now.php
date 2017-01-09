@@ -1,5 +1,5 @@
 <section class="Now">
-  <h2>Now</h2>
+  <h2 class="Now-title">Now</h2>
   <?php echo apply_filters('the_content', get_option(NOW_NAME)); ?>
 
   <ul class="Now-imageList">

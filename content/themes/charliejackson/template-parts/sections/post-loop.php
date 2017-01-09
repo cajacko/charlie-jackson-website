@@ -1,9 +1,9 @@
-<div>
-  <h2>Projects</h2>
+<div class="Projects">
+  <h2 class="Projects-title">Projects</h2>
   <?php
   if ( have_posts() ) : ?>
 
-    <main>
+    <main class="Projects-loop">
       <?php
       while ( have_posts() ) : the_post();
 

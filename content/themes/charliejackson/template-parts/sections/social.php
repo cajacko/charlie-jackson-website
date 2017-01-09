@@ -1,5 +1,5 @@
 <section class="Social">
-  <h2>Follow Me</h2>
+  <h2 class="Social-title">Follow Me</h2>
   <ul class="Social-list">
     <li class="Social-listItem">
       <a class="Social-link" href="">

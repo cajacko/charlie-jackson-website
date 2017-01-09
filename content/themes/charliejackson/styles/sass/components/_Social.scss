@@ -2,6 +2,10 @@
   @include sectionSpacing;
 }
 
+.Social-title {
+  line-height: 1;
+}
+
 .Social-list {
   list-style: none;
   margin: 0;
@@ -13,7 +17,7 @@
 }
 
 .Social-listItem {
-  width: calc((100% / 6) - #{$sectionPadding});
+  width: calc((100% / 6) - #{$paragraphSpacing});
 }
 
 .Social-link {

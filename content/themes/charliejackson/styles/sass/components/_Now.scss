@@ -2,6 +2,10 @@
   @include sectionSpacing;
 }
 
+.Now-title {
+  line-height: 1;
+}
+
 .Now-imageList {
   list-style: none;
   margin: 0;
@@ -13,7 +17,7 @@
 }
 
 .Now-imageListItem {
-  width: calc((100% / 3) - #{$sectionPadding});
+  width: calc((100% / 3) - #{$paragraphSpacing});
 }
 
 .Now-imageLink {

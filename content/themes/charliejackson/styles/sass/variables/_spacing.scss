@@ -1,4 +1,5 @@
-$sectionPadding: 20px;
+$sectionPadding: 40px;
+$paragraphSpacing: $sectionPadding / 2;
 
 @mixin sectionSpacing {
   padding-bottom: $sectionPadding;

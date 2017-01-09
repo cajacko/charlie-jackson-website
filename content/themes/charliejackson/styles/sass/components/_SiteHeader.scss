@@ -1,4 +1,4 @@
-$SiteHeader-image--size: 100px;
+$SiteHeader-image--size: 70px;
 
 .SiteHeader {
   @include sectionSpacing;
@@ -36,6 +36,7 @@ $SiteHeader-image--size: 100px;
   margin: 0;
   padding: 0;
   font-size: $fontSize-largest;
+  line-height: 1;
 }
 
 .SiteHeader-description {

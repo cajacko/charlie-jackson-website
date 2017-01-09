@@ -1,0 +1,7 @@
+$listPadding: $paragraphSpacing * 2;
+
+ul,
+ol {
+  margin: $paragraphSpacing 0;
+  padding-left: $listPadding;
+}
