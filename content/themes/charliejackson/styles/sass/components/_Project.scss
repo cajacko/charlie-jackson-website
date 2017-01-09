@@ -1,0 +1,14 @@
+.Project {
+  overflow: hidden;
+
+  img {
+    display: block;
+    margin: $paragraphSpacing 0;
+    width: 100%;
+    height: auto;
+  }
+
+  div {
+    width: 100% !important;
+  }
+}

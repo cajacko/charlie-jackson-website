@@ -1,7 +1,7 @@
 $SiteHeader-image--size: 70px;
 
 .SiteHeader {
-  @include sectionSpacing;
+  @include sectionSpacingWithBorder;
 
   display: flex;
   flex-direction: row;
@@ -22,7 +22,7 @@ $SiteHeader-image--size: 70px;
 }
 
 .SiteHeader-text {
-  padding-left: 20px;
+  padding-left: $paragraphSpacing;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,10 +32,12 @@ $SiteHeader-image--size: 70px;
   display: block;
 }
 
+$SiteHeader-title--fontSize: $fontSize-largest;
+
 .SiteHeader-title {
   margin: 0;
   padding: 0;
-  font-size: $fontSize-largest;
+  font-size: $SiteHeader-title--fontSize;
   line-height: 1;
 }
 

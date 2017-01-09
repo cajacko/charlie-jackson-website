@@ -4,5 +4,10 @@ $paragraphSpacing: $sectionPadding / 2;
 @mixin sectionSpacing {
   padding-bottom: $sectionPadding;
   margin-bottom: $sectionPadding;
+}
+
+@mixin sectionSpacingWithBorder {
+  padding-bottom: $sectionPadding;
+  margin-bottom: $sectionPadding;
   border-bottom: 1px solid $lightGrey;
 }

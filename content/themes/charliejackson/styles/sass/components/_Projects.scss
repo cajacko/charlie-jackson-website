@@ -1,11 +1,8 @@
 .Projects {
-  @include sectionSpacing;
+  @include sectionSpacingWithBorder;
 }
 
 .Projects-title {
   line-height: 1;
-}
-
-.Projects-loop {
-  @include sectionSpacing;
+  margin-bottom: $sectionPadding;
 }

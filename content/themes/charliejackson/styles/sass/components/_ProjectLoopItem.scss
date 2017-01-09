@@ -1,0 +1,29 @@
+.ProjectLoopItem {
+  @include sectionSpacing;
+
+  display: flex;
+}
+
+$ProjectLoopItem-imageLink--size: 100px;
+
+.ProjectLoopItem-imageLink {
+  display: block;
+  height: $ProjectLoopItem-imageLink--size;
+  width: $ProjectLoopItem-imageLink--size;
+}
+
+.ProjectLoopItem-image {
+  display: block;
+  height: $ProjectLoopItem-imageLink--size;
+  width: $ProjectLoopItem-imageLink--size;
+  max-width: none;
+  max-height: none;
+}
+
+.ProjectLoopItem-text {
+  padding-left: $paragraphSpacing;
+}
+
+.ProjectLoopItem-title {
+  margin: 0;
+}
