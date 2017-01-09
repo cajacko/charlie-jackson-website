@@ -21,6 +21,10 @@ h5,
 h6 {
   font-size: 16px; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
 .Html {
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
@@ -128,7 +132,8 @@ h6 {
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  margin-top: 10px; }
 
 .Social-listItem {
   width: calc((100% / 6) - 20px); }
