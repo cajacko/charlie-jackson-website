@@ -1,3 +1,14 @@
-@import 'Html';
-@import 'Body';
-@import 'SiteHeader';
+// Variables
+@import 'variables/colours';
+@import 'variables/fontSizes';
+@import 'variables/spacing';
+
+// General
+@import 'general/headings';
+
+// Components
+@import 'components/Html';
+@import 'components/Body';
+@import 'components/SiteHeader';
+@import 'components/Now';
+@import 'components/Social';

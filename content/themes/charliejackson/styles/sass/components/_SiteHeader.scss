@@ -1,8 +1,11 @@
 $SiteHeader-image--size: 100px;
 
 .SiteHeader {
+  @include sectionSpacing;
+
   display: flex;
   flex-direction: row;
+  margin-top: $sectionPadding;
 }
 
 .SiteHeader-imageLink {
@@ -20,9 +23,23 @@ $SiteHeader-image--size: 100px;
 
 .SiteHeader-text {
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.SiteHeader-titleLink {
+  display: block;
 }
 
 .SiteHeader-title {
   margin: 0;
   padding: 0;
+  font-size: $fontSize-largest;
+}
+
+.SiteHeader-description {
+  margin: 0;
+  padding: 0;
+  font-size: $fontSize-large;
 }

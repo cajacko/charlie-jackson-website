@@ -10,6 +10,9 @@ var cleanCSS = require('gulp-clean-css');
 var moduleImporter = require('sass-module-importer');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
+var env = require('node-env-file');
+
+env(__dirname + '/.env');
 
 var themeRoot = './content/themes/charliejackson/';
 var styleRoot = themeRoot + 'styles/';
@@ -48,7 +51,7 @@ gulp.task('watch', function () {
 
 gulp.task('browsersync', function() {
     browserSync.init({
-        proxy: "localhost"
+        proxy: process.env.LOCALHOST
     });
 });
 

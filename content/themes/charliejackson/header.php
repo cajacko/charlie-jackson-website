@@ -29,6 +29,6 @@
       <a class="SiteHeader-titleLink" href="/">
         <h1 class="SiteHeader-title"><?php bloginfo( 'name' ); ?></h1>
       </a>
-      <p class="SiteHeader-description"><?php bloginfo( 'description', 'display' ); ?><p>
+      <p class="SiteHeader-description"><?php bloginfo( 'description', 'display' ); ?></p>
     </div>
   </header>

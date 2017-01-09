@@ -1,0 +1,26 @@
+.Now {
+  @include sectionSpacing;
+}
+
+.Now-imageList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: $sectionPadding;
+}
+
+.Now-imageListItem {
+  width: calc((100% / 3) - #{$sectionPadding});
+}
+
+.Now-imageLink {
+  display: block;
+}
+
+.Now-image {
+  width: 100%;
+  height: auto;
+}

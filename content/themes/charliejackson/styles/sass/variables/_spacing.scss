@@ -1,0 +1,7 @@
+$sectionPadding: 20px;
+
+@mixin sectionSpacing {
+  padding-bottom: $sectionPadding;
+  margin-bottom: $sectionPadding;
+  border-bottom: 1px solid $lightGrey;
+}

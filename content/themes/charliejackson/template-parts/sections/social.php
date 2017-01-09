@@ -1,4 +1,4 @@
-<section>
+<section class="Social">
   <h2>Follow Me</h2>
   <ul>
     <li>
