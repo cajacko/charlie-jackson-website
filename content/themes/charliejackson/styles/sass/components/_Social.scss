@@ -1,3 +1,29 @@
 .Social {
   @include sectionSpacing;
 }
+
+.Social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Social-listItem {
+  width: calc((100% / 6) - 20px);
+}
+
+.Social-link {
+  display: block;
+}
+
+.Social-text {
+  display: none;
+}
+
+.Social-icon {
+  width: 100%;
+  height: auto;
+}
