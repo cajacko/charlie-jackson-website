@@ -17,7 +17,8 @@
 }
 
 .Social-listItem {
-  width: calc((100% / 6) - #{$paragraphSpacing});
+  width: calc((100% / 5) - #{$paragraphSpacing});
+  max-width: 60px;
 }
 
 .Social-link {
