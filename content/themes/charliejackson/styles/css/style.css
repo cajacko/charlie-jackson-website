@@ -33,6 +33,17 @@ ol {
   margin: 20px 0;
   padding-left: 40px; }
 
+a {
+  text-decoration: none;
+  color: #006c98;
+  cursor: pointer; }
+  a:hover {
+    color: #005c82;
+    text-decoration: underline; }
+    a:hover img {
+      -webkit-filter: grayscale(30%) brightness(90%);
+              filter: grayscale(30%) brightness(90%); }
+
 .Html {
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
@@ -151,7 +162,7 @@ ol {
   margin-top: 10px; }
 
 .Social-listItem {
-  width: calc((100% / 5) - 20px);
+  width: calc((100% / 6) - 20px);
   max-width: 60px; }
 
 .Social-link {
@@ -163,6 +174,42 @@ ol {
 .Social-icon {
   width: 100%;
   height: auto; }
+
+.Social-twitterPath--blue {
+  fill: #55acee; }
+  a:hover .Social-twitterPath--blue {
+    fill: #127ef9; }
+
+.Social-githubPath--black {
+  fill: black; }
+  a:hover .Social-githubPath--black {
+    fill: #505050; }
+
+.Social-linkedInPath--blue {
+  fill: #007bb5; }
+  a:hover .Social-linkedInPath--blue {
+    fill: #005780; }
+
+.Social-pinterestPath--red {
+  fill: #cb2027; }
+  a:hover .Social-pinterestPath--red {
+    fill: #9e151b; }
+
+.Social-emailPath--blue {
+  fill: #006c98; }
+  a:hover .Social-emailPath--blue {
+    fill: #005c82; }
+
+.Social-youtTube--red {
+  fill: #C33C2D; }
+  a:hover .Social-youtTube--red {
+    fill: #7b2117; }
+
+.Social-youtTube--grey {
+  fill: #D8D9D9; }
+
+.Social-youtTube--white {
+  fill: #FFFFFF; }
 
 .Projects {
   padding-bottom: 40px;

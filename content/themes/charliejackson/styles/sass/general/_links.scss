@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  color: $linkColour;
+  cursor: pointer;
+
+  &:hover {
+    color: $linkHighlight;
+    text-decoration: underline;
+
+    img {
+      filter: grayscale(30%) brightness(90%);
+    }
+  }
+}

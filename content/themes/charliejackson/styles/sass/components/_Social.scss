@@ -17,7 +17,7 @@
 }
 
 .Social-listItem {
-  width: calc((100% / 5) - #{$paragraphSpacing});
+  width: calc((100% / 6) - #{$paragraphSpacing});
   max-width: 60px;
 }
 
@@ -32,4 +32,60 @@
 .Social-icon {
   width: 100%;
   height: auto;
+}
+
+.Social-twitterPath--blue {
+  fill: $twitterBlue;
+
+  a:hover & {
+    fill: $twitterBlue--highlight;
+  }
+}
+
+.Social-githubPath--black {
+  fill: $githubBlack;
+
+  a:hover & {
+    fill: $githubBlack--highlight;
+  }
+}
+
+.Social-linkedInPath--blue {
+  fill: $linkedInBlue;
+
+  a:hover & {
+    fill: $linkedInBlue--highlight;
+  }
+}
+
+.Social-pinterestPath--red {
+  fill: $pinterestRed;
+
+  a:hover & {
+    fill: $pinterestRed--highlight;
+  }
+}
+
+.Social-emailPath--blue {
+  fill: $emailBlue;
+
+  a:hover & {
+    fill: $emailBlue--highlight;
+  }
+}
+
+.Social-youtTube--red {
+  fill: $youTubeRed;
+
+  a:hover & {
+    fill: $youTubeRed--highlight;
+  }
+}
+
+.Social-youtTube--grey {
+  fill: $youTubeGrey;
+}
+
+.Social-youtTube--white {
+  fill: $youTubeWhite;
 }
