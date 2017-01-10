@@ -3,7 +3,7 @@
   <?php
   if ( have_posts() ) : ?>
 
-    <main class="Projects-loop">
+    <main id="Projects-loop" class="Projects-loop">
       <?php
       while ( have_posts() ) : the_post();
 
@@ -15,8 +15,8 @@
 
     <?php
     the_posts_pagination( array(
-      'prev_text' => '<span>Previous page</span>',
-      'next_text' => '<span>Next Page</span>'
+      'prev_text' => '<span id="Projects-prev">Previous page</span>',
+      'next_text' => '<span id="Projects-next">Next Page</span>'
     ) );
 
   else :
