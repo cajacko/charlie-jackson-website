@@ -113,7 +113,7 @@ if (!defined('WP_DEBUG')) {
 	define('WP_DEBUG', false);
 }
 
-define('DISABLE_WP_CRON', true);
+// define('DISABLE_WP_CRON', true);
 define( 'SAVEQUERIES', true );
 
 

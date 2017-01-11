@@ -40,3 +40,6 @@ content/wp-cache-config.php
 # Custom ignore
 .env
 vendor
+
+content/updraft/**/*.zip
+content/updraft/**/*.gz

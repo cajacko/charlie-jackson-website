@@ -55,9 +55,5 @@
     "sass-module-importer": "^1.4.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "google-auth-library": "^0.10.0",
-    "googleapis": "^16.0.0"
   }
 }
