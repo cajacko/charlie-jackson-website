@@ -5,7 +5,8 @@ services:
      container_name: db
      image: mysql:5.7
      volumes:
-      - ./data-dump.sql:/docker-entrypoint-initdb.d/data-dump.sql
+       - db_data:/var/lib/mysql
+     #  - ./data-dump.sql:/docker-entrypoint-initdb.d/data-dump.sql
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -31,3 +32,5 @@ services:
        - ./content:/var/www/html/content
        - ./wp-config.php:/var/www/html/wp-config.php
        - ./.htaccess:/var/www/html/.htaccess
+volumes:
+    db_data:

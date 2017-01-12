@@ -110,7 +110,7 @@ if (!defined('WP_CONTENT_URL')) {
  * in their development environments.
  */
 if (!defined('WP_DEBUG')) {
-	define('WP_DEBUG', false);
+	define('WP_DEBUG', true);
 }
 
 // define('DISABLE_WP_CRON', true);
