@@ -5,6 +5,6 @@
   <ul class="Now-imageList">
     <li class="Now-imageListItem"><a class="Now-imageLink"><img class="Now-image" src="/content/themes/charliejackson/media/charlie-jackson-profile-picture-wedding.jpg" /></a></li>
     <li class="Now-imageListItem"><a class="Now-imageLink"><img class="Now-image" src="/content/themes/charliejackson/media/charlie-jackson-profile-picture-wood-party.jpg" /></a></li>
-    <li class="Now-imageListItem"><a class="Now-imageLink"><img class="Now-image" src="/content/themes/charliejackson/media/charlie-jackson-profile-beard.jpg" /></a></li>
+    <li class="Now-imageListItem"><a class="Now-imageLink"><img class="Now-image" src="/content/themes/charliejackson/media/charlie-jackson-profile-picture-beard.jpg" /></a></li>
   </ul>
 </section>
