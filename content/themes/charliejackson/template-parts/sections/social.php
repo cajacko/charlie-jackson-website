@@ -44,7 +44,7 @@
       </a>
     </li>
     <li class="Social-listItem">
-      <a class="Social-link" target="_blank" href="Profilehttps://uk.linkedin.com/in/charliejackson9">
+      <a class="Social-link" target="_blank" href="https://uk.linkedin.com/in/charliejackson9">
         <span class="Social-text">LinkedIn</span>
         <svg class="Social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
           <path class="Social-linkedInPath--blue" d="M195.877 .25c-107.717 0 -195.877 88.158 -195.877 195.877l0 607.841c0 107.717 88.158 195.845 195.877 195.845l607.841 0c107.718 0 195.845 -88.127 195.845 -195.845l0 -607.841c0 -107.717 -88.127 -195.877 -195.845 -195.877l-607.841 0zm49.266 164.948c51.648 0 83.461 33.906 84.443 78.475 0 43.585 -32.797 78.444 -85.442 78.444l-.969 0c-50.665 0 -83.412 -34.857 -83.412 -78.444 0 -44.568 33.738 -78.475 85.379 -78.475zm445.08 208.31c99.329 0 173.79 64.922 173.79 204.436l0 260.449l-150.953 0l0 -242.987c0 -61.06 -21.847 -102.718 -76.476 -102.718 -41.704 0 -66.562 28.078 -77.476 55.202 -3.987 9.704 -4.967 23.257 -4.967 36.832l0 253.671l-150.953 0s1.981 -411.613 0 -454.233l150.984 0l0 64.324c20.06 -30.95 55.942 -74.977 136.051 -74.977zm-521.556 10.685l150.953 0l0 454.202l-150.953 0l0 -454.202z"/>
@@ -68,7 +68,7 @@
       </a>
     </li>
     <li class="Social-listItem">
-      <a class="Social-link" target="_blank" href="mailto=contact@charliejackson.com">
+      <a class="Social-link" target="_blank" href="mailto:contact@charliejackson.com">
         <span class="Social-text">Email</span>
         <svg class="Social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
           <path class="Social-emailPath--blue" d="M0 788l0-576q0-1 3-19l339 290-338 325q-4-14-4-20zm45-635q7-3 17-3l913 0q9 0 18 3l-340 291-45 36-89 73-89-73-45-36zm1 694l341-327 132 107 132-107 341 327q-8 3-17 3l-913 0q-8 0-16-3zm650-364l338-290q3 9 3 19l0 576q0 9-3 20z"/>
