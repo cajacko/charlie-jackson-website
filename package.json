@@ -8,6 +8,8 @@
     "start": "docker-compose up -d --force-recreate --build",
     "stop": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)",
     "backup": "docker exec db sh -c 'exec mysqldump --all-databases -uroot -p\"$MYSQL_ROOT_PASSWORD\"' > `echo $PWD`/data-dump.sql",
+    "restore": "docker exec db sh -c 'exec mysql -uroot -p\"$MYSQL_ROOT_PASSWORD\" charliejackson' < `echo $PWD`/data-dump.sql",
+    "remove-volume": "docker volume rm charliejacksonwebsite_db_data",
     "dbLogs": "docker logs --follow db",
     "dev": "gulp",
     "bash-db": "docker exec -i -t db /bin/bash",
