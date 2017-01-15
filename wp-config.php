@@ -90,16 +90,16 @@ define('WPLANG', '');
  * These are required because wordpress is installed in a subdirectory.
  */
 if (!defined('WP_SITEURL')) {
-	define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
+	define('WP_SITEURL', 'https://' . $_SERVER['SERVER_NAME'] . '/wordpress');
 }
 if (!defined('WP_HOME')) {
-	define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME'] . '');
+	define('WP_HOME',    'https://' . $_SERVER['SERVER_NAME'] . '');
 }
 if (!defined('WP_CONTENT_DIR')) {
 	define('WP_CONTENT_DIR', dirname(__FILE__) . '/content');
 }
 if (!defined('WP_CONTENT_URL')) {
-	define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/content');
+	define('WP_CONTENT_URL', 'https://' . $_SERVER['SERVER_NAME'] . '/content');
 }
 
 /**
@@ -116,14 +116,11 @@ if (!defined('WP_DEBUG')) {
 // define('DISABLE_WP_CRON', true);
 define( 'SAVEQUERIES', true );
 
+/** SSL */
+define('FORCE_SSL_ADMIN', true);
 
-if ($_SERVER['SERVER_NAME'] == 'charliejackson.com') {
-	/** SSL */
-	define('FORCE_SSL_ADMIN', true);
-
-	// in some setups HTTP_X_FORWARDED_PROTO might contain  // a comma-separated list e.g. http,https  // so check for https existence  if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-	$_SERVER['HTTPS'] = 'on';
-}
+// in some setups HTTP_X_FORWARDED_PROTO might contain  // a comma-separated list e.g. http,https  // so check for https existence  if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+$_SERVER['HTTPS'] = 'on';
 
 /* That's all, stop editing! Happy blogging. */
 
