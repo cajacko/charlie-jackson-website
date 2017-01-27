@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
-var next = '/page/2/?ajax=true'
-var nextPage = 2
+var next = '/page/1/?ajax=true'
+var nextPage = 1
 const bottomScrollThreshold = 1000
 var gettingProjects = false
 

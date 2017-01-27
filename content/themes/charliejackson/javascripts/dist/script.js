@@ -23,8 +23,8 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var next = '/page/2/?ajax=true';
-var nextPage = 2;
+var next = '/page/1/?ajax=true';
+var nextPage = 1;
 var bottomScrollThreshold = 1000;
 var gettingProjects = false;
 
