@@ -23,6 +23,8 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log('update');
+
 var next = '/page/1/?ajax=true';
 var nextPage = 1;
 var bottomScrollThreshold = 1000;
@@ -38,6 +40,8 @@ function getNextProjects(callback) {
   }
 
   gettingProjects = true;
+
+  console.log(next);
 
   _jquery2.default.ajax({
     url: next,

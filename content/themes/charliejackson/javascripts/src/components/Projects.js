@@ -1,5 +1,7 @@
 import $ from 'jquery'
 
+console.log('update');
+
 var next = '/page/1/?ajax=true'
 var nextPage = 1
 const bottomScrollThreshold = 1000
@@ -15,6 +17,8 @@ function getNextProjects(callback) {
   }
 
   gettingProjects = true
+
+  console.log(next)
 
   $.ajax({
     url: next,
