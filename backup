@@ -13,7 +13,7 @@ DB_BACKUP_PATH=$BACKUP_DIR/$NAME
 mkdir -p $BACKUP_DIR
 mkdir -p $DB_BACKUP_DIR
 mkdir -p $CONTENT_BACKUP_DIR
-mkdir -p CONTENT_DIR
+mkdir -p $CONTENT_DIR
 
 docker exec social-helper-db sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > `echo $DB_BACKUP_PATH`
 cp -r $PWD/content/uploads $CONTENT_BACKUP_DIR
