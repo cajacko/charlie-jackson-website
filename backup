@@ -1,0 +1,19 @@
+#!/bin/sh
+
+NOW=$(date +"%s")
+DB_NAME=charlie-jackson-database-$NOW.sql
+CONTENT_DIR=$NOW
+
+BACKUP_DIR=$PWD/backups
+DB_BACKUP_DIR=$PWD/backups/db
+CONTENT_BACKUP_DIR=$PWD/backups/uploads
+
+DB_BACKUP_PATH=$BACKUP_DIR/$NAME
+
+mkdir -p $BACKUP_DIR
+mkdir -p $DB_BACKUP_DIR
+mkdir -p $CONTENT_BACKUP_DIR
+mkdir -p CONTENT_DIR
+
+docker exec social-helper-db sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > `echo $DB_BACKUP_DIR`
+cp -r $PWD/content/uploads $DB_BACKUP_PATH

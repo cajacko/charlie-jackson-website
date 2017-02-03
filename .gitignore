@@ -43,3 +43,4 @@ vendor
 
 content/updraft/**/*.zip
 content/updraft/**/*.gz
+backups/*
