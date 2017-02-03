@@ -119,12 +119,15 @@ define( 'SAVEQUERIES', true );
 // BEGIN iThemes Security - Do not modify or remove this line
 // iThemes Security Config Details: 2
 define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
-define( 'FORCE_SSL_LOGIN', true ); // Force SSL for Dashboard - Security > Settings > Secure Socket Layers (SSL) > SSL for Dashboard
-define( 'FORCE_SSL_ADMIN', true ); // Force SSL for Dashboard - Security > Settings > Secure Socket Layers (SSL) > SSL for Dashboard
-// END iThemes Security - Do not modify or remove this line
 
-// in some setups HTTP_X_FORWARDED_PROTO might contain  // a comma-separated list e.g. http,https  // so check for https existence  if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-$_SERVER['HTTPS'] = 'on';
+if (!defined('SSL_OFF')) {
+	define( 'FORCE_SSL_LOGIN', true ); // Force SSL for Dashboard - Security > Settings > Secure Socket Layers (SSL) > SSL for Dashboard
+	define( 'FORCE_SSL_ADMIN', true ); // Force SSL for Dashboard - Security > Settings > Secure Socket Layers (SSL) > SSL for Dashboard
+	// END iThemes Security - Do not modify or remove this line
+
+	// in some setups HTTP_X_FORWARDED_PROTO might contain  // a comma-separated list e.g. http,https  // so check for https existence  if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+	$_SERVER['HTTPS'] = 'on';
+}
 
 /* That's all, stop editing! Happy blogging. */
 

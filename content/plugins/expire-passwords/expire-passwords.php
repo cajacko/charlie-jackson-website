@@ -2,14 +2,18 @@
 /**
  * Plugin Name: Expire Passwords
  * Description: Require certain users to change their passwords on a regular basis.
- * Version: 0.4.0
+ * Version: 0.6.0
  * Author: Frankie Jarrett
  * Author URI: https://frankiejarrett.com
- * Text Domain: expire-passwords
  * License: GPL-2.0
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: expire-passwords
+ * Domain Path: /languages
  *
- * Copyright © 2016 Frankie Jarrett. All Rights Reserved.
+ * This plugin, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others.
+ *
+ * Copyright © 2017 Frankie Jarrett. All Rights Reserved.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 }
 
-define( 'EXPIRE_PASSWORDS_VERSION', '0.4.0' );
+define( 'EXPIRE_PASSWORDS_VERSION', '0.6.0' );
 define( 'EXPIRE_PASSWORDS_PLUGIN', plugin_basename( __FILE__ ) );
 define( 'EXPIRE_PASSWORDS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'EXPIRE_PASSWORDS_URL', plugin_dir_url( __FILE__ ) );
@@ -105,7 +109,8 @@ final class Expire_Passwords {
 		 */
 		self::$default_limit = absint( apply_filters( 'expass_default_limit', 90 ) );
 
-		add_action( 'user_register', array( __CLASS__, 'save_user_meta' ) );
+		add_action( 'user_register',  array( __CLASS__, 'save_user_meta' ) );
+		add_action( 'password_reset', array( __CLASS__, 'save_user_meta' ) );
 
 		new Expire_Passwords_Login_Screen;
 
@@ -117,8 +122,6 @@ final class Expire_Passwords {
 
 		new Expire_Passwords_List_Table;
 		new Expire_Passwords_Settings;
-
-		add_action( 'password_reset', array( __CLASS__, 'save_user_meta' ) );
 
 	}
 
@@ -255,9 +258,10 @@ final class Expire_Passwords {
 
 		}
 
-		$user = get_user_by( 'ID', $user_id );
+		$user  = get_user_by( 'ID', $user_id );
+		$roles = array_intersect( $user->roles, self::get_roles() );
 
-		return empty( $user->roles[0] ) ? false : ( array_intersect( $user->roles, self::get_roles() ) );
+		return empty( $user->roles[0] ) ? false : ! empty( $roles );
 
 	}
 
