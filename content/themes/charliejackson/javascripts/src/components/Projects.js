@@ -38,7 +38,7 @@ function getNextUrl(context) {
 
   if (nextUrl) {
     nextPage++
-    next = '/page/' + nextPage + '/?ajax=true'
+    next = 'page/' + nextPage + '/?ajax=true'
   } else {
     next = false
   }

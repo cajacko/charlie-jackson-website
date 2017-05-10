@@ -1,5 +1,11 @@
 <div class="Projects">
-  <h2 class="Projects-title">Projects</h2>
+  <h2 class="Projects-title">
+    <?php if (is_category() || is_tag()): ?>
+      <?php single_term_title('Projects: '); ?>
+    <?php else: ?>
+      Projects
+    <?php endif; ?>
+  </h2>
   <?php
   if ( have_posts() ) : ?>
 
