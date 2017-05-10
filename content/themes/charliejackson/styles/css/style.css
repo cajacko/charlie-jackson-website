@@ -284,6 +284,8 @@ a {
     height: auto; }
   .Project div {
     width: 100% !important; }
+  .Project iframe {
+    max-width: 100%; }
 
 .Project-title {
   margin-top: 0; }
