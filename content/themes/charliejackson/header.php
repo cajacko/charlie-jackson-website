@@ -6,7 +6,7 @@
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/lib.css">
-  <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/style.css">
+  <link rel="stylesheet" href="/content/themes/charliejackson/styles/css/style.min.css">
 </head>
 
 <body class="Body">

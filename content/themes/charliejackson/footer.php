@@ -1,3 +1,3 @@
-    <script src="/content/themes/charliejackson/javascripts/dist/script.js"> </script>
+    <script src="/content/themes/charliejackson/javascripts/dist/script.min.js"> </script>
   </body>
 </html>

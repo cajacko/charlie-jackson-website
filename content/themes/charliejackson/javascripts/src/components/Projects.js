@@ -16,12 +16,8 @@ function getNextProjects(callback) {
 
   gettingProjects = true
 
-  const url = window.location.href + next
-
-  console.log(url)
-
   $.ajax({
-    url: url,
+    url: next,
     context: document.body
   }).done(function(data) {
     gettingProjects = false
