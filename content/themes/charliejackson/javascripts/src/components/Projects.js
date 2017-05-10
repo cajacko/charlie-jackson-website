@@ -16,8 +16,6 @@ function getNextProjects(callback) {
 
   gettingProjects = true
 
-  console.log(next)
-
   $.ajax({
     url: next,
     context: document.body

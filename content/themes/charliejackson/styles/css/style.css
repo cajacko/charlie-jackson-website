@@ -1,3 +1,8 @@
+/**
+ * Defines the breakpoints and their associated names.
+ *
+ * Uses the mq sass plugin: https://github.com/sass-mq/sass-mq
+ */
 h1,
 h2,
 h3,
@@ -52,6 +57,9 @@ a {
 .Body {
   max-width: 600px;
   margin: 0 auto; }
+  @media (max-width: 39.99em) {
+    .Body {
+      padding: 0 10px; } }
 
 .SiteHeader {
   padding-bottom: 40px;
@@ -65,11 +73,20 @@ a {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-top: 40px; }
+  @media (max-width: 39.99em) {
+    .SiteHeader {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
 .SiteHeader-imageLink {
   max-height: 70px;
   max-width: 70px;
   display: block; }
+  @media (max-width: 39.99em) {
+    .SiteHeader-imageLink {
+      margin: 0 auto 10px auto; } }
 
 .SiteHeader-image {
   max-width: 100%;
@@ -89,6 +106,9 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+  @media (max-width: 39.99em) {
+    .SiteHeader-text {
+      padding-left: 0; } }
 
 .SiteHeader-titleLink {
   display: block; }
@@ -226,21 +246,31 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  @media (max-width: 39.99em) {
+    .ProjectLoopItem {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
 .ProjectLoopItem-imageLink {
   display: block;
-  height: 100px;
   width: 100px; }
+  @media (max-width: 39.99em) {
+    .ProjectLoopItem-imageLink {
+      margin: 0 auto 10px auto; } }
 
 .ProjectLoopItem-image {
   display: block;
-  height: 100px;
   width: 100px;
   max-width: none;
   max-height: none; }
 
 .ProjectLoopItem-text {
   padding-left: 20px; }
+  @media (max-width: 39.99em) {
+    .ProjectLoopItem-text {
+      padding-left: 0; } }
 
 .ProjectLoopItem-title {
   margin: 0; }

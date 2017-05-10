@@ -1,4 +1,8 @@
 .Body {
-  max-width: 600px;
+  max-width: $maxWidth;
   margin: 0 auto;
+
+  @include mq($until: mobile) {
+    padding: 0 10px;
+  }
 }

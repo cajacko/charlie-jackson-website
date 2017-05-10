@@ -1,0 +1,11 @@
+/**
+ * Defines the breakpoints and their associated names.
+ *
+ * Uses the mq sass plugin: https://github.com/sass-mq/sass-mq
+ */
+
+$mobileBreakpoint: $maxWidth + 40;
+
+$mq-breakpoints: (
+    mobile: $mobileBreakpoint,
+);

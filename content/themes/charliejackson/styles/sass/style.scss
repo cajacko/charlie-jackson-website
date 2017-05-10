@@ -1,7 +1,14 @@
 // Variables
+@import 'variables/layout';
 @import 'variables/colours';
 @import 'variables/fontSizes';
 @import 'variables/spacing';
+
+// Libraries
+@import '../../../../../node_modules/sass-mq/mq';
+
+// Library Setup
+@import 'variables/mq';
 
 // General
 @import 'general/headings';

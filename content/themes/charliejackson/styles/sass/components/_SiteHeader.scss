@@ -6,12 +6,20 @@ $SiteHeader-image--size: 70px;
   display: flex;
   flex-direction: row;
   margin-top: $sectionPadding;
+
+  @include mq($until: mobile) {
+    flex-direction: column;
+  }
 }
 
 .SiteHeader-imageLink {
   max-height: $SiteHeader-image--size;
   max-width: $SiteHeader-image--size;
   display: block;
+
+  @include mq($until: mobile) {
+    margin: 0 auto 10px auto;
+  }
 }
 
 .SiteHeader-image {
@@ -26,6 +34,10 @@ $SiteHeader-image--size: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include mq($until: mobile) {
+    padding-left: 0;
+  }
 }
 
 .SiteHeader-titleLink {
