@@ -195,6 +195,11 @@ a {
   width: 100%;
   height: auto; }
 
+.Social-instagramPath--black {
+  fill: black; }
+  a:hover .Social-instagramPath--black {
+    fill: #505050; }
+
 .Social-twitterPath--blue {
   fill: #55acee; }
   a:hover .Social-twitterPath--blue {

@@ -34,6 +34,14 @@
   height: auto;
 }
 
+.Social-instagramPath--black {
+  fill: $instagramBlack;
+
+  a:hover & {
+    fill: $instagramBlack--highlight;
+  }
+}
+
 .Social-twitterPath--blue {
   fill: $twitterBlue;
 
