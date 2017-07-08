@@ -36,7 +36,7 @@ const projects = [
   },
 ];
 
-const Projects = () => (
+const ProjectLoop = () => (
   <div className="Projects">
     <h2 className="Projects-title">Projects</h2>
     <main id="Projects-loop" className="Projects-loop">
@@ -77,4 +77,4 @@ const Projects = () => (
   </div>
 );
 
-export default Projects;
+export default ProjectLoop;
