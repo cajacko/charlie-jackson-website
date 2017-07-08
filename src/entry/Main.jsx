@@ -1,11 +1,10 @@
 /* @flow */
 
 import React from 'react';
+import App from 'components/App/App';
 
 const Main = () => (
-  <div>
-    Post Yeah goodness
-  </div>
+  <App />
 );
 
 export default Main;
