@@ -44,6 +44,7 @@
     "chromedriver": "2.29.0",
     "clean-webpack-plugin": "0.1.16",
     "command-line-args": "4.0.6",
+    "contentful": "^4.5.0",
     "cucumber": "2.3.0",
     "dotenv": "https://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz",
     "enzyme": "2.8.2",
