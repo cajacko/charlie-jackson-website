@@ -1,0 +1,25 @@
+{
+  "name": "charlie-jackson-website",
+  "version": "1.0.0",
+  "description": "Website for Charlie Jackson",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "login": "firebase login",
+    "init": "firebase init",
+    "deploy": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cajacko/charlie-jackson-website.git"
+  },
+  "author": "Charlie Jackson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cajacko/charlie-jackson-website/issues"
+  },
+  "homepage": "https://github.com/cajacko/charlie-jackson-website#readme",
+  "devDependencies": {
+    "firebase-tools": "^3.9.1"
+  }
+}
