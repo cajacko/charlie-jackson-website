@@ -19,8 +19,12 @@ function renderPage(url, htmlData, reactData) {
     react: page,
     manifest: manifestContent,
     js: {
-      main: manifest['main.js'],
-      vendor: manifest['vendor.js'],
+      main: `/assets/scripts/${manifest['main.js']}`,
+      vendor: `/assets/scripts/${manifest['vendor.js']}`,
+    },
+    css: {
+      lib: '/assets/styles/lib.css',
+      style: '/assets/styles/style.min.css',
     },
     ...htmlData,
   });

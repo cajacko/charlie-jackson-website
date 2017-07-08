@@ -18,7 +18,8 @@
         "store": "./src/store",
         "reducers": "./src/reducers",
         "entry": "./src/entry",
-        "dist": "./dist"
+        "dist": "./dist",
+        "dev": "./devServer"
       },
       "extensions": [".js", ".jsx"]
       }

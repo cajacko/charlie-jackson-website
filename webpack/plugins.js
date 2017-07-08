@@ -106,7 +106,7 @@ module.exports = isProduction => [
   // Otherwise we will build up redundant files.
   (() => {
     if (isProduction) {
-      const paths = [path.resolve(__dirname, '../dist/assets/prod')];
+      const paths = [path.resolve(__dirname, '../dist/assets/scripts')];
       const options = { root: path.resolve(__dirname, '../') };
       return new CleanWebpackPlugin(paths, options);
     }

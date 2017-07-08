@@ -4,7 +4,7 @@ import React from 'react';
 
 const Main = () => (
   <div>
-    Post Slug
+    Post Yeah goodness
   </div>
 );
 
