@@ -3,32 +3,36 @@ import Project from 'components/Project/Project';
 
 const projects = [
   {
-    image: '',
+    image: 'https://charliejackson.com/content/uploads/2017/05/om-150x150.png',
+    imageAlt: 'Om Mantra',
     url: '',
-    title: '',
-    lastUpdated: '',
-    excerpt: '',
+    title: 'Mantras – A Collection of Learnings',
+    lastUpdated: 'Sat 27th May, 2017',
+    excerpt: 'I have a list of mantra and sayings that I’ve collected from various books, podcasts and talks. These are thing’s that either inspire me or are principles I want to try and live by. Many of them contradict each other as well, so they are more thought provoking, than a definitive list of things I […]',
   },
   {
-    image: '',
+    image: 'https://charliejackson.com/content/uploads/2017/05/om-150x150.png',
+    imageAlt: 'Om Mantra',
     url: 'dt',
-    title: '',
-    lastUpdated: '',
-    excerpt: '',
+    title: 'Mantras – A Collection of Learnings',
+    lastUpdated: 'Sat 27th May, 2017',
+    excerpt: 'I have a list of mantra and sayings that I’ve collected from various books, podcasts and talks. These are thing’s that either inspire me or are principles I want to try and live by. Many of them contradict each other as well, so they are more thought provoking, than a definitive list of things I […]',
   },
   {
-    image: '',
+    image: 'https://charliejackson.com/content/uploads/2017/05/om-150x150.png',
+    imageAlt: 'Om Mantra',
     url: 'rty',
-    title: '',
-    lastUpdated: '',
-    excerpt: '',
+    title: 'Mantras – A Collection of Learnings',
+    lastUpdated: 'Sat 27th May, 2017',
+    excerpt: 'I have a list of mantra and sayings that I’ve collected from various books, podcasts and talks. These are thing’s that either inspire me or are principles I want to try and live by. Many of them contradict each other as well, so they are more thought provoking, than a definitive list of things I […]',
   },
   {
-    image: '',
+    image: 'https://charliejackson.com/content/uploads/2017/05/om-150x150.png',
+    imageAlt: 'Om Mantra',
     url: 'rhgtyy',
-    title: '',
-    lastUpdated: '',
-    excerpt: '',
+    title: 'Mantras – A Collection of Learnings',
+    lastUpdated: 'Sat 27th May, 2017',
+    excerpt: 'I have a list of mantra and sayings that I’ve collected from various books, podcasts and talks. These are thing’s that either inspire me or are principles I want to try and live by. Many of them contradict each other as well, so they are more thought provoking, than a definitive list of things I […]',
   },
 ];
 
@@ -37,7 +41,14 @@ const Projects = () => (
     <h2 className="Projects-title">Projects</h2>
     <main id="Projects-loop" className="Projects-loop">
       {
-        projects.map(({ image, url, title, lastUpdated, excerpt }) => (
+        projects.map(({
+          image,
+          url,
+          title,
+          lastUpdated,
+          excerpt,
+          imageAlt,
+        }) => (
           <Project
             key={url}
             image={image}
@@ -45,6 +56,7 @@ const Projects = () => (
             title={title}
             lastUpdated={lastUpdated}
             excerpt={excerpt}
+            imageAlt={imageAlt}
           />
         ))
       }
