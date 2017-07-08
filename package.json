@@ -10,9 +10,7 @@
     "deploy": "firebase deploy",
     "serve": "firebase serve",
     "start": "webpack-dev-server",
-    "build": "npm run build:development && npm run build:production",
-    "build:development": "webpack --progress --colors",
-    "build:production": "webpack --progress --colors --env.production",
+    "build": "webpack --progress --colors --env.production",
     "pages": "babel-node ./scripts/buildPages.jsx"
   },
   "repository": {

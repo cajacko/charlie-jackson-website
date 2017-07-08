@@ -6,17 +6,27 @@ import { join, dirname } from 'path';
 import { minify } from 'html-minifier';
 import mkdirp from 'mkdirp';
 import Main from 'entry/Main';
+import manifest from 'dist/assets/scripts/manifest.json';
 
 const file = readFileSync(join(__dirname, '../src/index.html'), 'utf8');
 const template = Handlebars.compile(file);
+const manifestContent = readFileSync(join(__dirname, `../dist/assets/scripts/${manifest['manifest.js']}`), 'utf8');
 
 // eslint-disable-next-line
 function renderPage(url, htmlData, reactData) {
   const page = ReactDOMServer.renderToString(<Main />);
-  const originalHtml = template({ react: page, ...htmlData });
+  const originalHtml = template({
+    react: page,
+    manifest: manifestContent,
+    js: {
+      main: manifest['main.js'],
+      vendor: manifest['vendor.js'],
+    },
+    ...htmlData,
+  });
   const html = minify(originalHtml, {
     removeComments: true,
-    collapseWhitespace: true,
+    // collapseWhitespace: true,
   });
 
   const path = join(__dirname, `../dist/${url}.html`);
@@ -33,12 +43,12 @@ function renderPage(url, htmlData, reactData) {
 function getPages() {
   return [
     {
-      url: 'post-slug',
+      url: 'index',
       htmlData: {},
       reactData: {},
     },
     {
-      url: 'dooby-doo/Wee',
+      url: 'post-slug',
       htmlData: {},
       reactData: {},
     },
