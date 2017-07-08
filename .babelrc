@@ -16,7 +16,8 @@
         "helpers": "./src/helpers",
         "views": "./src",
         "store": "./src/store",
-        "reducers": "./src/reducers"
+        "reducers": "./src/reducers",
+        "entry": "./src/entry"
       },
       "extensions": [".js", ".jsx"]
       }

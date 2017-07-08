@@ -2,10 +2,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Main from 'entry/Main';
 
 ReactDOM.render(
-  <div>
-    Woo
-  </div>,
+  <Main />,
   document.querySelector('#app'),
 );

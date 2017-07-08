@@ -12,7 +12,8 @@
     "start": "webpack-dev-server",
     "build": "npm run build:development && npm run build:production",
     "build:development": "webpack --progress --colors",
-    "build:production": "webpack --progress --colors --env.production"
+    "build:production": "webpack --progress --colors --env.production",
+    "pages": "babel-node ./scripts/buildPages.jsx"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,6 @@
   },
   "homepage": "https://github.com/cajacko/charlie-jackson-website#readme",
   "devDependencies": {
-    "firebase-tools": "^3.9.1",
     "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
     "babel-es6-polyfill": "1.1.0",
@@ -57,15 +57,19 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.9.0",
     "find-in-files": "0.4.0",
+    "firebase-tools": "^3.9.1",
     "flow-check": "0.3.0",
     "geckodriver": "1.6.1",
     "glob": "https://registry.npmjs.org/glob/-/glob-5.0.15.tgz",
     "glob-fs": "0.1.6",
+    "handlebars": "^4.0.10",
+    "html-minifier": "^3.5.2",
     "husky": "0.13.4",
     "iedriver": "3.3.1-rc.1",
     "inquirer": "https://registry.npmjs.org/inquirer/-/inquirer-0.12.0.tgz",
     "jest": "20.0.4",
     "lodash": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz",
+    "mkdirp": "^0.5.1",
     "moment": "https://registry.npmjs.org/moment/-/moment-2.18.1.tgz",
     "multi-commands": "1.1.1",
     "node-fetch": "1.7.0",
