@@ -3,6 +3,7 @@ import express from 'express';
 import Handlebars from 'handlebars';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import data from 'dev/data';
 
 const file = readFileSync(join(__dirname, '../src/index.html'), 'utf8');
 const template = Handlebars.compile(file);
@@ -31,6 +32,8 @@ const html = template({
 });
 
 const app = express();
+
+app.get('/data', data);
 
 app.get('*', (req, res) => {
   res.send(html);
