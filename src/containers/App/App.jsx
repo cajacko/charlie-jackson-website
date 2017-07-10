@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import App from 'components/App/App';
 import getProjects from 'actions/getProjects';
+import Item from 'containers/Item/Item';
 
 class AppContainer extends Component {
   componentDidMount() {
@@ -9,8 +11,33 @@ class AppContainer extends Component {
   }
 
   render() {
-    return <App />;
+    if (this.props.templates && this.props.templates.Home) {
+      return (
+        <Item
+          element={App}
+          itemId={this.props.templates.Home}
+        />
+      );
+    }
+
+    return null;
   }
 }
 
-export default connect()(AppContainer);
+AppContainer.propTypes = {
+  templates: PropTypes.shape({
+    Home: PropTypes.string,
+    Single: PropTypes.string,
+  }),
+  dispatch: PropTypes.func.isRequired,
+};
+
+AppContainer.defaultProps = {
+  templates: {},
+};
+
+function mapStateToProps({ templates }) {
+  return { templates };
+}
+
+export default connect(mapStateToProps)(AppContainer);
