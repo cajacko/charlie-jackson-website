@@ -5,8 +5,7 @@ import equal from 'deep-equal';
 
 function getItemProps(items, itemId) {
   if (!items[itemId]) {
-    // eslint-disable-next-line
-    console.error(`No item with ID: ${itemId}`, items, itemId);
+    return { noItem: true };
   }
 
   return items[itemId];
@@ -51,6 +50,7 @@ class Item extends Component {
   render() {
     const itemProps = getItemProps(this.props.items, this.props.itemId);
     const passedProps = getPassedProps(this.props);
+    // If no element then infer element from mapping of content type
     const Element = this.props.element;
     return <Element {...itemProps} {...passedProps} />;
   }
@@ -61,10 +61,15 @@ Item.propTypes = {
   element: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.func,
-  ]).isRequired,
+  ]),
   // eslint-disable-next-line
   items: PropTypes.object.isRequired,
-  itemId: PropTypes.string.isRequired,
+  itemId: PropTypes.string,
+};
+
+Item.defaultProps = {
+  element: null,
+  itemId: null,
 };
 
 function mapStateToProps({ items }) {

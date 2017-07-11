@@ -1,7 +1,12 @@
 import { combineReducers } from 'redux';
 import items from 'reducers/items';
-import templates from 'reducers/templates';
 import routes from 'reducers/routes';
 import routeData from 'reducers/routeData';
+import fourOhFour from 'reducers/fourOhFour';
 
-export default combineReducers({ items, templates, routes, routeData });
+export default combineReducers({
+  items,
+  routes,
+  routeData,
+  fourOhFour,
+});

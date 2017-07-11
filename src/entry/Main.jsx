@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import App from 'containers/App/App';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
+import Routes from 'containers/Routes/Routes';
 import configureStore from 'store/configureStore';
 
 const preloadedState = {};
@@ -10,7 +14,9 @@ const store = configureStore(preloadedState);
 
 const Main = () => (
   <Provider store={store}>
-    <App />
+    <Router>
+      <Route path="*" component={Routes} />
+    </Router>
   </Provider>
 );
 
