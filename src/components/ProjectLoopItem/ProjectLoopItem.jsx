@@ -1,45 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
+import Item from 'containers/Item/Item';
 
-const ProjectLoopItem = ({
-  url,
-  image,
-  imageAlt,
-  title,
-  lastUpdated,
-  excerpt,
-}) => (
-  <article className="ProjectLoopItem">
-    <Link className="ProjectLoopItem-imageLink" to={url}>
-      <img width="150" height="150" src={image} className="ProjectLoopItem-image wp-post-image" alt={imageAlt} />
-    </Link>
+const ProjectLoopItem = ({ fields }) => {
+  const url = `/${fields.slug['en-GB']}`;
+  const date = moment(fields.displayDate['en-GB']).format('ddd Do MMMM YYYY');
 
-    <div className="ProjectLoopItem-text">
-      <Link className="ProjectLoopItem-titleLink" to={url}>
-        <h3 className="ProjectLoopItem-title">{title}</h3>
+  return (
+    <article className="ProjectLoopItem">
+      <Link className="ProjectLoopItem-imageLink" to={url}>
+        <Item asset itemId={fields.thumbnailImage['en-GB'].sys.id} className="ProjectLoopItem-image wp-post-image" />
       </Link>
 
-      <div className="ProjectLoopItem-meta">
-        <p className="ProjectLoopItem-date">Last Updated: {lastUpdated}</p>
-      </div>
+      <div className="ProjectLoopItem-text">
+        <Link className="ProjectLoopItem-titleLink" to={url}>
+          <h3 className="ProjectLoopItem-title">{fields.title['en-GB']}</h3>
+        </Link>
 
-      <div className="ProjectLoopItem-content">
-        <p>{excerpt}</p>
-      </div>
+        <div className="ProjectLoopItem-meta">
+          <p className="ProjectLoopItem-date">Last Updated: {date}</p>
+        </div>
 
-      <Link className="ProjectLoopItem-readMore" to={url}>Read More</Link>
-    </div>
-  </article>
-);
+        <div className="ProjectLoopItem-content">
+          <p>{fields.excerpt['en-GB']}</p>
+        </div>
+
+        <Link className="ProjectLoopItem-readMore" to={url}>Read More</Link>
+      </div>
+    </article>
+  );
+};
 
 ProjectLoopItem.propTypes = {
-  url: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  lastUpdated: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
+  fields: PropTypes.shape({
+    displayDate: PropTypes.shape({
+      'en-GB': PropTypes.string,
+    }),
+    slug: PropTypes.shape({
+      'en-GB': PropTypes.string,
+    }),
+    title: PropTypes.shape({
+      'en-GB': PropTypes.string,
+    }),
+    excerpt: PropTypes.shape({
+      'en-GB': PropTypes.string,
+    }),
+    thumbnailImage: PropTypes.shape({
+      'en-GB': PropTypes.shape({
+        sys: PropTypes.shape({
+          id: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
 };
 
 export default ProjectLoopItem;

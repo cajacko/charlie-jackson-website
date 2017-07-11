@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Image from 'components/Image/Image';
 import Item from 'containers/Item/Item';
 
 const SiteHeader = ({ fields }) => (
   <header className="SiteHeader">
     <Link className="SiteHeader-imageLink" to="/">
-      <Item itemId={fields.image['en-GB'].sys.id} asset element={Image} className="SiteHeader-image" />
+      <Item itemId={fields.image['en-GB'].sys.id} asset className="SiteHeader-image" />
     </Link>
     <div className="SiteHeader-text">
       <Link className="SiteHeader-titleLink" to="/">

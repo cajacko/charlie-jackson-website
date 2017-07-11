@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import Image from 'components/Image/Image';
 import Item from 'containers/Item/Item';
 
 const Now = ({ fields }) => (
@@ -13,7 +12,7 @@ const Now = ({ fields }) => (
       {
         fields.images['en-GB'].map(({ sys }) => (
           <li key={sys.id} className="Now-imageListItem">
-            <Item itemId={sys.id} asset element={Image} />
+            <Item itemId={sys.id} asset />
           </li>
         ))
       }

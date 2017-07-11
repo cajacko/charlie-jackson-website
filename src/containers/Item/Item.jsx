@@ -5,6 +5,7 @@ import equal from 'deep-equal';
 import componentMap from 'constants/typeComponentMap';
 import getItemContentTypeId from 'helpers/getItemContentTypeId';
 import { getItemProps, getProps, getPassedProps } from 'helpers/getProps';
+import Image from 'components/Image/Image';
 
 class Item extends Component {
   constructor(props) {
@@ -42,6 +43,8 @@ class Item extends Component {
 
     if (this.props.element) {
       Element = this.props.element;
+    } else if (this.props.asset) {
+      Element = Image;
     } else {
       const contentTypeId = getItemContentTypeId(itemProps);
 
