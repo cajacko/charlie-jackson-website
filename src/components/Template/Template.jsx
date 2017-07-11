@@ -5,7 +5,7 @@ import getComponents from 'helpers/getComponents';
 import FourOhFourDefault from 'components/FourOhFourDefault/FourOhFourDefault';
 import FullScreenLoading from 'components/FullScreenLoading/FullScreenLoading';
 
-const Template = ({ noItem, fields, loading }) => {
+const Template = ({ noItem, fields, loading, templateDataItem }) => {
   if (noItem) {
     if (loading) {
       return <FullScreenLoading />;
@@ -44,7 +44,13 @@ const Template = ({ noItem, fields, loading }) => {
 
           const key = `${i}-${component.sys.id}`;
 
-          return <Item key={key} itemId={component.sys.id} />;
+          return (
+            <Item
+              key={key}
+              itemId={component.sys.id}
+              templateDataItem={templateDataItem}
+            />
+          );
         })
       }
     </div>
@@ -54,6 +60,7 @@ const Template = ({ noItem, fields, loading }) => {
 Template.propTypes = {
   noItem: PropTypes.bool,
   loading: PropTypes.bool,
+  templateDataItem: PropTypes.string,
   fields: PropTypes.shape({
     components: PropTypes.shape({
       'en-GB': PropTypes.arrayOf(PropTypes.shape({
@@ -69,6 +76,7 @@ Template.defaultProps = {
   noItem: false,
   fields: null,
   loading: false,
+  templateDataItem: null,
 };
 
 

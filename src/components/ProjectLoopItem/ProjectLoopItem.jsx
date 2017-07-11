@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import { Link } from 'react-router-dom';
 import Item from 'containers/Item/Item';
+import dateString from 'helpers/dateString';
 
 const ProjectLoopItem = ({ fields }) => {
   const url = `/${fields.slug['en-GB']}`;
-  const date = moment(fields.displayDate['en-GB']).format('ddd Do MMMM YYYY');
+  const date = dateString(fields.displayDate['en-GB']);
 
   return (
     <article className="ProjectLoopItem">

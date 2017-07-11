@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Item from 'containers/Item/Item';
+import ProjectLoopItem from 'components/ProjectLoopItem/ProjectLoopItem';
 
 const ProjectLoop = ({ title, projects }) => (
   <div className="Projects">
     <h2 className="Projects-title">{title}</h2>
     <main id="Projects-loop" className="Projects-loop">
       {
-        projects.map(id => <Item key={id} itemId={id} />)
+        projects.map(id => (
+          <Item key={id} itemId={id} element={ProjectLoopItem} />
+        ))
       }
     </main>
 
