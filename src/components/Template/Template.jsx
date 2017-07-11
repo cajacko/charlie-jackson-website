@@ -2,15 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from 'containers/Item/Item';
 import getComponents from 'helpers/getComponents';
+import FourOhFourDefault from 'components/FourOhFourDefault/FourOhFourDefault';
+import FullScreenLoading from 'components/FullScreenLoading/FullScreenLoading';
 
-const Template = (props) => {
-  if (props.noItem) {
+const Template = ({ noItem, fields, loading }) => {
+  if (noItem) {
+    if (loading) {
+      return <FullScreenLoading />;
+    }
+
     // eslint-disable-next-line
     console.warn('Hardcoded 404, should never happen with server rendering');
-    return null;
+    return <FourOhFourDefault />;
   }
 
-  const components = getComponents(props.fields);
+  const components = getComponents(fields);
 
   if (!components) {
     return null;
@@ -47,6 +53,7 @@ const Template = (props) => {
 
 Template.propTypes = {
   noItem: PropTypes.bool,
+  loading: PropTypes.bool,
   fields: PropTypes.shape({
     components: PropTypes.shape({
       'en-GB': PropTypes.arrayOf(PropTypes.shape({
@@ -61,6 +68,7 @@ Template.propTypes = {
 Template.defaultProps = {
   noItem: false,
   fields: null,
+  loading: false,
 };
 
 

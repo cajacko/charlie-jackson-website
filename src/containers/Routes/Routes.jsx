@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import Template from 'components/Template/Template';
 import Item from 'containers/Item/Item';
 import getProjects from 'actions/getProjects';
-import matchRoute from 'helpers/matchRoute';
-import getRouteDataItem from 'helpers/getRouteDataItem';
+import getTemplateInfo from 'helpers/getTemplateInfo';
 
 class RoutesContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { templateId: null, templateDataItem: null };
+    const { match, routes, fourOhFour, routeData } = props;
+    this.state = getTemplateInfo(match, routes, fourOhFour, routeData);
   }
 
   componentDidMount() {
@@ -20,28 +20,7 @@ class RoutesContainer extends Component {
   }
 
   componentWillReceiveProps({ match, routes, fourOhFour, routeData }) {
-    const route = matchRoute(routes, match.url, fourOhFour);
-    let { templateId, templateDataItem } = this.state;
-
-    if (route) {
-      templateId = route.template;
-
-      if (route.match && route.entryField && route.contentType) {
-        templateDataItem = getRouteDataItem(
-          routeData,
-          route.contentType,
-          route.entryField,
-          route.match,
-        );
-      } else {
-        templateDataItem = null;
-      }
-    } else {
-      templateId = null;
-      templateDataItem = null;
-    }
-
-    this.setState({ templateId, templateDataItem });
+    this.setState({ ...getTemplateInfo(match, routes, fourOhFour, routeData) });
   }
 
   render() {
@@ -50,6 +29,7 @@ class RoutesContainer extends Component {
         element={Template}
         itemId={this.state.templateId}
         templateDataItem={this.state.templateDataItem}
+        loading={this.props.loading}
       />
     );
   }
@@ -57,10 +37,25 @@ class RoutesContainer extends Component {
 
 RoutesContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }).isRequired,
+  routes: PropTypes.arrayOf(PropTypes.shape({
+    route: PropTypes.string,
+    template: PropTypes.string,
+  })).isRequired,
+  fourOhFour: PropTypes.string,
+  // eslint-disable-next-line
+  routeData: PropTypes.object.isRequired,
 };
 
-function mapStateToProps({ routes, routeData, fourOhFour }) {
-  return { routes, routeData, fourOhFour };
+RoutesContainer.defaultProps = {
+  fourOhFour: null,
+};
+
+function mapStateToProps({ routes, routeData, fourOhFour, loading }) {
+  return { routes, routeData, fourOhFour, loading };
 }
 
 export default withRouter(connect(mapStateToProps)(RoutesContainer));
