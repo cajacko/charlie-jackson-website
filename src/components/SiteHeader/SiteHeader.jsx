@@ -6,7 +6,7 @@ import Item from 'containers/Item/Item';
 const SiteHeader = ({ fields }) => (
   <header className="SiteHeader">
     <Link className="SiteHeader-imageLink" to="/">
-      <Item itemId={fields.image['en-GB'].sys.id} asset className="SiteHeader-image" />
+      <Item itemId={fields.image['en-GB'].sys.id} asset className="SiteHeader-image" width={70} height={70} />
     </Link>
     <div className="SiteHeader-text">
       <Link className="SiteHeader-titleLink" to="/">
