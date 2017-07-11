@@ -2,30 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import equal from 'deep-equal';
-
-function getItemProps(items, itemId) {
-  if (!items[itemId]) {
-    return { noItem: true };
-  }
-
-  return items[itemId];
-}
-
-function getPassedProps(props) {
-  const passedProps = Object.assign({}, props);
-  delete passedProps.itemId;
-  delete passedProps.items;
-  delete passedProps.element;
-  delete passedProps.dispatch;
-  return passedProps;
-}
-
-function getProps(props) {
-  return {
-    ...getItemProps(props.items, props.itemId),
-    ...getPassedProps(props),
-  };
-}
+import componentMap from 'constants/typeComponentMap';
+import getItemContentTypeId from 'helpers/getItemContentTypeId';
+import { getItemProps, getProps, getPassedProps } from 'helpers/getProps';
 
 class Item extends Component {
   constructor(props) {
@@ -48,10 +27,33 @@ class Item extends Component {
   }
 
   render() {
+    // Put all this in state and be smarter at processing
+    // this, so don't do it during render
     const itemProps = getItemProps(this.props.items, this.props.itemId);
     const passedProps = getPassedProps(this.props);
-    // If no element then infer element from mapping of content type
-    const Element = this.props.element;
+
+    let Element;
+
+    if (this.props.element) {
+      Element = this.props.element;
+    } else {
+      const contentTypeId = getItemContentTypeId(itemProps);
+
+      if (contentTypeId) {
+        if (componentMap[contentTypeId]) {
+          Element = componentMap[contentTypeId];
+        } else {
+          // eslint-disable-next-line
+          console.warn('No component map for', contentTypeId);
+          return null;
+        }
+      } else {
+        // eslint-disable-next-line
+        console.warn('Could not get an element for this item');
+        return null;
+      }
+    }
+
     return <Element {...itemProps} {...passedProps} />;
   }
 }
