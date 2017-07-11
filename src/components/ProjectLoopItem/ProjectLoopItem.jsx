@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ProjectLoopItem = ({
   url,
@@ -10,14 +11,14 @@ const ProjectLoopItem = ({
   excerpt,
 }) => (
   <article className="ProjectLoopItem">
-    <a className="ProjectLoopItem-imageLink" href={url}>
+    <Link className="ProjectLoopItem-imageLink" to={url}>
       <img width="150" height="150" src={image} className="ProjectLoopItem-image wp-post-image" alt={imageAlt} />
-    </a>
+    </Link>
 
     <div className="ProjectLoopItem-text">
-      <a className="ProjectLoopItem-titleLink" href={url}>
+      <Link className="ProjectLoopItem-titleLink" to={url}>
         <h3 className="ProjectLoopItem-title">{title}</h3>
-      </a>
+      </Link>
 
       <div className="ProjectLoopItem-meta">
         <p className="ProjectLoopItem-date">Last Updated: {lastUpdated}</p>
@@ -27,7 +28,7 @@ const ProjectLoopItem = ({
         <p>{excerpt}</p>
       </div>
 
-      <a className="ProjectLoopItem-readMore" href="/mantra/">Read More</a>
+      <Link className="ProjectLoopItem-readMore" to={url}>Read More</Link>
     </div>
   </article>
 );

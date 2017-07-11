@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SiteHeader = () => (
   <header className="SiteHeader">
-    <a className="SiteHeader-imageLink" href="/">
+    <Link className="SiteHeader-imageLink" to="/">
       <img
         width="150"
         height="150"
@@ -10,11 +11,11 @@ const SiteHeader = () => (
         className="SiteHeader-image"
         alt="Charlie Jackson profile"
       />
-    </a>
+    </Link>
     <div className="SiteHeader-text">
-      <a className="SiteHeader-titleLink" href="/">
+      <Link className="SiteHeader-titleLink" to="/">
         <h1 className="SiteHeader-title">Charlie Jackson</h1>
-      </a>
+      </Link>
       <p className="SiteHeader-description">Programmer, entrepreneur, designer and improv comedian</p>
     </div>
   </header>

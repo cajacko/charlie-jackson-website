@@ -1,5 +1,5 @@
 import React from 'react';
-import Project from 'components/Project/Project';
+import ProjectLoopItem from 'components/ProjectLoopItem/ProjectLoopItem';
 
 const projects = [
   {
@@ -49,7 +49,7 @@ const ProjectLoop = () => (
           excerpt,
           imageAlt,
         }) => (
-          <Project
+          <ProjectLoopItem
             key={url}
             image={image}
             url={url}
