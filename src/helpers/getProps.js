@@ -1,4 +1,12 @@
-export function getItemProps(items, itemId) {
+export function getItemProps(items, assets, itemId, asset) {
+  if (asset) {
+    if (!assets[itemId]) {
+      return { noItem: true };
+    }
+
+    return assets[itemId];
+  }
+
   if (!items[itemId]) {
     return { noItem: true };
   }
@@ -10,8 +18,14 @@ export function getPassedProps(props) {
   const passedProps = Object.assign({}, props);
   delete passedProps.itemId;
   delete passedProps.items;
+  delete passedProps.assets;
   delete passedProps.element;
   delete passedProps.dispatch;
+
+  if (passedProps.asset !== undefined) {
+    delete passedProps.asset;
+  }
+
   return passedProps;
 }
 

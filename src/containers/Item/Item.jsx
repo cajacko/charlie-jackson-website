@@ -29,7 +29,13 @@ class Item extends Component {
   render() {
     // Put all this in state and be smarter at processing
     // this, so don't do it during render
-    const itemProps = getItemProps(this.props.items, this.props.itemId);
+    const itemProps = getItemProps(
+      this.props.items,
+      this.props.assets,
+      this.props.itemId,
+      this.props.asset,
+    );
+
     const passedProps = getPassedProps(this.props);
 
     let Element;
@@ -66,16 +72,20 @@ Item.propTypes = {
   ]),
   // eslint-disable-next-line
   items: PropTypes.object.isRequired,
+  // eslint-disable-next-line
+  assets: PropTypes.object.isRequired,
   itemId: PropTypes.string,
+  asset: PropTypes.bool,
 };
 
 Item.defaultProps = {
   element: null,
   itemId: null,
+  asset: false,
 };
 
-function mapStateToProps({ items }) {
-  return { items };
+function mapStateToProps({ items, assets }) {
+  return { items, assets };
 }
 
 export default connect(mapStateToProps)(Item);
