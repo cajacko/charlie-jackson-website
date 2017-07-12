@@ -29,6 +29,7 @@ function renderPage(location, htmlData, reactData, state) {
   const originalHtml = template({
     react: page,
     manifest: manifestContent,
+    state: JSON.stringify(state).replace(/</g, '\\u003c'),
     js: {
       main: `/assets/scripts/${manifest['main.js']}`,
       vendor: `/assets/scripts/${manifest['vendor.js']}`,
@@ -41,7 +42,7 @@ function renderPage(location, htmlData, reactData, state) {
   });
   const html = minify(originalHtml, {
     removeComments: true,
-    // collapseWhitespace: true,
+    collapseWhitespace: true,
   });
 
   const path = join(__dirname, `../dist${url}.html`);

@@ -12,6 +12,8 @@
   <body class="Body">
     <div id="app">{{{react}}}</div>
 
+    <script>window.REDUX_PRELOADED_STATE = {{{state}}}</script>
+
     {{#if manifest}}
       <script>{{{manifest}}}</script>
     {{else}}
