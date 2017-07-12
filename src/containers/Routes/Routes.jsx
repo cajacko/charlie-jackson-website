@@ -24,10 +24,16 @@ class RoutesContainer extends Component {
   }
 
   render() {
+    let template = this.state.templateId;
+
+    if (this.state.noTemplateDataItem) {
+      template = this.props.fourOhFour;
+    }
+
     return (
       <Item
         element={Template}
-        itemId={this.state.templateId}
+        itemId={template}
         templateDataItem={this.state.templateDataItem}
         loading={this.props.loading}
       />

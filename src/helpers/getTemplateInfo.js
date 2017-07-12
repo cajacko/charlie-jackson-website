@@ -5,6 +5,7 @@ export default function (match, routes, fourOhFour, routeData) {
   const route = matchRoute(routes, match.url, fourOhFour);
   let templateId;
   let templateDataItem;
+  let noTemplateDataItem = false;
 
   if (route) {
     templateId = route.template;
@@ -16,6 +17,10 @@ export default function (match, routes, fourOhFour, routeData) {
         route.entryField,
         route.match,
       );
+
+      if (templateDataItem === null) {
+        noTemplateDataItem = true;
+      }
     } else {
       templateDataItem = null;
     }
@@ -24,5 +29,5 @@ export default function (match, routes, fourOhFour, routeData) {
     templateDataItem = null;
   }
 
-  return { templateId, templateDataItem };
+  return { templateId, templateDataItem, noTemplateDataItem };
 }

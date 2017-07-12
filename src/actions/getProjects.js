@@ -1,5 +1,4 @@
 import { createClient } from 'contentful';
-// import fetcher from 'helpers/fetcher';
 
 const client = createClient({
   space: '1gvc9x9hfuhs',
@@ -9,11 +8,12 @@ const client = createClient({
 
 export default function () {
   return (dispatch) => {
-    client.sync({initial: true})
+    client.sync({ initial: true })
       .then(response => dispatch({
         type: 'CONTENTFUL_SUCCESS',
         payload: response,
       }))
-      .catch(console.error)
+      // eslint-disable-next-line
+      .catch(console.error);
   };
 }

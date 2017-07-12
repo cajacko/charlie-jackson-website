@@ -5,16 +5,27 @@ import { readFileSync, writeFile } from 'fs';
 import { join, dirname } from 'path';
 import { minify } from 'html-minifier';
 import mkdirp from 'mkdirp';
-import Main from 'entry/Main';
+import Main from 'views/server';
 import manifest from 'dist/assets/scripts/manifest.json';
+import configureStore from 'store/configureStore.prod';
+import getProjects from 'actions/getProjects';
 
 const file = readFileSync(join(__dirname, '../src/index.html'), 'utf8');
 const template = Handlebars.compile(file);
 const manifestContent = readFileSync(join(__dirname, `../dist/assets/scripts/${manifest['manifest.js']}`), 'utf8');
 
 // eslint-disable-next-line
-function renderPage(url, htmlData, reactData) {
-  const page = ReactDOMServer.renderToString(<Main />);
+function renderPage(location, htmlData, reactData, state) {
+  let url = location;
+
+  if (url === '/') {
+    url = '/index';
+  }
+
+  const page = ReactDOMServer.renderToString(
+    <Main location={location} context={{}} state={state} />,
+  );
+
   const originalHtml = template({
     react: page,
     manifest: manifestContent,
@@ -33,7 +44,7 @@ function renderPage(url, htmlData, reactData) {
     // collapseWhitespace: true,
   });
 
-  const path = join(__dirname, `../dist/${url}.html`);
+  const path = join(__dirname, `../dist${url}.html`);
 
   mkdirp(dirname(path), (err) => {
     if (err) {
@@ -47,12 +58,17 @@ function renderPage(url, htmlData, reactData) {
 function getPages() {
   return [
     {
-      url: 'index',
+      url: '/',
       htmlData: {},
       reactData: {},
     },
     {
-      url: 'post-slug',
+      url: '/meditation',
+      htmlData: {},
+      reactData: {},
+    },
+    {
+      url: '/404',
       htmlData: {},
       reactData: {},
     },
@@ -61,6 +77,14 @@ function getPages() {
 
 const pages = getPages();
 
-pages.forEach(({ url, htmlData, reactData }) => {
-  renderPage(url, htmlData, reactData);
+const store = configureStore({});
+
+store.subscribe(() => {
+  const state = store.getState();
+
+  pages.forEach(({ url, htmlData, reactData }) => {
+    renderPage(url, htmlData, reactData, state);
+  });
 });
+
+store.dispatch(getProjects());
