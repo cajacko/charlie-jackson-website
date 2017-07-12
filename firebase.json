@@ -8,6 +8,17 @@
         "source": "**",
         "destination": "/404.html"
       }
+    ],
+    "headers": [
+      {
+        "source" : "**/*.@(js|map|css)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "max-age=31536000"
+          }
+        ]
+      }
     ]
   }
 }
