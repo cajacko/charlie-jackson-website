@@ -11,7 +11,7 @@ const ProjectLoopItem = ({ fields }) => {
   return (
     <article className="ProjectLoopItem">
       <Link className="ProjectLoopItem-imageLink" to={url}>
-        <Item asset itemId={fields.thumbnailImage['en-GB'].sys.id} className="ProjectLoopItem-image wp-post-image" />
+        <Item width={200} asset itemId={fields.thumbnailImage['en-GB'].sys.id} className="ProjectLoopItem-image wp-post-image" />
       </Link>
 
       <div className="ProjectLoopItem-text">

@@ -1,3 +1,6 @@
+import routeHasVar from 'helpers/routeHasVar';
+import replaceRouteVar from 'helpers/replaceRouteVar';
+
 export default function (routes, url, fourOhFour) {
   let matchedRoute;
 
@@ -7,8 +10,8 @@ export default function (routes, url, fourOhFour) {
         return;
       }
 
-      if (route.includes('{{') && route.includes('}}')) {
-        const regex = route.replace(/{{.*}}/, '(.+)');
+      if (routeHasVar(route)) {
+        const regex = replaceRouteVar(route, '(.+)');
         const re = new RegExp(regex, 'i');
         const matches = url.match(re);
 

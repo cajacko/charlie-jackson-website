@@ -12,7 +12,7 @@ const Now = ({ fields }) => (
       {
         fields.images['en-GB'].map(({ sys }) => (
           <li key={sys.id} className="Now-imageListItem">
-            <Item itemId={sys.id} asset />
+            <Item itemId={sys.id} asset width={360} height={360} />
           </li>
         ))
       }

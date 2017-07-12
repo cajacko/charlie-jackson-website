@@ -13,7 +13,8 @@
     "dev:webpack": "webpack-dev-server",
     "start": "multi \"npm run dev:webpack\" \"npm run dev:server\"",
     "build": "webpack --progress --colors --env.production",
-    "pages": "babel-node ./scripts/buildPages.jsx"
+    "pages": "babel-node ./scripts/buildPages.jsx",
+    "sitemap": "babel-node ./scripts/buildSitemap.js"
   },
   "repository": {
     "type": "git",
@@ -90,6 +91,7 @@
     "redux-logger": "3.0.6",
     "redux-thunk": "2.2.0",
     "selenium-webdriver": "3.4.0",
+    "sitemap": "^1.13.0",
     "staged-git-files": "0.0.4",
     "user-settings": "0.1.5",
     "webpack": "2.6.1",

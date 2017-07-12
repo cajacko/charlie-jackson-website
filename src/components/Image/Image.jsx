@@ -11,12 +11,22 @@ const Image = ({ fields, className, width, height, fill }) => {
     fillText = '&fit=fill';
   }
 
+  const ratio = imageHeight / imageWidth;
+
   if (height && width) {
     imageHeight = height;
     imageWidth = width;
+  } else if (height && !width) {
+    imageHeight = height;
+    imageWidth = Math.floor(imageHeight / ratio);
+    fillText = '&fit=fill';
+  } else if (!height && width) {
+    imageWidth = width;
+    imageHeight = Math.floor(ratio * imageWidth);
+    fillText = '&fit=fill';
   }
 
-  const url = `${fields.file['en-GB'].url}?w=${imageWidth}&h=${imageHeight}${fillText}`;
+  const url = `${fields.file['en-GB'].url}?w=${imageWidth}&h=${imageHeight}${fillText}&fm=jpg&fl=progressive`;
 
   return (
     <img
