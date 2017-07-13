@@ -3,16 +3,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Icon = ({ fields }) => (
-  <div dangerouslySetInnerHTML={{ __html: fields.svg['en-GB'] }} />
-);
+const Icon = ({ svg, colour }) => {
+  const string = svg.replace(new RegExp(/{{colour}}/, 'g'), colour);
+
+  return (
+    <div dangerouslySetInnerHTML={{ __html: string }} />
+  );
+};
 
 Icon.propTypes = {
-  fields: PropTypes.shape({
-    svg: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-  }).isRequired,
+  svg: PropTypes.string.isRequired,
+  colour: PropTypes.string,
+};
+
+Icon.defaultProps = {
+  colour: 'black',
 };
 
 export default Icon;

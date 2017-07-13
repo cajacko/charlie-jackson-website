@@ -1,9 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Image = ({ fields, className, width, height, fill }) => {
-  let imageHeight = fields.file['en-GB'].details.image.height;
-  let imageWidth = fields.file['en-GB'].details.image.width;
+const Image = ({
+  file,
+  title,
+  className,
+  width,
+  height,
+  fill,
+}) => {
+  let imageHeight = file.details.image.height;
+  let imageWidth = file.details.image.width;
 
   let fillText = '';
 
@@ -12,6 +19,7 @@ const Image = ({ fields, className, width, height, fill }) => {
   }
 
   const ratio = imageHeight / imageWidth;
+  let changeSize = true;
 
   if (height && width) {
     imageHeight = height;
@@ -23,10 +31,19 @@ const Image = ({ fields, className, width, height, fill }) => {
   } else if (!height && width) {
     imageWidth = width;
     imageHeight = Math.floor(ratio * imageWidth);
-    fillText = '&fit=fill';
+    fillText = 'fit=fill';
+  } else {
+    changeSize = false;
   }
 
-  const url = `${fields.file['en-GB'].url}?w=${imageWidth}&h=${imageHeight}${fillText}&fm=jpg&fl=progressive`;
+  const jpg = 'fm=jpg&fl=progressive';
+  let url;
+
+  if (changeSize) {
+    url = `${file.url}?w=${imageWidth}&h=${imageHeight}&${fillText}&${jpg}`;
+  } else {
+    url = `${file.url}?${jpg}`;
+  }
 
   return (
     <img
@@ -34,32 +51,27 @@ const Image = ({ fields, className, width, height, fill }) => {
       height={imageHeight}
       src={url}
       className={className}
-      alt={fields.title['en-GB']}
+      alt={title}
     />
   );
 };
 
 Image.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  fill: PropTypes.bool,
-  className: PropTypes.string,
-  fields: PropTypes.shape({
-    title: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    file: PropTypes.shape({
-      'en-GB': PropTypes.shape({
-        url: PropTypes.string,
-        details: PropTypes.shape({
-          image: PropTypes.shape({
-            width: PropTypes.number,
-            height: PropTypes.number,
-          }),
-        }),
+  file: PropTypes.shape({
+    url: PropTypes.string,
+    details: PropTypes.shape({
+      image: PropTypes.shape({
+        height: PropTypes.number,
+        width: PropTypes.number,
       }),
     }),
   }).isRequired,
+  className: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  fill: PropTypes.bool,
+  title: PropTypes.string,
+  stretchWidth: PropTypes.number,
 };
 
 Image.defaultProps = {
@@ -67,6 +79,8 @@ Image.defaultProps = {
   width: null,
   height: null,
   fill: true,
+  title: 'Content editor has not supplied alt text',
+  stretchWidth: null,
 };
 
 export default Image;

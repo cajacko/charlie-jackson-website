@@ -3,20 +3,27 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Item from 'containers/Item/Item';
 import dateString from 'helpers/dateString';
+import Image from 'components/Image/Image';
 
-const ProjectLoopItem = ({ fields }) => {
-  const url = `/${fields.slug['en-GB']}`;
-  const date = dateString(fields.displayDate['en-GB']);
+const ProjectLoopItem = ({
+  slug,
+  displayDate,
+  thumbnailImage,
+  title,
+  excerpt,
+}) => {
+  const url = `/${slug}`;
+  const date = dateString(displayDate);
 
   return (
     <article className="ProjectLoopItem">
       <Link className="ProjectLoopItem-imageLink" to={url}>
-        <Item width={200} asset itemId={fields.thumbnailImage['en-GB'].sys.id} className="ProjectLoopItem-image wp-post-image" />
+        <Item width={200} element={Image} itemId={thumbnailImage} className="ProjectLoopItem-image wp-post-image" />
       </Link>
 
       <div className="ProjectLoopItem-text">
         <Link className="ProjectLoopItem-titleLink" to={url}>
-          <h3 className="ProjectLoopItem-title">{fields.title['en-GB']}</h3>
+          <h3 className="ProjectLoopItem-title">{title}</h3>
         </Link>
 
         <div className="ProjectLoopItem-meta">
@@ -24,7 +31,7 @@ const ProjectLoopItem = ({ fields }) => {
         </div>
 
         <div className="ProjectLoopItem-content">
-          <p>{fields.excerpt['en-GB']}</p>
+          <p>{excerpt}</p>
         </div>
 
         <Link className="ProjectLoopItem-readMore" to={url}>Read More</Link>
@@ -34,27 +41,11 @@ const ProjectLoopItem = ({ fields }) => {
 };
 
 ProjectLoopItem.propTypes = {
-  fields: PropTypes.shape({
-    displayDate: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    slug: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    title: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    excerpt: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    thumbnailImage: PropTypes.shape({
-      'en-GB': PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
-      }),
-    }),
-  }).isRequired,
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  thumbnailImage: PropTypes.string.isRequired,
+  displayDate: PropTypes.string.isRequired,
 };
 
 export default ProjectLoopItem;

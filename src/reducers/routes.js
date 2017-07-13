@@ -1,37 +1,35 @@
 export default (state = [], { type, payload }) => {
   switch (type) {
     case 'CONTENTFUL_SUCCESS': {
-      const routes = [];
+      const stateRoutes = [];
 
-      payload.entries.forEach((entry) => {
-        const contentType = entry.sys.contentType.sys.id;
+      Object.keys(payload).forEach((id) => {
+        const { contentType, uuid, routes } = payload[id];
 
-        if (contentType === 'routes' && entry.fields.uuid['en-GB'] === 'Routes - Live') {
-          entry.fields.routes['en-GB'].forEach((route) => {
-            payload.entries.forEach((entryTemp) => {
-              if (entryTemp.sys.id === route.sys.id) {
-                const data = {
-                  route: entryTemp.fields.regex['en-GB'],
-                  template: entryTemp.fields.template['en-GB'].sys.id,
-                };
+        if (contentType === 'routes' && uuid === 'Routes - Live') {
+          routes.forEach((routeId) => {
+            const route = payload[routeId];
 
-                if (entryTemp.fields.contentType) {
-                  data.contentType = entryTemp.fields.contentType['en-GB'];
-                }
+            const data = {
+              route: route.regex,
+              template: route.template,
+            };
 
-                if (entryTemp.fields.entryField) {
-                  data.entryField = entryTemp.fields.entryField['en-GB'];
-                }
+            if (route.varContentType) {
+              data.contentType = route.varContentType;
+            }
 
-                routes.push(data);
-              }
-            });
+            if (route.varEntryField) {
+              data.entryField = route.varEntryField;
+            }
+
+            stateRoutes.push(data);
           });
         }
       });
 
 
-      return routes;
+      return stateRoutes;
     }
 
     default:

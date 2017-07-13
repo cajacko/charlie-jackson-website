@@ -1,17 +1,17 @@
 export default (state = null, { type, payload }) => {
   switch (type) {
     case 'CONTENTFUL_SUCCESS': {
-      let id = state;
+      let fourOhFour = state;
 
-      payload.entries.forEach((entry) => {
-        const contentType = entry.sys.contentType.sys.id;
+      Object.keys(payload).forEach((id) => {
+        const { contentType, uuid } = payload[id];
 
-        if (contentType === 'pageTemplate' && entry.fields.uuid['en-GB'] === '404') {
-          id = entry.sys.id;
+        if (contentType === 'pageTemplate' && uuid === '404') {
+          fourOhFour = id;
         }
       });
 
-      return id;
+      return fourOhFour;
     }
 
     default:

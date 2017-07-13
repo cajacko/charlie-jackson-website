@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import items from 'reducers/items';
-import assets from 'reducers/assets';
 import routes from 'reducers/routes';
 import routeData from 'reducers/routeData';
 import fourOhFour from 'reducers/fourOhFour';
@@ -12,5 +11,4 @@ export default combineReducers({
   routeData,
   fourOhFour,
   loading,
-  assets,
 });

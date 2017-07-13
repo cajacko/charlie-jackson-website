@@ -4,7 +4,7 @@ export function getProjectsFromItems(items) {
   const projects = [];
 
   Object.keys(items).forEach((id) => {
-    const contentType = items[id].sys.contentType.sys.id;
+    const { contentType } = items[id];
 
     if (contentType === 'project') {
       projects.push(id);
@@ -14,8 +14,8 @@ export function getProjectsFromItems(items) {
   return projects;
 }
 
-export function getProjectDisplayDateUnix(project) {
-  return moment(project.fields.displayDate['en-GB']).unix();
+export function getProjectDisplayDateUnix({ displayDate }) {
+  return moment(displayDate).unix();
 }
 
 export function sortProjects(projects, items) {

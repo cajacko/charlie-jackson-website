@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Item from 'containers/Item/Item';
+import SocialListItem from 'components/SocialListItem/SocialListItem';
 
-const Social = ({ fields }) => (
+const Social = ({ title, socialIcons }) => (
   <section className="Social">
-    <h2 className="Social-title">{fields.title['en-GB']}</h2>
+    <h2 className="Social-title">{title}</h2>
     <ul className="Social-list">
       {
-        fields.socialIcons['en-GB'].map(({ sys }) => (
-          <Item key={sys.id} itemId={sys.id} />
+        socialIcons.map(id => (
+          <Item element={SocialListItem} key={id} itemId={id} />
         ))
       }
     </ul>
@@ -16,18 +17,8 @@ const Social = ({ fields }) => (
 );
 
 Social.propTypes = {
-  fields: PropTypes.shape({
-    title: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    socialIcon: PropTypes.shape({
-      'en-GB': PropTypes.arrayOf(PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
-      })),
-    }),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  socialIcons: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Social;

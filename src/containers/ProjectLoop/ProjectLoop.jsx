@@ -11,7 +11,7 @@ class ProjectLoopContainer extends Component {
     const projects = getSortedProjectsFromItems(props.items);
 
     this.state = {
-      title: props.fields.title['en-GB'],
+      title: props.title,
       allProjects: projects,
       visibleProjects: projects,
       noMorePosts: false,
@@ -42,11 +42,7 @@ class ProjectLoopContainer extends Component {
 }
 
 ProjectLoopContainer.propTypes = {
-  fields: PropTypes.shape({
-    title: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
   // eslint-disable-next-line
   items: PropTypes.object.isRequired,
 };

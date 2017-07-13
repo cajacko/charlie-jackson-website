@@ -2,17 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Item from 'containers/Item/Item';
+import Image from 'components/Image/Image';
 
-const Now = ({ fields }) => (
+const Now = ({ title, content, images }) => (
   <section className="Now">
-    <h2 className="Now-title">{fields.title['en-GB']}</h2>
-    <ReactMarkdown source={fields.content['en-GB']} />
+    <h2 className="Now-title">{title}</h2>
+    <ReactMarkdown source={content} />
 
     <ul className="Now-imageList">
       {
-        fields.images['en-GB'].map(({ sys }) => (
-          <li key={sys.id} className="Now-imageListItem">
-            <Item itemId={sys.id} asset width={360} height={360} />
+        images.map(id => (
+          <li key={id} className="Now-imageListItem">
+            <Item
+              element={Image}
+              itemId={id}
+              width={360}
+              height={360}
+            />
           </li>
         ))
       }
@@ -21,21 +27,9 @@ const Now = ({ fields }) => (
 );
 
 Now.propTypes = {
-  fields: PropTypes.shape({
-    title: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    content: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    images: PropTypes.shape({
-      'en-GB': PropTypes.arrayOf(PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
-      })),
-    }),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Now;

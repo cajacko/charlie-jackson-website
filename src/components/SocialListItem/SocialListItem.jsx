@@ -1,32 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Item from 'containers/Item/Item';
+import Icon from 'components/Icon/Icon';
 
-const SocialListItem = ({ fields }) => (
+const SocialListItem = ({ url, icon, name }) => (
   <li className="Social-listItem">
-    <a className="Social-link" target="_blank" rel="noopener noreferrer" href={fields.url['en-GB']}>
-      <span className="Social-text">{fields.name['en-GB']}</span>
-      <Item itemId={fields.icon['en-GB'].sys.id} />
+    <a className="Social-link" target="_blank" rel="noopener noreferrer" href={url}>
+      <span className="Social-text">{name}</span>
+      <Item itemId={icon} element={Icon} />
     </a>
   </li>
 );
 
 SocialListItem.propTypes = {
-  fields: PropTypes.shape({
-    url: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    name: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    icon: PropTypes.shape({
-      'en-GB': PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
-      }),
-    }),
-  }).isRequired,
+  url: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default SocialListItem;

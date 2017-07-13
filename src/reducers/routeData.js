@@ -3,27 +3,25 @@ export default (state = {}, { type, payload }) => {
     case 'CONTENTFUL_SUCCESS': {
       const typeFields = {};
 
-      payload.entries.forEach((entry) => {
-        const contentType = entry.sys.contentType.sys.id;
+      Object.keys(payload).forEach((id) => {
+        const { contentType, varContentType, varEntryField } = payload[id];
 
         if (contentType === 'route') {
-          if (entry.fields.contentType && entry.fields.entryField) {
-            const routeDataContentType = entry.fields.contentType['en-GB'];
-
-            if (!typeFields[routeDataContentType]) {
-              typeFields[routeDataContentType] = [];
+          if (varContentType && varEntryField) {
+            if (!typeFields[varContentType]) {
+              typeFields[varContentType] = [];
             }
 
-            typeFields[routeDataContentType].push(entry.fields.entryField['en-GB']);
+            typeFields[varContentType].push(varEntryField);
           }
         }
       });
 
       const routeData = {};
 
-      payload.entries.forEach((entry) => {
-        const id = entry.sys.id;
-        const contentType = entry.sys.contentType.sys.id;
+      Object.keys(payload).forEach((id) => {
+        const item = payload[id];
+        const contentType = item.contentType;
 
         if (typeFields[contentType]) {
           typeFields[contentType].forEach((field) => {
@@ -35,7 +33,7 @@ export default (state = {}, { type, payload }) => {
               routeData[contentType][field] = {};
             }
 
-            const entryField = entry.fields[field]['en-GB'];
+            const entryField = item[field];
 
             routeData[contentType][field][entryField] = id;
           });

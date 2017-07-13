@@ -1,12 +1,4 @@
-export function getItemProps(items, assets, itemId, asset) {
-  if (asset) {
-    if (!assets[itemId]) {
-      return { noItem: true };
-    }
-
-    return assets[itemId];
-  }
-
+export function getItemProps(items, itemId) {
   if (!items[itemId]) {
     return { noItem: true };
   }

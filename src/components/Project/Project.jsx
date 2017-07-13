@@ -3,33 +3,25 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import dateString from 'helpers/dateString';
 
-const Project = ({ fields }) => {
-  const date = dateString(fields.displayDate['en-GB']);
+const Project = ({ displayDate, title, content }) => {
+  const date = dateString(displayDate);
 
   return (
     <article className="Project">
-      <h2 className="Project-title">{fields.title['en-GB']}</h2>
+      <h2 className="Project-title">{title}</h2>
       <div className="Project-meta">
         <p className="Project-date">Last Updated: {date}</p>
       </div>
 
-      <ReactMarkdown source={fields.content['en-GB']} />
+      <ReactMarkdown source={content} />
     </article>
   );
 };
 
 Project.propTypes = {
-  fields: PropTypes.shape({
-    displayDate: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    title: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-    content: PropTypes.shape({
-      'en-GB': PropTypes.string,
-    }),
-  }).isRequired,
+  displayDate: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default Project;
