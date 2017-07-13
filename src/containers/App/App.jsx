@@ -1,34 +1,30 @@
-import React from 'react';
 import { Provider } from 'react-redux';
-import { Route } from 'react-router-dom';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 import Routes from 'containers/Routes/Routes';
-import configureStore from 'store/configureStore';
+import ScrollToTop from 'containers/ScrollToTop/ScrollToTop';
 
-const App = ({ state }) => {
-  let preloadedState = state;
-
-  if (typeof window !== 'undefined' && window.REDUX_PRELOADED_STATE) {
-    preloadedState = window.REDUX_PRELOADED_STATE;
-    delete window.REDUX_PRELOADED_STATE;
-  }
-
-  const store = configureStore(preloadedState);
-
-  return (
-    <Provider store={store}>
-      <Route path="*" component={Routes} />
-    </Provider>
-  );
-};
+// eslint-disable-next-line
+const App = ({ Router, store, location, context }) => (
+  <Provider store={store}>
+    <Router location={location} context={context}>
+      <ScrollToTop>
+        <Route path="*" component={Routes} />
+      </ScrollToTop>
+    </Router>
+  </Provider>
+);
 
 App.propTypes = {
+  location: PropTypes.string,
   // eslint-disable-next-line
-  state: PropTypes.object,
+  context: PropTypes.object,
 };
 
 App.defaultProps = {
-  state: {},
+  location: undefined,
+  context: undefined,
 };
 
 export default App;
