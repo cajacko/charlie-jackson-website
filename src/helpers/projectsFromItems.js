@@ -28,7 +28,7 @@ export function sortProjects(projects, items) {
     const projectB = items[b];
     const dateA = getProjectDisplayDateUnix(projectA);
     const dateB = getProjectDisplayDateUnix(projectB);
-    return dateA - dateB;
+    return dateB - dateA;
   });
 
   return projects;

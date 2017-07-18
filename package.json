@@ -4,18 +4,18 @@
   "description": "Website for Charlie Jackson",
   "main": "index.js",
   "scripts": {
+    "start": "multi \"npm run dev:webpack\" \"npm run dev:server\" && npm run dev:serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "login": "firebase logout && firebase login",
     "init": "firebase init",
-    "deploy": "firebase deploy",
-    "serve": "firebase serve",
+    "deploy": "npm run dev:build && npm run dev:pages && firebase deploy",
+    "dev:serve": "firebase serve",
     "dev:server": "babel-node ./devServer/index.js",
     "dev:webpack": "webpack-dev-server",
-    "start": "multi \"npm run dev:webpack\" \"npm run dev:server\"",
-    "build": "webpack --progress --colors --env.production",
-    "pages": "babel-node ./scripts/buildPages.jsx",
-    "migrate": "babel-node ./scripts/migrateData.js",
-    "sitemap": "babel-node ./scripts/buildSitemap.js"
+    "dev:build": "webpack --progress --colors --env.production",
+    "dev:pages": "babel-node ./scripts/buildPages.jsx",
+    "dev:migrate": "babel-node ./scripts/migration/saveProjects.js",
+    "dev:sitemap": "babel-node ./scripts/buildSitemap.js"
   },
   "repository": {
     "type": "git",
