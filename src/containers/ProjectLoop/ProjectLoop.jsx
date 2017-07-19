@@ -13,9 +13,7 @@ class ProjectLoopContainer extends Component {
 
     this.state = {
       title: props.title,
-      allProjects: projects,
-      visibleProjects: projects,
-      noMorePosts: false,
+      projects,
     };
 
     this.getNextPosts = this.getNextPosts.bind(this);
@@ -30,24 +28,26 @@ class ProjectLoopContainer extends Component {
 
     this.setState({
       title,
-      allProjects: projects,
-      visibleProjects: projects,
-      noMorePosts: false,
+      projects,
     });
   }
 
-  // eslint-disable-next-line
   getNextPosts() {
-
+    if (this.props.noMoreProjects === false) {
+      this.props.dispatch(getProjects(
+        this.props.projectsPerLoad,
+        this.state.projects.length,
+      ));
+    }
   }
 
   render() {
     return (
       <ProjectLoop
         title={this.state.title}
-        projects={this.state.visibleProjects}
+        projects={this.state.projects}
         getNextPosts={this.getNextPosts}
-        noMorePosts={this.state.noMorePosts}
+        noMorePosts={this.props.noMoreProjects}
       />
     );
   }
@@ -59,14 +59,11 @@ ProjectLoopContainer.propTypes = {
   items: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
   projectsPerLoad: PropTypes.number.isRequired,
+  noMoreProjects: PropTypes.bool.isRequired,
 };
 
-ProjectLoopContainer.defaultProps = {
-
-};
-
-function mapStateToProps({ items }) {
-  return { items };
+function mapStateToProps({ items, noMoreProjects }) {
+  return { items, noMoreProjects };
 }
 
 export default connect(mapStateToProps)(ProjectLoopContainer);

@@ -4,6 +4,7 @@ import routes from 'reducers/routes';
 import routeData from 'reducers/routeData';
 import fourOhFour from 'reducers/fourOhFour';
 import loading from 'reducers/loading';
+import noMoreProjects from 'reducers/noMoreProjects';
 
 export default combineReducers({
   items,
@@ -11,4 +12,5 @@ export default combineReducers({
   routeData,
   fourOhFour,
   loading,
+  noMoreProjects,
 });

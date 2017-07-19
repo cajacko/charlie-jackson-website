@@ -149,16 +149,31 @@ function processAssets(assets, existingItems) {
 export default function (response) {
   let items = {};
   const loop = [];
+  let endOfLoop = false;
 
-  if (response.includes && response.items) {
+  if (response.items) {
     const responseItems = getPropertValue(response, 'items');
     items = processEntries(responseItems, items);
 
-    const assets = getPropertValue(response, 'includes.Asset');
-    items = processAssets(assets, items);
+    if (response.includes) {
+      if (response.includes.Asset) {
+        const assets = getPropertValue(response, 'includes.Asset');
+        items = processAssets(assets, items);
+      }
 
-    const entries = getPropertValue(response, 'includes.Entry');
-    items = processEntries(entries, items);
+      if (response.includes.Entry) {
+        const entries = getPropertValue(response, 'includes.Entry');
+        items = processEntries(entries, items);
+      }
+    }
+
+    response.items.forEach((item) => {
+      loop.push(item.sys.id);
+    });
+
+    if (response.items.length === 0) {
+      endOfLoop = true;
+    }
   } else {
     const entries = getPropertValue(response, 'entries');
     const assets = getPropertValue(response, 'assets');
@@ -167,5 +182,5 @@ export default function (response) {
     items = processAssets(assets, items);
   }
 
-  return { items, loop };
+  return { items, loop, endOfLoop };
 }

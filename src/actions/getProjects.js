@@ -1,12 +1,13 @@
 import contentful from 'constants/contentfulClient';
 import transform from 'helpers/transformApiResponse';
 
-export default function (limit) {
+export default function (limit, skip = 0) {
   return (dispatch) => {
     contentful.getEntries({
       content_type: 'project',
       include: 10,
       limit,
+      skip,
       order: '-fields.displayDate',
     })
       .then((response) => {
