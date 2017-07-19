@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+// import React from 'react';
+// import ReactDOMServer from 'react-dom/server';
 import Handlebars from 'handlebars';
 import { readFileSync, writeFile } from 'fs';
 import { join, dirname } from 'path';
 import { minify } from 'html-minifier';
 import mkdirp from 'mkdirp';
-import Main from 'views/server';
+// import Main from 'views/server';
 import manifest from 'dist/assets/scripts/manifest.json';
 import configureStore from 'store/configureStore.prod';
 import getProjects from 'actions/getProjects';
@@ -22,12 +22,12 @@ function renderPage(location, htmlData, reactData, state) {
     url = '/index';
   }
 
-  const page = ReactDOMServer.renderToString(
-    <Main location={location} context={{}} state={state} />,
-  );
+  // const page = ReactDOMServer.renderToString(
+  //   <Main location={location} context={{}} state={state} />,
+  // );
 
   const originalHtml = template({
-    react: page,
+    // react: page,
     manifest: manifestContent,
     state: JSON.stringify(state).replace(/</g, '\\u003c'),
     js: {
@@ -40,6 +40,7 @@ function renderPage(location, htmlData, reactData, state) {
     },
     ...htmlData,
   });
+
   const html = minify(originalHtml, {
     removeComments: true,
     collapseWhitespace: true,
@@ -60,16 +61,6 @@ function getPages() {
   return [
     {
       url: '/',
-      htmlData: {},
-      reactData: {},
-    },
-    {
-      url: '/meditation',
-      htmlData: {},
-      reactData: {},
-    },
-    {
-      url: '/404',
       htmlData: {},
       reactData: {},
     },

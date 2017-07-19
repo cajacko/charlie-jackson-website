@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from 'containers/Item/Item';
 import FourOhFourDefault from 'components/FourOhFourDefault/FourOhFourDefault';
+import removeLoading from 'helpers/removeLoading';
+
+let mounted = false;
 
 const Template = ({ noItem, components, loading, templateDataItem }) => {
   if (noItem) {
@@ -9,7 +12,17 @@ const Template = ({ noItem, components, loading, templateDataItem }) => {
       return null;
     }
 
+    if (mounted === false) {
+      mounted = true;
+      removeLoading();
+    }
+
     return <FourOhFourDefault />;
+  }
+
+  if (mounted === false) {
+    mounted = true;
+    removeLoading();
   }
 
   if (!components) {
