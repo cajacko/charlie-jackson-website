@@ -146,7 +146,7 @@ function processAssets(assets, existingItems) {
   return items;
 }
 
-export default function (response) {
+export default function (response, limit) {
   let items = {};
   const loop = [];
   let endOfLoop = false;
@@ -172,6 +172,8 @@ export default function (response) {
     });
 
     if (response.items.length === 0) {
+      endOfLoop = true;
+    } else if (limit && response.items.length !== limit) {
       endOfLoop = true;
     }
   } else {

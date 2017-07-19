@@ -5,6 +5,9 @@ export default (state = true, { type }) => {
       return false;
     }
 
+    case 'CONTENTFUL_INIT':
+      return true;
+
     default:
       return state;
   }

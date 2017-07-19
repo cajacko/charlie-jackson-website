@@ -3,6 +3,8 @@ import transform from 'helpers/transformApiResponse';
 
 export default function (limit, skip = 0) {
   return (dispatch) => {
+    dispatch({ type: 'CONTENTFUL_INIT' });
+
     contentful.getEntries({
       content_type: 'project',
       include: 10,
@@ -15,7 +17,7 @@ export default function (limit, skip = 0) {
         let payload;
 
         try {
-          payload = transform(response);
+          payload = transform(response, limit);
         } catch (err) {
           // eslint-disable-next-line
           console.warn(err);

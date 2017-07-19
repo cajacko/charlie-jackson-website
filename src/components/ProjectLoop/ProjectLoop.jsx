@@ -4,10 +4,32 @@ import Item from 'containers/Item/Item';
 import ProjectLoopItem from 'components/ProjectLoopItem/ProjectLoopItem';
 
 class ProjectLoop extends Component {
+  constructor(props) {
+    super(props);
+    this.getNextPostsIfShould = this.getNextPostsIfShould.bind(this);
+  }
+
   componentDidMount() {
-    setInterval(() => {
-      this.props.getNextPosts();
-    }, 5000);
+    window.addEventListener('scroll', this.getNextPostsIfShould);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.getNextPostsIfShould);
+  }
+
+  getNextPostsIfShould() {
+    if (this.props.loading) {
+      return;
+    }
+
+    const bottomPosition = window.pageYOffset + window.innerHeight;
+    const bottomSpacing = document.body.offsetHeight - bottomPosition;
+
+    if (bottomSpacing > 500) {
+      return;
+    }
+
+    this.props.getNextPosts();
   }
 
   render() {
@@ -43,6 +65,7 @@ ProjectLoop.propTypes = {
   title: PropTypes.string.isRequired,
   projects: PropTypes.arrayOf(PropTypes.string).isRequired,
   getNextPosts: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default ProjectLoop;

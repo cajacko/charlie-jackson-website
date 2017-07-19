@@ -33,12 +33,18 @@ class ProjectLoopContainer extends Component {
   }
 
   getNextPosts() {
-    if (this.props.noMoreProjects === false) {
-      this.props.dispatch(getProjects(
-        this.props.projectsPerLoad,
-        this.state.projects.length,
-      ));
+    if (this.props.loading) {
+      return;
     }
+
+    if (this.props.noMoreProjects) {
+      return;
+    }
+
+    this.props.dispatch(getProjects(
+      this.props.projectsPerLoad,
+      this.state.projects.length,
+    ));
   }
 
   render() {
@@ -47,7 +53,8 @@ class ProjectLoopContainer extends Component {
         title={this.state.title}
         projects={this.state.projects}
         getNextPosts={this.getNextPosts}
-        noMorePosts={this.props.noMoreProjects}
+        noMoreProjects={this.props.noMoreProjects}
+        loading={this.props.loading}
       />
     );
   }
@@ -60,10 +67,11 @@ ProjectLoopContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   projectsPerLoad: PropTypes.number.isRequired,
   noMoreProjects: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-function mapStateToProps({ items, noMoreProjects }) {
-  return { items, noMoreProjects };
+function mapStateToProps({ items, noMoreProjects, loading }) {
+  return { items, noMoreProjects, loading };
 }
 
 export default connect(mapStateToProps)(ProjectLoopContainer);
