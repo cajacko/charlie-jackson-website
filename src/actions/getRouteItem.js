@@ -1,12 +1,13 @@
 import contentful from 'constants/contentfulClient';
 import transform from 'helpers/transformApiResponse';
 
-export default function () {
+export default function (contentType, field, value) {
   return (dispatch) => {
     dispatch({ type: 'CONTENTFUL_INIT' });
-    
+
     contentful.getEntries({
-      'sys.contentType.sys.id[in]': 'routes,pageTemplate',
+      content_type: contentType,
+      [`fields.${field}`]: value,
       include: 10,
     })
       .then((response) => {

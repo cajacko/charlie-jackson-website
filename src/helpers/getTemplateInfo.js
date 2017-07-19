@@ -19,7 +19,11 @@ export default function (match, routes, fourOhFour, routeData) {
       );
 
       if (templateDataItem === null) {
-        noTemplateDataItem = true;
+        noTemplateDataItem = {
+          contentType: route.contentType,
+          field: route.entryField,
+          value: route.match,
+        };
       }
     } else {
       templateDataItem = null;

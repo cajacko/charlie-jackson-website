@@ -33,9 +33,16 @@ class ProjectLoop extends Component {
   }
 
   render() {
-    return (
-      <div className="Projects">
-        <h2 className="Projects-title">{this.props.title}</h2>
+    let content;
+
+    if (this.props.projects.length === 0) {
+      if (this.props.loading) {
+        content = <p>Loading</p>;
+      } else {
+        return null;
+      }
+    } else {
+      content = (
         <main id="Projects-loop" className="Projects-loop">
           {
             this.props.projects.map(id => (
@@ -43,19 +50,13 @@ class ProjectLoop extends Component {
             ))
           }
         </main>
+      );
+    }
 
-        <nav className="navigation pagination" role="navigation" style={{ display: 'none' }}>
-          <h2 className="screen-reader-text">Posts navigation</h2>
-          <div className="nav-links">
-            <span className="page-numbers current">1</span>
-            <a className="page-numbers" href="https://charliejackson.com/page/2/">2</a>
-            <span className="page-numbers dots">…</span>
-            <a className="page-numbers" href="https://charliejackson.com/page/6/">6</a>
-            <a className="next page-numbers" href="https://charliejackson.com/page/2/">
-              <span id="Projects-next">Next Page</span>
-            </a>
-          </div>
-        </nav>
+    return (
+      <div className="Projects">
+        <h2 className="Projects-title">{this.props.title}</h2>
+        {content}
       </div>
     );
   }

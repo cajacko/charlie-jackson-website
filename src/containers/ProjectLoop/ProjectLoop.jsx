@@ -20,7 +20,13 @@ class ProjectLoopContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(getProjects(this.props.projectsPerLoad));
+    if (
+      this.state.projects.length < this.props.projectsPerLoad &&
+      this.props.noMoreProjects === false &&
+      this.props.loading === false
+    ) {
+      this.props.dispatch(getProjects(this.props.projectsPerLoad));
+    }
   }
 
   componentWillReceiveProps({ items, title }) {
