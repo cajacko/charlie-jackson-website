@@ -1,13 +1,11 @@
 import contentful from 'constants/contentfulClient';
 import transform from 'helpers/transformApiResponse';
 
-export default function (limit) {
+export default function () {
   return (dispatch) => {
     contentful.getEntries({
-      content_type: 'project',
+      'sys.contentType.sys.id[in]': 'routes,pageTemplate',
       include: 10,
-      limit,
-      order: '-fields.displayDate',
     })
       .then((response) => {
         let success = true;

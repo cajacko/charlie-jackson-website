@@ -1,8 +1,30 @@
+function doesPropExist(originalObject, property) {
+  if (typeof originalObject !== 'object') {
+    return false;
+  }
+
+  let propExists = true;
+
+  const props = property.split('.');
+
+  let currentProp = Object.assign({}, originalObject);
+
+  props.forEach((prop) => {
+    if (currentProp[prop] === undefined) {
+      propExists = false;
+    }
+
+    currentProp = currentProp[prop];
+  });
+
+  return propExists;
+}
+
 function getPropertValue(originalObject, property) {
   if (typeof originalObject !== 'object') {
     // eslint-disable-next-line
-    console.warn(originalObject);
-    throw new Error('Unexpected response', originalObject);
+    console.warn(originalObject, property);
+    throw new Error('Unexpected response: 6');
   }
 
   const props = property.split('.');
@@ -13,7 +35,7 @@ function getPropertValue(originalObject, property) {
     if (currentProp[prop] === undefined) {
       // eslint-disable-next-line
       console.warn(currentProp, prop);
-      throw new Error('Unexpected response');
+      throw new Error('Unexpected response: 1');
     }
 
     currentProp = currentProp[prop];
@@ -26,7 +48,7 @@ function addUniqueProperty(source, sourceProp, result, resultProp) {
   if (result[resultProp] !== undefined) {
     // eslint-disable-next-line
     console.warn(result[resultProp], result, resultProp);
-    throw new Error('Unexpected response, prop already exists', result, resultProp);
+    throw new Error('Unexpected response: 2, prop already exists');
   }
 
   const sourceValue = getPropertValue(source, sourceProp);
@@ -40,7 +62,13 @@ function mergeFields(item, currentObject, asset) {
   const fields = getPropertValue(item, 'fields');
 
   Object.keys(fields).forEach((field) => {
-    let value = getPropertValue(fields[field], 'en-GB');
+    let value;
+
+    if (doesPropExist(fields[field], 'en-GB')) {
+      value = getPropertValue(fields[field], 'en-GB');
+    } else {
+      value = fields[field];
+    }
 
     if (!asset) {
       if (Array.isArray(value)) {
@@ -59,7 +87,7 @@ function mergeFields(item, currentObject, asset) {
     if (itemObject[field] !== undefined) {
       // eslint-disable-next-line
       console.warn(itemObject, field, value);
-      throw new Error('Unexpected response, prop already exists');
+      throw new Error('Unexpected response: 3, prop already exists');
     }
 
     itemObject[field] = value;
@@ -68,15 +96,13 @@ function mergeFields(item, currentObject, asset) {
   return itemObject;
 }
 
-export default function (response) {
-  const items = {};
-  const entries = getPropertValue(response, 'entries');
-  const assets = getPropertValue(response, 'assets');
+function processEntries(entries, existingItems) {
+  const items = Object.assign({}, existingItems);
 
   if (!Array.isArray(entries)) {
     // eslint-disable-next-line
     console.warn(entries);
-    throw new Error('Unexpected response');
+    throw new Error('Unexpected response: 4');
   }
 
   entries.forEach((item) => {
@@ -89,10 +115,16 @@ export default function (response) {
     items[id] = itemObject;
   });
 
+  return items;
+}
+
+function processAssets(assets, existingItems) {
+  const items = Object.assign({}, existingItems);
+
   if (!Array.isArray(assets)) {
     // eslint-disable-next-line
     console.warn(assets);
-    throw new Error('Unexpected response', response);
+    throw new Error('Unexpected response: 5');
   }
 
   assets.forEach((item) => {
@@ -100,10 +132,40 @@ export default function (response) {
     let itemObject = { id };
     itemObject = addUniqueProperty(item, 'sys.createdAt', itemObject, 'createdAt');
     itemObject = addUniqueProperty(item, 'sys.updatedAt', itemObject, 'updatedAt');
-    itemObject = addUniqueProperty(item, 'fields.file.en-GB.contentType', itemObject, 'contentType');
+
+    if (doesPropExist('fields.file.en-GB.contentType')) {
+      itemObject = addUniqueProperty(item, 'fields.file.en-GB.contentType', itemObject, 'contentType');
+    } else {
+      itemObject = addUniqueProperty(item, 'fields.file.contentType', itemObject, 'contentType');
+    }
+
     itemObject = mergeFields(item, itemObject, true);
     items[id] = itemObject;
   });
 
   return items;
+}
+
+export default function (response) {
+  let items = {};
+  const loop = [];
+
+  if (response.includes && response.items) {
+    const responseItems = getPropertValue(response, 'items');
+    items = processEntries(responseItems, items);
+
+    const assets = getPropertValue(response, 'includes.Asset');
+    items = processAssets(assets, items);
+
+    const entries = getPropertValue(response, 'includes.Entry');
+    items = processEntries(entries, items);
+  } else {
+    const entries = getPropertValue(response, 'entries');
+    const assets = getPropertValue(response, 'assets');
+
+    items = processEntries(entries, items);
+    items = processAssets(assets, items);
+  }
+
+  return { items, loop };
 }

@@ -3,12 +3,12 @@ export default (state = [], { type, payload }) => {
     case 'CONTENTFUL_SUCCESS': {
       const stateRoutes = [];
 
-      Object.keys(payload).forEach((id) => {
-        const { contentType, uuid, routes } = payload[id];
+      Object.keys(payload.items).forEach((id) => {
+        const { contentType, uuid, routes } = payload.items[id];
 
         if (contentType === 'routes' && uuid === 'Routes - Live') {
           routes.forEach((routeId) => {
-            const route = payload[routeId];
+            const route = payload.items[routeId];
 
             const data = {
               route: route.regex,
@@ -28,6 +28,9 @@ export default (state = [], { type, payload }) => {
         }
       });
 
+      if (stateRoutes.length === 0) {
+        return state;
+      }
 
       return stateRoutes;
     }

@@ -3,8 +3,12 @@ export default (state = {}, { type, payload }) => {
     case 'CONTENTFUL_SUCCESS': {
       const typeFields = {};
 
-      Object.keys(payload).forEach((id) => {
-        const { contentType, varContentType, varEntryField } = payload[id];
+      Object.keys(payload.items).forEach((id) => {
+        const {
+          contentType,
+          varContentType,
+          varEntryField,
+        } = payload.items[id];
 
         if (contentType === 'route') {
           if (varContentType && varEntryField) {
@@ -17,10 +21,10 @@ export default (state = {}, { type, payload }) => {
         }
       });
 
-      const routeData = {};
+      const routeData = Object.assign({}, state);
 
-      Object.keys(payload).forEach((id) => {
-        const item = payload[id];
+      Object.keys(payload.items).forEach((id) => {
+        const item = payload.items[id];
         const contentType = item.contentType;
 
         if (typeFields[contentType]) {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProjectLoop from 'components/ProjectLoop/ProjectLoop';
 import { getSortedProjectsFromItems } from 'helpers/projectsFromItems';
+import getProjects from 'actions/getProjects';
 
 class ProjectLoopContainer extends Component {
   constructor(props) {
@@ -20,8 +21,19 @@ class ProjectLoopContainer extends Component {
     this.getNextPosts = this.getNextPosts.bind(this);
   }
 
-  componentWillReceiveProps() {
+  componentDidMount() {
+    this.props.dispatch(getProjects(this.props.projectsPerLoad));
+  }
 
+  componentWillReceiveProps({ items, title }) {
+    const projects = getSortedProjectsFromItems(items);
+
+    this.setState({
+      title,
+      allProjects: projects,
+      visibleProjects: projects,
+      noMorePosts: false,
+    });
   }
 
   // eslint-disable-next-line
@@ -45,6 +57,8 @@ ProjectLoopContainer.propTypes = {
   title: PropTypes.string.isRequired,
   // eslint-disable-next-line
   items: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  projectsPerLoad: PropTypes.number.isRequired,
 };
 
 ProjectLoopContainer.defaultProps = {

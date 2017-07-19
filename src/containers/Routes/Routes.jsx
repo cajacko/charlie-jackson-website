@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Template from 'components/Template/Template';
 import Item from 'containers/Item/Item';
-import getProjects from 'actions/getProjects';
+import getTemplates from 'actions/getTemplates';
 import getTemplateInfo from 'helpers/getTemplateInfo';
 
 class RoutesContainer extends Component {
@@ -16,7 +16,7 @@ class RoutesContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(getProjects());
+    this.props.dispatch(getTemplates());
   }
 
   componentWillReceiveProps({ match, routes, fourOhFour, routeData }) {

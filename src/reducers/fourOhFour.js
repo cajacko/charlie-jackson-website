@@ -3,8 +3,8 @@ export default (state = null, { type, payload }) => {
     case 'CONTENTFUL_SUCCESS': {
       let fourOhFour = state;
 
-      Object.keys(payload).forEach((id) => {
-        const { contentType, uuid } = payload[id];
+      Object.keys(payload.items).forEach((id) => {
+        const { contentType, uuid } = payload.items[id];
 
         if (contentType === 'pageTemplate' && uuid === '404') {
           fourOhFour = id;
