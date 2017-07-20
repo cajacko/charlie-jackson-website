@@ -12,10 +12,11 @@ class RoutesContainer extends Component {
   constructor(props) {
     super(props);
 
-    const { match, routes, fourOhFour } = props;
+    const { match, routes, fourOhFour, loading } = props;
     this.state = {
       ...getTemplateInfo(match, routes.routes, fourOhFour, routes.routeData),
       triedToGetItemData: false,
+      loading,
     };
   }
 
@@ -29,17 +30,21 @@ class RoutesContainer extends Component {
       routes.routes,
       fourOhFour,
       routes.routeData,
+      loading,
     );
 
     let triedToGetItemData = this.state.triedToGetItemData;
 
     if (state.noTemplateDataItem && !loading && !triedToGetItemData) {
       triedToGetItemData = true;
+
       this.props.dispatch(getRouteItem(
         state.noTemplateDataItem.contentType,
         state.noTemplateDataItem.field,
         state.noTemplateDataItem.value,
       ));
+
+      state.loading = true;
     }
 
     this.setState({ ...state, triedToGetItemData });
@@ -47,9 +52,11 @@ class RoutesContainer extends Component {
 
   render() {
     let template = this.state.templateId;
+    let noTemplateData = false;
 
     if (this.state.noTemplateDataItem) {
       template = this.props.fourOhFour;
+      noTemplateData = true;
     }
 
     return (
@@ -57,7 +64,8 @@ class RoutesContainer extends Component {
         element={Template}
         itemId={template}
         templateDataItem={this.state.templateDataItem}
-        loading={this.props.loading}
+        loading={this.state.loading}
+        noTemplateData={noTemplateData}
       />
     );
   }

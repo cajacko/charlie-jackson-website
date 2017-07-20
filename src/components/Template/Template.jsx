@@ -6,8 +6,16 @@ import removeLoading from 'helpers/removeLoading';
 
 let mounted = false;
 
-const Template = ({ noItem, components, loading, templateDataItem }) => {
-  if (noItem) {
+const Template = ({
+  noItem,
+  components,
+  loading,
+  templateDataItem,
+  noTemplateData,
+}) => {
+  if (noTemplateData && loading) {
+    return null;
+  } else if (noItem) {
     if (loading) {
       return null;
     }
@@ -57,6 +65,7 @@ Template.propTypes = {
   loading: PropTypes.bool,
   templateDataItem: PropTypes.string,
   components: PropTypes.arrayOf(PropTypes.string),
+  noTemplateData: PropTypes.bool.isRequired,
 };
 
 Template.defaultProps = {

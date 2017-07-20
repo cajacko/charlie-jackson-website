@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FourOhFourDefault = () => (
-  <div>FourOhFourDefault</div>
+  <div>Error</div>
 );
 
 export default FourOhFourDefault;

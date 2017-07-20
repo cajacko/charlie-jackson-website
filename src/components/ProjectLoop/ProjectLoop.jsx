@@ -25,7 +25,7 @@ class ProjectLoop extends Component {
     const bottomPosition = window.pageYOffset + window.innerHeight;
     const bottomSpacing = document.body.offsetHeight - bottomPosition;
 
-    if (bottomSpacing > 500) {
+    if (bottomSpacing > 3000) {
       return;
     }
 
