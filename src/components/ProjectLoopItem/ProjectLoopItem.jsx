@@ -21,7 +21,7 @@ const ProjectLoopItem = ({
         <Item width={200} element={Image} itemId={thumbnailImage} className="ProjectLoopItem-image wp-post-image" />
       </Link>
 
-      <div className="ProjectLoopItem-text">
+      <div className="ProjectLoopItem-text" style={{ flex: 1 }}>
         <Link className="ProjectLoopItem-titleLink" to={url}>
           <h3 className="ProjectLoopItem-title">{title}</h3>
         </Link>
