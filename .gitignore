@@ -1,5 +1,0 @@
-node_modules
-npm-debug.log
-firebase-debug.log
-.env
-dist/assets/scripts/report.html
