@@ -1,0 +1,31 @@
+.spacingcontainer--mr {
+  margin-right: 10px;
+}
+
+.spacingcontainer--mt {
+  margin-top: 10px;
+}
+
+.spacingcontainer--ml {
+  margin-left: 10px;
+}
+
+.spacingcontainer--mb {
+  margin-bottom: 10px;
+}
+
+.spacingcontainer--pr {
+  padding-right: 10px;
+}
+
+.spacingcontainer--pt {
+  padding-top: 10px;
+}
+
+.spacingcontainer--pl {
+  padding-left: 10px;
+}
+
+.spacingcontainer--pb {
+  padding-bottom: 10px;
+}
