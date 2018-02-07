@@ -4,7 +4,7 @@ import ContactButton from '../Buttons/ContactButton';
 import Text from '../Text';
 import AlignContainer from '../Containers/AlignContainer';
 import ContentContainer from '../Containers/ContentContainer';
-import heroImage from './hero-image.jpg';
+import heroImage from './hero-image.png';
 
 class Hero extends PureComponent {
   render() {
