@@ -1,5 +1,6 @@
 .spacingcontainer {
   display: flex;
+  flex: 1;
 }
 
 .spacingcontainer--mr {

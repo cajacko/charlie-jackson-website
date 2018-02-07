@@ -1,20 +1,33 @@
 import React, { PureComponent } from 'react';
-// import './SiteNav.css';
+import './Hero.css';
 import ContactButton from '../Buttons/ContactButton';
+import Text from '../Text';
+import AlignContainer from '../Containers/AlignContainer';
+import ContentContainer from '../Containers/ContentContainer';
+import heroImage from './hero-image.jpg';
 
 class Hero extends PureComponent {
   render() {
     return (
-      <div>
-        <div>
-          <h1>
-            <span>Charlie Jackson</span> here!
-          </h1>
-          <h2>Freelance developer and UX designer</h2>
-          <ContactButton text="Hire me" />
-        </div>
+      <div className="hero">
+        <ContentContainer ph>
+          <div className="hero__content">
+            <AlignContainer vc>
+              <div>
+                <h1>
+                  <Text text="Charlie Jackson" />
+                  <Text text=" here!" />
+                </h1>
+                <h2>
+                  <Text text="Freelance developer and UX designer" />
+                </h2>
+                <ContactButton text="Hire me" />
+              </div>
+            </AlignContainer>
 
-        <img src="" />
+            <img className="hero__image" src={heroImage} />
+          </div>
+        </ContentContainer>
       </div>
     );
   }

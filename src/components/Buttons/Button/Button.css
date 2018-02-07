@@ -17,10 +17,12 @@
     transform 0.25s;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   text-decoration: underline;
   color: #ffffff;
   border-color: #ffffff;
   background-color: #009db5;
   transform: scale(1.05);
+  outline: none;
 }

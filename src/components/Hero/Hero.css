@@ -1,0 +1,19 @@
+.hero {
+  min-height: 500px;
+  display: flex;
+}
+
+.hero__content {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.hero__image {
+  max-width: 200px;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
