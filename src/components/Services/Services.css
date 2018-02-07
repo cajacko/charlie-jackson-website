@@ -1,0 +1,10 @@
+.services__header {
+  background-color: #f4f4f4;
+}
+
+.services__headerwrap {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}

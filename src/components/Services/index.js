@@ -5,28 +5,33 @@ import services from './services';
 import Icon from '../Icon';
 import HorizontalList from '../Lists/HorizontalList';
 import ContactButton from '../Buttons/ContactButton';
+import ContentContainer from '../Containers/ContentContainer';
+import SpacingContainer from '../Containers/SpacingContainer';
+import SectionHeading from '../SectionHeading';
 
 class Services extends Component {
   render() {
     return (
       <section>
-        <header>
-          <h3>
-            <Text fontSize="LARGE" bold text="I can build" />
-          </h3>
-          <nav>
-            <HorizontalList
-              list={services.map(({ label, icon }) => ({
-                key: label,
-                component: (
-                  <button>
-                    <Icon icon={icon} />
-                    <Text text={label} />
-                  </button>
-                ),
-              }))}
-            />
-          </nav>
+        <header className="services__header">
+          <ContentContainer>
+            <div className="services__headerwrap">
+              <SectionHeading text="I can build" />
+              <nav>
+                <HorizontalList
+                  list={services.map(({ label, icon }) => ({
+                    key: label,
+                    component: (
+                      <button>
+                        <Icon icon={icon} />
+                        <Text text={label} />
+                      </button>
+                    ),
+                  }))}
+                />
+              </nav>
+            </div>
+          </ContentContainer>
         </header>
         <div>
           <img src={services[0].image} alt={services[0].imageAlt} />
