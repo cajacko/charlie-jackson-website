@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import './Services.css';
 import Text from '../Text';
 import services from './services';
-import Icon from '../Icon';
-import HorizontalList from '../Lists/HorizontalList';
 import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
 import SpacingContainer from '../Containers/SpacingContainer';
 import SectionHeading from '../SectionHeading';
-import Button from '../Buttons/Button';
+import IconSliderNav from '../IconSlider/IconSliderNav';
 
 class Services extends Component {
   render() {
@@ -18,19 +16,7 @@ class Services extends Component {
           <ContentContainer>
             <div className="services__headerwrap">
               <SectionHeading text="I can build" />
-              <nav>
-                <HorizontalList
-                  list={services.map(({ label, icon }) => ({
-                    key: label,
-                    component: (
-                      <Button>
-                        <Icon icon={icon} />
-                        <Text text={label} />
-                      </Button>
-                    ),
-                  }))}
-                />
-              </nav>
+              <IconSliderNav services={services} active={services[0].label} />
             </div>
           </ContentContainer>
         </header>
