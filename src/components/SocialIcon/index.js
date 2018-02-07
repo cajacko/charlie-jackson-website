@@ -12,7 +12,7 @@ class SocialIcon extends PureComponent {
         <div className="socialicon">
           <SpacingContainer pr pl>
             <AlignContainer vc>
-              <Icon icon="twitter" size={this.props.size} />
+              <Icon icon={this.props.icon} size={this.props.size} />
             </AlignContainer>
           </SpacingContainer>
         </div>
