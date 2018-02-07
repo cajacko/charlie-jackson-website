@@ -13,7 +13,8 @@
   min-width: 150px;
   cursor: pointer;
   background-color: transparent;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s,
+    transform 0.25s;
 }
 
 .button:hover {
@@ -21,4 +22,5 @@
   color: #ffffff;
   border-color: #ffffff;
   background-color: #009db5;
+  transform: scale(1.05);
 }
