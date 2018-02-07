@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
+import './Link.css';
 
 class Link extends PureComponent {
   render() {
     return (
-      <a href={this.props.href} target="_blank">
+      <a className="link" href={this.props.href} target="_blank">
         {this.props.children}
       </a>
     );

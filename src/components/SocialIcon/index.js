@@ -1,15 +1,18 @@
 import React, { PureComponent } from 'react';
 import Link from '../Link';
 import Icon from '../Icon';
+import './SocialIcon.css';
 
-class SocialIcons extends PureComponent {
+class SocialIcon extends PureComponent {
   render() {
     return (
       <Link href={this.props.href}>
-        <Icon icon="twitter" />
+        <div className="socialicon">
+          <Icon icon="twitter" size={this.props.size} />
+        </div>
       </Link>
     );
   }
 }
 
-export default SocialIcons;
+export default SocialIcon;

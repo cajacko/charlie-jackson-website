@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import icons from './icons';
+import './Icons.css';
 
 class Icon extends PureComponent {
   render() {
@@ -10,11 +11,9 @@ class Icon extends PureComponent {
       return null;
     }
 
-    // if (className) {
-    //   html = html.replace('<svg', `<svg class="${className}"`);
-    // }
+    html = html.replace('<svg', `<svg class="icon__svg"`);
 
-    return <div dangerouslySetInnerHTML={{ __html: html }} />;
+    return <div className="icon" dangerouslySetInnerHTML={{ __html: html }} />;
   }
 }
 
