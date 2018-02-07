@@ -2,16 +2,16 @@ import React, { PureComponent } from 'react';
 import Link from '../Link';
 import Icon from '../Icon';
 import SpacingContainer from '../Containers/SpacingContainer';
-import './SocialIcon.css';
+import AlignContainer from '../Containers/AlignContainer';
 
 class SocialIcon extends PureComponent {
   render() {
     return (
       <Link href={this.props.href}>
         <SpacingContainer pr pl>
-          <div className="socialicon">
+          <AlignContainer vc>
             <Icon icon="twitter" size={this.props.size} />
-          </div>
+          </AlignContainer>
         </SpacingContainer>
       </Link>
     );

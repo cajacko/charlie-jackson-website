@@ -4,6 +4,7 @@ import ContactButton from '../Buttons/ContactButton';
 import './SiteNav.css';
 import SpacingContainer from '../Containers/SpacingContainer';
 import ContentContainer from '../Containers/ContentContainer';
+import AlignContainer from '../Containers/AlignContainer';
 
 class SiteNav extends PureComponent {
   render() {
@@ -13,7 +14,9 @@ class SiteNav extends PureComponent {
           <div className="sitenav">
             <SocialIcons />
             <SpacingContainer pl>
-              <ContactButton />
+              <AlignContainer vc>
+                <ContactButton />
+              </AlignContainer>
             </SpacingContainer>
           </div>
         </ContentContainer>
