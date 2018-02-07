@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import SocialIcons from '../SocialIcons';
+import ContactButton from '../Buttons/ContactButton';
 
-class SiteNav extends Component {
+class SiteNav extends PureComponent {
   render() {
-    return <div>hello</div>;
+    return (
+      <div>
+        <SocialIcons />
+        <ContactButton />
+      </div>
+    );
   }
 }
 
