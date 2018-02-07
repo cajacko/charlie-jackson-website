@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import './Button.css';
+import Text from '../../Text';
 
 class Button extends PureComponent {
   constructor(props) {
@@ -17,7 +18,7 @@ class Button extends PureComponent {
   render() {
     return (
       <button className="button" onClick={this.onClick}>
-        {this.props.text}
+        <Text text={this.props.text} />
       </button>
     );
   }
