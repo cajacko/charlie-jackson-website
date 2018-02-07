@@ -9,7 +9,9 @@ class SocialIcons extends PureComponent {
         {!!icons &&
           !!icons.length &&
           icons.map(({ icon, url }) => (
-            <SocialIcon id={icon} href={url} icon={icon} />
+            <li key={icon}>
+              <SocialIcon href={url} icon={icon} />
+            </li>
           ))}
       </ul>
     );

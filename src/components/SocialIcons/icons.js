@@ -4,19 +4,19 @@ const icons = [
     url: 'https://twitter.com/charliejackson',
   },
   {
-    icon: 'twitter',
+    icon: 'instagram',
     url: 'https://twitter.com/charliejackson',
   },
   {
-    icon: 'twitter',
+    icon: 'github',
     url: 'https://twitter.com/charliejackson',
   },
   {
-    icon: 'twitter',
+    icon: 'linkedin',
     url: 'https://twitter.com/charliejackson',
   },
   {
-    icon: 'twitter',
+    icon: 'youtube',
     url: 'https://twitter.com/charliejackson',
   },
 ];
