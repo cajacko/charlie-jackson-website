@@ -8,6 +8,7 @@ import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
 import SpacingContainer from '../Containers/SpacingContainer';
 import SectionHeading from '../SectionHeading';
+import Button from '../Buttons/Button';
 
 class Services extends Component {
   render() {
@@ -22,10 +23,10 @@ class Services extends Component {
                   list={services.map(({ label, icon }) => ({
                     key: label,
                     component: (
-                      <button>
+                      <Button>
                         <Icon icon={icon} />
                         <Text text={label} />
-                      </button>
+                      </Button>
                     ),
                   }))}
                 />
