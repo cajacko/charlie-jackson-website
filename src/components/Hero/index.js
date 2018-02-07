@@ -5,6 +5,7 @@ import Text from '../Text';
 import AlignContainer from '../Containers/AlignContainer';
 import ContentContainer from '../Containers/ContentContainer';
 import heroImage from './hero-image.png';
+import SpacingContainer from '../Containers/SpacingContainer';
 
 class Hero extends PureComponent {
   render() {
@@ -14,18 +15,33 @@ class Hero extends PureComponent {
           <div className="hero__content">
             <AlignContainer vc>
               <div>
-                <h1>
-                  <Text text="Charlie Jackson" />
-                  <Text text=" here!" />
+                <h1 className="hero__title">
+                  <Text
+                    text="Charlie Jackson"
+                    fontSize="X_LARGE"
+                    color="BLUE"
+                  />
+                  <Text text=" here!" fontSize="X_LARGE" />
                 </h1>
-                <h2>
-                  <Text text="Freelance developer and UX designer" />
-                </h2>
-                <ContactButton text="Hire me" />
+                <SpacingContainer mt>
+                  <h2 className="hero__subtitle">
+                    <Text
+                      text="Freelance developer and UX designer"
+                      fontSize="X_LARGE"
+                    />
+                  </h2>
+                </SpacingContainer>
+                <SpacingContainer mt2>
+                  <ContactButton text="Hire me" />
+                </SpacingContainer>
               </div>
             </AlignContainer>
 
-            <img className="hero__image" src={heroImage} />
+            <img
+              className="hero__image"
+              src={heroImage}
+              alt="Charlie Jackson pulling a silly face"
+            />
           </div>
         </ContentContainer>
       </div>

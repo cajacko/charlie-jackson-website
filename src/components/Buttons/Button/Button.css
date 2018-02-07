@@ -7,10 +7,10 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  height: 32px;
+  height: 40px;
   box-sizing: border-box;
   padding: 0 20px;
-  min-width: 150px;
+  min-width: 175px;
   cursor: pointer;
   background-color: transparent;
   transition: background-color 0.25s, color 0.25s, border-color 0.25s,

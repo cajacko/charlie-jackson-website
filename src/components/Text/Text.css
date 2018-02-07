@@ -6,3 +6,11 @@
   text-decoration: inherit;
   line-height: inherit;
 }
+
+.text--xl {
+  font-size: 30px;
+}
+
+.text--blue {
+  color: #009db5;
+}
