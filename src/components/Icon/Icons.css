@@ -6,3 +6,23 @@
 .icon {
   height: 20px;
 }
+
+.icon--black path {
+  fill: #1f393d;
+}
+
+.icon--white path {
+  fill: #ffffff;
+}
+
+.icon--orange path {
+  fill: #ff7100;
+}
+
+.icon--blue path {
+  fill: #009db5;
+}
+
+button:hover .icon--orange path {
+  fill: #009db5;
+}

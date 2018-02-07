@@ -13,7 +13,12 @@ class Icon extends PureComponent {
 
     html = html.replace('<svg', `<svg class="icon__svg"`);
 
-    return <div className="icon" dangerouslySetInnerHTML={{ __html: html }} />;
+    return (
+      <div
+        className="icon icon--black"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    );
   }
 }
 
