@@ -3,33 +3,33 @@
 }
 
 .spacingcontainer--mr {
-  margin-right: 10px;
+  margin-right: 16px;
 }
 
 .spacingcontainer--mt {
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .spacingcontainer--ml {
-  margin-left: 10px;
+  margin-left: 16px;
 }
 
 .spacingcontainer--mb {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .spacingcontainer--pr {
-  padding-right: 10px;
+  padding-right: 16px;
 }
 
 .spacingcontainer--pt {
-  padding-top: 10px;
+  padding-top: 16px;
 }
 
 .spacingcontainer--pl {
-  padding-left: 10px;
+  padding-left: 16px;
 }
 
 .spacingcontainer--pb {
-  padding-bottom: 10px;
+  padding-bottom: 16px;
 }
