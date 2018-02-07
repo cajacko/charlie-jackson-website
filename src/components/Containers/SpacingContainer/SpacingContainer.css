@@ -1,5 +1,6 @@
 .spacingcontainer {
   display: flex;
+  flex: 1;
 }
 
 .spacingcontainer--mr {
@@ -8,6 +9,10 @@
 
 .spacingcontainer--mt {
   margin-top: 16px;
+}
+
+.spacingcontainer--mt2 {
+  margin-top: 32px;
 }
 
 .spacingcontainer--ml {

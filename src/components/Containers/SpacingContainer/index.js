@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './SpacingContainer.css';
 
-const supportedProps = ['mt', 'mb', 'ml', 'mr', 'pt', 'pb', 'pl', 'pr'];
+const supportedProps = ['mt', 'mt2', 'mb', 'ml', 'mr', 'pt', 'pb', 'pl', 'pr'];
 
 class SpacingContainer extends PureComponent {
   render() {

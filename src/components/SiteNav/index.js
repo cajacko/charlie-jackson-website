@@ -13,11 +13,13 @@ class SiteNav extends PureComponent {
         <ContentContainer ph>
           <div className="sitenav">
             <SocialIcons />
-            <SpacingContainer pl>
-              <AlignContainer vc>
-                <ContactButton />
-              </AlignContainer>
-            </SpacingContainer>
+            <div>
+              <SpacingContainer pl>
+                <AlignContainer vc>
+                  <ContactButton />
+                </AlignContainer>
+              </SpacingContainer>
+            </div>
           </div>
         </ContentContainer>
       </SpacingContainer>
