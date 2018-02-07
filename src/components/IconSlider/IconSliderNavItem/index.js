@@ -23,11 +23,15 @@ class IconSliderNavItem extends Component {
       </SpacingContainer>
     );
 
-    if (this.props.active) {
-      return <div>{Content}</div>;
-    }
-
-    return <Button>{Content}</Button>;
+    return (
+      <div className="iconslidernavitem">
+        {this.props.active ? (
+          <div className="iconslidernavitem__static">{Content}</div>
+        ) : (
+          <Button>{Content}</Button>
+        )}
+      </div>
+    );
   }
 }
 

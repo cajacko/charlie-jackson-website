@@ -4,7 +4,6 @@ import Text from '../Text';
 import services from './services';
 import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
-import SpacingContainer from '../Containers/SpacingContainer';
 import SectionHeading from '../SectionHeading';
 import IconSliderNav from '../IconSlider/IconSliderNav';
 

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import './Button.css';
-import Text from '../../Text';
 
 class Button extends PureComponent {
   constructor(props) {

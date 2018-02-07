@@ -1,3 +1,13 @@
+.iconslidernavitem {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.iconslidernavitem__static {
+  display: flex;
+}
+
 .button:hover .iconslidernavitem__text {
   text-decoration: underline;
 }
