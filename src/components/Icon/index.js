@@ -15,7 +15,7 @@ class Icon extends PureComponent {
 
     return (
       <div
-        className="icon icon--black"
+        className="icon icon--darkgrey"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     );

@@ -9,7 +9,7 @@ class SocialIcon extends PureComponent {
   render() {
     return (
       <Link href={this.props.href}>
-        <div className="socialicon">
+        <div className={`socialicon socialicon--${this.props.icon}`}>
           <SpacingContainer pr pl>
             <AlignContainer vc>
               <Icon icon={this.props.icon} size={this.props.size} />

@@ -4,25 +4,33 @@
 }
 
 .icon {
-  height: 20px;
+  height: 30px;
 }
 
-.icon--black path {
-  fill: #1f393d;
+.icon path {
+  transition: fill 0.25s;
+}
+
+.icon--darkgrey path {
+  fill: #7f7f7f;
 }
 
 .icon--white path {
   fill: #ffffff;
 }
 
+button:hover .icon--white path {
+  fill: grey;
+}
+
 .icon--orange path {
   fill: #ff7100;
 }
 
-.icon--blue path {
+button:hover .icon--orange path {
   fill: #009db5;
 }
 
-button:hover .icon--orange path {
+.icon--blue path {
   fill: #009db5;
 }
