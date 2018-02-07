@@ -2,6 +2,9 @@
   list-style: none;
   display: flex;
   padding: 0;
-  /*flex: 1;*/
   margin: 0;
+}
+
+.horizontallist__listitem {
+  display: flex;
 }

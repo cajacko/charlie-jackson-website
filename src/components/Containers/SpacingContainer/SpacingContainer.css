@@ -1,3 +1,7 @@
+.spacingcontainer {
+  display: flex;
+}
+
 .spacingcontainer--mr {
   margin-right: 10px;
 }

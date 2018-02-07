@@ -8,7 +8,9 @@ class HorizontalList extends PureComponent {
     return (
       <ul className="horizontallist">
         {this.props.list.map(({ key, component }) => (
-          <li key={key}>{component}</li>
+          <li key={key} className="horizontallist__listitem">
+            {component}
+          </li>
         ))}
       </ul>
     );

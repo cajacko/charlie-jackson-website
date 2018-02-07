@@ -8,16 +8,16 @@ import ContentContainer from '../Containers/ContentContainer';
 class SiteNav extends PureComponent {
   render() {
     return (
-      <ContentContainer ph>
-        <div className="sitenav">
-          <SpacingContainer pr>
+      <SpacingContainer mt mb>
+        <ContentContainer ph>
+          <div className="sitenav">
             <SocialIcons />
-          </SpacingContainer>
-          <SpacingContainer pl>
-            <ContactButton />
-          </SpacingContainer>
-        </div>
-      </ContentContainer>
+            <SpacingContainer pl>
+              <ContactButton />
+            </SpacingContainer>
+          </div>
+        </ContentContainer>
+      </SpacingContainer>
     );
   }
 }
