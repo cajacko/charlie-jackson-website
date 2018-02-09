@@ -6,6 +6,7 @@ import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
 import SectionHeading from '../SectionHeading';
 import IconSliderNav from '../IconSlider/IconSliderNav';
+import SliderContent from '../Slider/SliderContent';
 
 class Services extends Component {
   render() {
@@ -21,10 +22,11 @@ class Services extends Component {
             </div>
           </ContentContainer>
         </header>
-        <div>
-          <img src={services[0].image} alt={services[0].imageAlt} />
-          <Text text={services[0].text} />
-        </div>
+        <SliderContent
+          imageSrc={services[0].image}
+          imageAlt={services[0].imageAlt}
+          text={services[0].text}
+        />
         <footer>
           <ContactButton />
         </footer>

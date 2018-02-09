@@ -10,6 +10,10 @@ class Text extends PureComponent {
     }
 
     switch (this.props.fontSize) {
+      case 'XX_LARGE':
+        classes += ' text--xxl';
+        break;
+
       case 'X_LARGE':
         classes += ' text--xl';
         break;
@@ -17,6 +21,7 @@ class Text extends PureComponent {
       case 'LARGE':
         classes += ' text--l';
         break;
+
       default:
         break;
     }

@@ -1,0 +1,18 @@
+.slidercontent {
+  display: flex;
+}
+
+.slidercontent__image {
+  flex: 1;
+}
+
+.slidercontent__text {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slidercontent__paragraph {
+  max-width: 350px;
+}

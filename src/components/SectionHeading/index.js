@@ -8,7 +8,7 @@ class SectionHeading extends Component {
     return (
       <SpacingContainer mt2 mb2>
         <h3 className="sectionheading">
-          <Text fontSize="LARGE" bold text={this.props.text} />
+          <Text fontSize="X_LARGE" bold text={this.props.text} />
         </h3>
       </SpacingContainer>
     );
