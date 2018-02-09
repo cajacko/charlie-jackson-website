@@ -9,6 +9,10 @@ class Text extends PureComponent {
       classes += ' text--bold';
     }
 
+    if (this.props.underline) {
+      classes += ' text--underline';
+    }
+
     switch (this.props.fontSize) {
       case 'XX_LARGE':
         classes += ' text--xxl';
