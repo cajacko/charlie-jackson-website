@@ -14,7 +14,9 @@ class Services extends Component {
         <header className="services__header">
           <ContentContainer>
             <div className="services__headerwrap">
-              <SectionHeading text="I can build" />
+              <div>
+                <SectionHeading text="I can build" />
+              </div>
               <IconSliderNav services={services} active={services[0].label} />
             </div>
           </ContentContainer>
