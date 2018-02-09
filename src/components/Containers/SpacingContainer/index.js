@@ -33,6 +33,11 @@ class SpacingContainer extends PureComponent {
       props.mb = true;
     }
 
+    if (props.mv2) {
+      props.mt2 = true;
+      props.mb2 = true;
+    }
+
     let classes = 'spacingcontainer';
 
     supportedProps.forEach(prop => {
