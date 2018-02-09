@@ -5,7 +5,7 @@ const services = [
     label: 'Websites',
     icon: 'twitter',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Websites Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -13,7 +13,7 @@ const services = [
     label: 'Mobile Apps',
     icon: 'twitter',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Mobile Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -21,7 +21,7 @@ const services = [
     label: 'Desktop Apps',
     icon: 'twitter',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Desktop Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -29,7 +29,7 @@ const services = [
     label: 'Startups',
     icon: 'twitter',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Startups Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -37,7 +37,7 @@ const services = [
     label: 'Bespoke Solutions',
     icon: 'twitter',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Bespoke Solutions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
     imageAlt: 'Lorem ipsum dolor sit amet',
   },

@@ -9,7 +9,33 @@ import SliderContent from '../Slider/SliderContent';
 import SpacingContainer from '../Containers/SpacingContainer';
 
 class Services extends Component {
+  state = {
+    displayedIndex: 0,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.changeActiveItem = this.changeActiveItem.bind(this);
+  }
+
+  changeActiveItem(selectedLabel) {
+    let { displayedIndex } = this.state;
+
+    services.forEach(({ label }, i) => {
+      if (selectedLabel === label) displayedIndex = i;
+    });
+
+    if (displayedIndex !== this.state.displayedIndex) {
+      this.setState({ displayedIndex });
+    }
+  }
+
   render() {
+    const { label, image, imageAlt, text } = services[
+      this.state.displayedIndex
+    ];
+
     return (
       <section>
         <header className="services__header">
@@ -18,15 +44,15 @@ class Services extends Component {
               <div>
                 <SectionHeading text="I can build" />
               </div>
-              <IconSliderNav services={services} active={services[0].label} />
+              <IconSliderNav
+                services={services}
+                active={label}
+                onChange={this.changeActiveItem}
+              />
             </div>
           </ContentContainer>
         </header>
-        <SliderContent
-          imageSrc={services[0].image}
-          imageAlt={services[0].imageAlt}
-          text={services[0].text}
-        />
+        <SliderContent imageSrc={image} imageAlt={imageAlt} text={text} />
         <SpacingContainer mv2 mh>
           <footer className="services__footer">
             <ContactButton />

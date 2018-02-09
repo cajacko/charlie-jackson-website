@@ -16,6 +16,7 @@ class IconSliderNav extends Component {
                 label={label}
                 icon={icon}
                 active={this.props.active === label}
+                action={() => this.props.onChange(label)}
               />
             ),
           }))}

@@ -28,7 +28,7 @@ class IconSliderNavItem extends Component {
         {this.props.active ? (
           <div className="iconslidernavitem__static">{Content}</div>
         ) : (
-          <Button>{Content}</Button>
+          <Button action={this.props.action}>{Content}</Button>
         )}
       </div>
     );
