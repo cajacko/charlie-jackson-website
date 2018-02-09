@@ -2,8 +2,13 @@
   display: flex;
 }
 
+.slidercontent__imagewrapper {
+  max-height: 200px;
+  max-width: 200px;
+}
+
 .slidercontent__image {
-  flex: 1;
+  /*flex: 1;*/
 }
 
 .slidercontent__text {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Services.css';
-import Text from '../Text';
 import services from './services';
 import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
