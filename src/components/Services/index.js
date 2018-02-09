@@ -6,6 +6,7 @@ import ContentContainer from '../Containers/ContentContainer';
 import SectionHeading from '../SectionHeading';
 import IconSliderNav from '../IconSlider/IconSliderNav';
 import SliderContent from '../Slider/SliderContent';
+import SpacingContainer from '../Containers/SpacingContainer';
 
 class Services extends Component {
   render() {
@@ -26,9 +27,11 @@ class Services extends Component {
           imageAlt={services[0].imageAlt}
           text={services[0].text}
         />
-        <footer>
-          <ContactButton />
-        </footer>
+        <SpacingContainer mv2 mh>
+          <footer className="services__footer">
+            <ContactButton />
+          </footer>
+        </SpacingContainer>
       </section>
     );
   }
