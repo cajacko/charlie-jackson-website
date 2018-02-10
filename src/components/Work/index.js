@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
 import companies from './companies';
 import SpacingContainer from '../Containers/SpacingContainer';
+import Img from '../Img';
 import './Work.css';
 
 class Work extends PureComponent {
@@ -15,10 +16,8 @@ class Work extends PureComponent {
         <div className="work">
           {companies.map(({ image, imageAlt }) => (
             <div key={imageAlt} className="work__imagewrapper">
-              <SpacingContainer mv>
-                <div>
-                  <img className="work__image" src={image} alt={imageAlt} />
-                </div>
+              <SpacingContainer mv mh>
+                <Img contain src={image} alt={imageAlt} />
               </SpacingContainer>
             </div>
           ))}
