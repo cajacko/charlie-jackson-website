@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.button--fill {
+  flex: 1;
+}
+
 .button:focus {
   outline: none;
 }

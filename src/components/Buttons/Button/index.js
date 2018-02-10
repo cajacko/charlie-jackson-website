@@ -18,6 +18,7 @@ class Button extends PureComponent {
     let classes = 'button';
 
     if (this.props.hasText) classes += ' button--hasText';
+    if (this.props.fill) classes += ' button--fill';
 
     return (
       <button className={classes} onClick={this.onClick}>

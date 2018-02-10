@@ -11,9 +11,13 @@ class DotSliderNav extends Component {
           list={this.props.content.map(i => ({
             key: i,
             component: (
-              <div>
-                <Button>
-                  <div />
+              <div className="dotslidernav__item">
+                <Button fill>
+                  <div
+                    className={`dotslidernav__control ${
+                      i === 0 ? 'dotslidernav__control--active' : ''
+                    }`}
+                  />
                 </Button>
               </div>
             ),
