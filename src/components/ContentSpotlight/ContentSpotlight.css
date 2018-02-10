@@ -1,0 +1,8 @@
+.contentspotlight__wrapper {
+  flex: 1;
+  flex-direction: column;
+}
+
+.contentspotlight--dark {
+  background-color: #1f393d;
+}

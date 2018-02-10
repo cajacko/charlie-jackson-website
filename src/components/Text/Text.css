@@ -23,6 +23,10 @@
   color: #009db5;
 }
 
+.text--white {
+  color: #ffffff;
+}
+
 .text--bold {
   font-weight: bold;
 }
