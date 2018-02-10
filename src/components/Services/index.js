@@ -52,7 +52,11 @@ class Services extends Component {
             </div>
           </ContentContainer>
         </header>
-        <ServiceContent imageSrc={image} imageAlt={imageAlt} text={text} />
+        <SpacingContainer mv2>
+          <ContentContainer>
+            <ServiceContent imageSrc={image} imageAlt={imageAlt} text={text} />
+          </ContentContainer>
+        </SpacingContainer>
         <SpacingContainer mv2 mh>
           <footer className="services__footer">
             <ContactButton />
