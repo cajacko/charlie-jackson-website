@@ -4,6 +4,7 @@ import './App.css';
 import Hero from '../Hero';
 import Services from '../Services';
 import Work from '../Work';
+import Testimonials from '../Testimonials';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <Hero />
         <Services />
         <Work />
+        <Testimonials />
       </div>
     );
   }
