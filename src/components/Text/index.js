@@ -5,10 +5,27 @@ class Text extends PureComponent {
   render() {
     let classes = 'text';
 
+    if (this.props.bold) {
+      classes += ' text--bold';
+    }
+
+    if (this.props.underline) {
+      classes += ' text--underline';
+    }
+
     switch (this.props.fontSize) {
+      case 'XX_LARGE':
+        classes += ' text--xxl';
+        break;
+
       case 'X_LARGE':
         classes += ' text--xl';
         break;
+
+      case 'LARGE':
+        classes += ' text--l';
+        break;
+
       default:
         break;
     }

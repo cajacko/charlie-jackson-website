@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import './Button.css';
-import Text from '../../Text';
 
 class Button extends PureComponent {
   constructor(props) {
@@ -16,9 +15,13 @@ class Button extends PureComponent {
   }
 
   render() {
+    let classes = 'button';
+
+    if (this.props.hasText) classes += ' button--hasText';
+
     return (
-      <button className="button" onClick={this.onClick}>
-        <Text text={this.props.text} />
+      <button className={classes} onClick={this.onClick}>
+        {this.props.children}
       </button>
     );
   }

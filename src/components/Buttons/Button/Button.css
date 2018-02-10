@@ -1,28 +1,41 @@
 .button {
   appearance: none;
-  border: 1px solid #009db5;
-  color: #009db5;
-  border-radius: 16px;
-  line-height: 1;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  background: transparent;
   display: flex;
-  height: 40px;
-  box-sizing: border-box;
-  padding: 0 20px;
-  min-width: 175px;
   cursor: pointer;
-  background-color: transparent;
   transition: background-color 0.25s, color 0.25s, border-color 0.25s,
     transform 0.25s;
+  padding: 0;
+  margin: 0;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:hover,
 .button:focus {
+  transform: scale(1.05);
+}
+
+.button--hasText {
+  color: #009db5;
+  border: 1px solid #009db5;
+  border-radius: 16px;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  min-width: 175px;
+}
+
+.button--hasText:hover,
+.button--hasText:focus {
   text-decoration: underline;
   color: #ffffff;
   border-color: #ffffff;
   background-color: #009db5;
-  transform: scale(1.05);
-  outline: none;
 }

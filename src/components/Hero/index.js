@@ -18,16 +18,16 @@ class Hero extends PureComponent {
                 <h1 className="hero__title">
                   <Text
                     text="Charlie Jackson"
-                    fontSize="X_LARGE"
+                    fontSize="XX_LARGE"
                     color="BLUE"
                   />
-                  <Text text=" here!" fontSize="X_LARGE" />
+                  <Text text=" here!" fontSize="XX_LARGE" />
                 </h1>
                 <SpacingContainer mt>
                   <h2 className="hero__subtitle">
                     <Text
                       text="Freelance developer and UX designer"
-                      fontSize="X_LARGE"
+                      fontSize="XX_LARGE"
                     />
                   </h2>
                 </SpacingContainer>

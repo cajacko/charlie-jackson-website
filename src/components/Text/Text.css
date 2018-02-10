@@ -7,10 +7,26 @@
   line-height: inherit;
 }
 
-.text--xl {
+.text--xxl {
   font-size: 30px;
+}
+
+.text--xl {
+  font-size: 24px;
+}
+
+.text--l {
+  font-size: 20px;
 }
 
 .text--blue {
   color: #009db5;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+.text--underline {
+  text-decoration: underline;
 }

@@ -13,11 +13,22 @@ class Icon extends PureComponent {
 
     html = html.replace('<svg', `<svg class="icon__svg"`);
 
+    let classes = 'icon';
+
+    switch (this.props.color) {
+      case 'ORANGE':
+        classes += ' icon--orange';
+        break;
+      case 'BLUE':
+        classes += ' icon--blue';
+        break;
+      default:
+        classes += ' icon--darkgrey';
+        break;
+    }
+
     return (
-      <div
-        className="icon icon--darkgrey"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className={classes} dangerouslySetInnerHTML={{ __html: html }} />
     );
   }
 }

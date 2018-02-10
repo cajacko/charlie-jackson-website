@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SiteNav from '../SiteNav';
 import './App.css';
 import Hero from '../Hero';
+import Services from '../Services';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <SiteNav />
         <Hero />
+        <Services />
       </div>
     );
   }
