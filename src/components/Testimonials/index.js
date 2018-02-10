@@ -3,17 +3,22 @@ import ContentSpotlight from '../ContentSpotlight';
 import SpacingContainer from '../Containers/SpacingContainer';
 import ContentContainer from '../Containers/ContentContainer';
 import Testimonial from '../Testimonial';
-import image from './profile-pic.png';
+import testimonials from './testimonials';
+import DotSliderNav from '../Slider/DotSliderNav';
 
 class Work extends PureComponent {
   render() {
+    const { quote, image, name, imageAlt } = testimonials[0];
+
     return (
       <ContentSpotlight title="Some may say">
         <Testimonial
-          quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          quote={quote}
           image={image}
-          name="Charlie Jackson"
+          name={name}
+          imageAlt={imageAlt}
         />
+        <DotSliderNav content={testimonials.map((c, i) => i)} />
       </ContentSpotlight>
     );
   }
