@@ -34,6 +34,9 @@ class Text extends PureComponent {
       case 'BLUE':
         classes += ' text--blue';
         break;
+      case 'WHITE':
+        classes += ' text--white';
+        break;
       default:
         break;
     }
