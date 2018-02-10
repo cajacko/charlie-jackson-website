@@ -10,7 +10,7 @@ class IconSliderNavItem extends Component {
     return (
       <div className="iconslidernavitem">
         <Button action={this.props.action}>
-          <SpacingContainer pb>
+          <SpacingContainer mb2>
             <div>
               <Icon
                 icon={this.props.icon}
