@@ -7,7 +7,12 @@ import AlignContainer from '../Containers/AlignContainer';
 class SectionHeading extends Component {
   render() {
     return (
-      <SpacingContainer mv2 ph>
+      <SpacingContainer
+        mt2
+        mb2={!this.props.halfBottomSpacing}
+        mb={this.props.halfBottomSpacing}
+        ph
+      >
         <AlignContainer hc>
           <h3 className="sectionheading">
             <Text
