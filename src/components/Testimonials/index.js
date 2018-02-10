@@ -9,15 +9,11 @@ class Work extends PureComponent {
   render() {
     return (
       <ContentSpotlight title="Some may say">
-        <SpacingContainer mv2>
-          <ContentContainer>
-            <Testimonial
-              quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-              image={image}
-              name="Charlie Jackson"
-            />
-          </ContentContainer>
-        </SpacingContainer>
+        <Testimonial
+          quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          image={image}
+          name="Charlie Jackson"
+        />
       </ContentSpotlight>
     );
   }

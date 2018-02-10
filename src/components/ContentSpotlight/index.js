@@ -9,7 +9,7 @@ class ContentSpotlight extends PureComponent {
     let classes = 'contentspotlight';
     let headingColor = 'BLACK';
     let headingHalfBottomSpacing = false;
-    let contentHalfBottomMargin = true;
+    let contentHalfBottomMargin = false;
 
     switch (this.props.theme) {
       case 'DARK':
@@ -22,7 +22,7 @@ class ContentSpotlight extends PureComponent {
 
     if (this.props.halfContentVerticalSpacing) {
       headingHalfBottomSpacing = true;
-      contentHalfBottomMargin = false;
+      contentHalfBottomMargin = true;
     }
 
     return (
