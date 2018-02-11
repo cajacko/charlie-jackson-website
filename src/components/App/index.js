@@ -49,9 +49,7 @@ class App extends Component {
         <Testimonials />
         <Skills />
         <Contact />
-        <Modal>
-          {this.state.showContactModal && <Contact showClose fullScreen />}
-        </Modal>
+        <Modal>{this.state.showContactModal && <Contact fullScreen />}</Modal>
       </div>
     );
   }
