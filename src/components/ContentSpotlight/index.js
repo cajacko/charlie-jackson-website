@@ -16,6 +16,11 @@ class ContentSpotlight extends PureComponent {
         classes += ' contentspotlight--dark';
         headingColor = 'WHITE';
         break;
+
+      case 'LIGHT':
+        classes += ' contentspotlight--light';
+        break;
+
       default:
         break;
     }

@@ -5,6 +5,7 @@ import Hero from '../Hero';
 import Services from '../Services';
 import Work from '../Work';
 import Testimonials from '../Testimonials';
+import Skills from '../Skills';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Services />
         <Work />
         <Testimonials />
+        <Skills />
       </div>
     );
   }
