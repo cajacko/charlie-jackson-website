@@ -7,6 +7,10 @@
   margin-right: 16px;
 }
 
+.spacingcontainer--mr2 {
+  margin-right: 32px;
+}
+
 .spacingcontainer--mt {
   margin-top: 16px;
 }
@@ -17,6 +21,10 @@
 
 .spacingcontainer--ml {
   margin-left: 16px;
+}
+
+.spacingcontainer--ml2 {
+  margin-left: 32px;
 }
 
 .spacingcontainer--mb {

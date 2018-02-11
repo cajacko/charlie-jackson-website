@@ -1,0 +1,15 @@
+.skills {
+  display: flex;
+}
+
+.skills__column {
+  flex: 1;
+  display: flex;
+}
+
+.skills__content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
