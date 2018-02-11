@@ -30,6 +30,14 @@ class Button extends PureComponent {
         break;
     }
 
+    if (this.props.href) {
+      return (
+        <a className={classes} href={this.props.href} target="_blank">
+          {this.props.children}
+        </a>
+      );
+    }
+
     return (
       <button className={classes} onClick={this.onClick}>
         {this.props.children}
@@ -39,7 +47,13 @@ class Button extends PureComponent {
 }
 
 Button.propTypes = {
-  action: PropTypes.func.isRequired,
+  action: PropTypes.func,
+  href: PropTypes.string,
+};
+
+Button.propTypes = {
+  action: PropTypes.func,
+  href: PropTypes.string,
 };
 
 export default Button;

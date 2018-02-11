@@ -6,7 +6,12 @@ import Button from '../Button';
 class TextButton extends PureComponent {
   render() {
     return (
-      <Button action={this.props.action} hasText theme={this.props.theme}>
+      <Button
+        action={this.props.action}
+        href={this.props.href}
+        hasText
+        theme={this.props.theme}
+      >
         <Text text={this.props.text} />
       </Button>
     );
@@ -14,8 +19,14 @@ class TextButton extends PureComponent {
 }
 
 TextButton.propTypes = {
-  action: PropTypes.func.isRequired,
+  action: PropTypes.func,
   text: PropTypes.string.isRequired,
+  href: PropTypes.string,
+};
+
+TextButton.defaultProps = {
+  action: null,
+  href: null,
 };
 
 export default TextButton;
