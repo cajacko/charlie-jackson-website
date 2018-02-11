@@ -13,3 +13,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.skills__table {
+  border-collapse: collapse;
+}
+
+.skills__cell {
+  padding: 5px 0;
+}
+
+.skills__row--topborder {
+  border-top: 1px solid #1f393d80;
+}

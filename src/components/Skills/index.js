@@ -23,20 +23,27 @@ class Skills extends PureComponent {
           <div className="skills__column">
             <SpacingContainer ml2>
               <div className="skills__content">
-                <table>
+                <table className="skills__table">
                   <tbody>
-                    {skills.map(({ label, ...skill }) => (
-                      <tr key={label}>
-                        <td>
-                          <Text text={label} />
+                    {skills.map(({ label, ...skill }, i) => (
+                      <tr
+                        key={label}
+                        className={!!i ? 'skills__row--topborder' : ''}
+                      >
+                        <td className="skills__cell">
+                          <SpacingContainer mr2>
+                            <Text text={label} color="BLUE" fontSize="SMALL" />
+                          </SpacingContainer>
                         </td>
-                        <td>
-                          {skill.skills.map((skillItem, i) => (
-                            <span key={skillItem}>
-                              {!!i && <Text text=", " />}
-                              <Text text={skillItem} />
-                            </span>
-                          ))}
+                        <td className="skills__cell">
+                          <SpacingContainer mr>
+                            {skill.skills.map((skillItem, i) => (
+                              <span key={skillItem}>
+                                {!!i && <Text text=", " fontSize="SMALL" />}
+                                <Text text={skillItem} fontSize="SMALL" />
+                              </span>
+                            ))}
+                          </SpacingContainer>
                         </td>
                       </tr>
                     ))}

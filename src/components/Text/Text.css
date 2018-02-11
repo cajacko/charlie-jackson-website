@@ -19,6 +19,10 @@
   font-size: 20px;
 }
 
+.text--sm {
+  font-size: 12px;
+}
+
 .text--blue {
   color: #009db5;
 }

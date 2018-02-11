@@ -26,6 +26,10 @@ class Text extends PureComponent {
         classes += ' text--l';
         break;
 
+      case 'SMALL':
+        classes += ' text--sm';
+        break;
+
       default:
         break;
     }
