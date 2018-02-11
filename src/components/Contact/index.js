@@ -7,10 +7,11 @@ import Input from '../Forms/Input';
 import Textarea from '../Forms/Textarea';
 import SpacingContainer from '../Containers/SpacingContainer';
 import Form from '../Forms/Form';
+import ContactApi from '../../modules/ContactApi';
 
 class Contact extends PureComponent {
   onSubmit({ name, email, message }) {
-    console.warn(name, email, message);
+    ContactApi.submit(name, email, message);
   }
 
   render() {

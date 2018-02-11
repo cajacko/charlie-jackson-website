@@ -27,8 +27,6 @@ function inputControl(WrappedComponent) {
 
       const value = event.target.value;
 
-      console.warn(value);
-
       if (value !== this.state.value) {
         this.setValue(value);
       }
