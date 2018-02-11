@@ -11,7 +11,14 @@ class SocialIcons extends PureComponent {
       <HorizontalList
         list={icons.map(({ icon, url }, i) => ({
           key: icon,
-          component: <SocialIcon href={url} icon={icon} size="SMALL" />,
+          component: (
+            <SocialIcon
+              href={url}
+              icon={icon}
+              size={this.props.large ? 'LARGE' : 'MEDIUM'}
+              light={this.props.light}
+            />
+          ),
         }))}
       />
     );
