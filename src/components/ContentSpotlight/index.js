@@ -11,14 +11,19 @@ class ContentSpotlight extends PureComponent {
     let headingHalfBottomSpacing = false;
     let contentHalfBottomMargin = false;
 
+    const setBackground = background => {
+      if (!this.props.noBackground) classes += ` ${background}`;
+    };
+
     switch (this.props.theme) {
       case 'DARK':
-        classes += ' contentspotlight--dark';
+        setBackground('contentspotlight--dark');
+
         headingColor = 'WHITE';
         break;
 
       case 'LIGHT':
-        classes += ' contentspotlight--light';
+        setBackground('contentspotlight--light');
         break;
 
       default:
@@ -29,8 +34,6 @@ class ContentSpotlight extends PureComponent {
       headingHalfBottomSpacing = true;
       contentHalfBottomMargin = true;
     }
-
-    if (this.props.fullScreen) classes += ' contentspotlight--fullscreen';
 
     return (
       <div className={classes}>

@@ -19,7 +19,7 @@ class Contact extends PureComponent {
       <ContentSpotlight
         title="Contact"
         theme="DARK"
-        fullScreen={this.props.fullScreen}
+        noBackground={this.props.fullScreen}
       >
         <div className="contact">
           <div className="contact__form">
