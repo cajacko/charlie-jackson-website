@@ -30,6 +30,8 @@ class ContentSpotlight extends PureComponent {
       contentHalfBottomMargin = true;
     }
 
+    if (this.props.fullScreen) classes += ' contentspotlight--fullscreen';
+
     return (
       <div className={classes}>
         <ContentContainer>

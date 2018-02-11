@@ -16,7 +16,11 @@ class Contact extends PureComponent {
 
   render() {
     return (
-      <ContentSpotlight title="Contact" theme="DARK">
+      <ContentSpotlight
+        title="Contact"
+        theme="DARK"
+        fullScreen={this.props.fullScreen}
+      >
         <div className="contact">
           <div className="contact__form">
             <Form onSubmit={this.onSubmit}>
