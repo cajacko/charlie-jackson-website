@@ -12,6 +12,7 @@ class Input extends PureComponent {
         placeholder={this.props.placeholder}
         value={this.props.value}
         type={this.props.type}
+        onChange={this.props.onChange}
       />
     );
   }

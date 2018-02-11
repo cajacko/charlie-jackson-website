@@ -10,9 +10,9 @@ class Textarea extends PureComponent {
         id={this.props.id}
         name={this.props.name}
         placeholder={this.props.placeholder}
-      >
-        {this.props.value}
-      </textarea>
+        onChange={this.props.onChange}
+        value={this.props.value}
+      />
     );
   }
 }
