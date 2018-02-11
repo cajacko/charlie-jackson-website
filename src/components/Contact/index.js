@@ -6,29 +6,55 @@ import './Contact.css';
 import Input from '../Forms/Input';
 import Textarea from '../Forms/Textarea';
 import SpacingContainer from '../Containers/SpacingContainer';
+import Form from '../Forms/Form';
 
 class Contact extends PureComponent {
+  onSubmit({ name, email, message }) {
+    console.warn(name, email, message);
+  }
+
   render() {
     return (
       <ContentSpotlight title="Contact" theme="DARK">
         <div className="contact">
-          <form className="contact__form">
-            <div>
-              <SpacingContainer mb2>
-                <SpacingContainer mr>
-                  <Input placeholder="Name" type="text" />
-                </SpacingContainer>
-                <SpacingContainer ml>
-                  <Input placeholder="Email" type="text" />
-                </SpacingContainer>
-              </SpacingContainer>
-            </div>
-            <Textarea placeholder="Message" />
+          <div className="contact__form">
+            <Form onSubmit={this.onSubmit}>
+              {({ setFormState, submit }) => (
+                <div className="contact__formwrapper">
+                  <div>
+                    <SpacingContainer mb2>
+                      <SpacingContainer mr>
+                        <Input
+                          placeholder="Name"
+                          type="text"
+                          onChange={setFormState}
+                          name="name"
+                        />
+                      </SpacingContainer>
+                      <SpacingContainer ml>
+                        <Input
+                          placeholder="Email"
+                          type="text"
+                          onChange={setFormState}
+                          name="email"
+                        />
+                      </SpacingContainer>
+                    </SpacingContainer>
+                  </div>
 
-            <SpacingContainer mv2>
-              <TextButton text="Submit" theme="LIGHT" />
-            </SpacingContainer>
-          </form>
+                  <Textarea
+                    placeholder="Message"
+                    onChange={setFormState}
+                    name="message"
+                  />
+
+                  <SpacingContainer mv2>
+                    <TextButton text="Submit" theme="LIGHT" action={submit} />
+                  </SpacingContainer>
+                </div>
+              )}
+            </Form>
+          </div>
           <div className="contact__social">
             <SocialIcons large light />
           </div>

@@ -19,13 +19,15 @@ function inputControl(WrappedComponent) {
 
     setValue(value) {
       this.setState({ value });
-      if (this.props.onChange) this.props.onChange(value);
+      if (this.props.onChange) this.props.onChange(value, this.props.name);
     }
 
     onChange(event) {
       event.preventDefault();
 
       const value = event.target.value;
+
+      console.warn(value);
 
       if (value !== this.state.value) {
         this.setValue(value);
@@ -35,9 +37,9 @@ function inputControl(WrappedComponent) {
     render() {
       return (
         <WrappedComponent
+          {...this.props}
           value={this.state.value || ''}
           onChange={this.onChange}
-          {...this.props}
         />
       );
     }

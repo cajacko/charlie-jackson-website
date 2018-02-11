@@ -12,6 +12,11 @@
   flex-direction: column;
 }
 
+.contact__formwrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact__social {
   display: flex;
   justify-content: center;
