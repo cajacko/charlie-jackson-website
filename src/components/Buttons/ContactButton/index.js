@@ -1,15 +1,16 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import TextButton from '../TextButton';
 
 class ContactButton extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.action = this.props.action;
+    this.action = this.action.bind(this);
   }
 
   action() {
-    console.warn('Show contact modal');
+    this.context.showContactModal();
   }
 
   render() {
@@ -18,5 +19,9 @@ class ContactButton extends PureComponent {
     );
   }
 }
+
+ContactButton.contextTypes = {
+  showContactModal: PropTypes.func,
+};
 
 export default ContactButton;

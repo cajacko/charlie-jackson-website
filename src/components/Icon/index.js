@@ -22,8 +22,21 @@ class Icon extends PureComponent {
       case 'BLUE':
         classes += ' icon--blue';
         break;
+
       default:
         classes += ' icon--darkgrey';
+        break;
+    }
+
+    switch (this.props.size) {
+      case 'LARGE':
+        classes += ' icon--lg';
+        break;
+      case 'SMALL':
+        classes += ' icon--sm';
+        break;
+
+      default:
         break;
     }
 

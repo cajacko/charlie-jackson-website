@@ -10,3 +10,9 @@
 .contentspotlight--light {
   background-color: #f8f8f8;
 }
+
+.contentspotlight--fullscreen {
+  flex: 1;
+  align-items: center;
+  display: flex;
+}

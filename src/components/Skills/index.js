@@ -71,7 +71,7 @@ class Skills extends PureComponent {
                 />
               </Paragraph>
               <SpacingContainer mt>
-                <TextButton text="More Charlie" />
+                <TextButton text="More Charlie" action={() => {}} />
               </SpacingContainer>
             </footer>
           </SpacingContainer>
