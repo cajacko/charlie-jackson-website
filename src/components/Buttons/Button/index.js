@@ -20,6 +20,15 @@ class Button extends PureComponent {
     if (this.props.hasText) classes += ' button--hasText';
     if (this.props.fill) classes += ' button--fill';
 
+    switch (this.props.theme) {
+      case 'LIGHT':
+        classes += ' button--light';
+        break;
+
+      default:
+        break;
+    }
+
     return (
       <button className={classes} onClick={this.onClick}>
         {this.props.children}

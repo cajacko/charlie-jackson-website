@@ -36,10 +36,22 @@
   min-width: 175px;
 }
 
+.button--hasText.button--light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 .button--hasText:hover,
 .button--hasText:focus {
   text-decoration: underline;
   color: #ffffff;
   border-color: #ffffff;
   background-color: #009db5;
+}
+
+.button--light.button--hasText:hover,
+.button--light.button--hasText:focus {
+  color: #1f393d;
+  border-color: #1f393d;
+  background-color: #ffffff;
 }
