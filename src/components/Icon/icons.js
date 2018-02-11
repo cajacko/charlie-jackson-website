@@ -99,7 +99,9 @@ export default {
   `,
 
   youtube: `
-  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	 viewBox="0 59.97 400.002 280.06" enable-background="new 0 59.97 400.002 280.06"
+  	 xml:space="preserve">
   <g id="Layer_2">
   </g>
   <g id="Layer_1">
@@ -112,5 +114,6 @@ export default {
   	</g>
   </g>
   </svg>
+
   `,
 };
