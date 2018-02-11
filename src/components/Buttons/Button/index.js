@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import './Button.css';
 
 class Button extends PureComponent {
@@ -36,5 +37,9 @@ class Button extends PureComponent {
     );
   }
 }
+
+Button.propTypes = {
+  action: PropTypes.func.isRequired,
+};
 
 export default Button;
