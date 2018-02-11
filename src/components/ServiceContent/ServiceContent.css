@@ -1,25 +1,25 @@
-.slidercontent {
+.servicecontent {
   display: flex;
   flex: 1;
 }
 
-.slidercontent__imagewrapper {
+.servicecontent__imagewrapper {
   max-height: 200px;
   max-width: 200px;
 }
 
-.slidercontent__image {
+.servicecontent__image {
   max-width: 100%;
   max-height: 100%;
 }
 
-.slidercontent__text {
+.servicecontent__text {
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.slidercontent__paragraph {
+.servicecontent__paragraph {
   max-width: 350px;
 }

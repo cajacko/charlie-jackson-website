@@ -3,10 +3,12 @@ import './Img.css';
 
 class Img extends PureComponent {
   render() {
-    if (this.props.contain) {
+    if (this.props.contain || this.props.fill) {
       return (
         <div
-          className="img--contain"
+          className={`img--background img--${
+            this.props.contain ? 'contain' : 'fill'
+          }`}
           style={{ backgroundImage: `url('${this.props.src}')` }}
         />
       );

@@ -4,8 +4,8 @@ import services from './services';
 import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
 import SectionHeading from '../SectionHeading';
-import IconSliderNav from '../IconSlider/IconSliderNav';
-import SliderContent from '../Slider/SliderContent';
+import IconSliderNav from '../Slider/IconSliderNav';
+import ServiceContent from '../ServiceContent';
 import SpacingContainer from '../Containers/SpacingContainer';
 
 class Services extends Component {
@@ -52,7 +52,11 @@ class Services extends Component {
             </div>
           </ContentContainer>
         </header>
-        <SliderContent imageSrc={image} imageAlt={imageAlt} text={text} />
+        <SpacingContainer mv2>
+          <ContentContainer>
+            <ServiceContent imageSrc={image} imageAlt={imageAlt} text={text} />
+          </ContentContainer>
+        </SpacingContainer>
         <SpacingContainer mv2 mh>
           <footer className="services__footer">
             <ContactButton />

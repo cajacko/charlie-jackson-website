@@ -1,7 +1,14 @@
-.img--contain {
+.img--background {
   display: flex;
   flex: 1;
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.img--contain {
+  background-size: contain;
+}
+
+.img--fill {
+  background-size: cover;
 }
