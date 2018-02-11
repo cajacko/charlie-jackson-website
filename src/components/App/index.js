@@ -8,6 +8,7 @@ import Work from '../Work';
 import Testimonials from '../Testimonials';
 import Skills from '../Skills';
 import Contact from '../Contact';
+import Modal from '../Modal';
 
 class App extends Component {
   constructor(props) {
@@ -48,6 +49,9 @@ class App extends Component {
         <Testimonials />
         <Skills />
         <Contact />
+        <Modal>
+          {this.state.showContactModal && <Contact showClose fullScreen />}
+        </Modal>
       </div>
     );
   }
