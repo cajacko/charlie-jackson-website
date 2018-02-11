@@ -7,8 +7,32 @@ import SpacingContainer from '../Containers/SpacingContainer';
 import './Testimonials.css';
 
 class Testimonials extends PureComponent {
+  state = {
+    displayedIndex: 0,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.changeActiveItem = this.changeActiveItem.bind(this);
+  }
+
+  changeActiveItem(selectedName) {
+    let { displayedIndex } = this.state;
+
+    testimonials.forEach(({ name }, i) => {
+      if (selectedName === name) displayedIndex = i;
+    });
+
+    if (displayedIndex !== this.state.displayedIndex) {
+      this.setState({ displayedIndex });
+    }
+  }
+
   render() {
-    const { quote, image, name, imageAlt } = testimonials[0];
+    const { quote, image, name, imageAlt } = testimonials[
+      this.state.displayedIndex
+    ];
 
     return (
       <ContentSpotlight title="Some may say">
@@ -22,7 +46,11 @@ class Testimonials extends PureComponent {
           <footer>
             <SpacingContainer mt2>
               <div className="testimonials__navwrapper">
-                <DotSliderNav content={testimonials.map((c, i) => i)} />
+                <DotSliderNav
+                  active={name}
+                  content={testimonials}
+                  onChange={this.changeActiveItem}
+                />
               </div>
             </SpacingContainer>
           </footer>
