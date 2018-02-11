@@ -6,6 +6,7 @@ import Text from '../Text';
 import SpacingContainer from '../Containers/SpacingContainer';
 import Paragraph from '../Paragraph';
 import TextButton from '../Buttons/TextButton';
+import { SKILLS } from '../../constants/data';
 
 class Skills extends PureComponent {
   render() {
@@ -59,22 +60,24 @@ class Skills extends PureComponent {
               </SpacingContainer>
             </div>
           </div>
-          <SpacingContainer mt2>
-            <footer className="skills__footer">
-              <Paragraph noSpacing center>
-                <Text fontSize="SMALL" text="Want more?" />
-              </Paragraph>
-              <Paragraph noSpacing center>
-                <Text
-                  fontSize="SMALL"
-                  text="Read my article on me, my process and experience"
-                />
-              </Paragraph>
-              <SpacingContainer mt>
-                <TextButton text="More Charlie" action={() => {}} />
-              </SpacingContainer>
-            </footer>
-          </SpacingContainer>
+          {SKILLS.MORE_URL && (
+            <SpacingContainer mt2>
+              <footer className="skills__footer">
+                <Paragraph noSpacing center>
+                  <Text fontSize="SMALL" text="Want more?" />
+                </Paragraph>
+                <Paragraph noSpacing center>
+                  <Text
+                    fontSize="SMALL"
+                    text="Read my article on me, my process and experience"
+                  />
+                </Paragraph>
+                <SpacingContainer mt>
+                  <TextButton text="More Charlie" href={SKILLS.MORE_URL} />
+                </SpacingContainer>
+              </footer>
+            </SpacingContainer>
+          )}
         </div>
       </ContentSpotlight>
     );
