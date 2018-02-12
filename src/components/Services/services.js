@@ -35,7 +35,7 @@ const services = [
   },
   {
     label: 'Bespoke Solutions',
-    icon: 'twitter',
+    icon: 'iot',
     text:
       'Bespoke Solutions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
