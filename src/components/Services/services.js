@@ -3,7 +3,7 @@ import image from '../Hero/hero-image.png';
 const services = [
   {
     label: 'Websites',
-    icon: 'twitter',
+    icon: 'website',
     text:
       'Websites Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
@@ -11,7 +11,7 @@ const services = [
   },
   {
     label: 'Mobile Apps',
-    icon: 'twitter',
+    icon: 'mobile',
     text:
       'Mobile Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
@@ -19,7 +19,7 @@ const services = [
   },
   {
     label: 'Desktop Apps',
-    icon: 'twitter',
+    icon: 'desktop',
     text:
       'Desktop Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
@@ -27,7 +27,7 @@ const services = [
   },
   {
     label: 'Startups',
-    icon: 'twitter',
+    icon: 'startup',
     text:
       'Startups Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
@@ -35,7 +35,7 @@ const services = [
   },
   {
     label: 'Bespoke Solutions',
-    icon: 'twitter',
+    icon: 'iot',
     text:
       'Bespoke Solutions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
