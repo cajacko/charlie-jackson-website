@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
-import companies from './companies';
+import companies from '../../constants/data';
 import SpacingContainer from '../Containers/SpacingContainer';
 import Img from '../Img';
 import './Work.css';
