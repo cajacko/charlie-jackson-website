@@ -3,7 +3,7 @@ import image from '../Hero/hero-image.png';
 const services = [
   {
     label: 'Websites',
-    icon: 'twitter',
+    icon: 'website',
     text:
       'Websites Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
@@ -11,7 +11,7 @@ const services = [
   },
   {
     label: 'Mobile Apps',
-    icon: 'twitter',
+    icon: 'mobile',
     text:
       'Mobile Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,
