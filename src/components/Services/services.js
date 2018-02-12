@@ -19,7 +19,7 @@ const services = [
   },
   {
     label: 'Desktop Apps',
-    icon: 'twitter',
+    icon: 'desktop',
     text:
       'Desktop Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image,

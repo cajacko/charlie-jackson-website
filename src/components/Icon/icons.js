@@ -158,4 +158,17 @@ export default {
     </g>
   </svg>
   `,
+
+  desktop: `
+
+<svg viewBox="0 0 70 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Welcome" stroke="none" >
+      <g id="Simple---Initial-Copy" transform="translate(-812.000000, -800.000000)" >
+          <g id="Desktop-mac-01" transform="translate(812.000000, 800.000000)">
+              <path d="M63.6363636,0 L6.36363636,0 C2.8,0 0,2.816 0,6.4 L0,44.8 C0,48.384 2.8,51.2 6.36363636,51.2 L28.6363636,51.2 L22.2727273,60.8 L22.2727273,64 L47.7272727,64 L47.7272727,60.8 L41.3636364,51.2 L63.6363636,51.2 C67.2,51.2 70,48.384 70,44.8 L70,6.4 C70,2.816 67.2,0 63.6363636,0 Z M63,38 L6,38 L6,6 L63,6 L63,38 Z" id="XMLID_6_"></path>
+          </g>
+      </g>
+  </g>
+</svg>
+  `,
 };
