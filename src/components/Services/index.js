@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Services.css';
-import services from './services';
+import {services} from '../../constants/data';
 import ContactButton from '../Buttons/ContactButton';
 import ContentContainer from '../Containers/ContentContainer';
 import SectionHeading from '../SectionHeading';

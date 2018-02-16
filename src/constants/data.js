@@ -2,7 +2,7 @@ export const SKILLS = {
   MORE_URL: null,
 };
 
-const companies = [
+export const companies = [
   {
     image: require('../assets/freeview.png'),
     imageAlt: 'Freeview',
@@ -37,4 +37,45 @@ const companies = [
   },
 ];
 
-export default companies;
+export const services = [
+  {
+    label: 'Websites',
+    icon: 'website',
+    text:
+      'Websites Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: require('../assets/countryside-alliance.png'),
+    imageAlt: 'Lorem ipsum dolor sit amet',
+  },
+  {
+    label: 'Mobile Apps',
+    icon: 'mobile',
+    text:
+      'Mobile Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: require('../assets/countryside-alliance.png'),
+    imageAlt: 'Lorem ipsum dolor sit amet',
+  },
+  {
+    label: 'Desktop Apps',
+    icon: 'desktop',
+    text:
+      'Desktop Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: require('../assets/countryside-alliance.png'),
+    imageAlt: 'Lorem ipsum dolor sit amet',
+  },
+  {
+    label: 'Startups',
+    icon: 'startup',
+    text:
+      'Startups Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: require('../assets/countryside-alliance.png'),
+    imageAlt: 'Lorem ipsum dolor sit amet',
+  },
+  {
+    label: 'Bespoke Solutions',
+    icon: 'iot',
+    text:
+      'Bespoke Solutions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: require('../assets/countryside-alliance.png'),
+    imageAlt: 'Lorem ipsum dolor sit amet',
+  },
+];
