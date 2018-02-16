@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
 import Testimonial from '../Testimonial';
-import testimonials from './testimonials';
+import { testimonials } from '../../constants/data';
 import DotSliderNav from '../Slider/DotSliderNav';
 import SpacingContainer from '../Containers/SpacingContainer';
 import './Testimonials.css';
