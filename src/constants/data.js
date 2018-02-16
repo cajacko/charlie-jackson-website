@@ -79,3 +79,37 @@ export const services = [
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
 ];
+
+export const about =
+  'I\'m a senior JavaScript developer who focussing on React. I build modern technology products that have excellent testing, SEO, performance and maintanability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing I\'m building my own tech products, doing improv comedy or drawing pretty pictures.';
+
+export const skills = [
+  {
+    label: 'Front End',
+    skills: ['JavaScript', 'React.js', 'CSS', 'HTML'],
+  },
+  {
+    label: 'Back End',
+    skills: ['Node.js', 'PHP', 'Python'],
+  },
+  {
+    label: 'Cloud',
+    skills: ['AWS', 'Firebase', 'Digital Ocean'],
+  },
+  {
+    label: 'CMS',
+    skills: [' Contentful', 'Kentico Cloud', 'Wordpress', 'Drupal'],
+  },
+  {
+    label: 'Apps',
+    skills: [' React Native', 'Electron'],
+  },
+  {
+    label: 'IoT',
+    skills: [' Raspberry Pi'],
+  },
+  {
+    label: 'Misc',
+    skills: ['Google Apps Scripts', 'Trello Powerups'],
+  },
+];

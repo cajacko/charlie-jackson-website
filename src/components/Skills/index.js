@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
 import './Skills.css';
-import { about, skills } from './skills';
+import { about, skills } from '../../constants/data';
 import Text from '../Text';
 import SpacingContainer from '../Containers/SpacingContainer';
 import Paragraph from '../Paragraph';
