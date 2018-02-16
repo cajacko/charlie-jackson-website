@@ -121,22 +121,34 @@ export const skills = [
 export const testimonials = [
   {
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    image: require('../assets/profile-pic.png'),
-    imageAlt: 'Pic of Charlie Jackson',
-    name: 'Charlie Jackson',
+      'Great guy with a serious drive for development!',
+    image: require('../assets/john-hopley.jpg'),
+    imageAlt: 'John Hopley',
+    name: 'John Hopley',
   },
   {
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    image: require('../assets/profile-pic.png'),
-    imageAlt: 'Pic of Charlie Jackson',
-    name: 'Viki Jackson',
+      'Working with Charlie is an absolute pleasure. His natural enthusiasm and innovative thinking really adds value to a project and better solutions are created because of his involvement.',
+    image: require('../assets/phil-wakefield.jpg'),
+    imageAlt: 'Phil Wakefield',
+    name: 'Phil Wakefield',
+  },
+  {
+    quote: 'Charlie is a dedicated and talented front end developer. During the time we worked together he was constantly improving his skillset and bringing those improvements to the team and projects he worked on.',
+    image: require('../assets/cameron-wortlehock.jpg'),
+    imageAlt: 'Cameron Wortlehock',
+    name: 'Cameron Wortlehock',
+  },
+  {
+    quote: 'Charlie\'s attitude is a "can do" attitude and he always delivers on time.',
+    image: require('../assets/sami-bouremoum.jpg'),
+    imageAlt: 'Sami Bouremoum',
+    name: 'Sami Bouremoum',
   },
   {
     quote:
       'Charlie is awesome! I\'ve known him his whole life and he\' a stand up guy. There doesn\'t seem to be anything he can\'t build and make better. Although I may be biased.',
-    image: require('../assets/profile-pic.png'),
+    image: require('../assets/charlie-jackson.jpg'),
     imageAlt: 'Pic of Charlie Jackson',
     name: 'Charlie Jackson',
   },
