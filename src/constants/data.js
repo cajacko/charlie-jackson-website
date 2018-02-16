@@ -86,7 +86,7 @@ export const about =
 export const skills = [
   {
     label: 'Front End',
-    skills: ['JavaScript', 'React.js', 'CSS', 'HTML'],
+    skills: ['JavaScript', 'React.js', 'SASS', 'CSS', 'HTML'],
   },
   {
     label: 'Back End',
@@ -109,8 +109,12 @@ export const skills = [
     skills: [' Raspberry Pi'],
   },
   {
+    label: 'Testing',
+    skills: ['Cucumber', 'Selenium Webdriver', 'BrowserStack', 'Jest'],
+  },
+  {
     label: 'Misc',
-    skills: ['Google Apps Scripts', 'Trello Powerups'],
+    skills: ['Google Apps Scripts', 'Trello Powerups', 'Flow'],
   },
 ];
 
