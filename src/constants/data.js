@@ -42,7 +42,7 @@ export const services = [
     label: 'Websites',
     icon: 'website',
     text:
-      'Websites Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      `Since 2012 I have been building websites for both large companies like Freeview to smaller startups. With experience building social media sites, e-commerce, brochureware and complex webapps.`,
     image: require('../assets/countryside-alliance.png'),
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -50,7 +50,7 @@ export const services = [
     label: 'Mobile Apps',
     icon: 'mobile',
     text:
-      'Mobile Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'I build apps that work on both iOS and Android devices. With live apps on both app stores, I can help bring your next idea to the market',
     image: require('../assets/countryside-alliance.png'),
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -58,7 +58,7 @@ export const services = [
     label: 'Desktop Apps',
     icon: 'desktop',
     text:
-      'Desktop Apps Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Mac, Windows, Linux? I can build your next app on all these platforms. I\'ve made everything from utility apps to complex photo manipulation products.',
     image: require('../assets/countryside-alliance.png'),
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -66,7 +66,7 @@ export const services = [
     label: 'Startups',
     icon: 'startup',
     text:
-      'Startups Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'I\'ve ran my own tech startup for 4 years, and been in and out of others every since. From crowdfunding campaigns to technical strategy I can help build your startup.',
     image: require('../assets/countryside-alliance.png'),
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
@@ -74,7 +74,7 @@ export const services = [
     label: 'Bespoke Solutions',
     icon: 'iot',
     text:
-      'Bespoke Solutions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Need to automate social media, building an IoT device or maybe a integration with your Google services. I can build it, lets talk.',
     image: require('../assets/countryside-alliance.png'),
     imageAlt: 'Lorem ipsum dolor sit amet',
   },
