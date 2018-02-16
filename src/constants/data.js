@@ -81,7 +81,7 @@ export const services = [
 ];
 
 export const about =
-  'I\'m a senior JavaScript developer who focussing on React. I build modern technology products that have excellent testing, SEO, performance and maintanability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing I\'m building my own tech products, doing improv comedy or drawing pretty pictures.';
+  'I\'m a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent testing, SEO, performance and maintanability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing I\'m building my own tech products, doing improv comedy or drawing pretty pictures. I live in London, UK.';
 
 export const skills = [
   {
@@ -131,9 +131,9 @@ export const testimonials = [
   },
   {
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      'Charlie is awesome! I\'ve known him his whole life and he\' a stand up guy. There doesn\'t seem to be anything he can\'t build and make better. Although I may be biased.',
     image: require('../assets/profile-pic.png'),
     imageAlt: 'Pic of Charlie Jackson',
-    name: 'Tom Bell',
+    name: 'Charlie Jackson',
   },
 ];
