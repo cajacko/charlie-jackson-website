@@ -11,7 +11,7 @@ class Testimonial extends Component {
       <div className="testimonial">
         <div className="testimonial__quote">
           <Paragraph center noSpacing>
-            <Text text={`"${this.props.quote}`} fontSize="LARGE" />
+            <Text text={`"${this.props.quote}"`} fontSize="LARGE" />
           </Paragraph>
         </div>
         <SpacingContainer mb mt2>
