@@ -9,20 +9,22 @@ import AlignContainer from '../Containers/AlignContainer';
 class SiteNav extends PureComponent {
   render() {
     return (
-      <SpacingContainer mt mb>
+      <div className="sitenav">
+      <SpacingContainer pt pb>
         <ContentContainer ph>
-          <div className="sitenav">
-            <SocialIcons />
+          <div className="sitenav__wrapper">
+            <SocialIcons light />
             <div>
               <SpacingContainer pl>
                 <AlignContainer vc>
-                  <ContactButton />
+                  <ContactButton theme="LIGHT"/>
                 </AlignContainer>
               </SpacingContainer>
             </div>
           </div>
         </ContentContainer>
       </SpacingContainer>
+      </div>
     );
   }
 }

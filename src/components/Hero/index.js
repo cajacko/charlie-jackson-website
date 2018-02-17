@@ -4,7 +4,7 @@ import ContactButton from '../Buttons/ContactButton';
 import Text from '../Text';
 import AlignContainer from '../Containers/AlignContainer';
 import ContentContainer from '../Containers/ContentContainer';
-import heroImage from './hero-image.png';
+import heroImage from '../../assets/background.jpg';
 import SpacingContainer from '../Containers/SpacingContainer';
 
 class Hero extends PureComponent {
@@ -19,29 +19,25 @@ class Hero extends PureComponent {
                   <Text
                     text="Charlie Jackson"
                     fontSize="XX_LARGE"
-                    color="BLUE"
+                    color="WHITE"
+                    bold
                   />
-                  <Text text=" here!" fontSize="XX_LARGE" />
+                  <Text text=" here!" fontSize="XX_LARGE" color="WHITE" />
                 </h1>
                 <SpacingContainer mt>
                   <h2 className="hero__subtitle">
                     <Text
                       text="Freelance developer and UX designer"
                       fontSize="XX_LARGE"
+                      color="WHITE"
                     />
                   </h2>
                 </SpacingContainer>
                 <SpacingContainer mt2>
-                  <ContactButton text="Hire me" />
+                  <ContactButton text="Hire me" theme="LIGHT" />
                 </SpacingContainer>
               </div>
             </AlignContainer>
-
-            <img
-              className="hero__image"
-              src={heroImage}
-              alt="Charlie Jackson pulling a silly face"
-            />
           </div>
         </ContentContainer>
       </div>
