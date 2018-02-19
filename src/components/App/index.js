@@ -9,6 +9,7 @@ import Testimonials from '../Testimonials';
 import Skills from '../Skills';
 import Contact from '../Contact';
 import Modal from '../Modal';
+import background from '../../assets/background.jpg';
 
 class App extends Component {
   constructor(props) {
@@ -42,8 +43,10 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div style={{ backgroundImage: `url('${background}')`, backgroundSize: 'cover', backgroundPosition: 'right bottom'}}>
         <SiteNav />
         <Hero />
+        </div>
         <Services />
         <Work />
         <Testimonials />

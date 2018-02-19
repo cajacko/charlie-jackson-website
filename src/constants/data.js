@@ -42,7 +42,7 @@ export const services = [
     label: 'Websites',
     icon: 'website',
     text:
-      `Since 2012 I have been building websites for both large companies like Freeview to smaller startups. With experience building social media sites, e-commerce, brochureware and complex webapps.`,
+      `Since 2012 I have been building websites for both large companies like Freeview and smaller startups; with experience building social media sites, e-commerce, brochureware and complex webapps.`,
     image: require('../assets/macbook.png'),
     imageAlt: 'Website',
   },
@@ -50,7 +50,7 @@ export const services = [
     label: 'Mobile Apps',
     icon: 'mobile',
     text:
-      'I build apps that work on both iOS and Android devices. With live apps on both app stores, I can help bring your next idea to the market',
+      'I build apps that work on both iOS and Android devices. With live apps on both app stores, I can help bring your next idea to the market.',
     image: require('../assets/mobile-apps.png'),
     imageAlt: 'Mobile Apps',
   },
@@ -58,7 +58,7 @@ export const services = [
     label: 'Desktop Apps',
     icon: 'desktop',
     text:
-      'Mac, Windows, Linux? I can build your next app on all these platforms. I\'ve made everything from utility apps to complex photo manipulation products.',
+      'Mac, Windows, Linux? I can build your next app on all of these platforms. I\'ve made everything from utility apps to complex photo manipulation products.',
     image: require('../assets/desktop.png'),
     imageAlt: 'Desktop Apps',
   },
@@ -66,7 +66,7 @@ export const services = [
     label: 'Startups',
     icon: 'startup',
     text:
-      'I\'ve ran my own tech startup for 4 years, and been in and out of others every since. From crowdfunding campaigns to technical strategy I can help build your startup.',
+      'From crowdfunding campaigns to technical strategy, I can help take your startup to the next level. Having ran my own tech startup for four years, and been in and out of others every since.',
     image: require('../assets/startup.png'),
     imageAlt: 'Startup',
   },
@@ -74,14 +74,14 @@ export const services = [
     label: 'Bespoke Solutions',
     icon: 'iot',
     text:
-      'Need to automate social media, building an IoT device or maybe a integration with your Google services. I can build it, lets talk.',
+      'Need to automate social media, building an IoT device or maybe an integration with your Google services. I can identify and build a solution to your problems, let\'s talk.',
     image: require('../assets/bespoke.png'),
     imageAlt: 'Bespoke',
   },
 ];
 
 export const about =
-  'I\'m a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent testing, SEO, performance and maintanability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing I\'m building my own tech products, doing improv comedy or drawing pretty pictures. I live in London, UK.';
+  'I\'m a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent testing, SEO, performance and maintanability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing, I\'m building my own tech products, doing improv comedy or drawing pretty pictures. I live in London, UK.';
 
 export const skills = [
   {

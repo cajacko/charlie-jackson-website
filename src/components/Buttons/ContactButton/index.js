@@ -15,13 +15,14 @@ class ContactButton extends PureComponent {
 
   render() {
     return (
-      <TextButton text={this.props.text || 'Contact me'} action={this.action} />
+      <TextButton text={this.props.text || 'Contact me'} action={this.action} theme={this.props.theme}/>
     );
   }
 }
 
 ContactButton.contextTypes = {
   showContactModal: PropTypes.func,
+  theme: null,
 };
 
 export default ContactButton;
