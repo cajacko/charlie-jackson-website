@@ -177,7 +177,7 @@ export const socialIcons = [
   },
   {
     icon: 'email',
-    contact: true,
+    isContact: true,
     url: 'https://github.com/cajacko',
   },
 ];

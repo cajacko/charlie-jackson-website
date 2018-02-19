@@ -8,10 +8,11 @@ import './SocialIcon.css';
 class SocialIcon extends PureComponent {
   render() {
     return (
+      <div className={`socialicon ${this.props.isContact ? 'socialicon--contact' : ''}`}>
       <Link href={this.props.href}>
         <div
-          className={`socialicon socialicon--${this.props.icon} ${
-            this.props.light ? 'socialicon--light' : 'socialicon--color'
+          className={`socialicon__wrapper socialicon__wrapper--${this.props.icon} ${
+            this.props.light ? 'socialicon__wrapper--light' : 'socialicon__wrapper--color'
           }`}
         >
           <SpacingContainer pr pl>
@@ -21,6 +22,7 @@ class SocialIcon extends PureComponent {
           </SpacingContainer>
         </div>
       </Link>
+      </div>
     );
   }
 }
