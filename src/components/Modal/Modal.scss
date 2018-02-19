@@ -1,3 +1,5 @@
+@import '../../constants/colors.scss';
+
 .modal {
   position: fixed;
   top: 0;
@@ -7,7 +9,7 @@
   height: 100vh;
   width: 100vw;
   z-index: 1;
-  background: #1f393dfa;
+  background: transparentize($tePapaGreen, 0.03);
   display: flex;
 }
 
@@ -29,7 +31,7 @@
 }
 
 .modal__close path {
-  fill: #ffffff;
+  fill: $white;
   opacity: 0.5;
 }
 

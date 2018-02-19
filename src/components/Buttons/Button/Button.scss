@@ -1,27 +1,34 @@
+@import '../../../constants/colors.scss';
+
 .button {
   appearance: none;
   border: none;
   background: transparent;
   display: flex;
   cursor: pointer;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s, transform 0.25s;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s,
+    transform 0.25s;
   padding: 0;
   margin: 0;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .button--fill {
-  flex: 1; }
+  flex: 1;
+}
 
 .button:focus {
-  outline: none; }
+  outline: none;
+}
 
 .button:hover,
 .button:focus {
-  transform: scale(1.05); }
+  transform: scale(1.05);
+}
 
 .button--hasText {
-  color: #009db5;
-  border: 1px solid #009db5;
+  color: $bondiBlue;
+  border: 1px solid $bondiBlue;
   border-radius: 16px;
   line-height: 1;
   justify-content: center;
@@ -29,21 +36,25 @@
   height: 40px;
   box-sizing: border-box;
   padding: 0 20px;
-  min-width: 175px; }
+  min-width: 175px;
+}
 
 .button--hasText.button--light {
-  border-color: #ffffff;
-  color: #ffffff; }
+  border-color: $white;
+  color: $white;
+}
 
 .button--hasText:hover,
 .button--hasText:focus {
   text-decoration: underline;
-  color: #ffffff;
-  border-color: #ffffff;
-  background-color: #009db5; }
+  color: $white;
+  border-color: $white;
+  background-color: $bondiBlue;
+}
 
 .button--light.button--hasText:hover,
 .button--light.button--hasText:focus {
-  color: #1f393d;
-  border-color: #1f393d;
-  background-color: #ffffff; }
+  color: $tePapaGreen;
+  border-color: $tePapaGreen;
+  background-color: $white;
+}

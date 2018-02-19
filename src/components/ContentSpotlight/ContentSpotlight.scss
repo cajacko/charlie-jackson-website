@@ -1,14 +1,20 @@
+@import '../../constants/colors.scss';
+
 .contentspotlight__wrapper {
   flex: 1;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .contentspotlight--dark {
-  background-color: #1f393d; }
+  background-color: $tePapaGreen;
+}
 
 .contentspotlight--light {
-  background-color: #f8f8f8; }
+  background-color: $greyLight;
+}
 
 .contentspotlight--fullscreen {
   flex: 1;
   align-items: center;
-  display: flex; }
+  display: flex;
+}

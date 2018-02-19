@@ -1,11 +1,13 @@
 .hero {
   min-height: 440px;
-  display: flex; }
+  display: flex;
+}
 
 .hero__content {
   display: flex;
   flex: 1;
-  position: relative; }
+  position: relative;
+}
 
 .hero__image {
   max-width: 350px;
@@ -13,10 +15,12 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  right: 0; }
+  right: 0;
+}
 
 .hero__title,
 .hero__subtitle {
   padding: 0;
   margin: 0;
-  line-height: 1; }
+  line-height: 1;
+}

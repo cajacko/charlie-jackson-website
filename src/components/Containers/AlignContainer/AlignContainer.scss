@@ -1,9 +1,12 @@
 .aligncontainer {
   display: flex;
-  flex: 1; }
+  flex: 1;
+}
 
 .aligncontainer--hc {
-  justify-content: center; }
+  justify-content: center;
+}
 
 .aligncontainer--vc {
-  align-items: center; }
+  align-items: center;
+}

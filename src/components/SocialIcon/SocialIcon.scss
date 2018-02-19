@@ -1,3 +1,5 @@
+@import '../../constants/colors.scss';
+
 .socialicon {
   display: flex;
   flex: 1;
@@ -5,7 +7,7 @@
 }
 
 .socialicon--light path {
-  fill: #ffffff;
+  fill: $white;
   opacity: 0.5;
 }
 
@@ -28,7 +30,7 @@ a:hover .socialicon--instagram.socialicon--color path,
 a:focus .socialicon--instagram.socialicon--color path,
 a:hover .socialicon--github.socialicon--color path,
 a:focus .socialicon--github.socialicon--color path {
-  fill: #1f393d;
+  fill: $tePapaGreen;
 }
 
 a:hover .socialicon--linkedin.socialicon--color path,

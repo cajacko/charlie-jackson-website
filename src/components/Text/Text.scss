@@ -1,3 +1,5 @@
+@import '../../constants/colors.scss';
+
 .text {
   font-size: 16px;
   font-family: helvetica, sans-serif;
@@ -24,11 +26,11 @@
 }
 
 .text--blue {
-  color: #009db5;
+  color: $bondiBlue;
 }
 
 .text--white {
-  color: #ffffff;
+  color: $white;
 }
 
 .text--bold {

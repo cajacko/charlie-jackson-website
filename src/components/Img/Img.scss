@@ -2,10 +2,13 @@
   display: flex;
   flex: 1;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+}
 
 .img--contain {
-  background-size: contain; }
+  background-size: contain;
+}
 
 .img--fill {
-  background-size: cover; }
+  background-size: cover;
+}

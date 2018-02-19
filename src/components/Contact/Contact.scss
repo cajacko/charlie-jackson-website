@@ -2,18 +2,22 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: center; }
+  align-items: center;
+}
 
 .contact__form {
   max-width: 600px;
   width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .contact__formwrapper {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .contact__social {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
