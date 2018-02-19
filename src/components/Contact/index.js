@@ -10,8 +10,8 @@ import Form from '../Forms/Form';
 import ContactApi from '../../modules/ContactApi';
 
 class Contact extends PureComponent {
-  onSubmit({ name, email, message }) {
-    ContactApi.submit(name, email, message);
+  onSubmit({ email, message }) {
+    ContactApi.submit(email, message);
   }
 
   render() {
@@ -26,26 +26,14 @@ class Contact extends PureComponent {
             <Form onSubmit={this.onSubmit}>
               {({ setFormState, submit }) => (
                 <div className="contact__formwrapper">
-                  <div>
-                    <SpacingContainer mb2>
-                      <SpacingContainer mr>
-                        <Input
-                          placeholder="Name"
-                          type="text"
-                          onChange={setFormState}
-                          name="name"
-                        />
-                      </SpacingContainer>
-                      <SpacingContainer ml>
-                        <Input
-                          placeholder="Email"
-                          type="text"
-                          onChange={setFormState}
-                          name="email"
-                        />
-                      </SpacingContainer>
-                    </SpacingContainer>
-                  </div>
+                  <SpacingContainer mb2>
+                    <Input
+                      placeholder="Email"
+                      type="text"
+                      onChange={setFormState}
+                      name="email"
+                    />
+                  </SpacingContainer>
 
                   <Textarea
                     placeholder="Message"

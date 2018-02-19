@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import './Hero.css';
 import ContactButton from '../Buttons/ContactButton';
 import Text from '../Text';
-import AlignContainer from '../Containers/AlignContainer';
 import ContentContainer from '../Containers/ContentContainer';
 import SpacingContainer from '../Containers/SpacingContainer';
 
