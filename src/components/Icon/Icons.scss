@@ -23,6 +23,12 @@
   height: 50px;
 }
 
+@media (max-width: 500px) {
+  .icon--lg {
+    height: 35px;
+  }
+}
+
 .icon path {
   transition: fill 0.5s;
 }
