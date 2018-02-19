@@ -10,33 +10,31 @@ class Hero extends PureComponent {
   render() {
     return (
       <div className="hero">
-        <ContentContainer ph>
+        <ContentContainer ph pv>
           <div className="hero__content">
-            <AlignContainer vc>
-              <div>
-                <h1 className="hero__title">
+            <div>
+              <h1 className="hero__title">
+                <Text
+                  text="Charlie Jackson"
+                  fontSize="XX_LARGE"
+                  color="WHITE"
+                  bold
+                />
+                <Text text=" here!" fontSize="XX_LARGE" color="WHITE" />
+              </h1>
+              <SpacingContainer mt>
+                <h2 className="hero__subtitle">
                   <Text
-                    text="Charlie Jackson"
+                    text="Freelance developer and UX designer"
                     fontSize="XX_LARGE"
                     color="WHITE"
-                    bold
                   />
-                  <Text text=" here!" fontSize="XX_LARGE" color="WHITE" />
-                </h1>
-                <SpacingContainer mt>
-                  <h2 className="hero__subtitle">
-                    <Text
-                      text="Freelance developer and UX designer"
-                      fontSize="XX_LARGE"
-                      color="WHITE"
-                    />
-                  </h2>
-                </SpacingContainer>
-                <SpacingContainer mt2>
-                  <ContactButton text="Hire me" theme="LIGHT" />
-                </SpacingContainer>
-              </div>
-            </AlignContainer>
+                </h2>
+              </SpacingContainer>
+              <SpacingContainer mt2>
+                <ContactButton text="Hire me" theme="LIGHT" />
+              </SpacingContainer>
+            </div>
           </div>
         </ContentContainer>
       </div>

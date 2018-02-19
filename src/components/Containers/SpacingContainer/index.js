@@ -25,6 +25,11 @@ class SpacingContainer extends PureComponent {
       props.pl = true;
     }
 
+    if (props.pv) {
+      props.pt = true;
+      props.pb = true;
+    }
+
     if (props.mh) {
       props.mr = true;
       props.ml = true;
