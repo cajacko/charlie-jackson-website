@@ -15,16 +15,16 @@ class Skills extends PureComponent {
         <div className="skills">
           <div className="skills__columns">
             <div className="skills__column">
-              <SpacingContainer mr2>
+              <div className="skills__columnwrapper skills__columnwrapper--text">
                 <div className="skills__content">
                   <Paragraph noSpacing>
                     <Text text={about} />
                   </Paragraph>
                 </div>
-              </SpacingContainer>
+              </div>
             </div>
-            <div className="skills__column">
-              <SpacingContainer ml2>
+            <div className="skills__column skills__column--table">
+              <div className="skills__columnwrapper skills__columnwrapper--table">
                 <div className="skills__content">
                   <table className="skills__table">
                     <tbody>
@@ -33,7 +33,7 @@ class Skills extends PureComponent {
                           key={label}
                           className={!!i ? 'skills__row--topborder' : ''}
                         >
-                          <td className="skills__cell">
+                          <td className="skills__cell skills__cell--title">
                             <SpacingContainer mr2>
                               <Text
                                 text={label}
@@ -44,12 +44,14 @@ class Skills extends PureComponent {
                           </td>
                           <td className="skills__cell">
                             <SpacingContainer mr>
+                            <div>
                               {skill.skills.map((skillItem, i) => (
                                 <span key={skillItem}>
                                   {!!i && <Text text=", " fontSize="SMALL" />}
                                   <Text text={skillItem} fontSize="SMALL" />
                                 </span>
                               ))}
+                              </div>
                             </SpacingContainer>
                           </td>
                         </tr>
@@ -57,7 +59,7 @@ class Skills extends PureComponent {
                     </tbody>
                   </table>
                 </div>
-              </SpacingContainer>
+              </div>
             </div>
           </div>
           {SKILLS.MORE_URL && (
