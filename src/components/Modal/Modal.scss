@@ -11,6 +11,7 @@
   z-index: 1;
   background: transparentize($tePapaGreen, 0.03);
   display: flex;
+  overflow: auto;
 }
 
 .modal__wrapper {
