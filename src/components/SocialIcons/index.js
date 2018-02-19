@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import icons from './icons';
+import { socialIcons as icons } from '../../constants/data';
 import SocialIcon from '../SocialIcon';
 import HorizontalList from '../Lists/HorizontalList';
 

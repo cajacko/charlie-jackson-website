@@ -153,3 +153,26 @@ export const testimonials = [
     name: 'Charlie Jackson',
   },
 ];
+
+export const socialIcons = [
+  {
+    icon: 'twitter',
+    url: 'https://twitter.com/charliejackson',
+  },
+  {
+    icon: 'linkedin',
+    url: 'https://uk.linkedin.com/in/charliejackson9',
+  },
+  {
+    icon: 'instagram',
+    url: 'https://www.instagram.com/charlie_a_jackson/',
+  },
+  {
+    icon: 'youtube',
+    url: 'https://www.youtube.com/channel/UCfCtHRISGIUZlYHd8wjdmPQ',
+  },
+  {
+    icon: 'github',
+    url: 'https://github.com/cajacko',
+  },
+];
