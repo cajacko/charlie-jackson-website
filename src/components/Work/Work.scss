@@ -14,6 +14,20 @@
   transition: transform 0.25s, opacity 0.25s;
 }
 
+@media (max-width: 700px) {
+  .work__imagewrapper {
+    width: 160px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .work__imagewrapper {
+    width: 120px;
+    height: 80px;
+  }
+}
+
 .work__imagewrapper:hover {
   opacity: 1;
   transform: scale(1.1);
