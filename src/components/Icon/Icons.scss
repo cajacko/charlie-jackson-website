@@ -9,6 +9,12 @@
   height: 30px;
 }
 
+@media (max-width: 500px) {
+  .icon {
+    height: 20px;
+  }
+}
+
 .icon--sm {
   height: 20px;
 }
