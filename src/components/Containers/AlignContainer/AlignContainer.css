@@ -1,9 +1,0 @@
-.aligncontainer {
-  display: flex;
-  flex: 1; }
-
-.aligncontainer--hc {
-  justify-content: center; }
-
-.aligncontainer--vc {
-  align-items: center; }
