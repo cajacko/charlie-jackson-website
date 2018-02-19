@@ -14,9 +14,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "login": "firebase login",
-    "deploy": "firebase deploy"
+    "deploy:live": "node scripts/setBuildTarget --live && yarn run build && firebase deploy",
+    "deploy:dev": "node scripts/setBuildTarget --dev && yarn run build && firebase deploy"
   },
   "devDependencies": {
-    "firebase-tools": "^3.17.4"
+    "firebase-tools": "^3.17.4",
+    "fs-extra": "^5.0.0"
   }
 }
