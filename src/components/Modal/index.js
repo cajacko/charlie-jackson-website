@@ -15,7 +15,7 @@ class Modal extends Component {
           <div className="modal__close">
             <Button action={this.context.hideContactModal}>
               <SpacingContainer mh2 mv2>
-                <Icon icon="cancel" />
+                <Icon icon="cancel" reduceWithWidth />
               </SpacingContainer>
             </Button>
           </div>

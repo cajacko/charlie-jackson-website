@@ -15,6 +15,10 @@ class Icon extends PureComponent {
 
     let classes = 'icon';
 
+    if (this.props.reduceWithWidth) {
+      classes += ' icon--reduceWithWidth';
+    }
+
     switch (this.props.color) {
       case 'ORANGE':
         classes += ' icon--orange';

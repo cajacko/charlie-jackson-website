@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 500px) {
-  .icon {
+  .icon--reduceWithWidth {
     height: 20px;
   }
 }
@@ -24,7 +24,7 @@
 }
 
 @media (max-width: 500px) {
-  .icon--lg {
+  .icon--lg.icon--reduceWithWidth {
     height: 35px;
   }
 }

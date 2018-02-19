@@ -9,6 +9,12 @@
   line-height: inherit;
 }
 
+@media (max-width: 550px) {
+  .text--reduceWithWidth {
+    font-size: 12px;
+  }
+}
+
 .text--xxl {
   font-size: 30px;
 }

@@ -18,7 +18,7 @@ class IconSliderNavItem extends Component {
               />
               <SpacingContainer mt>
                 <div className="iconslidernavitem__text">
-                  <Text text={this.props.label} underline={this.props.active} />
+                  <Text text={this.props.label} underline={this.props.active} reduceWithWidth />
                 </div>
               </SpacingContainer>
             </div>

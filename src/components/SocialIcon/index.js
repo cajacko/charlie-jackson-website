@@ -31,7 +31,7 @@ class SocialIcon extends PureComponent {
       >
         <SpacingContainer pr pl>
           <AlignContainer vc>
-            <Icon icon={this.props.icon} size={this.props.size} />
+            <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />
           </AlignContainer>
         </SpacingContainer>
       </div>
