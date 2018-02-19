@@ -1,0 +1,87 @@
+@import '../../constants/colors.scss';
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.skills__columns {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .skills__columns {
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+  }
+}
+
+.skills__column {
+  flex: 1;
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .skills__column {
+    flex: none;
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+.skills__column--table {
+  margin-top: 30px;
+}
+
+.skills__columnwrapper {
+  display: flex;
+  flex: 1;
+}
+
+.skills__columnwrapper--text {
+  margin-right: 30px;
+}
+
+.skills__columnwrapper--table {
+  margin-left: 30px;
+}
+
+@media (max-width: 900px) {
+  .skills__columnwrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.skills__content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.skills__cell {
+  padding: 5px 0;
+}
+
+.skills__cell--title {
+  min-width: 90px;
+}
+
+.skills__row--topborder {
+  border-top: 1px solid transparentize($tePapaGreen, 0.75);
+}
+
+.skills__footer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}

@@ -1,3 +1,5 @@
+@import '../../constants/colors.scss';
+
 .text {
   font-size: 16px;
   font-family: helvetica, sans-serif;
@@ -5,6 +7,12 @@
   color: inherit;
   text-decoration: inherit;
   line-height: inherit;
+}
+
+@media (max-width: 550px) {
+  .text--reduceWithWidth {
+    font-size: 12px;
+  }
 }
 
 .text--xxl {
@@ -24,11 +32,11 @@
 }
 
 .text--blue {
-  color: #009db5;
+  color: $bondiBlue;
 }
 
 .text--white {
-  color: #ffffff;
+  color: $white;
 }
 
 .text--bold {

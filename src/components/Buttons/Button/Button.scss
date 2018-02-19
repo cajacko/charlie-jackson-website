@@ -1,3 +1,5 @@
+@import '../../../constants/colors.scss';
+
 .button {
   appearance: none;
   border: none;
@@ -25,8 +27,8 @@
 }
 
 .button--hasText {
-  color: #009db5;
-  border: 1px solid #009db5;
+  color: $bondiBlue;
+  border: 1px solid $bondiBlue;
   border-radius: 16px;
   line-height: 1;
   justify-content: center;
@@ -38,21 +40,21 @@
 }
 
 .button--hasText.button--light {
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: $white;
+  color: $white;
 }
 
 .button--hasText:hover,
 .button--hasText:focus {
   text-decoration: underline;
-  color: #ffffff;
-  border-color: #ffffff;
-  background-color: #009db5;
+  color: $white;
+  border-color: $white;
+  background-color: $bondiBlue;
 }
 
 .button--light.button--hasText:hover,
 .button--light.button--hasText:focus {
-  color: #1f393d;
-  border-color: #1f393d;
-  background-color: #ffffff;
+  color: $tePapaGreen;
+  border-color: $tePapaGreen;
+  background-color: $white;
 }

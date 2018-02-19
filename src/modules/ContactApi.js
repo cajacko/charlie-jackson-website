@@ -1,5 +1,5 @@
 class ContactApi {
-  static submit(name, email, message) {
+  static submit(email, message) {
     const FORMSPREE_ID = 'xdgeqelm';
     const url = `https://formspree.io/${FORMSPREE_ID}`;
 
@@ -9,7 +9,7 @@ class ContactApi {
         Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, userEmail: email, message }),
+      body: JSON.stringify({ userEmail: email, message }),
     })
       .then(response => response.json())
       .then(({ success, error, ...response }) => {

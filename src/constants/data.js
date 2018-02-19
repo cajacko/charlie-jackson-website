@@ -175,4 +175,9 @@ export const socialIcons = [
     icon: 'github',
     url: 'https://github.com/cajacko',
   },
+  {
+    icon: 'email',
+    isContact: true,
+    url: 'https://github.com/cajacko',
+  },
 ];

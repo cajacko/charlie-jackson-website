@@ -1,9 +1,0 @@
-.sitenav {
-  background-color: #00000063;
-}
-
-.sitenav__wrapper {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
-}

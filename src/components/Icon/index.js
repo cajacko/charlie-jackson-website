@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import icons from './icons';
+import icons from '../../constants/icons';
 import './Icons.css';
 
 class Icon extends PureComponent {
@@ -14,6 +14,10 @@ class Icon extends PureComponent {
     html = html.replace('<svg', `<svg class="icon__svg"`);
 
     let classes = 'icon';
+
+    if (this.props.reduceWithWidth) {
+      classes += ' icon--reduceWithWidth';
+    }
 
     switch (this.props.color) {
       case 'ORANGE':

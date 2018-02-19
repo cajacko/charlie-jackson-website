@@ -1,0 +1,27 @@
+@import '../../constants/colors.scss';
+
+.sitenav {
+  background-color: transparentize($black, 0.6);
+}
+
+.sitenav__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+@media (max-width: 650px) {
+  .sitenav__wrapper {
+    justify-content: center;
+  }
+}
+
+.sitenav__contact {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .sitenav__contact {
+    display: block;
+  }
+}

@@ -13,8 +13,8 @@ class SiteNav extends PureComponent {
       <SpacingContainer pt pb>
         <ContentContainer ph>
           <div className="sitenav__wrapper">
-            <SocialIcons light />
-            <div>
+            <SocialIcons light includeContact />
+            <div className="sitenav__contact">
               <SpacingContainer pl>
                 <AlignContainer vc>
                   <ContactButton theme="LIGHT"/>

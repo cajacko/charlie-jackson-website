@@ -6,7 +6,7 @@ class ContentContainer extends PureComponent {
   render() {
     return (
       <div className="contentcontainer">
-        <SpacingContainer ph={this.props.ph}>
+        <SpacingContainer {...this.props}>
           {this.props.children}
         </SpacingContainer>
       </div>

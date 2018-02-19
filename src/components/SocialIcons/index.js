@@ -9,17 +9,23 @@ class SocialIcons extends PureComponent {
 
     return (
       <HorizontalList
-        list={icons.map(({ icon, url }, i) => ({
-          key: icon,
-          component: (
-            <SocialIcon
-              href={url}
-              icon={icon}
-              size={this.props.large ? 'LARGE' : 'MEDIUM'}
-              light={this.props.light}
-            />
-          ),
-        }))}
+        list={icons
+          .filter(
+            ({ isContact }) =>
+              !isContact || (isContact && this.props.includeContact),
+          )
+          .map(({ icon, url, isContact }, i) => ({
+            key: icon,
+            component: (
+              <SocialIcon
+                href={url}
+                icon={icon}
+                size={this.props.large ? 'LARGE' : 'MEDIUM'}
+                light={this.props.light}
+                isContact={!!isContact}
+              />
+            ),
+          }))}
       />
     );
   }
