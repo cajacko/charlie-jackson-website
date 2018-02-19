@@ -9,17 +9,19 @@ class ServiceContent extends Component {
   render() {
     return (
       <div className="servicecontent">
-        <SpacingContainer mh>
-          <AlignContainer hc vc>
-            <div className="servicecontent__imagewrapper">
-              <img
-                className="servicecontent__image"
-                src={this.props.imageSrc}
-                alt={this.props.imageAlt}
-              />
-            </div>
-          </AlignContainer>
-        </SpacingContainer>
+        <div className="servicecontent__wrapper">
+          <SpacingContainer mh>
+            <AlignContainer hc vc>
+              <div className="servicecontent__imagewrapper">
+                <img
+                  className="servicecontent__image"
+                  src={this.props.imageSrc}
+                  alt={this.props.imageAlt}
+                />
+              </div>
+            </AlignContainer>
+          </SpacingContainer>
+        </div>
         <div className="servicecontent__text">
           <div className="servicecontent__paragraph">
             <SpacingContainer mh>
