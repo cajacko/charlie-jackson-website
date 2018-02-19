@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import icons from './icons';
+import icons from '../../constants/icons';
 import './Icons.css';
 
 class Icon extends PureComponent {
