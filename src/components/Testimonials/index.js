@@ -36,7 +36,7 @@ class Testimonials extends PureComponent {
 
     return (
       <ContentSpotlight title="Some may say">
-        <div className="testimonials">
+        <div>
           <Testimonial
             quote={quote}
             image={image}
