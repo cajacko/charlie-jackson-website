@@ -1,6 +1,6 @@
 class ContactApi {
   static submit(email, message) {
-    const FORMSPREE_ID = 'xdgeqelm';
+    const FORMSPREE_ID = 'mywjzzgm';
     const url = `https://formspree.io/${FORMSPREE_ID}`;
 
     return new Promise((resolve, reject) => {

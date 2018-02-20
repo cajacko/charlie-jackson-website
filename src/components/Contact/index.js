@@ -29,7 +29,7 @@ class Contact extends PureComponent {
 
     Promise.all([
       ContactApi.submit(email, message),
-      new Promise(resolve => setTimeout(resolve, 2000)),
+      new Promise(resolve => setTimeout(resolve, 1000)),
     ])
       .then(() => {
         if (fetchId !== this.state.fetchId) return;
