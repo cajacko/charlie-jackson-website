@@ -29,11 +29,9 @@ class SocialIcon extends PureComponent {
             : 'socialicon__wrapper--color'
         }`}
       >
-        <SpacingContainer pr pl>
-          <AlignContainer vc>
+          <AlignContainer vc hc>
             <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />
           </AlignContainer>
-        </SpacingContainer>
       </div>
     );
 

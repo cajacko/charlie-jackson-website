@@ -1,6 +1,7 @@
-.spacingcontainer {
-  display: flex;
-  flex: 1;
+.spacingcontainer::after {
+  display: block;
+  content: '';
+  clear: both;
 }
 
 .spacingcontainer--mr {

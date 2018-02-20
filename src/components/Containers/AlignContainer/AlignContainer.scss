@@ -1,12 +1,20 @@
 .aligncontainer {
-  display: flex;
-  flex: 1;
+  // display: flex;
+  // flex: 1;
 }
 
 .aligncontainer--hc {
-  justify-content: center;
+  // justify-content: center;
 }
 
 .aligncontainer--vc {
   align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.aligncontainer--hc,
+.aligncontainer--vc {
+  justify-content: center;
 }
