@@ -19,6 +19,18 @@
   }
 }
 
+.socialicon__wrapper--large {
+  height: 50px;
+  width: 95px;
+}
+
+@media (max-width: 500px) {
+  .socialicon__wrapper--large {
+    height: 40px;
+    width: 72px;
+  }
+}
+
 .socialicon__wrapper--light path {
   fill: $white;
   opacity: 0.5;

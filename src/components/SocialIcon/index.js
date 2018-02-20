@@ -19,15 +19,21 @@ class SocialIcon extends PureComponent {
   }
 
   render() {
+    let classes = `socialicon__wrapper socialicon__wrapper--${this.props.icon}`;
+
+    if (this.props.light) {
+      classes += ' socialicon__wrapper--light';
+    } else {
+      classes += ' socialicon__wrapper--color';
+    }
+
+    if (this.props.size === 'LARGE') {
+      classes += ' socialicon__wrapper--large';
+    }
+
     const content = (
       <div
-        className={`socialicon__wrapper socialicon__wrapper--${
-          this.props.icon
-        } ${
-          this.props.light
-            ? 'socialicon__wrapper--light'
-            : 'socialicon__wrapper--color'
-        }`}
+        className={classes}
       >
           <AlignContainer vc hc>
             <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />

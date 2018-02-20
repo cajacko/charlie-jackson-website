@@ -1,43 +1,37 @@
 @import '../../constants/colors.scss';
 
-.skills {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.skills__columns {
-  display: flex;
-}
-
-@media (max-width: 900px) {
-  .skills__columns {
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-  }
+.skills__columns::after {
+  display: block;
+  content: '';
+  clear: both;
 }
 
 .skills__column {
-  flex: 1;
-  display: flex;
+  width: 50%;
+}
+
+.skills__column--text {
+  float: left;
+}
+
+.skills__column--table {
+  float: right;
 }
 
 @media (max-width: 900px) {
   .skills__column {
-    flex: none;
+    // flex: none;
     max-width: 600px;
     width: 100%;
+    margin: 0 auto;
+    float: none;
   }
 }
 
-.skills__column--table {
-  margin-top: 30px;
-}
-
-.skills__columnwrapper {
-  display: flex;
-  flex: 1;
+@media (max-width: 900px) {
+  .skills__column--table {
+    margin-top: 30px;
+  }
 }
 
 .skills__columnwrapper--text {
@@ -53,13 +47,6 @@
     margin-left: 0;
     margin-right: 0;
   }
-}
-
-.skills__content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .skills__table {
