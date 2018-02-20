@@ -20,6 +20,11 @@ class Button extends PureComponent {
 
     if (this.props.hasText) classes += ' button--hasText';
     if (this.props.fill) classes += ' button--fill';
+    if (this.props.disabled) {
+      classes += ' button--disabled';
+    } else {
+      classes += ' button--notDisabled';
+    }
 
     switch (this.props.theme) {
       case 'LIGHT':
@@ -39,7 +44,7 @@ class Button extends PureComponent {
     }
 
     return (
-      <button className={classes} onClick={this.onClick}>
+      <button className={classes} onClick={this.onClick} disabled={!!this.props.disabled}>
         {this.props.children}
       </button>
     );
