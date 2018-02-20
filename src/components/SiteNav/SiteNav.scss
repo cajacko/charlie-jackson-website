@@ -5,19 +5,31 @@
 }
 
 .sitenav__wrapper {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
+  float: right;
+}
+
+.sitenav__wrapper::after {
+  display: block;
+  content: '';
+  clear: both;
 }
 
 @media (max-width: 650px) {
   .sitenav__wrapper {
+    float: none;
+    display: flex;
+    flex: 1;
     justify-content: center;
   }
 }
 
+.sitenav__icons {
+  float: left;
+}
+
 .sitenav__contact {
   display: none;
+  float: right;
 }
 
 @media (min-width: 800px) {

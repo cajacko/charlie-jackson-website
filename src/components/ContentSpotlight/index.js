@@ -46,8 +46,8 @@ class ContentSpotlight extends PureComponent {
             />
             <SpacingContainer
               ph
-              mb2={!contentHalfBottomMargin}
-              mb={contentHalfBottomMargin}
+              pb2={!contentHalfBottomMargin}
+              pb={contentHalfBottomMargin}
             >
               {this.props.children}
             </SpacingContainer>

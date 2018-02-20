@@ -14,7 +14,7 @@ class Skills extends PureComponent {
       <ContentSpotlight title="Me and my skills" theme="LIGHT">
         <div className="skills">
           <div className="skills__columns">
-            <div className="skills__column">
+            <div className="skills__column skills__column--text">
               <div className="skills__columnwrapper skills__columnwrapper--text">
                 <div className="skills__content">
                   <Paragraph noSpacing>

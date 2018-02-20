@@ -11,18 +11,11 @@ class ServiceContent extends Component {
       <div className="servicecontent">
         <div className="servicecontent__wrapper">
           <SpacingContainer mh>
-            <AlignContainer hc vc>
-              <div className="servicecontent__imagewrapper">
-                <img
-                  className="servicecontent__image"
-                  src={this.props.imageSrc}
-                  alt={this.props.imageAlt}
-                />
-              </div>
-            </AlignContainer>
+              <div className="servicecontent__imagewrapper" style={{ backgroundImage: `url('${this.props.imageSrc}')`}} />
           </SpacingContainer>
         </div>
         <div className="servicecontent__text">
+          <AlignContainer vc>
           <div className="servicecontent__paragraph">
             <SpacingContainer mh>
               <Paragraph noSpacing>
@@ -30,6 +23,7 @@ class ServiceContent extends Component {
               </Paragraph>
             </SpacingContainer>
           </div>
+          </AlignContainer>
         </div>
       </div>
     );

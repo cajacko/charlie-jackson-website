@@ -1,18 +1,19 @@
 .hero {
-  min-height: 440px;
+  height: 440px;
   display: flex;
 }
 
 .hero__content {
-  display: flex;
-  flex: 1;
   position: relative;
-  flex-direction: column;
+}
+
+.hero__wrapper {
+  width: 100%;
 }
 
 @media (min-width: 700px) {
-  .hero__content {
-    justify-content: center;
+  .hero {
+    align-items: center;
   }
 }
 

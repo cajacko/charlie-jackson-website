@@ -7,6 +7,7 @@ import SectionHeading from '../SectionHeading';
 import IconSliderNav from '../Slider/IconSliderNav';
 import ServiceContent from '../ServiceContent';
 import SpacingContainer from '../Containers/SpacingContainer';
+import AlignContainer from '../Containers/AlignContainer';
 
 class Services extends Component {
   state = {
@@ -40,7 +41,6 @@ class Services extends Component {
       <section>
         <header className="services__header">
           <ContentContainer>
-            <div className="services__headerwrap">
               <div>
                 <SectionHeading text="I can build" />
               </div>
@@ -49,7 +49,6 @@ class Services extends Component {
                 active={label}
                 onChange={this.changeActiveItem}
               />
-            </div>
           </ContentContainer>
         </header>
         <SpacingContainer mv2>
@@ -58,9 +57,9 @@ class Services extends Component {
           </ContentContainer>
         </SpacingContainer>
         <SpacingContainer mv2 mh>
-          <footer className="services__footer">
+          <AlignContainer hc>
             <ContactButton />
-          </footer>
+          </AlignContainer>
         </SpacingContainer>
       </section>
     );

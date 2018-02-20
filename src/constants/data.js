@@ -145,13 +145,6 @@ export const testimonials = [
     imageAlt: 'Sami Bouremoum',
     name: 'Sami Bouremoum',
   },
-  {
-    quote:
-      'Charlie is awesome! I\'ve known him his whole life and he\' a stand up guy. There doesn\'t seem to be anything he can\'t build and make better. Although I may be biased.',
-    image: require('../assets/charlie-jackson.jpg'),
-    imageAlt: 'Pic of Charlie Jackson',
-    name: 'Charlie Jackson',
-  },
 ];
 
 export const socialIcons = [
