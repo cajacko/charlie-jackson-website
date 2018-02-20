@@ -4,8 +4,15 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/*",
+        "destination": "https://firebase.google.com",
+        "type": 302
       }
     ]
   }

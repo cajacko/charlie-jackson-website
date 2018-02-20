@@ -15,11 +15,11 @@
     "build": "npm-run-all build:css build:js",
     "build:css": "node-sass-chokidar src/ -o src/",
     "watch:css": "npm run build:css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "login": "firebase login",
-    "deploy:live": "node scripts/setBuildTarget --live && yarn run build && firebase deploy",
-    "deploy:dev": "node scripts/setBuildTarget --dev && yarn run build && firebase deploy"
+    "deploy:live": "firebase use prod && yarn run build && firebase deploy",
+    "deploy:dev": "firebase use dev && yarn run build && firebase deploy",
+    "serve": "yarn run build && firebase use dev && firebase serve"
   },
   "devDependencies": {
     "firebase-tools": "^3.17.4",
