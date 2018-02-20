@@ -21,8 +21,8 @@
   outline: none;
 }
 
-.button:hover,
-.button:focus {
+.button--notDisabled.button:hover,
+.button--notDisabled.button:focus {
   transform: scale(1.05);
 }
 
@@ -44,17 +44,22 @@
   color: $white;
 }
 
-.button--hasText:hover,
-.button--hasText:focus {
+.button--notDisabled.button--hasText:hover,
+.button--notDisabled.button--hasText:focus {
   text-decoration: underline;
   color: $white;
   border-color: $white;
   background-color: $bondiBlue;
 }
 
-.button--light.button--hasText:hover,
-.button--light.button--hasText:focus {
+.button--notDisabled.button--light.button--hasText:hover,
+.button--notDisabled.button--light.button--hasText:focus {
   color: $tePapaGreen;
   border-color: $tePapaGreen;
   background-color: $white;
+}
+
+.button--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

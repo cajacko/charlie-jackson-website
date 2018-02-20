@@ -11,6 +11,7 @@ class TextButton extends PureComponent {
         href={this.props.href}
         hasText
         theme={this.props.theme}
+        disabled={!!this.props.disabled}
       >
         <Text text={this.props.text} />
       </Button>

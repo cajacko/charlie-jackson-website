@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 import Button from '../Buttons/Button';
 import Icon from '../Icon';
-import SpacingContainer from '../Containers/SpacingContainer';
 import AlignContainer from '../Containers/AlignContainer';
 import './SocialIcon.css';
 

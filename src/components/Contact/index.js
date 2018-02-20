@@ -8,10 +8,52 @@ import Textarea from '../Forms/Textarea';
 import SpacingContainer from '../Containers/SpacingContainer';
 import Form from '../Forms/Form';
 import ContactApi from '../../modules/ContactApi';
+import Loading from '../Loading';
+import Button from '../Buttons/Button';
+import Text from '../Text';
 
 class Contact extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = { state: 'INIT', message: null, fetchId: 0 };
+
+    this.onSubmit = this.onSubmit.bind(this);
+    this.cancel = this.cancel.bind(this);
+  }
+
   onSubmit({ email, message }) {
-    ContactApi.submit(email, message);
+    const fetchId = this.state.fetchId + 1;
+
+    this.setState({ state: 'REQUESTED', fetchId, message: null });
+
+    Promise.all([
+      ContactApi.submit(email, message),
+      new Promise(resolve => setTimeout(resolve, 2000)),
+    ])
+      .then(() => {
+        if (fetchId !== this.state.fetchId) return;
+
+        this.setState({ state: 'SUCCESS', message: 'Successfully submitted your message. I\'ll get back to you soon :)' });
+      })
+      .catch(e => {
+        if (fetchId !== this.state.fetchId) return;
+
+        const message =
+          (e && e.message) ||
+          'Could not submit your message, please try again or email me at contact@charliejackson.com';
+
+        this.setState({
+          state: 'FAILED',
+          message: `${message} Email me instead at contact@charliejackson.com`,
+        });
+      });
+  }
+
+  cancel() {
+    const fetchId = this.state.fetchId + 1;
+
+    this.setState({ state: 'INIT', message: null, fetchId });
   }
 
   render() {
@@ -42,7 +84,46 @@ class Contact extends PureComponent {
                   />
 
                   <SpacingContainer mv2>
-                    <TextButton text="Submit" theme="LIGHT" action={submit} />
+                    <div className="contact__footer">
+                      <div className="contact__footerwrapper">
+                        <TextButton
+                          text={
+                            this.state.state === 'REQUESTED'
+                              ? 'Submitting'
+                              : 'Submit'
+                          }
+                          theme="LIGHT"
+                          action={submit}
+                          disabled={this.state.state === 'REQUESTED'}
+                        />
+                        {this.state.state === 'REQUESTED' && (
+                          <div className="contact__status">
+                            <div className="contact__loading">
+                              <Loading theme="DARK" />
+                            </div>
+                            <div className="contact__cancel">
+                              <Button action={this.cancel}>
+                                <Text text="Cancel" color="WHITE" underline />
+                              </Button>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {this.state.message && (
+                      <div className="contact__message">
+                        {this.state.state === 'FAILED' ? (
+                          <div className="contact__messagetext contact__messagetext--failed">
+                            <Text text={this.state.message} />
+                          </div>
+                        ) : (
+                          <div className="contact__messagetext">
+                            <Text text={this.state.message} />
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </SpacingContainer>
                 </div>
               )}
