@@ -1,23 +1,18 @@
 {
   "hosting": {
-    "public": "dist",
-    "cleanUrls": true,
-    "ignore": ["dist/assets/scripts/manifest.json"],
+    "public": "build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
       }
     ],
-    "headers": [
+    "redirects": [
       {
-        "source" : "**/*.@(js|map|css)",
-        "headers" : [
-          {
-            "key" : "Cache-Control",
-            "value" : "max-age=31536000"
-          }
-        ]
+        "source": "/:location",
+        "destination": "https://projects.charliejackson.com/:location",
+        "type": 302
       }
     ]
   }

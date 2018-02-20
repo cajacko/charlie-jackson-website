@@ -1,0 +1,48 @@
+@import '../../constants/colors.scss';
+
+.text {
+  font-size: 16px;
+  font-family: helvetica, sans-serif;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: inherit;
+  line-height: inherit;
+}
+
+@media (max-width: 550px) {
+  .text--reduceWithWidth {
+    font-size: 12px;
+  }
+}
+
+.text--xxl {
+  font-size: 30px;
+}
+
+.text--xl {
+  font-size: 24px;
+}
+
+.text--l {
+  font-size: 20px;
+}
+
+.text--sm {
+  font-size: 12px;
+}
+
+.text--blue {
+  color: $bondiBlue;
+}
+
+.text--white {
+  color: $white;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+.text--underline {
+  text-decoration: underline;
+}

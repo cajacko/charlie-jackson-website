@@ -1,0 +1,39 @@
+@import '../../constants/colors.scss';
+
+.sitenav {
+  background-color: transparentize($black, 0.6);
+}
+
+.sitenav__wrapper {
+  float: right;
+}
+
+.sitenav__wrapper::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+@media (max-width: 650px) {
+  .sitenav__wrapper {
+    float: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.sitenav__icons {
+  float: left;
+}
+
+.sitenav__contact {
+  display: none;
+  float: right;
+}
+
+@media (min-width: 800px) {
+  .sitenav__contact {
+    display: block;
+  }
+}

@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "charlie-jackson-projects",
-    "prod": "charlie-jackson-projects"
+    "dev": "charlie-jackson-website-dev",
+    "prod": "charlie-jackson-website"
   }
 }

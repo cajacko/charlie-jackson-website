@@ -1,7 +1,0 @@
-{
-  "include": [
-    "./src/**/*.{js,jsx}",
-    "!./src/store/configureStore.js",
-    "!**/*.test.{js,jsx}"
-  ]
-}

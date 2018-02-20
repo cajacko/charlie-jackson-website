@@ -1,0 +1,39 @@
+.work {
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work__imagewrapper {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  opacity: 0.5;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+@media (max-width: 700px) {
+  .work__imagewrapper {
+    width: 160px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .work__imagewrapper {
+    width: 120px;
+    height: 80px;
+  }
+}
+
+.work__imagewrapper:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.work__image {
+  max-width: 100%;
+  max-height: 100%;
+}
