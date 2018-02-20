@@ -16,7 +16,7 @@ class Work extends PureComponent {
         <div className="work">
           {companies.map(({ image, imageAlt }) => (
             <div key={imageAlt} className="work__imagewrapper">
-              <SpacingContainer mv mh>
+              <SpacingContainer mv mh flex>
                 <Img contain src={image} alt={imageAlt} />
               </SpacingContainer>
             </div>

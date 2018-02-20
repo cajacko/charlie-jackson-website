@@ -4,6 +4,11 @@
   clear: both;
 }
 
+.spacingcontainer--flex {
+  display: flex;
+  flex: 1;
+}
+
 .spacingcontainer--mr {
   margin-right: 16px;
 }
