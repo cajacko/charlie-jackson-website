@@ -81,7 +81,7 @@ export const services = [
 ];
 
 export const about =
-  'I\'m a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent testing, SEO, performance and maintanability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing, I\'m building my own tech products, doing improv comedy or drawing pretty pictures. I live in London, UK.';
+  'I\'m a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent testing, SEO, performance and maintainability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing, I\'m building my own tech products, doing improv comedy or drawing pretty pictures. I live in London, UK.';
 
 export const skills = [
   {
