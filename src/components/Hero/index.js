@@ -9,6 +9,7 @@ class Hero extends PureComponent {
   render() {
     return (
       <div className="hero">
+        <div className="hero__wrapper">
         <ContentContainer ph pv>
           <div className="hero__content">
             <div>
@@ -36,6 +37,7 @@ class Hero extends PureComponent {
             </div>
           </div>
         </ContentContainer>
+        </div>
       </div>
     );
   }
