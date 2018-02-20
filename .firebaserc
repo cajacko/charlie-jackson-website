@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "charlie-jackson-projects"
+    "default": "charlie-jackson-projects",
+    "prod": "charlie-jackson-projects"
   }
 }
