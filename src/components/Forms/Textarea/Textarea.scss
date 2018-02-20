@@ -12,6 +12,7 @@
   font-size: 16px;
   width: 100%;
   box-sizing: border-box;
+  font-family: helvetica, sans-serif;
 }
 
 .textarea:hover,
@@ -27,21 +28,25 @@
 .textarea::-webkit-input-placeholder {
   /* Chrome */
   color: $white;
+  font-family: helvetica, sans-serif;
 }
 
 .textarea:-ms-input-placeholder {
   /* IE 10+ */
   color: $white;
+  font-family: helvetica, sans-serif;
 }
 
 .textarea::-moz-placeholder {
   /* Firefox 19+ */
   color: $white;
   opacity: 1;
+  font-family: helvetica, sans-serif;
 }
 
 .textarea:-moz-placeholder {
   /* Firefox 4 - 18 */
   color: $white;
   opacity: 1;
+  font-family: helvetica, sans-serif;
 }
