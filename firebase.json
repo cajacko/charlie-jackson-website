@@ -10,8 +10,8 @@
     ],
     "redirects": [
       {
-        "source": "/*",
-        "destination": "https://firebase.google.com",
+        "source": "/:location",
+        "destination": "https://projects.charliejackson.com/:location",
         "type": 302
       }
     ]
