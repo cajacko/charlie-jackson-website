@@ -41,8 +41,7 @@ export const services = [
   {
     label: 'Websites',
     icon: 'website',
-    text:
-      `Since 2012 I have been building websites for both large companies like Freeview and smaller startups; with experience building social media sites, e-commerce, brochureware and complex webapps.`,
+    text: `Since 2012 I have been building websites for both large companies like Freeview and smaller startups, with experience building social media sites, e-commerce, brochureware and complex webapps.`,
     image: require('../assets/macbook.png'),
     imageAlt: 'Website',
   },
@@ -58,7 +57,7 @@ export const services = [
     label: 'Desktop Apps',
     icon: 'desktop',
     text:
-      'Mac, Windows, Linux? I can build your next app on all of these platforms. I\'ve made everything from utility apps to complex photo manipulation products.',
+      "Mac, Windows, Linux? I can build your next app on all of these platforms. I've made everything from utility apps to complex photo manipulation products.",
     image: require('../assets/desktop.png'),
     imageAlt: 'Desktop Apps',
   },
@@ -66,7 +65,7 @@ export const services = [
     label: 'Startups',
     icon: 'startup',
     text:
-      'From crowdfunding campaigns to technical strategy, I can help take your startup to the next level. Having ran my own tech startup for four years, and been in and out of others every since.',
+      'From crowdfunding campaigns to technical strategy, I can help take your startup to the next level. Having run my own tech startup for four years, and been in and out of others ever since.',
     image: require('../assets/startup.png'),
     imageAlt: 'Startup',
   },
@@ -74,14 +73,13 @@ export const services = [
     label: 'Bespoke Solutions',
     icon: 'iot',
     text:
-      'Need to automate social media, building an IoT device or maybe an integration with your Google services. I can identify and build a solution to your problems, let\'s talk.',
+      "Need to automate social media, build an IoT device or maybe an integration with your Google services? I can identify and build a solution to your problems, let's talk.",
     image: require('../assets/bespoke.png'),
     imageAlt: 'Bespoke',
   },
 ];
 
-export const about =
-  'I\'m a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent testing, SEO, performance and maintainability. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I\'ve worked in big web agencies and smaller startups since 2012. When I\'m not freelancing, I\'m building my own tech products, doing improv comedy or drawing pretty pictures. I live in London, UK.';
+export const about = `I'm a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent performance, simple maintainability, strong SEO and great testing. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I've worked in big web agencies and smaller startups since 2012. When I'm not working, I'm building my own tech products, doing improv comedy or sketching whatever captures my attention. I'm based in London, UK and available for remote work.`;
 
 export const skills = [
   {
@@ -120,8 +118,7 @@ export const skills = [
 
 export const testimonials = [
   {
-    quote:
-      'Great guy with a serious drive for development!',
+    quote: 'Great guy with a serious drive for development!',
     image: require('../assets/john-hopley.jpg'),
     imageAlt: 'John Hopley',
     name: 'John Hopley',
@@ -134,13 +131,15 @@ export const testimonials = [
     name: 'Phil Wakefield',
   },
   {
-    quote: 'Charlie is a dedicated and talented front end developer. During the time we worked together he was constantly improving his skillset and bringing those improvements to the team and projects he worked on.',
+    quote:
+      'Charlie is a dedicated and talented front end developer. During the time we worked together he was constantly improving his skillset and bringing those improvements to the team and projects he worked on.',
     image: require('../assets/cameron-wortlehock.jpg'),
     imageAlt: 'Cameron Wortlehock',
     name: 'Cameron Wortlehock',
   },
   {
-    quote: 'Charlie\'s attitude is a "can do" attitude and he always delivers on time.',
+    quote:
+      'Charlie\'s attitude is a "can do" attitude and he always delivers on time.',
     image: require('../assets/sami-bouremoum.jpg'),
     imageAlt: 'Sami Bouremoum',
     name: 'Sami Bouremoum',
