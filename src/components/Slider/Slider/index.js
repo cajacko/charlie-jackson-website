@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import './Slider.css';
 
 class Slider extends PureComponent {
   state = {
@@ -25,15 +26,29 @@ class Slider extends PureComponent {
     );
 
     return (
-      <div>
+      <div className="slider">
         {!this.props.bottom && nav}
 
-        <div>
-          {this.props.slides.map((slideContent, i) => (
-            <div key={(slideContent && slideContent.key) || i}>
-              {this.props.slide(slideContent, this.state.displayedIndex)}
-            </div>
-          ))}
+        <div className="slider__slides">
+          <div
+            className="slider__slideswrapper"
+            style={{
+              width: `${this.props.slides.length * 100}%`,
+              marginLeft: `-${this.state.displayedIndex * 100}%`,
+            }}
+          >
+            {this.props.slides.map((slideContent, i) => (
+              <div
+                key={(slideContent && slideContent.key) || i}
+                className="slider__slide"
+                style={{
+                  width: `${Math.floor(100 / this.props.slides.length)}%`,
+                }}
+              >
+                {this.props.slide(slideContent, this.state.displayedIndex)}
+              </div>
+            ))}
+          </div>
         </div>
 
         {this.props.bottom && nav}
