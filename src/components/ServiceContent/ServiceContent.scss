@@ -1,3 +1,5 @@
+@import '../../constants/spacing.scss';
+
 .servicecontent::after {
   display: block;
   content: '';
@@ -12,7 +14,7 @@
 @media (max-width: 600px) {
   .servicecontent__wrapper {
     float: none;
-    margin-bottom: 30px;
+    margin-bottom: $spacingFull;
     width: auto;
   }
 }

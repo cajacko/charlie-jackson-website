@@ -1,3 +1,5 @@
+@import '../../../constants/spacing.scss';
+
 .spacingcontainer::after {
   display: block;
   content: '';
@@ -10,57 +12,57 @@
 }
 
 .spacingcontainer--mr {
-  margin-right: 16px;
+  margin-right: $spacingHalf;
 }
 
 .spacingcontainer--mr2 {
-  margin-right: 32px;
+  margin-right: $spacingFull;
 }
 
 .spacingcontainer--mt {
-  margin-top: 16px;
+  margin-top: $spacingHalf;
 }
 
 .spacingcontainer--mt2 {
-  margin-top: 32px;
+  margin-top: $spacingFull;
 }
 
 .spacingcontainer--ml {
-  margin-left: 16px;
+  margin-left: $spacingHalf;
 }
 
 .spacingcontainer--ml2 {
-  margin-left: 32px;
+  margin-left: $spacingFull;
 }
 
 .spacingcontainer--mb {
-  margin-bottom: 16px;
+  margin-bottom: $spacingHalf;
 }
 
 .spacingcontainer--mb2 {
-  margin-bottom: 32px;
+  margin-bottom: $spacingFull;
 }
 
 .spacingcontainer--pr {
-  padding-right: 16px;
+  padding-right: $spacingHalf;
 }
 
 .spacingcontainer--pt {
-  padding-top: 16px;
+  padding-top: $spacingHalf;
 }
 
 .spacingcontainer--pt2 {
-  padding-top: 32px;
+  padding-top: $spacingFull;
 }
 
 .spacingcontainer--pl {
-  padding-left: 16px;
+  padding-left: $spacingHalf;
 }
 
 .spacingcontainer--pb {
-  padding-bottom: 16px;
+  padding-bottom: $spacingHalf;
 }
 
 .spacingcontainer--pb2 {
-  padding-bottom: 32px;
+  padding-bottom: $spacingFull;
 }
