@@ -8,14 +8,14 @@ class DotSliderNav extends Component {
     return (
       <nav className="dotslidernav">
         <HorizontalList
-          list={this.props.content.map(({ name }) => ({
+          list={this.props.content.map(({ name }, i) => ({
             key: name,
             component: (
               <div className="dotslidernav__item">
-                <Button fill action={() => this.props.onChange(name)}>
+                <Button fill action={() => this.props.onChange(i)}>
                   <div
                     className={`dotslidernav__control ${
-                      name === this.props.active
+                      i === this.props.active
                         ? 'dotslidernav__control--active'
                         : ''
                     }`}
