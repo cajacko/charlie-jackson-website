@@ -9,7 +9,7 @@ class IconSliderNav extends Component {
       <nav className="iconslidernav">
         <HorizontalList
           stretch
-          list={this.props.services.map(({ label, icon }) => ({
+          list={this.props.items.map(({ label, icon }) => ({
             key: label,
             component: (
               <IconSliderNavItem
