@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import HorizontalList from '../../Lists/HorizontalList';
 import './DotSliderNav.css';
-import Button from '../../Buttons/Button';
+import ActiveFocusButton from '../../Buttons/ActiveFocusButton';
 
 class DotSliderNav extends Component {
   render() {
     return (
       <nav className="dotslidernav">
         <HorizontalList
-          list={this.props.content.map(({ name }) => ({
+          list={this.props.content.map(({ name }, i) => ({
             key: name,
             component: (
               <div className="dotslidernav__item">
-                <Button fill action={() => this.props.onChange(name)}>
+                <ActiveFocusButton
+                  active={i === this.props.active}
+                  fill
+                  action={() => this.props.onChange(i)}
+                >
                   <div
                     className={`dotslidernav__control ${
-                      name === this.props.active
+                      i === this.props.active
                         ? 'dotslidernav__control--active'
                         : ''
                     }`}
                   />
-                </Button>
+                </ActiveFocusButton>
               </div>
             ),
           }))}

@@ -9,14 +9,14 @@ class IconSliderNav extends Component {
       <nav className="iconslidernav">
         <HorizontalList
           stretch
-          list={this.props.services.map(({ label, icon }) => ({
+          list={this.props.items.map(({ label, icon }, i) => ({
             key: label,
             component: (
               <IconSliderNavItem
                 label={label}
                 icon={icon}
-                active={this.props.active === label}
-                action={() => this.props.onChange(label)}
+                active={this.props.active === i}
+                action={() => this.props.onChange(i)}
               />
             ),
           }))}
