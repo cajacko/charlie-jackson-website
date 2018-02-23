@@ -44,7 +44,7 @@ class Services extends Component {
             </div>
           )}
         />
-        <SpacingContainer mv2 mh>
+        <SpacingContainer mb2 mh>
           <AlignContainer hc>
             <ContactButton />
           </AlignContainer>
