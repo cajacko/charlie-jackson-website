@@ -35,6 +35,10 @@ class Button extends PureComponent {
         break;
     }
 
+    if (this.props.showAsDiv) {
+      return <div className={classes}>{this.props.children}</div>;
+    }
+
     if (this.props.href) {
       return (
         <a className={classes} href={this.props.href} target="_blank">
@@ -44,7 +48,11 @@ class Button extends PureComponent {
     }
 
     return (
-      <button className={classes} onClick={this.onClick} disabled={!!this.props.disabled}>
+      <button
+        className={classes}
+        onClick={this.onClick}
+        disabled={!!this.props.disabled}
+      >
         {this.props.children}
       </button>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HorizontalList from '../../Lists/HorizontalList';
 import './DotSliderNav.css';
-import Button from '../../Buttons/Button';
+import ActiveFocusButton from '../../Buttons/ActiveFocusButton';
 
 class DotSliderNav extends Component {
   render() {
@@ -12,7 +12,11 @@ class DotSliderNav extends Component {
             key: name,
             component: (
               <div className="dotslidernav__item">
-                <Button fill action={() => this.props.onChange(i)}>
+                <ActiveFocusButton
+                  active={i === this.props.active}
+                  fill
+                  action={() => this.props.onChange(i)}
+                >
                   <div
                     className={`dotslidernav__control ${
                       i === this.props.active
@@ -20,7 +24,7 @@ class DotSliderNav extends Component {
                         : ''
                     }`}
                   />
-                </Button>
+                </ActiveFocusButton>
               </div>
             ),
           }))}
