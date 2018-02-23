@@ -30,18 +30,13 @@ class Services extends Component {
               </ContentContainer>
             </header>
           )}
-          slide={({ image, imageAlt, text }) => (
-            <div className="services__slide">
-              <SpacingContainer pv2>
-                <ContentContainer>
-                  <ServiceContent
-                    imageSrc={image}
-                    imageAlt={imageAlt}
-                    text={text}
-                  />
-                </ContentContainer>
-              </SpacingContainer>
-            </div>
+          slide={({ image, imageAlt, text }, index, height) => (
+            <ServiceContent
+              imageSrc={image}
+              imageAlt={imageAlt}
+              text={text}
+              height={height}
+            />
           )}
         />
         <SpacingContainer mb2 mh>
