@@ -15,7 +15,7 @@ const supportedProps = [
   'pl',
   'pr',
   'pt2',
-  'pb2'
+  'pb2',
 ];
 
 class SpacingContainer extends PureComponent {
@@ -52,7 +52,7 @@ class SpacingContainer extends PureComponent {
       props.mr2 = true;
     }
 
-    if (props.pt2) {
+    if (props.pv2) {
       props.pt2 = true;
       props.pb2 = true;
     }
@@ -65,7 +65,7 @@ class SpacingContainer extends PureComponent {
     let classes = 'spacingcontainer';
 
     if (this.props.flex) {
-      classes += ' spacingcontainer--flex'
+      classes += ' spacingcontainer--flex';
     }
 
     supportedProps.forEach(prop => {
