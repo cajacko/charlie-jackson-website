@@ -31,15 +31,17 @@ class Services extends Component {
             </header>
           )}
           slide={({ image, imageAlt, text }) => (
-            <SpacingContainer pv2>
-              <ContentContainer>
-                <ServiceContent
-                  imageSrc={image}
-                  imageAlt={imageAlt}
-                  text={text}
-                />
-              </ContentContainer>
-            </SpacingContainer>
+            <div className="services__slide">
+              <SpacingContainer pv2>
+                <ContentContainer>
+                  <ServiceContent
+                    imageSrc={image}
+                    imageAlt={imageAlt}
+                    text={text}
+                  />
+                </ContentContainer>
+              </SpacingContainer>
+            </div>
           )}
         />
         <SpacingContainer mv2 mh>
