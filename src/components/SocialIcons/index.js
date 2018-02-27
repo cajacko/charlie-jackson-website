@@ -10,10 +10,8 @@ class SocialIcons extends PureComponent {
     return (
       <HorizontalList
         list={icons
-          .filter(
-            ({ isContact }) =>
-              !isContact || (isContact && this.props.includeContact),
-          )
+          .filter(({ isContact }) =>
+              !isContact || (isContact && this.props.includeContact))
           .map(({ icon, url, isContact }, i) => ({
             key: icon,
             component: (

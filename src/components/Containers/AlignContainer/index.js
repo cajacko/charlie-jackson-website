@@ -7,7 +7,7 @@ class AlignContainer extends PureComponent {
   render() {
     let classes = 'aligncontainer';
 
-    supportedProps.forEach(prop => {
+    supportedProps.forEach((prop) => {
       if (this.props[prop]) classes += ` aligncontainer--${prop}`;
     });
 

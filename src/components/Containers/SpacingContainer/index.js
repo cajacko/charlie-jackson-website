@@ -68,7 +68,7 @@ class SpacingContainer extends PureComponent {
       classes += ' spacingcontainer--flex';
     }
 
-    supportedProps.forEach(prop => {
+    supportedProps.forEach((prop) => {
       if (props[prop]) classes += ` spacingcontainer--${prop}`;
     });
 

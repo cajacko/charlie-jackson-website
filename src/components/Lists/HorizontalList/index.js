@@ -16,7 +16,11 @@ class HorizontalList extends PureComponent {
     return (
       <ul className={classes}>
         {this.props.list.map(({ key, component }) => (
-          <li key={key} className="horizontallist__listitem" style={{ width: width && `${width}%`}}>
+          <li
+            key={key}
+            className="horizontallist__listitem"
+            style={{ width: width && `${width}%` }}
+          >
             {component}
           </li>
         ))}

@@ -11,7 +11,7 @@ class Icon extends PureComponent {
       return null;
     }
 
-    html = html.replace('<svg', `<svg class="icon__svg"`);
+    html = html.replace('<svg', '<svg class="icon__svg"');
 
     let classes = 'icon';
 

@@ -5,11 +5,7 @@ class ContactApi {
 
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        reject(
-          new Error(
-            'Submission timed out. Maybe your internet is slow? Or maybe I fucked up somewhere.',
-          ),
-        );
+        reject(new Error('Submission timed out. Maybe your internet is slow? Or maybe I fucked up somewhere.'));
       }, 10000);
 
       fetch(url, {
@@ -25,15 +21,13 @@ class ContactApi {
           if (!success) {
             console.error('Error with form response', response);
 
-            throw new Error(
-              error ||
-                'There was an error whilst submitting the message. Damn errors!',
-            );
+            throw new Error(error ||
+                'There was an error whilst submitting the message. Damn errors!');
           }
 
           resolve();
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error);
 
           reject(error);

@@ -11,7 +11,7 @@ class ContentSpotlight extends PureComponent {
     let headingHalfBottomSpacing = false;
     let contentHalfBottomMargin = false;
 
-    const setBackground = background => {
+    const setBackground = (background) => {
       if (!this.props.noBackground) classes += ` ${background}`;
     };
 

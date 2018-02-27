@@ -31,7 +31,7 @@ class Skills extends PureComponent {
                       {skills.map(({ label, ...skill }, i) => (
                         <tr
                           key={label}
-                          className={!!i ? 'skills__row--topborder' : ''}
+                          className={i ? 'skills__row--topborder' : ''}
                         >
                           <td className="skills__cell skills__cell--title">
                             <SpacingContainer mr2>
@@ -44,13 +44,13 @@ class Skills extends PureComponent {
                           </td>
                           <td className="skills__cell">
                             <SpacingContainer mr>
-                            <div>
-                              {skill.skills.map((skillItem, i) => (
-                                <span key={skillItem}>
-                                  {!!i && <Text text=", " fontSize="SMALL" />}
-                                  <Text text={skillItem} fontSize="SMALL" />
-                                </span>
-                              ))}
+                              <div>
+                                {skill.skills.map((skillItem, i) => (
+                                  <span key={skillItem}>
+                                    {!!i && <Text text=", " fontSize="SMALL" />}
+                                    <Text text={skillItem} fontSize="SMALL" />
+                                  </span>
+                                ))}
                               </div>
                             </SpacingContainer>
                           </td>

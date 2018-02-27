@@ -10,23 +10,23 @@ class SiteNav extends PureComponent {
   render() {
     return (
       <div className="sitenav">
-      <SpacingContainer pt pb>
-        <ContentContainer ph>
-          <div className="sitenav__wrapper">
-            <div className="sitenav__icons">
-            <SocialIcons light includeContact />
-            </div>
+        <SpacingContainer pt pb>
+          <ContentContainer ph>
+            <div className="sitenav__wrapper">
+              <div className="sitenav__icons">
+                <SocialIcons light includeContact />
+              </div>
 
-            <div className="sitenav__contact">
-              <SpacingContainer pl>
-                <AlignContainer vc>
-                  <ContactButton theme="LIGHT"/>
-                </AlignContainer>
-              </SpacingContainer>
+              <div className="sitenav__contact">
+                <SpacingContainer pl>
+                  <AlignContainer vc>
+                    <ContactButton theme="LIGHT" />
+                  </AlignContainer>
+                </SpacingContainer>
+              </div>
             </div>
-          </div>
-        </ContentContainer>
-      </SpacingContainer>
+          </ContentContainer>
+        </SpacingContainer>
       </div>
     );
   }

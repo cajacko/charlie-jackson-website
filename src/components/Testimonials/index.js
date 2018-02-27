@@ -18,14 +18,16 @@ class Testimonials extends PureComponent {
 
         <Slider
           slides={testimonials}
-          slide={({ quote, image, imageAlt, name }, index, height) => (
-            <Testimonial
-              quote={quote}
-              image={image}
-              name={name}
-              imageAlt={imageAlt}
-              height={height}
-            />
+          slide={({
+ quote, image, imageAlt, name,
+}, index, height) => (
+  <Testimonial
+    quote={quote}
+    image={image}
+    name={name}
+    imageAlt={imageAlt}
+    height={height}
+  />
           )}
           bottom
           nav={(index, onChange, items) => (

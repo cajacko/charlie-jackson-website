@@ -34,9 +34,13 @@ class Contact extends PureComponent {
       .then(() => {
         if (fetchId !== this.state.fetchId) return;
 
-        this.setState({ state: 'SUCCESS', message: 'Successfully submitted your message. I\'ll get back to you soon :)' });
+        this.setState({
+          state: 'SUCCESS',
+          message:
+            "Successfully submitted your message. I'll get back to you soon :)",
+        });
       })
-      .catch(e => {
+      .catch((e) => {
         if (fetchId !== this.state.fetchId) return;
 
         const message =

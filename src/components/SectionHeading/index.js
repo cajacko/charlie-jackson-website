@@ -12,14 +12,14 @@ class SectionHeading extends Component {
         pb={this.props.halfBottomSpacing}
         ph
       >
-          <h3 className="sectionheading">
-            <Text
-              fontSize="X_LARGE"
-              bold
-              text={this.props.text}
-              color={this.props.color}
-            />
-          </h3>
+        <h3 className="sectionheading">
+          <Text
+            fontSize="X_LARGE"
+            bold
+            text={this.props.text}
+            color={this.props.color}
+          />
+        </h3>
       </SpacingContainer>
     );
   }

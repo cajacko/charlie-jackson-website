@@ -31,12 +31,10 @@ class SocialIcon extends PureComponent {
     }
 
     const content = (
-      <div
-        className={classes}
-      >
-          <AlignContainer vc hc>
-            <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />
-          </AlignContainer>
+      <div className={classes}>
+        <AlignContainer vc hc>
+          <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />
+        </AlignContainer>
       </div>
     );
 
@@ -59,6 +57,5 @@ class SocialIcon extends PureComponent {
 SocialIcon.contextTypes = {
   showContactModal: PropTypes.func,
 };
-
 
 export default SocialIcon;

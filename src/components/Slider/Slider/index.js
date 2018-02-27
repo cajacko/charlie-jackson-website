@@ -56,10 +56,10 @@ class Slider extends PureComponent {
     const nav = this.props.nav(
       this.state.displayedIndex,
       this.changeActiveItem,
-      this.props.slides,
+      this.props.slides
     );
 
-    var settings = {
+    const settings = {
       dots: false,
       infinite: true,
       speed: 500,
@@ -87,7 +87,7 @@ class Slider extends PureComponent {
                 {this.props.slide(
                   slideContent,
                   this.state.displayedIndex,
-                  this.state.height,
+                  this.state.height
                 )}
               </div>
             ))}
