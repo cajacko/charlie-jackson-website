@@ -17,7 +17,8 @@
     "serve": "yarn run build && firebase use dev && firebase serve",
     "test:lint": "eslint --ext .js --ext .jsx src",
     "precommit": "lint-staged",
-    "prettify": "prettier-eslint --write 'src/**/*.{js,jsx}'"
+    "prettify": "prettier-eslint --write 'src/**/*.{js,jsx}'",
+    "flow": "flow"
   },
   "lint-staged": {
     "*.js": [
@@ -34,6 +35,7 @@
     ]
   },
   "dependencies": {
+    "babel-eslint": "^8.2.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -51,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "firebase-tools": "^3.17.4",
+    "flow-bin": "^0.66.0",
     "fs-extra": "^5.0.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",

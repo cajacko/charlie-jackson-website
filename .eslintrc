@@ -3,6 +3,10 @@
     "airbnb"
   ],
   "rules": {
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always"
+    ],
     "func-names": "off",
     "no-warning-comments": ["error", { location: "anywhere"}],
     "no-console": "off",
@@ -64,6 +68,7 @@
   },
   "plugins": [
     "jest",
+    "flowtype"
   ],
   "env": {
     "jest/globals": true
