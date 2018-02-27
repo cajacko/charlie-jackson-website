@@ -71,5 +71,6 @@
     "fetch": false,
     "document": false,
     "window": false,
+    "Image": false
   }
 }
