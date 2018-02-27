@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import SlickSlider from 'react-slick';
 import PropTypes from 'prop-types';

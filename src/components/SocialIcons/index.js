@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { socialIcons as icons } from '../../constants/data';

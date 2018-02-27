@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm-run-all -p watch:css start:js",
     "start:js": "react-scripts start",
-    "test": "yarn test:lint",
+    "test": "yarn test:lint && yarn flow",
     "build:js": "react-scripts build",
     "build": "npm-run-all build:css build:js",
     "build:css": "node-sass-chokidar src/ -o src/",

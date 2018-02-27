@@ -1,4 +1,6 @@
-/* eslint max-lines: 0 max-len: 0 */
+/* eslint global-require: 0 */
+/* eslint max-lines: 0 */
+/* eslint flowtype/require-valid-file-annotation: 0 */
 
 export default {
   instagram: `

@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import Testimonial from '../Testimonial';
 import { testimonials } from '../../constants/data';

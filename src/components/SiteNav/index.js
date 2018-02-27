@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import SocialIcons from '../SocialIcons';
 import ContactButton from '../Buttons/ContactButton';

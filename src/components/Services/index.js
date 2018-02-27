@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import './Services.css';
 import { services } from '../../constants/data';

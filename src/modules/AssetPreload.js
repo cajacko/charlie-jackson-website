@@ -1,3 +1,5 @@
+// @flow
+
 import { services, testimonials } from '../constants/data';
 
 // Store images here to prevent garbage collection
@@ -11,7 +13,7 @@ class AssetPreload {
     testimonials.forEach(preload);
   }
 
-  static preloadImage(image) {
+  static preloadImage(image: string) {
     const img = new Image();
     img.src = image;
     images.push(img);

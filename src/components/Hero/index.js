@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import './Hero.css';
 import ContactButton from '../Buttons/ContactButton';

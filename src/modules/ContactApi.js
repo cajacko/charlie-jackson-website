@@ -1,9 +1,11 @@
+// @flow
+
 class ContactApi {
-  static submit(email, message) {
+  static submit(email: string, message: string) {
     const FORMSPREE_ID = 'mywjzzgm';
     const url = `https://formspree.io/${FORMSPREE_ID}`;
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve: () => {}, reject: () => {}) => {
       setTimeout(() => {
         reject(new Error('Submission timed out. Maybe your internet is slow? Or maybe I fucked up somewhere.'));
       }, 10000);
