@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Text from '../../Text';
 import Icon from '../../Icon';
 import ActiveFocusButton from '../../Buttons/ActiveFocusButton';
@@ -35,5 +36,12 @@ class IconSliderNavItem extends Component {
     );
   }
 }
+
+IconSliderNavItem.propTypes = {
+  action: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+  icon: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+};
 
 export default IconSliderNavItem;

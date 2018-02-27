@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 function inputControl(WrappedComponent) {
-  return class extends PureComponent {
+  class InputControl extends PureComponent {
     constructor(props) {
       super(props);
 
@@ -17,19 +18,19 @@ function inputControl(WrappedComponent) {
       }
     }
 
-    setValue(value) {
-      this.setState({ value });
-      if (this.props.onChange) this.props.onChange(value, this.props.name);
-    }
-
     onChange(event) {
       event.preventDefault();
 
-      const value = event.target.value;
+      const { target: { value } } = event;
 
       if (value !== this.state.value) {
         this.setValue(value);
       }
+    }
+
+    setValue(value) {
+      this.setState({ value });
+      if (this.props.onChange) this.props.onChange(value, this.props.name);
     }
 
     render() {
@@ -41,7 +42,20 @@ function inputControl(WrappedComponent) {
         />
       );
     }
+  }
+
+  InputControl.propTypes = {
+    onChange: PropTypes.func,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string,
   };
+
+  InputControl.defaultProps = {
+    onChange: null,
+    value: '',
+  };
+
+  return InputControl;
 }
 
 export default inputControl;

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import icons from '../../constants/icons';
 import './Icons.css';
 
@@ -11,7 +12,7 @@ class Icon extends PureComponent {
       return null;
     }
 
-    html = html.replace('<svg', `<svg class="icon__svg"`);
+    html = html.replace('<svg', '<svg class="icon__svg"');
 
     let classes = 'icon';
 
@@ -49,5 +50,18 @@ class Icon extends PureComponent {
     );
   }
 }
+
+Icon.propTypes = {
+  size: PropTypes.string,
+  reduceWithWidth: PropTypes.bool,
+  color: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+};
+
+Icon.defaultProps = {
+  size: null,
+  reduceWithWidth: false,
+  color: null,
+};
 
 export default Icon;

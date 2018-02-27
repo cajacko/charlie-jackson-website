@@ -23,11 +23,15 @@ TextButton.propTypes = {
   action: PropTypes.func,
   text: PropTypes.string.isRequired,
   href: PropTypes.string,
+  theme: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 TextButton.defaultProps = {
   action: null,
   href: null,
+  theme: null,
+  disabled: false,
 };
 
 export default TextButton;

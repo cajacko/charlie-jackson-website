@@ -1,14 +1,10 @@
 import React, { PureComponent } from 'react';
 import SlickSlider from 'react-slick';
+import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 class Slider extends PureComponent {
-  state = {
-    displayedIndex: 0,
-    height: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -16,6 +12,11 @@ class Slider extends PureComponent {
     this.afterChange = this.afterChange.bind(this);
     this.setHeight = this.setHeight.bind(this);
   }
+
+  state = {
+    displayedIndex: 0,
+    height: null,
+  };
 
   componentDidMount() {
     // Needed as Slider probably does something weird on initial load and it
@@ -30,9 +31,11 @@ class Slider extends PureComponent {
 
   setHeight() {
     if (this.state.height !== null) {
-      return this.setState({ height: null }, () => {
+      this.setState({ height: null }, () => {
         this.setHeight();
       });
+
+      return;
     }
 
     this.setState({ height: this.sliderWrap.clientHeight });
@@ -56,10 +59,10 @@ class Slider extends PureComponent {
     const nav = this.props.nav(
       this.state.displayedIndex,
       this.changeActiveItem,
-      this.props.slides,
+      this.props.slides
     );
 
-    var settings = {
+    const settings = {
       dots: false,
       infinite: true,
       speed: 500,
@@ -74,8 +77,17 @@ class Slider extends PureComponent {
       <div>
         {!this.props.bottom && nav}
 
-        <div ref={ref => (this.sliderWrap = ref)}>
-          <SlickSlider ref={c => (this.slider = c)} {...settings}>
+        <div
+          ref={(ref) => {
+            this.sliderWrap = ref;
+          }}
+        >
+          <SlickSlider
+            ref={(c) => {
+              this.slider = c;
+            }}
+            {...settings}
+          >
             {this.props.slides.map((slideContent, i) => (
               <div
                 key={(slideContent && slideContent.key) || i}
@@ -87,7 +99,7 @@ class Slider extends PureComponent {
                 {this.props.slide(
                   slideContent,
                   this.state.displayedIndex,
-                  this.state.height,
+                  this.state.height
                 )}
               </div>
             ))}
@@ -99,5 +111,16 @@ class Slider extends PureComponent {
     );
   }
 }
+
+Slider.propTypes = {
+  slide: PropTypes.func.isRequired,
+  slides: PropTypes.arrayOf(PropTypes.object).isRequired,
+  bottom: PropTypes.bool,
+  nav: PropTypes.func.isRequired,
+};
+
+Slider.defaultProps = {
+  bottom: false,
+};
 
 export default Slider;

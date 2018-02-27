@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ContentSpotlight from '../ContentSpotlight';
 import TextButton from '../Buttons/TextButton';
 import SocialIcons from '../SocialIcons';
@@ -12,9 +13,15 @@ import Loading from '../Loading';
 import Button from '../Buttons/Button';
 import Text from '../Text';
 
+let id = 0;
+
 class Contact extends PureComponent {
   constructor(props) {
     super(props);
+
+    id += 1;
+    this.emailId = `contact__emailid--${id}`;
+    this.messageId = `contact__messageid--${id}`;
 
     this.state = { state: 'INIT', message: null, fetchId: 0 };
 
@@ -34,18 +41,24 @@ class Contact extends PureComponent {
       .then(() => {
         if (fetchId !== this.state.fetchId) return;
 
-        this.setState({ state: 'SUCCESS', message: 'Successfully submitted your message. I\'ll get back to you soon :)' });
+        this.setState({
+          state: 'SUCCESS',
+          message:
+            "Successfully submitted your message. I'll get back to you soon :)",
+        });
       })
-      .catch(e => {
+      .catch((e) => {
         if (fetchId !== this.state.fetchId) return;
 
-        const message =
+        let errorMessage =
           (e && e.message) ||
           'Could not submit your message, please try again or email me at contact@charliejackson.com';
 
+        errorMessage = `${errorMessage} Email me instead at contact@charliejackson.com`;
+
         this.setState({
           state: 'FAILED',
-          message: `${message} Email me instead at contact@charliejackson.com`,
+          message: errorMessage,
         });
       });
   }
@@ -74,6 +87,7 @@ class Contact extends PureComponent {
                       type="text"
                       onChange={setFormState}
                       name="email"
+                      id={this.emailId}
                     />
                   </SpacingContainer>
 
@@ -81,6 +95,7 @@ class Contact extends PureComponent {
                     placeholder="Message"
                     onChange={setFormState}
                     name="message"
+                    id={this.messageId}
                   />
 
                   <SpacingContainer mv2>
@@ -137,5 +152,13 @@ class Contact extends PureComponent {
     );
   }
 }
+
+Contact.propTypes = {
+  fullScreen: PropTypes.bool,
+};
+
+Contact.defaultProps = {
+  fullScreen: false,
+};
 
 export default Contact;

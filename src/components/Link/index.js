@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import './Link.css';
 
 class Link extends PureComponent {
@@ -10,5 +11,10 @@ class Link extends PureComponent {
     );
   }
 }
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Link;

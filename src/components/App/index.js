@@ -43,9 +43,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div style={{ backgroundImage: `url('${background}')`, backgroundSize: 'cover', backgroundPosition: 'right bottom'}}>
-        <SiteNav />
-        <Hero />
+        <div
+          style={{
+            backgroundImage: `url('${background}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right bottom',
+          }}
+        >
+          <SiteNav />
+          <Hero />
         </div>
         <Services />
         <Work />

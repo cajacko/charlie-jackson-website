@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Text from '../Text';
 import Img from '../Img';
 import './Testimonial.css';
@@ -22,7 +23,7 @@ class Testimonial extends Component {
         </div>
         <SpacingContainer mb mt2>
           <div className="testimonial__image">
-            <Img src={this.props.image} imageAlt="Hello" fill />
+            <Img src={this.props.image} alt={this.props.imageAlt} fill />
           </div>
         </SpacingContainer>
         <Paragraph noSpacing>
@@ -32,5 +33,17 @@ class Testimonial extends Component {
     );
   }
 }
+
+Testimonial.propTypes = {
+  height: PropTypes.number,
+  quote: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
+};
+
+Testimonial.defaultProps = {
+  height: null,
+};
 
 export default Testimonial;

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import './SpacingContainer.css';
 
 const supportedProps = [
@@ -68,12 +69,21 @@ class SpacingContainer extends PureComponent {
       classes += ' spacingcontainer--flex';
     }
 
-    supportedProps.forEach(prop => {
+    supportedProps.forEach((prop) => {
       if (props[prop]) classes += ` spacingcontainer--${prop}`;
     });
 
     return <div className={classes}>{this.props.children}</div>;
   }
 }
+
+SpacingContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  flex: PropTypes.bool,
+};
+
+SpacingContainer.defaultProps = {
+  flex: false,
+};
 
 export default SpacingContainer;

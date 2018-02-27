@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Text from '../Text';
 import './ServiceContent.css';
 import Paragraph from '../Paragraph';
@@ -43,5 +44,15 @@ class ServiceContent extends Component {
     );
   }
 }
+
+ServiceContent.propTypes = {
+  text: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+  height: PropTypes.number,
+};
+
+ServiceContent.defaultProps = {
+  height: null,
+};
 
 export default ServiceContent;

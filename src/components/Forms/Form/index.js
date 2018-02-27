@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 class Form extends PureComponent {
   constructor(props) {
@@ -10,16 +11,16 @@ class Form extends PureComponent {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  setFormState(value, name) {
-    if (this.state[name] !== value) {
-      this.setState({ [name]: value });
-    }
-  }
-
   onSubmit(event) {
     if (event && event.preventDefault) event.preventDefault();
 
     if (this.props.onSubmit) this.props.onSubmit(this.state);
+  }
+
+  setFormState(value, name) {
+    if (this.state[name] !== value) {
+      this.setState({ [name]: value });
+    }
   }
 
   render() {
@@ -33,5 +34,10 @@ class Form extends PureComponent {
     );
   }
 }
+
+Form.propTypes = {
+  children: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default Form;

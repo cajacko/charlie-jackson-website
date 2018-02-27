@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import inputControl from '../inputControl';
 import './Input.css';
 
@@ -17,5 +18,19 @@ class Input extends PureComponent {
     );
   }
 }
+
+Input.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
+  type: PropTypes.string.isRequired,
+};
+
+Input.defaultProps = {
+  placeholder: null,
+  value: '',
+};
 
 export default inputControl(Input);

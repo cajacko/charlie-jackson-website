@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Loading.css';
 
 const Loading = ({ theme }) => {
-
   let classes = 'loading';
 
-  switch(theme) {
+  switch (theme) {
     case 'DARK':
       classes += ' loading--dark';
       break;
@@ -14,9 +14,15 @@ const Loading = ({ theme }) => {
       break;
   }
 
-  return (
-  <div className={classes}>Loading...</div>
-);
+  return <div className={classes}>Loading...</div>;
+};
+
+Loading.propTypes = {
+  theme: PropTypes.string,
+};
+
+Loading.defaultProps = {
+  theme: null,
 };
 
 export default Loading;

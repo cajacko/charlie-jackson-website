@@ -1,7 +1,7 @@
 import { services, testimonials } from '../constants/data';
 
 // Store images here to prevent garbage collection
-let images = [];
+const images = [];
 
 class AssetPreload {
   static preload() {
@@ -12,7 +12,7 @@ class AssetPreload {
   }
 
   static preloadImage(image) {
-    var img = new Image();
+    const img = new Image();
     img.src = image;
     images.push(img);
   }
