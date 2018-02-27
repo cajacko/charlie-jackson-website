@@ -13,6 +13,7 @@
   "scripts": {
     "start": "npm-run-all -p watch:css start:js",
     "start:js": "react-scripts start",
+    "test": "yarn test:lint",
     "build:js": "react-scripts build",
     "build": "npm-run-all build:css build:js",
     "build:css": "node-sass-chokidar src/ -o src/",
@@ -21,9 +22,18 @@
     "login": "firebase login",
     "deploy:live": "firebase use prod && yarn run build && firebase deploy",
     "deploy:dev": "firebase use dev && yarn run build && firebase deploy",
-    "serve": "yarn run build && firebase use dev && firebase serve"
+    "serve": "yarn run build && firebase use dev && firebase serve",
+    "test:lint": "eslint --ext .js --ext .jsx src"
   },
   "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.12.2",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "firebase-tools": "^3.17.4",
     "fs-extra": "^5.0.0",
     "node-sass-chokidar": "^0.0.3",
