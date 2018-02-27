@@ -1,13 +1,56 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import SlickSlider from 'react-slick';
 import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-class Slider extends PureComponent {
-  constructor(props) {
+type Slides = Array<{}>;
+
+type Props = {
+  slide: (
+    slideContent: {
+      key: string,
+    },
+    displayedIndex: number,
+    height?: ?number
+  ) => React.Node,
+  slides: Slides,
+  bottom?: ?boolean,
+  nav: (
+    displayedIndex: number,
+    changeActiveItem: (index: number) => void,
+    slides: Slides
+  ) => React.Node,
+};
+
+type State = {
+  height?: ?number,
+  displayedIndex: number,
+};
+
+type SliderType = ?{
+  slickGoTo: (index: number) => void,
+};
+
+type SliderWrap = ?{
+  clientHeight: number,
+};
+
+class Slider extends React.PureComponent<Props, State> {
+  static propTypes = {
+    slide: PropTypes.func.isRequired,
+    slides: PropTypes.arrayOf(PropTypes.object).isRequired,
+    bottom: PropTypes.bool,
+    nav: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    bottom: false,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -15,9 +58,9 @@ class Slider extends PureComponent {
       height: null,
     };
 
-    this.changeActiveItem = this.changeActiveItem.bind(this);
-    this.afterChange = this.afterChange.bind(this);
-    this.setHeight = this.setHeight.bind(this);
+    (this: any).changeActiveItem = this.changeActiveItem.bind(this);
+    (this: any).afterChange = this.afterChange.bind(this);
+    (this: any).setHeight = this.setHeight.bind(this);
   }
 
   componentDidMount() {
@@ -40,18 +83,25 @@ class Slider extends PureComponent {
       return;
     }
 
-    this.setState({ height: this.sliderWrap.clientHeight });
+    if (this.sliderWrap && this.sliderWrap.clientHeight) {
+      this.setState({ height: this.sliderWrap.clientHeight });
+    }
   }
 
-  changeActiveItem(displayedIndex) {
+  sliderWrap: SliderWrap;
+  slider: SliderType;
+
+  changeActiveItem(displayedIndex: number) {
     if (displayedIndex !== this.state.displayedIndex) {
       this.setState({ displayedIndex }, () => {
-        this.slider.slickGoTo(displayedIndex);
+        if (this.slider && this.slider.slickGoTo) {
+          this.slider.slickGoTo(displayedIndex);
+        }
       });
     }
   }
 
-  afterChange(displayedIndex) {
+  afterChange(displayedIndex: number) {
     if (displayedIndex !== this.state.displayedIndex) {
       this.setState({ displayedIndex });
     }
@@ -80,12 +130,12 @@ class Slider extends PureComponent {
         {!this.props.bottom && nav}
 
         <div
-          ref={(ref) => {
+          ref={(ref: SliderWrap) => {
             this.sliderWrap = ref;
           }}
         >
           <SlickSlider
-            ref={(c) => {
+            ref={(c: SliderType) => {
               this.slider = c;
             }}
             {...settings}
@@ -113,16 +163,5 @@ class Slider extends PureComponent {
     );
   }
 }
-
-Slider.propTypes = {
-  slide: PropTypes.func.isRequired,
-  slides: PropTypes.arrayOf(PropTypes.object).isRequired,
-  bottom: PropTypes.bool,
-  nav: PropTypes.func.isRequired,
-};
-
-Slider.defaultProps = {
-  bottom: false,
-};
 
 export default Slider;

@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import './SpacingContainer.css';
 
@@ -21,63 +21,82 @@ const supportedProps = [
   'pb2',
 ];
 
-class SpacingContainer extends PureComponent {
-  render() {
-    const props = Object.assign({}, this.props);
+const SpacingContainer = ({
+  flex,
+  children,
+  ...props
+}: {
+  flex?: boolean,
+  children: React.Node,
+  mt?: boolean,
+  mt2?: boolean,
+  mb?: boolean,
+  mb2?: boolean,
+  ml?: boolean,
+  ml2?: boolean,
+  mr?: boolean,
+  mr2?: boolean,
+  pt?: boolean,
+  pb?: boolean,
+  pl?: boolean,
+  pr?: boolean,
+  pt2?: boolean,
+  pb2?: boolean,
+}) => {
+  const propsToPass = Object.assign({}, props);
 
-    if (props.ph) {
-      props.pr = true;
-      props.pl = true;
-    }
-
-    if (props.pv) {
-      props.pt = true;
-      props.pb = true;
-    }
-
-    if (props.mh) {
-      props.mr = true;
-      props.ml = true;
-    }
-
-    if (props.mv) {
-      props.mt = true;
-      props.mb = true;
-    }
-
-    if (props.mv2) {
-      props.mt2 = true;
-      props.mb2 = true;
-    }
-
-    if (props.mh2) {
-      props.ml2 = true;
-      props.mr2 = true;
-    }
-
-    if (props.pv2) {
-      props.pt2 = true;
-      props.pb2 = true;
-    }
-
-    if (props.ph2) {
-      props.pl2 = true;
-      props.pr2 = true;
-    }
-
-    let classes = 'spacingcontainer';
-
-    if (this.props.flex) {
-      classes += ' spacingcontainer--flex';
-    }
-
-    supportedProps.forEach((prop) => {
-      if (props[prop]) classes += ` spacingcontainer--${prop}`;
-    });
-
-    return <div className={classes}>{this.props.children}</div>;
+  if (propsToPass.ph) {
+    propsToPass.pr = true;
+    propsToPass.pl = true;
   }
-}
+
+  if (propsToPass.pv) {
+    propsToPass.pt = true;
+    propsToPass.pb = true;
+  }
+
+  if (propsToPass.mh) {
+    propsToPass.mr = true;
+    propsToPass.ml = true;
+  }
+
+  if (propsToPass.mv) {
+    propsToPass.mt = true;
+    propsToPass.mb = true;
+  }
+
+  if (propsToPass.mv2) {
+    propsToPass.mt2 = true;
+    propsToPass.mb2 = true;
+  }
+
+  if (propsToPass.mh2) {
+    propsToPass.ml2 = true;
+    propsToPass.mr2 = true;
+  }
+
+  if (propsToPass.pv2) {
+    propsToPass.pt2 = true;
+    propsToPass.pb2 = true;
+  }
+
+  if (propsToPass.ph2) {
+    propsToPass.pl2 = true;
+    propsToPass.pr2 = true;
+  }
+
+  let classes = 'spacingcontainer';
+
+  if (flex) {
+    classes += ' spacingcontainer--flex';
+  }
+
+  supportedProps.forEach((prop) => {
+    if (props[prop]) classes += ` spacingcontainer--${prop}`;
+  });
+
+  return <div className={classes}>{children}</div>;
+};
 
 SpacingContainer.propTypes = {
   children: PropTypes.node.isRequired,
@@ -86,6 +105,20 @@ SpacingContainer.propTypes = {
 
 SpacingContainer.defaultProps = {
   flex: false,
+  mt: false,
+  mt2: false,
+  mb: false,
+  mb2: false,
+  ml: false,
+  ml2: false,
+  mr: false,
+  mr2: false,
+  pt: false,
+  pb: false,
+  pl: false,
+  pr: false,
+  pt2: false,
+  pb2: false,
 };
 
 export default SpacingContainer;

@@ -1,26 +1,47 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-function inputControl(WrappedComponent) {
-  class InputControl extends PureComponent {
-    constructor(props) {
+type Props = {
+  name: string,
+  onChange: (value?: string, name: string) => void,
+  value?: string,
+};
+
+type State = {
+  value?: string,
+};
+
+function inputControl(WrappedComponent: React.ComponentType<{ [key: string]: any }>) {
+  class InputControl extends React.PureComponent<Props, State> {
+    static propTypes = {
+      onChange: PropTypes.func,
+      name: PropTypes.string.isRequired,
+      value: PropTypes.string,
+    };
+
+    static defaultProps = {
+      onChange: null,
+      value: '',
+    };
+
+    constructor(props: Props) {
       super(props);
 
       this.state = { value: props.value };
 
-      this.onChange = this.onChange.bind(this);
-      this.setValue = this.setValue.bind(this);
+      (this: any).onChange = this.onChange.bind(this);
+      (this: any).setValue = this.setValue.bind(this);
     }
 
-    componentWillReceiveProps({ value }) {
+    componentWillReceiveProps({ value }: Props) {
       if (value !== this.props.value && value !== this.state.value) {
         this.setValue(value);
       }
     }
 
-    onChange(event) {
+    onChange(event: SyntheticInputEvent<HTMLInputElement>) {
       event.preventDefault();
 
       const { target: { value } } = event;
@@ -30,7 +51,7 @@ function inputControl(WrappedComponent) {
       }
     }
 
-    setValue(value) {
+    setValue(value?: string) {
       this.setState({ value });
       if (this.props.onChange) this.props.onChange(value, this.props.name);
     }
@@ -45,17 +66,6 @@ function inputControl(WrappedComponent) {
       );
     }
   }
-
-  InputControl.propTypes = {
-    onChange: PropTypes.func,
-    name: PropTypes.string.isRequired,
-    value: PropTypes.string,
-  };
-
-  InputControl.defaultProps = {
-    onChange: null,
-    value: '',
-  };
 
   return InputControl;
 }

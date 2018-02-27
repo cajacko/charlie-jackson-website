@@ -12,9 +12,9 @@ const TextButton = ({
   disabled,
   text,
 }: {
-  action?: (event: SyntheticEvent<HTMLButtonElement>) => void,
-  href?: string,
-  theme?: string,
+  action?: ?(event: SyntheticEvent<HTMLButtonElement>) => void,
+  href?: ?string,
+  theme?: ?string,
   disabled?: boolean,
   text: string,
 }) => (

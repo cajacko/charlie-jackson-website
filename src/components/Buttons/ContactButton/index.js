@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import TextButton from '../TextButton';
 
 type Props = {
-  text?: string,
-  theme?: string,
+  text?: ?string,
+  theme?: ?string,
 };
 
 class ContactButton extends PureComponent<Props> {

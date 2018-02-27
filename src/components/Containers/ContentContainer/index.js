@@ -1,23 +1,17 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import './ContentContainer.css';
 import SpacingContainer from '../SpacingContainer';
 
-class ContentContainer extends PureComponent {
-  render() {
-    return (
-      <div className="contentcontainer">
-        <div className="contentcontainer__wrapper">
-          <SpacingContainer {...this.props}>
-            {this.props.children}
-          </SpacingContainer>
-        </div>
-      </div>
-    );
-  }
-}
+const ContentContainer = ({ children, ...props }: { children: React.Node }) => (
+  <div className="contentcontainer">
+    <div className="contentcontainer__wrapper">
+      <SpacingContainer {...props}>{children}</SpacingContainer>
+    </div>
+  </div>
+);
 
 ContentContainer.propTypes = {
   children: PropTypes.node.isRequired,
