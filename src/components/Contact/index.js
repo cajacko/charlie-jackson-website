@@ -1,4 +1,5 @@
 // @flow
+/* eslint max-lines: 0 */
 
 import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
@@ -64,8 +65,19 @@ class Contact extends PureComponent<Props, State> {
    *
    * @return {Void} No return value
    */
-  onSubmit({ email, message }: { email: string, message: string }) {
+  onSubmit({ email, message }: { [key: string]: string }) {
     const fetchId = this.state.fetchId + 1;
+
+    if (!email || !message) {
+      this.setState({
+        state: 'FAILED',
+        fetchId,
+        message:
+          'Email, or message were not added, please add them or email me instead at contact@charliejackson.com',
+      });
+
+      return;
+    }
 
     this.setState({ state: 'REQUESTED', fetchId, message: null });
 

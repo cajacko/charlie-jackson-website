@@ -7,4 +7,10 @@ import AssetPreload from './modules/AssetPreload';
 
 AssetPreload.preload();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = document.getElementById('root');
+
+if (root === null) {
+  throw new Error('#root does not exist on the page, could not load react');
+} else {
+  ReactDOM.render(<App />, root);
+}

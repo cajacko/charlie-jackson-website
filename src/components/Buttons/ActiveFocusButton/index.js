@@ -1,18 +1,19 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
 type Props = {
   active?: boolean,
+  children: React.Node,
 };
 
 type State = {
   showAsDiv: boolean,
 };
 
-class ActiveFocusButton extends PureComponent<Props, State> {
+class ActiveFocusButton extends React.PureComponent<Props, State> {
   static defaultProps = {
     active: false,
   };

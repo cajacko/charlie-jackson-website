@@ -5,13 +5,19 @@ import PropTypes from 'prop-types';
 
 type Props = {
   children: (data: {
-    setFormState: (value: string, name: string) => void,
-    submit: (event: SyntheticEvent<HTMLFormElement>) => void,
+    setFormState: (value?: ?string, name: string) => void,
+    submit: (
+      event: SyntheticEvent<HTMLFormElement | HTMLButtonElement>
+    ) => void,
   }) => React.Node,
   onSubmit: (formState: {}) => void,
 };
 
-class Form extends React.PureComponent<Props, {}> {
+type State = {
+  [key: string]: string,
+};
+
+class Form extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
@@ -21,13 +27,13 @@ class Form extends React.PureComponent<Props, {}> {
     (this: any).onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(event: SyntheticEvent<HTMLFormElement>) {
+  onSubmit(event: SyntheticEvent<HTMLFormElement | HTMLButtonElement>) {
     if (event && event.preventDefault) event.preventDefault();
 
     if (this.props.onSubmit) this.props.onSubmit(this.state);
   }
 
-  setFormState(value: string, name: string) {
+  setFormState(value?: ?string, name: string) {
     if (this.state[name] !== value) {
       this.setState({ [name]: value });
     }

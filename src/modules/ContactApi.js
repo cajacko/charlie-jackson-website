@@ -11,7 +11,7 @@ class ContactApi {
    * @param {String} message The message content
    * @return {Promise} Promise that resolves if successfully submitted
    */
-  static submit(email: string, message: string) {
+  static submit(email: string, message: string): Promise<void> {
     const FORMSPREE_ID = 'mywjzzgm';
     const url = `https://formspree.io/${FORMSPREE_ID}`;
 

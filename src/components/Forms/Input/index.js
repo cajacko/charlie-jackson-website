@@ -16,7 +16,7 @@ const Input = ({
   id: string,
   name: string,
   placeholder?: string,
-  value?: string,
+  value?: ?string,
   type: string,
   onChange: (value?: string, name: string) => void,
 }) => (
