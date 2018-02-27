@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
 import './Skills.css';
-import { about, skills } from '../../constants/data';
+import { about, skills, SKILLS } from '../../constants/data';
 import Text from '../Text';
 import SpacingContainer from '../Containers/SpacingContainer';
 import Paragraph from '../Paragraph';
 import TextButton from '../Buttons/TextButton';
-import { SKILLS } from '../../constants/data';
 
 class Skills extends PureComponent {
   render() {
@@ -45,9 +44,11 @@ class Skills extends PureComponent {
                           <td className="skills__cell">
                             <SpacingContainer mr>
                               <div>
-                                {skill.skills.map((skillItem, i) => (
+                                {skill.skills.map((skillItem, index) => (
                                   <span key={skillItem}>
-                                    {!!i && <Text text=", " fontSize="SMALL" />}
+                                    {!!index && (
+                                      <Text text=", " fontSize="SMALL" />
+                                    )}
                                     <Text text={skillItem} fontSize="SMALL" />
                                   </span>
                                 ))}

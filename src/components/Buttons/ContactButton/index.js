@@ -26,7 +26,16 @@ class ContactButton extends PureComponent {
 
 ContactButton.contextTypes = {
   showContactModal: PropTypes.func,
+};
+
+ContactButton.propTypes = {
+  text: PropTypes.string,
   theme: PropTypes.string,
+};
+
+ContactButton.defaultProps = {
+  text: null,
+  theme: null,
 };
 
 export default ContactButton;

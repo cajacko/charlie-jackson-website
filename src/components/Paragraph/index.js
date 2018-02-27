@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Paragraph.css';
 
 class Paragraph extends Component {
@@ -16,5 +17,16 @@ class Paragraph extends Component {
     return <p className={classes}>{this.props.children}</p>;
   }
 }
+
+Paragraph.propTypes = {
+  center: PropTypes.bool,
+  noSpacing: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
+
+Paragraph.defaultProps = {
+  center: false,
+  noSpacing: false,
+};
 
 export default Paragraph;

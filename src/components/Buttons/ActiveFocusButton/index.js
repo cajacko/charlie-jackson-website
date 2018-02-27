@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 
 class ActiveFocusButton extends PureComponent {
@@ -23,5 +24,15 @@ class ActiveFocusButton extends PureComponent {
     return <Button {...this.props} showAsDiv={this.state.showAsDiv} />;
   }
 }
+
+ActiveFocusButton.propTypes = {
+  active: PropTypes.bool,
+  showAsDiv: PropTypes.bool,
+};
+
+ActiveFocusButton.defaultProps = {
+  active: false,
+  showAsDiv: false,
+};
 
 export default ActiveFocusButton;

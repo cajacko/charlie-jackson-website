@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ContentContainer from '../Containers/ContentContainer';
 import SpacingContainer from '../Containers/SpacingContainer';
 import SectionHeading from '../SectionHeading';
@@ -57,5 +58,19 @@ class ContentSpotlight extends PureComponent {
     );
   }
 }
+
+ContentSpotlight.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  halfContentVerticalSpacing: PropTypes.bool,
+  theme: PropTypes.string,
+  noBackground: PropTypes.bool,
+};
+
+ContentSpotlight.defaultProps = {
+  halfContentVerticalSpacing: false,
+  theme: null,
+  noBackground: false,
+};
 
 export default ContentSpotlight;

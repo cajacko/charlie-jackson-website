@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Text from '../Text';
 import Img from '../Img';
 import './Testimonial.css';
@@ -32,5 +33,16 @@ class Testimonial extends Component {
     );
   }
 }
+
+Testimonial.propTypes = {
+  height: PropTypes.number,
+  quote: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+Testimonial.defaultProps = {
+  height: null,
+};
 
 export default Testimonial;

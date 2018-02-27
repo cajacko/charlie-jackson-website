@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import './Text.css';
 
 class Text extends PureComponent {
@@ -52,5 +53,22 @@ class Text extends PureComponent {
     return <span className={classes}>{this.props.text}</span>;
   }
 }
+
+Text.propTypes = {
+  color: PropTypes.string,
+  fontSize: PropTypes.string,
+  underline: PropTypes.bool,
+  reduceWithWidth: PropTypes.bool,
+  bold: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+};
+
+Text.defaultProps = {
+  color: null,
+  fontSize: null,
+  underline: false,
+  reduceWithWidth: false,
+  bold: false,
+};
 
 export default Text;

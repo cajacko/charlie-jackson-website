@@ -30,7 +30,7 @@
     "max-lines": [
       "error",
       {
-        "max": 100,
+        "max": 150,
         "skipBlankLines": true,
         "skipComments": true
       }
@@ -41,7 +41,8 @@
         "code": 80,
         "ignoreStrings": true,
         "ignoreUrls": true,
-        "ignoreRegExpLiterals": true
+        "ignoreRegExpLiterals": true,
+        "ignoreTemplateLiterals": true,
       }
     ],
     "import/no-extraneous-dependencies": [

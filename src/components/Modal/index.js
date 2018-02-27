@@ -30,4 +30,12 @@ Modal.contextTypes = {
   hideContactModal: PropTypes.func,
 };
 
+Modal.propTypes = {
+  children: PropTypes.node,
+};
+
+Modal.defaultProps = {
+  children: null,
+};
+
 export default Modal;

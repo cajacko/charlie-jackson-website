@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './SectionHeading.css';
 import Text from '../Text';
 import SpacingContainer from '../Containers/SpacingContainer';
@@ -24,5 +25,16 @@ class SectionHeading extends Component {
     );
   }
 }
+
+SectionHeading.propTypes = {
+  halfBottomSpacing: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  color: PropTypes.string,
+};
+
+SectionHeading.defaultProps = {
+  halfBottomSpacing: false,
+  color: null,
+};
 
 export default SectionHeading;

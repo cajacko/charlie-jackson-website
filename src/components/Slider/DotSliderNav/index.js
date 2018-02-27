@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import HorizontalList from '../../Lists/HorizontalList';
 import './DotSliderNav.css';
 import ActiveFocusButton from '../../Buttons/ActiveFocusButton';
@@ -33,5 +34,13 @@ class DotSliderNav extends Component {
     );
   }
 }
+
+DotSliderNav.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  })).isRequired,
+  onChange: PropTypes.func.isRequired,
+  active: PropTypes.number.isRequired,
+};
 
 export default DotSliderNav;

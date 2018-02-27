@@ -62,11 +62,22 @@ class Button extends PureComponent {
 Button.propTypes = {
   action: PropTypes.func,
   href: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  showAsDiv: PropTypes.bool,
+  theme: PropTypes.string,
+  disabled: PropTypes.bool,
+  fill: PropTypes.bool,
+  hasText: PropTypes.bool,
 };
 
-Button.propTypes = {
-  action: PropTypes.func,
-  href: PropTypes.string,
+Button.defaultProps = {
+  action: null,
+  href: null,
+  showAsDiv: false,
+  theme: null,
+  disabled: false,
+  fill: false,
+  hasText: false,
 };
 
 export default Button;

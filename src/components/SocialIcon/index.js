@@ -58,4 +58,18 @@ SocialIcon.contextTypes = {
   showContactModal: PropTypes.func,
 };
 
+SocialIcon.propTypes = {
+  icon: PropTypes.string.isRequired,
+  light: PropTypes.bool,
+  size: PropTypes.string,
+  isContact: PropTypes.bool,
+  href: PropTypes.string.isRequired,
+};
+
+SocialIcon.defaultProps = {
+  light: false,
+  size: null,
+  isContact: false,
+};
+
 export default SocialIcon;

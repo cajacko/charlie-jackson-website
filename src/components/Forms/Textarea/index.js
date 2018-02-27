@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import inputControl from '../inputControl';
 import './Textarea.css';
 
@@ -16,5 +17,18 @@ class Textarea extends PureComponent {
     );
   }
 }
+
+Textarea.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
+};
+
+Textarea.defaultProps = {
+  placeholder: null,
+  value: '',
+};
 
 export default inputControl(Textarea);

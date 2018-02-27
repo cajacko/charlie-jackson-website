@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import HorizontalList from '../../Lists/HorizontalList';
 import IconSliderNavItem from '../IconSliderNavItem';
 import './IconSliderNav.css';
@@ -25,5 +26,14 @@ class IconSliderNav extends Component {
     );
   }
 }
+
+IconSliderNav.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+  })).isRequired,
+  active: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default IconSliderNav;

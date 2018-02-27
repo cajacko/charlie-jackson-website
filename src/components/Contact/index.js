@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ContentSpotlight from '../ContentSpotlight';
 import TextButton from '../Buttons/TextButton';
 import SocialIcons from '../SocialIcons';
@@ -43,13 +44,15 @@ class Contact extends PureComponent {
       .catch((e) => {
         if (fetchId !== this.state.fetchId) return;
 
-        const message =
+        let errorMessage =
           (e && e.message) ||
           'Could not submit your message, please try again or email me at contact@charliejackson.com';
 
+        errorMessage = `${errorMessage} Email me instead at contact@charliejackson.com`;
+
         this.setState({
           state: 'FAILED',
-          message: `${message} Email me instead at contact@charliejackson.com`,
+          message: errorMessage,
         });
       });
   }
@@ -141,5 +144,13 @@ class Contact extends PureComponent {
     );
   }
 }
+
+Contact.propTypes = {
+  fullScreen: PropTypes.bool,
+};
+
+Contact.defaultProps = {
+  fullScreen: false,
+};
 
 export default Contact;

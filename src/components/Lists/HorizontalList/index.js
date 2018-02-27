@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import './HorizontalList.css';
 
 class HorizontalList extends PureComponent {
@@ -28,5 +29,17 @@ class HorizontalList extends PureComponent {
     );
   }
 }
+
+HorizontalList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    component: PropTypes.node.isRequired,
+  })).isRequired,
+  stretch: PropTypes.bool,
+};
+
+HorizontalList.defaultProps = {
+  stretch: false,
+};
 
 export default HorizontalList;
