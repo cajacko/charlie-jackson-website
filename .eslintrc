@@ -3,6 +3,8 @@
     "airbnb"
   ],
   "rules": {
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1,
     "flowtype/require-valid-file-annotation": [
       2,
       "always"

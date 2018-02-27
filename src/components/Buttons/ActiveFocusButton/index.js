@@ -4,14 +4,30 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
-class ActiveFocusButton extends PureComponent {
-  constructor(props) {
+type Props = {
+  active?: boolean,
+};
+
+type State = {
+  showAsDiv: boolean,
+};
+
+class ActiveFocusButton extends PureComponent<Props, State> {
+  static defaultProps = {
+    active: false,
+  };
+
+  static propTypes = {
+    active: PropTypes.bool,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = { showAsDiv: false };
   }
 
-  componentWillReceiveProps({ active }) {
+  componentWillReceiveProps({ active }: Props) {
     if (this.props.active && !active) {
       // Small hack to remove sticky hover on touch devices, basically removes
       // the original button element from the dom and replaces it with a div,
@@ -26,15 +42,5 @@ class ActiveFocusButton extends PureComponent {
     return <Button {...this.props} showAsDiv={this.state.showAsDiv} />;
   }
 }
-
-ActiveFocusButton.propTypes = {
-  active: PropTypes.bool,
-  showAsDiv: PropTypes.bool,
-};
-
-ActiveFocusButton.defaultProps = {
-  active: false,
-  showAsDiv: false,
-};
 
 export default ActiveFocusButton;

@@ -10,15 +10,15 @@ class Slider extends PureComponent {
   constructor(props) {
     super(props);
 
+    this.state = {
+      displayedIndex: 0,
+      height: null,
+    };
+
     this.changeActiveItem = this.changeActiveItem.bind(this);
     this.afterChange = this.afterChange.bind(this);
     this.setHeight = this.setHeight.bind(this);
   }
-
-  state = {
-    displayedIndex: 0,
-    height: null,
-  };
 
   componentDidMount() {
     // Needed as Slider probably does something weird on initial load and it

@@ -15,7 +15,7 @@
     "deploy:live": "firebase use prod && yarn run build && firebase deploy",
     "deploy:dev": "firebase use dev && yarn run build && firebase deploy",
     "serve": "yarn run build && firebase use dev && firebase serve",
-    "test:lint": "eslint --ext .js --ext .jsx src",
+    "test:lint": "node ./node_modules/eslint/bin/eslint.js --ext .js --ext .jsx src",
     "precommit": "lint-staged",
     "prettify": "prettier-eslint --write 'src/**/*.{js,jsx}'",
     "flow": "flow",
