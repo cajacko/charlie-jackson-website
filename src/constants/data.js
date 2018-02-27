@@ -1,3 +1,5 @@
+/* eslint global-require: 0 max-lines: 0 */
+
 export const SKILLS = {
   MORE_URL: null,
 };
