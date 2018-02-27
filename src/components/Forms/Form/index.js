@@ -36,7 +36,7 @@ class Form extends PureComponent {
 }
 
 Form.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 

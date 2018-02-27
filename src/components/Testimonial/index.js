@@ -23,7 +23,7 @@ class Testimonial extends Component {
         </div>
         <SpacingContainer mb mt2>
           <div className="testimonial__image">
-            <Img src={this.props.image} imageAlt="Hello" fill />
+            <Img src={this.props.image} alt={this.props.imageAlt} fill />
           </div>
         </SpacingContainer>
         <Paragraph noSpacing>
@@ -39,6 +39,7 @@ Testimonial.propTypes = {
   quote: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
 };
 
 Testimonial.defaultProps = {

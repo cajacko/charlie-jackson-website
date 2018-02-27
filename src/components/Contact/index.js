@@ -13,9 +13,15 @@ import Loading from '../Loading';
 import Button from '../Buttons/Button';
 import Text from '../Text';
 
+let id = 0;
+
 class Contact extends PureComponent {
   constructor(props) {
     super(props);
+
+    id += 1;
+    this.emailId = `contact__emailid--${id}`;
+    this.messageId = `contact__messageid--${id}`;
 
     this.state = { state: 'INIT', message: null, fetchId: 0 };
 
@@ -81,6 +87,7 @@ class Contact extends PureComponent {
                       type="text"
                       onChange={setFormState}
                       name="email"
+                      id={this.emailId}
                     />
                   </SpacingContainer>
 
@@ -88,6 +95,7 @@ class Contact extends PureComponent {
                     placeholder="Message"
                     onChange={setFormState}
                     name="message"
+                    id={this.messageId}
                   />
 
                   <SpacingContainer mv2>
