@@ -5,57 +5,7 @@ import SlickSlider from 'react-slick';
 import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-type Testimonial = {
-  key: string,
-  quote: string,
-  image: string,
-  imageAlt: string,
-  name: string,
-  [key: string]: any,
-};
-
-type Service = {
-  key: string,
-  image: string,
-  imageAlt: string,
-  text: string,
-  label: string,
-  icon: string,
-  [key: string]: any,
-};
-
-type SlideContent = Testimonial | Service;
-
-type Slides = Array<SlideContent>;
-
-type Props = {
-  slide: (
-    slideContent: SlideContent,
-    displayedIndex: number,
-    height?: ?number
-  ) => React.Node,
-  slides: Slides,
-  bottom?: ?boolean,
-  nav: (
-    displayedIndex: number,
-    changeActiveItem: (index: number) => void,
-    slides: Slides
-  ) => React.Node,
-};
-
-type State = {
-  height?: ?number,
-  displayedIndex: number,
-};
-
-type SliderType = ?{
-  slickGoTo: (index: number) => void,
-};
-
-type SliderWrap = ?{
-  clientHeight: number,
-};
+import type { Props, State, SliderType, SliderWrap } from './SliderTypes';
 
 class Slider extends React.PureComponent<Props, State> {
   static propTypes = {
