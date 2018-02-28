@@ -10,7 +10,8 @@
           "useBuiltIns": true
         }
       ],
-      "transform-flow-strip-types"
+      "transform-flow-strip-types",
+      "transform-class-properties"
     ],
     "babelrc": false
   },
