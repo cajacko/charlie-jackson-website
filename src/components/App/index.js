@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SiteNav from '../SiteNav';
@@ -11,14 +13,18 @@ import Contact from '../Contact';
 import Modal from '../Modal';
 import background from '../../assets/background.jpg';
 
-class App extends Component {
-  constructor(props) {
+type State = {
+  showContactModal: boolean,
+};
+
+class App extends Component<{}, State> {
+  constructor(props: {}) {
     super(props);
 
     this.state = { showContactModal: false };
 
-    this.showContactModal = this.showContactModal.bind(this);
-    this.hideContactModal = this.hideContactModal.bind(this);
+    (this: any).showContactModal = this.showContactModal.bind(this);
+    (this: any).hideContactModal = this.hideContactModal.bind(this);
   }
 
   getChildContext() {
@@ -43,9 +49,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div style={{ backgroundImage: `url('${background}')`, backgroundSize: 'cover', backgroundPosition: 'right bottom'}}>
-        <SiteNav />
-        <Hero />
+        <div
+          style={{
+            backgroundImage: `url('${background}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right bottom',
+          }}
+        >
+          <SiteNav />
+          <Hero />
         </div>
         <Services />
         <Work />

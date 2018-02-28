@@ -1,28 +1,55 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import * as React from 'react';
+import PropTypes from 'prop-types';
 import './HorizontalList.css';
 
-class HorizontalList extends PureComponent {
-  render() {
-    if (!this.props.list || !this.props.list.length) return null;
+const HorizontalList = ({
+  list,
+  stretch,
+}: {
+  list?: Array<{
+    key: string,
+    component: React.Node,
+  }>,
+  stretch?: boolean,
+}) => {
+  if (!list || !list.length) return null;
 
-    let classes = ' horizontallist';
-    let width;
+  let classes = ' horizontallist';
+  let width;
 
-    if (this.props.stretch) {
-      classes += ' horizontallist--stretch';
-      width = Math.floor(100 / this.props.list.length);
-    }
-
-    return (
-      <ul className={classes}>
-        {this.props.list.map(({ key, component }) => (
-          <li key={key} className="horizontallist__listitem" style={{ width: width && `${width}%`}}>
-            {component}
-          </li>
-        ))}
-      </ul>
-    );
+  if (stretch) {
+    classes += ' horizontallist--stretch';
+    width = Math.floor(100 / list.length);
   }
-}
+
+  return (
+    <ul className={classes}>
+      {list.map(({ key, component }) => (
+        <li
+          key={key}
+          className="horizontallist__listitem"
+          style={{ width: width && `${width}%` }}
+        >
+          {component}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+HorizontalList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    component: PropTypes.node.isRequired,
+  })),
+  stretch: PropTypes.bool,
+};
+
+HorizontalList.defaultProps = {
+  stretch: false,
+  list: null,
+};
 
 export default HorizontalList;

@@ -1,12 +1,33 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import TextButton from '../TextButton';
 
-class ContactButton extends PureComponent {
-  constructor(props) {
+type Props = {
+  text?: ?string,
+  theme?: ?string,
+};
+
+class ContactButton extends PureComponent<Props> {
+  static contextTypes = {
+    showContactModal: PropTypes.func,
+  };
+
+  static propTypes = {
+    text: PropTypes.string,
+    theme: PropTypes.string,
+  };
+
+  static defaultProps = {
+    text: null,
+    theme: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
-    this.action = this.action.bind(this);
+    (this: any).action = this.action.bind(this);
   }
 
   action() {
@@ -15,14 +36,13 @@ class ContactButton extends PureComponent {
 
   render() {
     return (
-      <TextButton text={this.props.text || 'Contact me'} action={this.action} theme={this.props.theme}/>
+      <TextButton
+        text={this.props.text || 'Contact me'}
+        action={this.action}
+        theme={this.props.theme}
+      />
     );
   }
 }
-
-ContactButton.contextTypes = {
-  showContactModal: PropTypes.func,
-  theme: PropTypes.string,
-};
 
 export default ContactButton;

@@ -1,18 +1,38 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+/* eslint react/no-unused-prop-types: 0 */
+// Because of if (props[prop]) classes += ` aligncontainer--${prop}`;
+
+import * as React from 'react';
+import PropTypes from 'prop-types';
 import './AlignContainer.css';
 
 const supportedProps = ['hc', 'vc'];
 
-class AlignContainer extends PureComponent {
-  render() {
-    let classes = 'aligncontainer';
+const AlignContainer = ({
+  children,
+  ...props
+}: {
+  children: React.Node,
+  vc?: boolean,
+  hc?: boolean,
+}) => {
+  let classes = 'aligncontainer';
 
-    supportedProps.forEach(prop => {
-      if (this.props[prop]) classes += ` aligncontainer--${prop}`;
-    });
+  supportedProps.forEach((prop) => {
+    if (props[prop]) classes += ` aligncontainer--${prop}`;
+  });
 
-    return <div className={classes}>{this.props.children}</div>;
-  }
-}
+  return <div className={classes}>{children}</div>;
+};
+
+AlignContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+AlignContainer.defaultProps = {
+  hc: false,
+  vc: false,
+};
 
 export default AlignContainer;

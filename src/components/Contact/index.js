@@ -1,3 +1,6 @@
+// @flow
+/* eslint max-lines: 0 */
+
 import React, { PureComponent } from 'react';
 import ContentSpotlight from '../ContentSpotlight';
 import TextButton from '../Buttons/TextButton';
@@ -12,18 +15,69 @@ import Loading from '../Loading';
 import Button from '../Buttons/Button';
 import Text from '../Text';
 
-class Contact extends PureComponent {
-  constructor(props) {
+let id = 0;
+
+type Props = {
+  fullScreen?: boolean,
+};
+
+type State = {
+  message: ?string,
+  fetchId: number,
+  state: string,
+};
+
+/**
+ * The main contact component. Handles the submission of the form, and displays
+ * loading/error messages as needed
+ *
+ * @extends PureComponent
+ */
+class Contact extends PureComponent<Props, State> {
+  static defaultProps = {
+    fullScreen: false,
+  };
+
+  /**
+   * Initialise the class, set the initial state, bind the methods and set the
+   * id's for the inputs
+   *
+   * @param {Object} props Props passed to the component
+   */
+  constructor(props: Props) {
     super(props);
+
+    id += 1;
+    this.emailId = `contact__emailid--${id}`;
+    this.messageId = `contact__messageid--${id}`;
 
     this.state = { state: 'INIT', message: null, fetchId: 0 };
 
-    this.onSubmit = this.onSubmit.bind(this);
-    this.cancel = this.cancel.bind(this);
+    (this: any).onSubmit = this.onSubmit.bind(this);
+    (this: any).cancel = this.cancel.bind(this);
   }
 
-  onSubmit({ email, message }) {
+  /**
+   * When the form gets submitted, try and submit the form. Setting the correct
+   * state and handling success/errors.
+   *
+   * @param {Object} formState The form values
+   *
+   * @return {Void} No return value
+   */
+  onSubmit({ email, message }: { [key: string]: string }) {
     const fetchId = this.state.fetchId + 1;
+
+    if (!email || !message) {
+      this.setState({
+        state: 'FAILED',
+        fetchId,
+        message:
+          'Email, or message were not added, please add them or email me instead at contact@charliejackson.com',
+      });
+
+      return;
+    }
 
     this.setState({ state: 'REQUESTED', fetchId, message: null });
 
@@ -34,28 +88,47 @@ class Contact extends PureComponent {
       .then(() => {
         if (fetchId !== this.state.fetchId) return;
 
-        this.setState({ state: 'SUCCESS', message: 'Successfully submitted your message. I\'ll get back to you soon :)' });
+        this.setState({
+          state: 'SUCCESS',
+          message:
+            "Successfully submitted your message. I'll get back to you soon :)",
+        });
       })
-      .catch(e => {
+      .catch((e) => {
         if (fetchId !== this.state.fetchId) return;
 
-        const message =
+        let errorMessage =
           (e && e.message) ||
           'Could not submit your message, please try again or email me at contact@charliejackson.com';
 
+        errorMessage = `${errorMessage} Email me instead at contact@charliejackson.com`;
+
         this.setState({
           state: 'FAILED',
-          message: `${message} Email me instead at contact@charliejackson.com`,
+          message: errorMessage,
         });
       });
   }
 
+  emailId: string;
+  messageId: string;
+
+  /**
+   * Cancel the submission of the form
+   *
+   * @return {Void} No return value
+   */
   cancel() {
     const fetchId = this.state.fetchId + 1;
 
     this.setState({ state: 'INIT', message: null, fetchId });
   }
 
+  /**
+   * Render the component
+   *
+   * @return {ReactElement} Render the markup
+   */
   render() {
     return (
       <ContentSpotlight
@@ -74,6 +147,7 @@ class Contact extends PureComponent {
                       type="text"
                       onChange={setFormState}
                       name="email"
+                      id={this.emailId}
                     />
                   </SpacingContainer>
 
@@ -81,6 +155,7 @@ class Contact extends PureComponent {
                     placeholder="Message"
                     onChange={setFormState}
                     name="message"
+                    id={this.messageId}
                   />
 
                   <SpacingContainer mv2>

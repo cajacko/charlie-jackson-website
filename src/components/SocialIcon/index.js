@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Link';
@@ -6,11 +8,37 @@ import Icon from '../Icon';
 import AlignContainer from '../Containers/AlignContainer';
 import './SocialIcon.css';
 
-class SocialIcon extends PureComponent {
-  constructor(props) {
+type Props = {
+  href: string,
+  icon: string,
+  light?: ?boolean,
+  size?: ?string,
+  isContact?: ?boolean,
+};
+
+class SocialIcon extends PureComponent<Props> {
+  static contextTypes = {
+    showContactModal: PropTypes.func,
+  };
+
+  static propTypes = {
+    icon: PropTypes.string.isRequired,
+    light: PropTypes.bool,
+    size: PropTypes.string,
+    isContact: PropTypes.bool,
+    href: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    light: false,
+    size: null,
+    isContact: false,
+  };
+
+  constructor(props: Props) {
     super(props);
 
-    this.action = this.action.bind(this);
+    (this: any).action = this.action.bind(this);
   }
 
   action() {
@@ -31,12 +59,10 @@ class SocialIcon extends PureComponent {
     }
 
     const content = (
-      <div
-        className={classes}
-      >
-          <AlignContainer vc hc>
-            <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />
-          </AlignContainer>
+      <div className={classes}>
+        <AlignContainer vc hc>
+          <Icon reduceWithWidth icon={this.props.icon} size={this.props.size} />
+        </AlignContainer>
       </div>
     );
 
@@ -55,10 +81,5 @@ class SocialIcon extends PureComponent {
     );
   }
 }
-
-SocialIcon.contextTypes = {
-  showContactModal: PropTypes.func,
-};
-
 
 export default SocialIcon;

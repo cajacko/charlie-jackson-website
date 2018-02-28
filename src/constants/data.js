@@ -1,3 +1,7 @@
+/* eslint global-require: 0 */
+/* eslint max-lines: 0 */
+/* eslint flowtype/require-valid-file-annotation: 0 */
+
 export const SKILLS = {
   MORE_URL: null,
 };
@@ -41,7 +45,8 @@ export const services = [
   {
     label: 'Websites',
     icon: 'website',
-    text: `Since 2012 I have been building websites for both large companies like Freeview and smaller startups, with experience building social media sites, e-commerce, brochureware and complex webapps.`,
+    text:
+      'Since 2012 I have been building websites for both large companies like Freeview and smaller startups, with experience building social media sites, e-commerce, brochureware and complex webapps.',
     image: require('../assets/macbook.png'),
     imageAlt: 'Website',
   },
@@ -79,7 +84,8 @@ export const services = [
   },
 ];
 
-export const about = `I'm a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent performance, simple maintainability, strong SEO and great testing. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I've worked in big web agencies and smaller startups since 2012. When I'm not working, I'm building my own tech products, doing improv comedy or sketching whatever captures my attention. I'm based in London, UK and available for remote work.`;
+export const about =
+  "I'm a senior full stack JavaScript developer with a focus on React. I build modern technology products that have excellent performance, simple maintainability, strong SEO and great testing. When it comes to design I believe in direct, simple solutions, cutting out the bullshit. I've worked in big web agencies and smaller startups since 2012. When I'm not working, I'm building my own tech products, doing improv comedy or sketching whatever captures my attention. I'm based in London, UK and available for remote work.";
 
 export const skills = [
   {
