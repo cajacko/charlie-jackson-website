@@ -1,31 +1,37 @@
-import React, { Component } from 'react';
+// @flow
+
+import React from 'react';
 import PropTypes from 'prop-types';
 import HorizontalList from '../../Lists/HorizontalList';
 import IconSliderNavItem from '../IconSliderNavItem';
 import './IconSliderNav.css';
 
-class IconSliderNav extends Component {
-  render() {
-    return (
-      <nav className="iconslidernav">
-        <HorizontalList
-          stretch
-          list={this.props.items.map(({ label, icon }, i) => ({
-            key: label,
-            component: (
-              <IconSliderNavItem
-                label={label}
-                icon={icon}
-                active={this.props.active === i}
-                action={() => this.props.onChange(i)}
-              />
-            ),
-          }))}
-        />
-      </nav>
-    );
-  }
-}
+const IconSliderNav = ({
+  items,
+  active,
+  onChange,
+}: {
+  items: Array<{ label: string, icon: string, [key: string]: any }>,
+  onChange: (index: number) => void,
+  active: number,
+}) => (
+  <nav className="iconslidernav">
+    <HorizontalList
+      stretch
+      list={items.map(({ label, icon }, i) => ({
+        key: label,
+        component: (
+          <IconSliderNavItem
+            label={label}
+            icon={icon}
+            active={active === i}
+            action={() => onChange(i)}
+          />
+        ),
+      }))}
+    />
+  </nav>
+);
 
 IconSliderNav.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({

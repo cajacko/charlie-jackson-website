@@ -1,5 +1,7 @@
+// @flow
+/* eslint max-lines: 0 */
+
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import ContentSpotlight from '../ContentSpotlight';
 import TextButton from '../Buttons/TextButton';
 import SocialIcons from '../SocialIcons';
@@ -15,8 +17,34 @@ import Text from '../Text';
 
 let id = 0;
 
-class Contact extends PureComponent {
-  constructor(props) {
+type Props = {
+  fullScreen?: boolean,
+};
+
+type State = {
+  message: ?string,
+  fetchId: number,
+  state: string,
+};
+
+/**
+ * The main contact component. Handles the submission of the form, and displays
+ * loading/error messages as needed
+ *
+ * @extends PureComponent
+ */
+class Contact extends PureComponent<Props, State> {
+  static defaultProps = {
+    fullScreen: false,
+  };
+
+  /**
+   * Initialise the class, set the initial state, bind the methods and set the
+   * id's for the inputs
+   *
+   * @param {Object} props Props passed to the component
+   */
+  constructor(props: Props) {
     super(props);
 
     id += 1;
@@ -25,12 +53,31 @@ class Contact extends PureComponent {
 
     this.state = { state: 'INIT', message: null, fetchId: 0 };
 
-    this.onSubmit = this.onSubmit.bind(this);
-    this.cancel = this.cancel.bind(this);
+    (this: any).onSubmit = this.onSubmit.bind(this);
+    (this: any).cancel = this.cancel.bind(this);
   }
 
-  onSubmit({ email, message }) {
+  /**
+   * When the form gets submitted, try and submit the form. Setting the correct
+   * state and handling success/errors.
+   *
+   * @param {Object} formState The form values
+   *
+   * @return {Void} No return value
+   */
+  onSubmit({ email, message }: { [key: string]: string }) {
     const fetchId = this.state.fetchId + 1;
+
+    if (!email || !message) {
+      this.setState({
+        state: 'FAILED',
+        fetchId,
+        message:
+          'Email, or message were not added, please add them or email me instead at contact@charliejackson.com',
+      });
+
+      return;
+    }
 
     this.setState({ state: 'REQUESTED', fetchId, message: null });
 
@@ -63,12 +110,25 @@ class Contact extends PureComponent {
       });
   }
 
+  emailId: string;
+  messageId: string;
+
+  /**
+   * Cancel the submission of the form
+   *
+   * @return {Void} No return value
+   */
   cancel() {
     const fetchId = this.state.fetchId + 1;
 
     this.setState({ state: 'INIT', message: null, fetchId });
   }
 
+  /**
+   * Render the component
+   *
+   * @return {ReactElement} Render the markup
+   */
   render() {
     return (
       <ContentSpotlight
@@ -152,13 +212,5 @@ class Contact extends PureComponent {
     );
   }
 }
-
-Contact.propTypes = {
-  fullScreen: PropTypes.bool,
-};
-
-Contact.defaultProps = {
-  fullScreen: false,
-};
 
 export default Contact;

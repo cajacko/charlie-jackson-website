@@ -1,15 +1,49 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-class Button extends PureComponent {
-  constructor(props) {
+type Props = {
+  action?: ?(event: SyntheticEvent<HTMLButtonElement>) => void,
+  href?: ?string,
+  children: React.Node,
+  showAsDiv?: ?boolean,
+  theme?: ?string,
+  disabled?: ?boolean,
+  fill?: ?boolean,
+  hasText?: ?boolean,
+};
+
+class Button extends React.PureComponent<Props> {
+  static propTypes = {
+    action: PropTypes.func,
+    href: PropTypes.string,
+    children: PropTypes.node.isRequired,
+    showAsDiv: PropTypes.bool,
+    theme: PropTypes.string,
+    disabled: PropTypes.bool,
+    fill: PropTypes.bool,
+    hasText: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    action: null,
+    href: null,
+    showAsDiv: false,
+    theme: null,
+    disabled: false,
+    fill: false,
+    hasText: false,
+  };
+
+  constructor(props: Props) {
     super(props);
 
-    this.onClick = this.onClick.bind(this);
+    (this: any).onClick = this.onClick.bind(this);
   }
 
-  onClick(event) {
+  onClick(event: SyntheticEvent<HTMLButtonElement>) {
     event.preventDefault();
 
     if (this.props.action) this.props.action(event);
@@ -58,26 +92,5 @@ class Button extends PureComponent {
     );
   }
 }
-
-Button.propTypes = {
-  action: PropTypes.func,
-  href: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  showAsDiv: PropTypes.bool,
-  theme: PropTypes.string,
-  disabled: PropTypes.bool,
-  fill: PropTypes.bool,
-  hasText: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  action: null,
-  href: null,
-  showAsDiv: false,
-  theme: null,
-  disabled: false,
-  fill: false,
-  hasText: false,
-};
 
 export default Button;

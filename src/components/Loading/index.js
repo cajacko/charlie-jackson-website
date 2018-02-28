@@ -1,8 +1,10 @@
+// @flow
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Loading.css';
 
-const Loading = ({ theme }) => {
+const Loading = ({ theme }: { theme?: string }) => {
   let classes = 'loading';
 
   switch (theme) {

@@ -1,23 +1,31 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Img.css';
 
-class Img extends PureComponent {
-  render() {
-    if (this.props.contain || this.props.fill) {
-      return (
-        <div
-          className={`img--background img--${
-            this.props.contain ? 'contain' : 'fill'
-          }`}
-          style={{ backgroundImage: `url('${this.props.src}')` }}
-        />
-      );
-    }
-
-    return <img className="img" src={this.props.src} alt={this.props.alt} />;
+const Img = ({
+  contain,
+  fill,
+  src,
+  alt,
+}: {
+  contain?: boolean,
+  fill?: boolean,
+  src: string,
+  alt: string,
+}) => {
+  if (contain || fill) {
+    return (
+      <div
+        className={`img--background img--${contain ? 'contain' : 'fill'}`}
+        style={{ backgroundImage: `url('${src}')` }}
+      />
+    );
   }
-}
+
+  return <img className="img" src={src} alt={alt} />;
+};
 
 Img.propTypes = {
   contain: PropTypes.bool,

@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+// @flow
+
+import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../Text';
 import './ServiceContent.css';
@@ -7,43 +9,49 @@ import SpacingContainer from '../Containers/SpacingContainer';
 import AlignContainer from '../Containers/AlignContainer';
 import ContentContainer from '../Containers/ContentContainer';
 
-class ServiceContent extends Component {
-  render() {
-    const style = {};
+const ServiceContent = ({
+  height,
+  imageSrc,
+  text,
+}: {
+  height?: ?number,
+  imageSrc: string,
+  text: string,
+}) => {
+  const style = {};
 
-    if (this.props.height) style.height = `${this.props.height}px`;
+  if (height) style.height = `${height}px`;
 
-    return (
-      <div style={style}>
-        <SpacingContainer pv2>
-          <ContentContainer>
-            <div className="servicecontent">
-              <div className="servicecontent__wrapper">
-                <SpacingContainer mh>
-                  <div
-                    className="servicecontent__imagewrapper"
-                    style={{ backgroundImage: `url('${this.props.imageSrc}')` }}
-                  />
-                </SpacingContainer>
-              </div>
-              <div className="servicecontent__text">
-                <AlignContainer vc>
-                  <div className="servicecontent__paragraph">
-                    <SpacingContainer mh>
-                      <Paragraph noSpacing>
-                        <Text text={this.props.text} fontSize="LARGE" />
-                      </Paragraph>
-                    </SpacingContainer>
-                  </div>
-                </AlignContainer>
-              </div>
+  return (
+    <div style={style}>
+      <SpacingContainer pv2>
+        <ContentContainer>
+          <div className="servicecontent">
+            <div className="servicecontent__wrapper">
+              <SpacingContainer mh>
+                <div
+                  className="servicecontent__imagewrapper"
+                  style={{ backgroundImage: `url('${imageSrc}')` }}
+                />
+              </SpacingContainer>
             </div>
-          </ContentContainer>
-        </SpacingContainer>
-      </div>
-    );
-  }
-}
+            <div className="servicecontent__text">
+              <AlignContainer vc>
+                <div className="servicecontent__paragraph">
+                  <SpacingContainer mh>
+                    <Paragraph noSpacing>
+                      <Text text={text} fontSize="LARGE" />
+                    </Paragraph>
+                  </SpacingContainer>
+                </div>
+              </AlignContainer>
+            </div>
+          </div>
+        </ContentContainer>
+      </SpacingContainer>
+    </div>
+  );
+};
 
 ServiceContent.propTypes = {
   text: PropTypes.string.isRequired,

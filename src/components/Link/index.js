@@ -1,16 +1,14 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import './Link.css';
 
-class Link extends PureComponent {
-  render() {
-    return (
-      <a className="link" href={this.props.href} target="_blank">
-        {this.props.children}
-      </a>
-    );
-  }
-}
+const Link = ({ href, children }: { href: string, children: React.Node }) => (
+  <a className="link" href={href} target="_blank">
+    {children}
+  </a>
+);
 
 Link.propTypes = {
   href: PropTypes.string.isRequired,

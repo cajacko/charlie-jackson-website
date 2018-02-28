@@ -1,23 +1,39 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-class Form extends PureComponent {
-  constructor(props) {
+type Props = {
+  children: (data: {
+    setFormState: (value?: ?string, name: string) => void,
+    submit: (
+      event: SyntheticEvent<HTMLFormElement | HTMLButtonElement>
+    ) => void,
+  }) => React.Node,
+  onSubmit: (formState: {}) => void,
+};
+
+type State = {
+  [key: string]: string,
+};
+
+class Form extends React.PureComponent<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {};
 
-    this.setFormState = this.setFormState.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    (this: any).setFormState = this.setFormState.bind(this);
+    (this: any).onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(event) {
+  onSubmit(event: SyntheticEvent<HTMLFormElement | HTMLButtonElement>) {
     if (event && event.preventDefault) event.preventDefault();
 
     if (this.props.onSubmit) this.props.onSubmit(this.state);
   }
 
-  setFormState(value, name) {
+  setFormState(value?: ?string, name: string) {
     if (this.state[name] !== value) {
       this.setState({ [name]: value });
     }

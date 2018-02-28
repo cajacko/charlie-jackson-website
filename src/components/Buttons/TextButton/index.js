@@ -1,23 +1,33 @@
-import React, { PureComponent } from 'react';
+// @flow
+
+import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../../Text';
 import Button from '../Button';
 
-class TextButton extends PureComponent {
-  render() {
-    return (
-      <Button
-        action={this.props.action}
-        href={this.props.href}
-        hasText
-        theme={this.props.theme}
-        disabled={!!this.props.disabled}
-      >
-        <Text text={this.props.text} />
-      </Button>
-    );
-  }
-}
+const TextButton = ({
+  action,
+  href,
+  theme,
+  disabled,
+  text,
+}: {
+  action?: ?(event: SyntheticEvent<HTMLButtonElement>) => void,
+  href?: ?string,
+  theme?: ?string,
+  disabled?: boolean,
+  text: string,
+}) => (
+  <Button
+    action={action}
+    href={href}
+    hasText
+    theme={theme}
+    disabled={!!disabled}
+  >
+    <Text text={text} />
+  </Button>
+);
 
 TextButton.propTypes = {
   action: PropTypes.func,
