@@ -11,7 +11,7 @@ const DotSliderNav = ({
   active,
   onChange,
 }: {
-  content: Array<{ name: string }>,
+  content: Array<{ name: string, [key: string]: any }>,
   onChange: (index: number) => void,
   active: number,
 }) => (

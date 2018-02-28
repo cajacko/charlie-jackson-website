@@ -15,7 +15,7 @@ const IconSliderNavItem = ({
   icon,
   label,
 }: {
-  action: () => {},
+  action: () => void,
   active: boolean,
   icon: string,
   label: string,

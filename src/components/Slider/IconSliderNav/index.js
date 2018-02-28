@@ -11,7 +11,7 @@ const IconSliderNav = ({
   active,
   onChange,
 }: {
-  items: Array<{ label: string, icon: string }>,
+  items: Array<{ label: string, icon: string, [key: string]: any }>,
   onChange: (index: number) => void,
   active: number,
 }) => (

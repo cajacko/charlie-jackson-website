@@ -6,13 +6,32 @@ import PropTypes from 'prop-types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-type Slides = Array<{}>;
+type Testimonial = {
+  key: string,
+  quote: string,
+  image: string,
+  imageAlt: string,
+  name: string,
+  [key: string]: any,
+};
+
+type Service = {
+  key: string,
+  image: string,
+  imageAlt: string,
+  text: string,
+  label: string,
+  icon: string,
+  [key: string]: any,
+};
+
+type SlideContent = Testimonial | Service;
+
+type Slides = Array<SlideContent>;
 
 type Props = {
   slide: (
-    slideContent: {
-      key: string,
-    },
+    slideContent: SlideContent,
     displayedIndex: number,
     height?: ?number
   ) => React.Node,
@@ -142,7 +161,7 @@ class Slider extends React.PureComponent<Props, State> {
           >
             {this.props.slides.map((slideContent, i) => (
               <div
-                key={(slideContent && slideContent.key) || i}
+                key={(slideContent && slideContent.key) || `${i}`}
                 className="slider__slide"
                 style={{
                   width: `${Math.floor(100 / this.props.slides.length)}%`,
