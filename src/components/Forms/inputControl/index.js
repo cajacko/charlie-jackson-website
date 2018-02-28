@@ -13,7 +13,9 @@ type State = {
   value?: string,
 };
 
-function inputControl(WrappedComponent: React.ComponentType<{ [key: string]: any }>) {
+function inputControl(WrappedComponent: React.ComponentType<{
+    [key: string]: any,
+  }>) {
   class InputControl extends React.PureComponent<Props, State> {
     static propTypes = {
       onChange: PropTypes.func,

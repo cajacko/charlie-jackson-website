@@ -1,5 +1,8 @@
 // @flow
 
+/* eslint react/no-unused-prop-types: 0 */
+// Because of if (props[prop]) classes += ` spacingcontainer--${prop}`;
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './SpacingContainer.css';
@@ -28,6 +31,14 @@ const SpacingContainer = ({
 }: {
   flex?: boolean,
   children: React.Node,
+  pv?: boolean,
+  ph2?: boolean,
+  pv2?: boolean,
+  mh2?: boolean,
+  mv2?: boolean,
+  mv?: boolean,
+  mh?: boolean,
+  ph?: boolean,
   mt?: boolean,
   mt2?: boolean,
   mb?: boolean,
@@ -43,47 +54,49 @@ const SpacingContainer = ({
   pt2?: boolean,
   pb2?: boolean,
 }) => {
-  const propsToPass = Object.assign({}, props);
+  const propsToPass = {};
 
-  if (propsToPass.ph) {
+  if (props.ph) {
     propsToPass.pr = true;
     propsToPass.pl = true;
   }
 
-  if (propsToPass.pv) {
+  if (props.pv) {
     propsToPass.pt = true;
     propsToPass.pb = true;
   }
 
-  if (propsToPass.mh) {
+  if (props.mh) {
     propsToPass.mr = true;
     propsToPass.ml = true;
   }
 
-  if (propsToPass.mv) {
+  if (props.mv) {
     propsToPass.mt = true;
     propsToPass.mb = true;
   }
 
-  if (propsToPass.mv2) {
+  if (props.mv2) {
     propsToPass.mt2 = true;
     propsToPass.mb2 = true;
   }
 
-  if (propsToPass.mh2) {
+  if (props.mh2) {
     propsToPass.ml2 = true;
     propsToPass.mr2 = true;
   }
 
-  if (propsToPass.pv2) {
+  if (props.pv2) {
     propsToPass.pt2 = true;
     propsToPass.pb2 = true;
   }
 
-  if (propsToPass.ph2) {
+  if (props.ph2) {
     propsToPass.pl2 = true;
     propsToPass.pr2 = true;
   }
+
+  Object.assign(propsToPass, props);
 
   let classes = 'spacingcontainer';
 
@@ -119,6 +132,14 @@ SpacingContainer.defaultProps = {
   pr: false,
   pt2: false,
   pb2: false,
+  pv: false,
+  ph2: false,
+  pv2: false,
+  mh2: false,
+  mv2: false,
+  mv: false,
+  mh: false,
+  ph: false,
 };
 
 export default SpacingContainer;

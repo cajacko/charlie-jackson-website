@@ -1,5 +1,8 @@
 // @flow
 
+/* eslint react/no-unused-prop-types: 0 */
+// Because of if (props[prop]) classes += ` aligncontainer--${prop}`;
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './AlignContainer.css';
