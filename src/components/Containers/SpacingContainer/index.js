@@ -24,6 +24,23 @@ const supportedProps = [
   'pb2',
 ];
 
+/**
+ * Generic container for adding globally controlled spacing to a component.
+ * Props can be passed in the following ways to define spacing, each one is a
+ * boolean:
+ * - mr - stands for margin-right with the default spacing
+ * - pl - stands for padding-left with the default spacing
+ * - mb2 - stands for margin-bottom with 2x the standard spacing
+ * - mv - adds vertical margin
+ * - ph - add horizontal padding
+ * - etc.
+ *
+ * @param {Object} props Props passed to the component
+ * @param {Boolean} props.flex Whether the container should display with flex
+ * @param {ReactElement} props.children Children to render
+ *
+ * @return {ReactElement} The markup to render
+ */
 const SpacingContainer = ({
   flex,
   children,
@@ -54,7 +71,7 @@ const SpacingContainer = ({
   pt2?: boolean,
   pb2?: boolean,
 }) => {
-  const propsToPass = {};
+  let propsToPass = {};
 
   if (props.ph) {
     propsToPass.pr = true;
@@ -96,7 +113,7 @@ const SpacingContainer = ({
     propsToPass.pr2 = true;
   }
 
-  Object.assign(propsToPass, props);
+  propsToPass = Object.assign({}, props, propsToPass);
 
   let classes = 'spacingcontainer';
 
@@ -105,7 +122,7 @@ const SpacingContainer = ({
   }
 
   supportedProps.forEach((prop) => {
-    if (props[prop]) classes += ` spacingcontainer--${prop}`;
+    if (propsToPass[prop]) classes += ` spacingcontainer--${prop}`;
   });
 
   return <div className={classes}>{children}</div>;
