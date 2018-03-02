@@ -2,6 +2,7 @@
 /* eslint import/first: 0 */
 
 import './modules/Sentry';
+import Raven from 'raven-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
@@ -16,3 +17,7 @@ if (root === null) {
 } else {
   ReactDOM.render(<App />, root);
 }
+
+Raven.captureMessage(new Error('Loaded'));
+
+throw new Error('Damn');
