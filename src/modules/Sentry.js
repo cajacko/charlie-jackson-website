@@ -8,6 +8,6 @@ import environment from '../constants/environment';
 Raven.config(env.SENTRY_URL, {
   release: version,
   environment,
-  serverName: window.location.hostname,
+  serverName: window && window.location && window.location.hostname,
   debug: environment === 'production',
 }).install();

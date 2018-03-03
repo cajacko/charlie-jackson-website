@@ -11,7 +11,10 @@ try {
     env[key.replace('REACT_APP_', '')] = process.env[key];
   });
 } catch (e) {
+  // eslint-disable-next-line no-console
   console.error('Could not load process.env');
+
+  // eslint-disable-next-line no-console
   console.error(e);
 }
 
