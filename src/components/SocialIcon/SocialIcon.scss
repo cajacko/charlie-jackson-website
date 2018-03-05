@@ -12,7 +12,7 @@
   width: 72px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575px) {
   .socialicon__wrapper {
     height: 30px;
     width: 50px;
@@ -24,10 +24,17 @@
   width: 95px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 630px) {
   .socialicon__wrapper--large {
     height: 40px;
     width: 72px;
+  }
+}
+
+@media (max-width: 500px) {
+  .socialicon__wrapper--large {
+    height: 30px;
+    width: 50px;
   }
 }
 
