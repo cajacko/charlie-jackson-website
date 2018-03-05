@@ -12,18 +12,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-const baseRewrites = [
-  {
-    source: '/',
-    destination: '/index.html',
-  },
-  {
-    source: '**',
-    destination: '/404.html',
-  },
-];
-
-firebase.hosting.rewrites = baseRewrites;
+firebase.hosting.redirects = firebase.hosting.redirects || [];
 
 const contentfulIdSlug = {};
 
@@ -37,7 +26,7 @@ client.getEntries({ content_type: 'project' }).then((response) => {
 
     if (!slug) return;
 
-    firebase.hosting.rewrites.push({
+    firebase.hosting.redirects.push({
       source: `/${slug}`,
       destination: data[key].url,
       type: 301,
