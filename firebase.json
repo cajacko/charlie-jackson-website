@@ -15,12 +15,275 @@
     ],
     "rewrites": [
       {
-        "source": "/",
+        "source": "**",
         "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/audiomixer",
+        "destination": "https://medium.com/@CharlieAJackson/a0225fa81d9e",
+        "type": 301
       },
       {
-        "source": "**",
-        "destination": "/404.html"
+        "source": "/sss",
+        "destination": "https://medium.com/@CharlieAJackson/7082fc8947c6",
+        "type": 301
+      },
+      {
+        "source": "/audioengineering",
+        "destination": "https://medium.com/@CharlieAJackson/a07dd03783e",
+        "type": 301
+      },
+      {
+        "source": "/desk",
+        "destination": "https://medium.com/@CharlieAJackson/bd390bc0e50a",
+        "type": 301
+      },
+      {
+        "source": "/school",
+        "destination": "https://medium.com/@CharlieAJackson/78e3f3e7dd5e",
+        "type": 301
+      },
+      {
+        "source": "/busshelter",
+        "destination": "https://medium.com/@CharlieAJackson/da4661d80f16",
+        "type": 301
+      },
+      {
+        "source": "/toyota",
+        "destination": "https://medium.com/@CharlieAJackson/23ba07cb1901",
+        "type": 301
+      },
+      {
+        "source": "/kitchenblock",
+        "destination": "https://medium.com/@CharlieAJackson/58372c937370",
+        "type": 301
+      },
+      {
+        "source": "/electronic",
+        "destination": "https://medium.com/@CharlieAJackson/d5e5312087de",
+        "type": 301
+      },
+      {
+        "source": "/cocoon",
+        "destination": "https://medium.com/@CharlieAJackson/3f1a032dc330",
+        "type": 301
+      },
+      {
+        "source": "/marketstall",
+        "destination": "https://medium.com/@CharlieAJackson/d9d5f7b11251",
+        "type": 301
+      },
+      {
+        "source": "/dissertation",
+        "destination": "https://medium.com/@CharlieAJackson/a8f6b810c43d",
+        "type": 301
+      },
+      {
+        "source": "/tipandturn",
+        "destination": "https://medium.com/@CharlieAJackson/8d058811f80",
+        "type": 301
+      },
+      {
+        "source": "/nottingham",
+        "destination": "https://medium.com/@CharlieAJackson/953f75259715",
+        "type": 301
+      },
+      {
+        "source": "/lumine",
+        "destination": "https://medium.com/@CharlieAJackson/e16b00836635",
+        "type": 301
+      },
+      {
+        "source": "/tedx",
+        "destination": "https://medium.com/@CharlieAJackson/6395260d7dcf",
+        "type": 301
+      },
+      {
+        "source": "/ucl",
+        "destination": "https://medium.com/@CharlieAJackson/564f42d21474",
+        "type": 301
+      },
+      {
+        "source": "/photine",
+        "destination": "https://medium.com/@CharlieAJackson/54acf7699e3f",
+        "type": 301
+      },
+      {
+        "source": "/ninestore",
+        "destination": "https://medium.com/@CharlieAJackson/e6ccc1b86221",
+        "type": 301
+      },
+      {
+        "source": "/talklab",
+        "destination": "https://medium.com/@CharlieAJackson/35f2714d0493",
+        "type": 301
+      },
+      {
+        "source": "/graftt",
+        "destination": "https://medium.com/@CharlieAJackson/bac0c5b76ce6",
+        "type": 301
+      },
+      {
+        "source": "/productstories",
+        "destination": "https://medium.com/@CharlieAJackson/569ff0e67290",
+        "type": 301
+      },
+      {
+        "source": "/datalight",
+        "destination": "https://medium.com/@CharlieAJackson/c0a452f14a96",
+        "type": 301
+      },
+      {
+        "source": "/nineline",
+        "destination": "https://medium.com/@CharlieAJackson/8b079c846bd1",
+        "type": 301
+      },
+      {
+        "source": "/lifetree",
+        "destination": "https://medium.com/@CharlieAJackson/78a3e4ff7143",
+        "type": 301
+      },
+      {
+        "source": "/wedding",
+        "destination": "https://medium.com/@CharlieAJackson/dc010b6a26f4",
+        "type": 301
+      },
+      {
+        "source": "/indiajackson",
+        "destination": "https://medium.com/@CharlieAJackson/eea5f901410d",
+        "type": 301
+      },
+      {
+        "source": "/ninestudios",
+        "destination": "https://medium.com/@CharlieAJackson/9cb36234e17f",
+        "type": 301
+      },
+      {
+        "source": "/rememberwhen",
+        "destination": "https://medium.com/@CharlieAJackson/92a921c89ef8",
+        "type": 301
+      },
+      {
+        "source": "/portfolio",
+        "destination": "https://medium.com/@CharlieAJackson/2dccf4b642d3",
+        "type": 301
+      },
+      {
+        "source": "/render",
+        "destination": "https://medium.com/@CharlieAJackson/fd4ec54289d2",
+        "type": 301
+      },
+      {
+        "source": "/globalcommands",
+        "destination": "https://medium.com/@CharlieAJackson/b94fabd79e99",
+        "type": 301
+      },
+      {
+        "source": "/saxophone",
+        "destination": "https://medium.com/@CharlieAJackson/7ac114ff263e",
+        "type": 301
+      },
+      {
+        "source": "/tennis",
+        "destination": "https://medium.com/@CharlieAJackson/aabf347eed26",
+        "type": 301
+      },
+      {
+        "source": "/multicommands",
+        "destination": "https://medium.com/@CharlieAJackson/d3ff46218d94",
+        "type": 301
+      },
+      {
+        "source": "/sketchwork",
+        "destination": "https://medium.com/@CharlieAJackson/85e5aa1fb719",
+        "type": 301
+      },
+      {
+        "source": "/readingroom",
+        "destination": "https://medium.com/@CharlieAJackson/eadd348995d1",
+        "type": 301
+      },
+      {
+        "source": "/githack",
+        "destination": "https://medium.com/@CharlieAJackson/d3b6bba00079",
+        "type": 301
+      },
+      {
+        "source": "/improv",
+        "destination": "https://medium.com/@CharlieAJackson/4e6a176bc5dc",
+        "type": 301
+      },
+      {
+        "source": "/website",
+        "destination": "https://medium.com/@CharlieAJackson/9267b9ad4e7f",
+        "type": 301
+      },
+      {
+        "source": "/socialhelper",
+        "destination": "https://medium.com/@CharlieAJackson/9261a9657882",
+        "type": 301
+      },
+      {
+        "source": "/cookbook",
+        "destination": "https://medium.com/@CharlieAJackson/bd725a95b701",
+        "type": 301
+      },
+      {
+        "source": "/yeoman",
+        "destination": "https://medium.com/@CharlieAJackson/95605f937ad4",
+        "type": 301
+      },
+      {
+        "source": "/cj",
+        "destination": "https://medium.com/@CharlieAJackson/2b495e381cf5",
+        "type": 301
+      },
+      {
+        "source": "/flowcheck",
+        "destination": "https://medium.com/@CharlieAJackson/f7424416501",
+        "type": 301
+      },
+      {
+        "source": "/dailydoodle",
+        "destination": "https://medium.com/@CharlieAJackson/29e12984ea80",
+        "type": 301
+      },
+      {
+        "source": "/viki",
+        "destination": "https://medium.com/@CharlieAJackson/9d8622395079",
+        "type": 301
+      },
+      {
+        "source": "/wordpress",
+        "destination": "https://medium.com/@CharlieAJackson/348f49d4eb6c",
+        "type": 301
+      },
+      {
+        "source": "/dailyphoto",
+        "destination": "https://medium.com/@CharlieAJackson/4039e935fa0f",
+        "type": 301
+      },
+      {
+        "source": "/jenkins",
+        "destination": "https://medium.com/@CharlieAJackson/5b8cc961a55a",
+        "type": 301
+      },
+      {
+        "source": "/story",
+        "destination": "https://medium.com/@CharlieAJackson/70f1ccc878e2",
+        "type": 301
+      },
+      {
+        "source": "/meditation",
+        "destination": "https://medium.com/@CharlieAJackson/7ed3bcbbd6e2",
+        "type": 301
+      },
+      {
+        "source": "/mantra",
+        "destination": "https://medium.com/@CharlieAJackson/6b2c6f63dda4",
+        "type": 301
       }
     ]
   }
