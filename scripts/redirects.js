@@ -3,6 +3,7 @@
 require('dotenv').config();
 const { createClient } = require('contentful');
 const { writeJson } = require('fs-extra');
+const { join } = require('path');
 const data = require('./mediumContentfulMap.json');
 const firebase = require('../firebase.json');
 
@@ -31,8 +32,6 @@ client.getEntries({ content_type: 'project' }).then((response) => {
     contentfulIdSlug[item.sys.id] = item.fields.slug;
   });
 
-  console.log(contentfulIdSlug);
-
   Object.keys(data).forEach((key) => {
     const slug = contentfulIdSlug[key];
 
@@ -45,5 +44,7 @@ client.getEntries({ content_type: 'project' }).then((response) => {
     });
   });
 
-  return writeJson('../firebase.json', firebase);
+  return writeJson(join(__dirname, '../firebase.json'), firebase, {
+    spaces: 2,
+  });
 });
