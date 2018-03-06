@@ -1,6 +1,6 @@
 {
   "name": "charlie-jackson-website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "build:css": "node-sass-chokidar src/ -o src/",

@@ -19,6 +19,7 @@ const Icon = ({
   let html = icons[icon];
 
   if (!html) {
+    // eslint-disable-next-line no-console
     console.error(new Error(`Icon does not exist: ${icon}`));
     return null;
   }
