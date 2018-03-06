@@ -9,6 +9,8 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import AssetPreload from './modules/AssetPreload';
 
+// Try and render the app, if we get an error, then show the report dialog, and
+// notify the log server
 try {
   AssetPreload.preload();
 
