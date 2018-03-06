@@ -12,7 +12,7 @@
     "watch:css": "npm run build:css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "eject": "react-scripts eject",
     "login": "firebase login",
-    "deploy:live": "firebase use prod && yarn run build && firebase deploy",
+    "deploy:live": "yarn test && firebase use prod && yarn run build && firebase deploy",
     "deploy:dev": "firebase use dev && yarn run build && firebase deploy",
     "serve": "yarn run build && firebase use dev && firebase serve",
     "test:lint": "node ./node_modules/eslint/bin/eslint.js --ext .js --ext .jsx src",
