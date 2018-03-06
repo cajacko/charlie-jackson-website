@@ -17,6 +17,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [1.0.1] - 2018-03-06
+
+### Fixed
+
+* Eslint ignore console statement in icon file
+* Replaced tabs with spaces in icon file
+
 ## [1.0.0] - 2018-03-06
 
 ### Added
