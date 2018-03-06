@@ -31,6 +31,7 @@ class ContactApi {
         .then(response => response.json())
         .then(({ success, error, ...response }) => {
           if (!success) {
+            // eslint-disable-next-line no-console
             console.error('Error with form response', response);
 
             throw new Error(error ||
@@ -40,6 +41,7 @@ class ContactApi {
           resolve();
         })
         .catch((error) => {
+          // eslint-disable-next-line no-console
           console.error(error);
 
           reject(error);

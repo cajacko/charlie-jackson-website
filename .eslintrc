@@ -11,7 +11,7 @@
     ],
     "func-names": "off",
     "no-warning-comments": ["error", { location: "anywhere"}],
-    "no-console": "off",
+    "no-console": "error",
     "comma-dangle": [
       2,
       {
