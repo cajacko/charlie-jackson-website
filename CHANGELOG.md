@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-* Google Tag Manager
-
 ### Changed
 
 ### Deprecated
@@ -18,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 
 ### Fixed
+
+## [1.1.0] - 2018-03-07
+
+### Added
+
+* Google Tag Manager
 
 ## [1.0.1] - 2018-03-06
 
