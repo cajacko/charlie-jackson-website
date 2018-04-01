@@ -1,10 +1,9 @@
 .newslettersignup {
   display: flex;
-  justify-content: center;
+  flex: 1;
 }
 
 .newslettersignup__input {
-  max-width: 400px;
   margin-right: 20px;
   width: 100%;
   display: flex;

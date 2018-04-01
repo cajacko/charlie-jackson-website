@@ -7,6 +7,7 @@ import Input from '../Forms/Input';
 import env from '../../constants/env';
 import TextButton from '../Buttons/TextButton';
 import './NewsletterSignup.css';
+import FormContainer from '../Forms/Container';
 
 /**
  * Newsletter signup component. Shows an input for adding joining my email
@@ -48,19 +49,21 @@ class NewsletterSignup extends PureComponent<{}> {
       <ContentSpotlight title="Join my newsletter">
         <Form onSubmit={this.onSubmit}>
           {({ setFormState, submit }) => (
-            <div className="newslettersignup">
-              <div className="newslettersignup__input">
-                <Input
-                  id="newsletter-email"
-                  name="newsletter-email"
-                  onChange={setFormState}
-                  type="email"
-                  theme="DARK"
-                  placeholder="Your sexy email address"
-                />
+            <FormContainer>
+              <div className="newslettersignup">
+                <div className="newslettersignup__input">
+                  <Input
+                    id="newsletter-email"
+                    name="newsletter-email"
+                    onChange={setFormState}
+                    type="email"
+                    theme="DARK"
+                    placeholder="Your sexy email address"
+                  />
+                </div>
+                <TextButton text="Submit" theme="DARK" action={submit} />
               </div>
-              <TextButton text="Submit" theme="DARK" action={submit} />
-            </div>
+            </FormContainer>
           )}
         </Form>
       </ContentSpotlight>
