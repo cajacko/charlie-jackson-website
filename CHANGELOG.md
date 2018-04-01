@@ -17,6 +17,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [1.2.0] - 2018-04-01
+
+### Added
+
+* Email newsletter signup component
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
 ## [1.1.0] - 2018-03-07
 
 ### Added
