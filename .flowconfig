@@ -8,5 +8,6 @@
 [lints]
 
 [options]
+module.name_mapper='.*\(.scss\)' -> 'empty/object'
 
 [strict]
