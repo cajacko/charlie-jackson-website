@@ -51,6 +51,8 @@ class NewsletterSignup extends PureComponent<{}> {
               name="newsletter-email"
               onChange={setFormState}
               type="email"
+              theme="DARK"
+              placeholder="Your sexy email address"
             />
           )}
         </Form>
