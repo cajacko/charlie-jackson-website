@@ -12,12 +12,24 @@ import Skills from '../Skills';
 import Contact from '../Contact';
 import Modal from '../Modal';
 import background from '../../assets/background.jpg';
+import NewsletterSignup from '../NewsletterSignup';
 
 type State = {
   showContactModal: boolean,
 };
 
+/**
+ * The main App. Decides on the structure of the page and provides context to
+ * the children
+ */
 class App extends Component<{}, State> {
+  /**
+   * Initialise the class, set the initial state and bind the methods
+   *
+   * @param {Object} props Props passed to the component
+   *
+   * @return {Void} No return value
+   */
   constructor(props: {}) {
     super(props);
 
@@ -27,6 +39,12 @@ class App extends Component<{}, State> {
     (this: any).hideContactModal = this.hideContactModal.bind(this);
   }
 
+  /**
+   * Get the child context, so we can pass functions to the children to control
+   * the modal
+   *
+   * @return {Object} The context to return
+   */
   getChildContext() {
     return {
       showContactModal: this.showContactModal,
@@ -34,18 +52,33 @@ class App extends Component<{}, State> {
     };
   }
 
+  /**
+   * Show the contact modal
+   *
+   * @return {Void} No return value
+   */
   showContactModal() {
     if (this.state.showContactModal) return;
 
     this.setState({ showContactModal: true });
   }
 
+  /**
+   * Hide the contact modal
+   *
+   * @return {Void} No return value
+   */
   hideContactModal() {
     if (!this.state.showContactModal) return;
 
     this.setState({ showContactModal: false });
   }
 
+  /**
+   * Render the app
+   *
+   * @return {ReactElement} The markup to render
+   */
   render() {
     return (
       <div>
@@ -63,6 +96,7 @@ class App extends Component<{}, State> {
         <Work />
         <Testimonials />
         <Skills />
+        <NewsletterSignup />
         <Contact />
         <Modal>{this.state.showContactModal && <Contact fullScreen />}</Modal>
       </div>
