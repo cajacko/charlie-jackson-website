@@ -1,13 +1,14 @@
 {
   "name": "charlie-jackson-website",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "build:css": "node-sass-chokidar src/ -o src/",
     "build:js": "react-scripts build",
     "build": "npm-run-all build:css build:js",
     "deploy:dev": "firebase use dev && yarn run build && firebase deploy",
-    "deploy:live": "yarn test && firebase use prod && yarn run build && firebase deploy",
+    "deploy:live":
+      "yarn test && firebase use prod && yarn run build && firebase deploy",
     "eject": "react-scripts eject",
     "flow": "flow",
     "jsdoc": "jsdoc src -r -d docs -c jsdoc.json",
@@ -18,23 +19,16 @@
     "setredirects": "babel-node scripts/redirects.js",
     "start:js": "react-scripts start",
     "start": "npm-run-all -p watch:css start:js",
-    "test:lint": "node ./node_modules/eslint/bin/eslint.js --ext .js --ext .jsx src",
+    "test:lint":
+      "node ./node_modules/eslint/bin/eslint.js --ext .js --ext .jsx src",
     "test": "yarn test:lint && yarn flow && yarn jsdoc",
-    "watch:css": "npm run build:css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "watch:css":
+      "npm run build:css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier-eslint --write",
-      "git add"
-    ],
-    "*.jsx": [
-      "prettier-eslint --write",
-      "git add"
-    ],
-    "*.md": [
-      "prettier-eslint --write",
-      "git add"
-    ]
+    "*.js": ["prettier-eslint --write", "git add"],
+    "*.jsx": ["prettier-eslint --write", "git add"],
+    "*.md": ["prettier-eslint --write", "git add"]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
