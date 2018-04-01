@@ -14,6 +14,7 @@ import ContactApi from '../../modules/ContactApi';
 import Loading from '../Loading';
 import Button from '../Buttons/Button';
 import Text from '../Text';
+import FormContainer from '../Forms/Container';
 
 let id = 0;
 
@@ -137,7 +138,7 @@ class Contact extends PureComponent<Props, State> {
         noBackground={this.props.fullScreen}
       >
         <div className="contact">
-          <div className="contact__form">
+          <FormContainer>
             <Form onSubmit={this.onSubmit}>
               {({ setFormState, submit }) => (
                 <div className="contact__formwrapper">
@@ -203,7 +204,7 @@ class Contact extends PureComponent<Props, State> {
                 </div>
               )}
             </Form>
-          </div>
+          </FormContainer>
           <div className="contact__social">
             <SocialIcons large light />
           </div>

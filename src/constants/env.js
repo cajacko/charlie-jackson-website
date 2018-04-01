@@ -4,7 +4,11 @@
  * Consistent export of the environmental variables as an object.
  */
 
-const env: { SENTRY_URL?: ?string, NODE_ENV?: ?string } = {};
+const env: {
+  SENTRY_URL?: ?string,
+  NODE_ENV?: ?string,
+  MAILCHIMP_SIGNUP_URL?: ?string,
+} = {};
 
 try {
   Object.keys(process.env).forEach((key) => {

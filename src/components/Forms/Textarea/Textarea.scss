@@ -1,11 +1,11 @@
-@import '../../../constants/colors.scss';
+@import "../../../constants/colors.scss";
 
 .textarea {
   background-color: transparent;
   flex: 1;
   border: 1px solid $white;
-  padding: 8px 10px;
-  border-radius: 5px;
+  padding: 16px;
+  border-radius: 16px;
   transition: transform 0.25s;
   color: $white;
   height: 200px;
