@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "private": true,
   "scripts": {
+    "eject": "react-scripts eject",
     "build:css": "node-sass-chokidar src/ -o src/",
     "build:js": "react-scripts build",
     "build": "npm-run-all build:css build:js",
