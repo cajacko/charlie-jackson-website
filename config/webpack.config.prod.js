@@ -1,5 +1,3 @@
-
-
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
@@ -10,8 +8,10 @@ const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const SentryCliPlugin = require('@sentry/webpack-plugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const packageJSON = require('../package.json');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -228,6 +228,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new SentryCliPlugin({
+      release: packageJSON.version,
+      include: path.join(__dirname, '../build/static/js'),
+      validate: true,
+    }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
