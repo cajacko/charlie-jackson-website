@@ -17,6 +17,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+## [1.4.0] - 2018-04-28
+
+### Added
+
+* sentry/webpack-plugin package to automatically upload sourcemaps to sentry
+
+### Changed
+
+* Ejected Create React App so could change webpack config
+
 ## [1.2.0] - 2018-04-01
 
 ### Added
