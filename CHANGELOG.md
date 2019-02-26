@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
+* Deleted everything, in favour of a super simple site that links out everywhere
+
 ### Fixed
 
 ## [1.4.0] - 2018-04-28
