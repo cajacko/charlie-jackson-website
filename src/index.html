@@ -15,12 +15,31 @@
         line-height: 1.5;
       }
 
+      html {
+        background-color: #014050;
+      }
+
       body {
+        align-items: center;
+        justify-content: center;
+      }
+
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
         background-size: cover;
         background-position: right bottom;
         background-image: url("<%- backgroundImage %>");
-        align-items: center;
-        justify-content: center;
+      }
+
+      @media (max-width: 600px) {
+        .background {
+          right: -200px;
+        }
       }
 
       h1,
@@ -44,6 +63,8 @@
       }
 
       .content {
+        position: relative;
+        z-index: 2;
         background-color: #ffffffd9;
         margin: 1rem;
         padding: 1rem;
@@ -139,5 +160,6 @@
         <% }); %>
       </ul>
     </main>
+    <div class="background" />
   </body>
 </html>

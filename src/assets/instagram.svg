@@ -1,12 +1,9 @@
 <svg
-  class="icon__svg"
+  version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  x="0px"
-  y="0px"
-  viewBox="0 0 800 800"
-  enable-background="new 0 0 800 800"
   xml:space="preserve"
+  viewBox="0 0 800 800"
 >
   <title>Instagram</title>
   <g>
@@ -17,7 +14,6 @@
       <use xlink:href="#SVGID_1_" overflow="visible"></use>
     </clipPath>
     <path
-      class="Social-instagramPath--black"
       clip-path="url(#SVGID_2_)"
       d="M400.003,72.068c106.804,0,119.451,0.408,161.633,2.332
                       c38.997,1.781,60.178,8.298,74.274,13.774c18.673,7.257,31.996,15.926,45.993,29.923c13.999,13.997,22.669,27.317,29.923,45.99
@@ -39,7 +35,6 @@
                       "
     ></path>
     <path
-      class="Social-instagramPath--black"
       clip-path="url(#SVGID_2_)"
       d="M400.003,194.594c-113.442,0-205.406,91.961-205.406,205.403S286.561,605.4,400.003,605.4
                       c113.439,0,205.403-91.961,205.403-205.403S513.442,194.594,400.003,194.594 M400.003,533.329
@@ -47,7 +42,6 @@
                       S473.642,533.329,400.003,533.329"
     ></path>
     <path
-      class="Social-instagramPath--black"
       clip-path="url(#SVGID_2_)"
       d="M661.523,186.479c0,26.507-21.488,47.998-48.002,47.998c-26.508,0-47.998-21.491-47.998-47.998
                       c0-26.514,21.49-48.002,47.998-48.002C640.035,138.477,661.523,159.965,661.523,186.479"
