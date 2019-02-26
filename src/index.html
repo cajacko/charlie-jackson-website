@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#4c7cb9" />
+    <meta name="theme-color" content="#ffffff" />
+    <title><%= meta.title %></title>
+    <meta name="description" content="<%= meta.description %>" />
+    <meta name="author" content="<%= meta.author %>" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        font-size: 16px;
+        font-family: helvetica, sans-serif;
+        display: flex;
+        flex: 1;
+        line-height: 1.5;
+      }
+
+      html {
+        background-color: #014050;
+      }
+
+      body {
+        align-items: center;
+        justify-content: center;
+      }
+
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-size: cover;
+        background-position: right bottom;
+        background-image: url("<%- backgroundImage %>");
+      }
+
+      h1,
+      h2,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+        color: #001015;
+        font-weight: 400;
+      }
+
+      a,
+      a:visited {
+        color: #2305b7;
+      }
+
+      a:hover,
+      a:active {
+        color: #6b089a;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.85);
+        margin: 1rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        max-width: 36rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.38);
+        border-radius: 0.2rem;
+      }
+
+      .title,
+      .subtitle {
+        color: #014050;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      .subtitle,
+      .paragraph,
+      .contact,
+      .links {
+        margin-top: 1rem;
+      }
+
+      .subtitle {
+        flex-direction: column;
+        display: flex;
+        line-height: 1;
+      }
+
+      .subtitle__title {
+        font-size: 1.5rem;
+      }
+
+      .subtitle__subtitle {
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 0.25rem;
+      }
+
+      .links {
+        list-style: none;
+        flex-flow: wrap;
+        display: flex;
+      }
+
+      .links__item {
+        flex: 1;
+        display: flex;
+        margin-top: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      .icon,
+      .icon:visited {
+        flex: 1;
+        justify-content: center;
+        cursor: pointer;
+        display: flex;
+      }
+
+      .icon:hover,
+      .icon:active {
+        opacity: 0.6;
+      }
+
+      .icon svg {
+        height: 2rem;
+      }
+
+      .icon path {
+        fill: #014050;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="content">
+      <h1 class="title"><%= title %></h1>
+      <h2 class="subtitle">
+        <span class="subtitle__title"><%= subtitle.title %></span
+        ><span class="subtitle__subtitle"><%= subtitle.subtitle %></span>
+      </h2>
+      <p class="paragraph"><%- paragraph %></p>
+      <p class="contact"><%- contact %></p>
+      <ul class="links">
+        <% icons.forEach(function(icon){ %>
+        <li class="links__item">
+          <a class="icon" href="<%= icon.href %>"><%- icon.icon %></a>
+        </li>
+        <% }); %>
+      </ul>
+    </main>
+    <div class="background"></div>
+  </body>
+</html>
