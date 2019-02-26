@@ -1,15 +1,20 @@
 {
+  "meta": {
+    "title": "Charlie Jackson Developer",
+    "author": "Charlie Jackson",
+    "description": "Freelance JavaScript Developer (focus on React and React Native)"
+  },
   "title": "Charlie Jackson",
   "subtitle": {
     "title": "Freelance JavaScript Developer ",
     "subtitle": "(Focus on React and React Native)"
   },
   "paragraph": "Find everything you may need to know about my work life and services on <a href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a>. I put a lot of code on <a href=\"https://github.com/cajacko\">GitHub</a>. I don't really use other social channels, but you can find them below if you want to.",
-  "contact": "Contact me at <a href=\"mailto: contact@charliejackson.com\">contact@charliejackson.com</a>",
+  "contact": "Contact me at <a href=\"mailto:contact@charliejackson.com\">contact@charliejackson.com</a>",
   "icons": [
     {
       "icon": "email",
-      "href": "mailto: contact@charliejackson.com"
+      "href": "mailto:contact@charliejackson.com"
     },
     {
       "icon": "github",

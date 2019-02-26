@@ -1,6 +1,5 @@
 {
   "projects": {
-    "dev": "charlie-jackson-website-dev",
     "prod": "charlie-jackson-website"
   }
 }
