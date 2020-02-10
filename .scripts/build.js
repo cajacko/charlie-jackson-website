@@ -5,7 +5,7 @@ const { minify } = require("html-minifier");
 const imageDataURI = require("image-data-uri");
 
 const templatePath = join(__dirname, "../src/index.html");
-const outPath = join(__dirname, "../public/index.html");
+const outPath = join(__dirname, "../docs/index.html");
 const backgroundImagePath = join(__dirname, "../src/assets/background.jpg");
 const contentPath = join(__dirname, "../src/content.json");
 
