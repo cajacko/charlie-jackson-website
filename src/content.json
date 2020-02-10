@@ -1,15 +1,14 @@
 {
   "meta": {
-    "title": "Charlie Jackson Developer",
+    "title": "Charlie Jackson Comedian/Developer",
     "author": "Charlie Jackson",
-    "description": "Freelance JavaScript Developer (focus on React and React Native)"
+    "description": "Comedian & JavaScript Developer (focus on React and React Native)"
   },
   "title": "Charlie Jackson",
   "subtitle": {
-    "title": "Freelance JavaScript Developer ",
-    "subtitle": "(Focus on React and React Native)"
+    "title": "Comedian & JavaScript Developer "
   },
-  "paragraph": "Find everything you may need to know about my work life and services on <a href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a>. I put a lot of code on <a href=\"https://github.com/cajacko\">GitHub</a>. I don't really use other social channels, but you can find them below if you want to.",
+  "paragraph": "Enjoy funny things? I do improvised comedy (and bits of stand-up/clowning) around London, UK. Follow my socials for more info. For developer stuff everything you need to know is on <a href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a>.",
   "contact": "Contact me at <a href=\"mailto:contact@charliejackson.com\">contact@charliejackson.com</a>",
   "icons": [
     {
@@ -31,14 +30,6 @@
     {
       "icon": "instagram",
       "href": "https://www.instagram.com/charlie_a_jackson/"
-    },
-    {
-      "icon": "youtube",
-      "href": "https://www.youtube.com/channel/UCfCtHRISGIUZlYHd8wjdmPQ"
-    },
-    {
-      "icon": "medium",
-      "href": "https://medium.com/@CharlieAJackson"
     }
   ]
 }
