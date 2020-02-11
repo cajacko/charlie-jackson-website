@@ -125,10 +125,6 @@
         background: rgb(255, 255, 255);
       }
 
-      .links {
-        background: #161a2e;
-      }
-
       .newsletter {
         background: rgb(255, 255, 255);
       }
@@ -150,6 +146,20 @@
         height: 150px;
         width: 150px;
         box-shadow: 1px 1px 6px 0px #0000007a;
+      }
+
+      .links {
+        background: #161a2e;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999999;
+        box-shadow: 0 0 6px #0000006b;
+      }
+
+      .links__content {
+        padding: 1rem;
       }
 
       .links__list {
@@ -185,6 +195,10 @@
         fill: white;
       }
 
+      .newsletter {
+        background-color: #eaeaea;
+      }
+
       .newsletter__content {
         display: flex;
         align-items: center;
@@ -212,6 +226,10 @@
         opacity: 0.8;
       }
 
+      .shows {
+        background: white;
+      }
+
       .shows__heading {
         text-transform: uppercase;
         font-weight: bold;
@@ -234,9 +252,14 @@
         margin-top: 0.5rem;
       }
 
+      .main {
+        padding-bottom: 8rem;
+      }
+
     </style>
   </head>
   <body>
+    <main id="main" class="main">
     <section class="section heading primarybackground">
       <div class="content heading__content">
         <div class="headings">
@@ -255,18 +278,7 @@
       <p class="contact"><%- contact %></p>
     </div>
     </section>
-    <section class="section links">
-      <div class="content">
-      <ul class="links__list">
-        <% icons.forEach(function(icon){ %>
-        <li class="links__item">
-          <a class="icon" target="_blank" href="<%= icon.href %>"><%- icon.icon %></a>
-        </li>
-        <% }); %>
-      </div>
-      </ul>
-    </section>
-    <section class="newsletter section section--paper">
+    <section class="newsletter section">
       <div class="content newsletter__content">
       <p class="newsletter__text"><%- newsletter.text %></p>
       <a class="newsletter__link" target="_blank" href="<%- newsletter.href %>"
@@ -275,7 +287,7 @@
     </div>
     </section>
     <% if (shows && shows.length) { %>
-    <section class="shows section">
+    <section class="shows section section--paper">
       <div class="content">
       <h3 class="shows__heading"><%- showsHeading %></h3>
       <ul class="shows__list">
@@ -305,5 +317,31 @@
     </div>
     </section>
     <% } %>
+  </main>
+
+    <footer id="links" class="section links">
+      <div class="content links__content">
+      <ul class="links__list">
+        <% icons.forEach(function(icon){ %>
+        <li class="links__item">
+          <a class="icon" target="_blank" href="<%= icon.href %>"><%- icon.icon %></a>
+        </li>
+        <% }); %>
+      </div>
+      </ul>
+    </footer>
+
+    <script>
+      var links = document.getElementById('links');
+      var main = document.getElementById('main');
+
+      function setLinksSpacing() {
+        main.setAttribute("style", "padding-bottom: " + links.clientHeight + "px")
+      }
+
+      setLinksSpacing();
+
+      window.onresize = setLinksSpacing;
+    </script>
   </body>
 </html>
