@@ -4,11 +4,14 @@
     "author": "Charlie Jackson",
     "description": "Comedian & JavaScript Developer (focus on React and React Native)"
   },
+  "image": "./assets/background.jpg",
   "title": "Charlie Jackson",
-  "subtitle": {
-    "title": "Comedian & JavaScript Developer "
-  },
-  "paragraph": "Enjoy funny things? I do improvised comedy (and bits of stand-up/clowning) around London, UK. Follow my socials for more info. For developer stuff everything you need to know is on <a href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a>.",
+  "heading": "Comedian & JavaScript Developer",
+  "now": [
+    "You may see me bumbling about London, UK doing improvised comedy a bit of stand-up and the occasional clowning performance. Any shows and such should be on my <a target=\"_blank\" href=\"https://twitter.com/charliejackson\">Twitter</a> if you wanna come and throw some overly ripe apples.",
+    "I'm also a software developer. I build websites and mobile apps with JavaScript (mainly React and React Native). Find out more of that on <a target=\"_blank\" href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a> or <a target=\"_blank\" href=\"https://github.com/cajacko\">GitHub</a>.",
+    "Outside of that I have a lot of personal projects all documented on my <a target=\"_blank\" href=\"https://projects.charliejackson.com\">Project Journal</a>. And do a bunch of writing which you can find <a target=\"_blank\" href=\"https://writing.charliejackson.com\">here</a>."
+  ],
   "contact": "Contact me at <a href=\"mailto:contact@charliejackson.com\">contact@charliejackson.com</a>",
   "icons": [
     {
@@ -30,6 +33,43 @@
     {
       "icon": "instagram",
       "href": "https://www.instagram.com/charlie_a_jackson/"
+    },
+    {
+      "icon": "project",
+      "href": "https://projects.charliejackson.com"
+    },
+    {
+      "icon": "book",
+      "href": "https://writing.charliejackson.com"
+    }
+  ],
+  "newsletter": {
+    "text": "I have an email newsletter for my shows, writing and projects.",
+    "buttonText": "Sign up here",
+    "href": "http://eepurl.com/dp1Qo9"
+  },
+  "showsHeading": "Upcoming Shows",
+  "shows": [
+    {
+      "title": "Graduation Show - Hoopla Standup Level 2 Course",
+      "date": "Thursday, 5 March 2020 19:30 - 22:00",
+      "location": "The Miller, 96 Snowsfields Road, London SE1 3SS, UK",
+      "price": "Free!"
+    },
+    {
+      "title": "Graduation Show - Improvised Hip Hop",
+      "date": "Thursday, 14 May 2020 19:30 - 22:00",
+      "location": "London (TBC)",
+      "price": "Free!"
     }
   ]
+  // "shows": [
+  //   {
+  //     "title": "",
+  //     "date": "",
+  //     "location": "",
+  //     "price": "",
+  //     "link": ""
+  //   }
+  // ]
 }

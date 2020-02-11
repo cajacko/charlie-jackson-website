@@ -1,12 +1,13 @@
 const ejs = require("ejs");
 const { join } = require("path");
-const { ensureFile, writeFile, readFile, readJson } = require("fs-extra");
+const { ensureFile, writeFile, readFile } = require("fs-extra");
 const { minify } = require("html-minifier");
 const imageDataURI = require("image-data-uri");
+const JSON5 = require("json5");
 
 const templatePath = join(__dirname, "../src/index.html");
 const outPath = join(__dirname, "../docs/index.html");
-const backgroundImagePath = join(__dirname, "../src/assets/background.jpg");
+const backgroundImagePath = join(__dirname, "../src/assets/image.jpg");
 const contentPath = join(__dirname, "../src/content.json");
 
 const minifyOptions = {
@@ -30,25 +31,31 @@ const minifyOptions = {
 };
 
 const getRenderData = () =>
-  readJson(contentPath).then(content =>
-    Promise.all([
-      readFile(backgroundImagePath).then(backgroundImageBuffer => ({
-        backgroundImage: imageDataURI.encode(backgroundImageBuffer, "JPEG")
-      })),
-      Promise.all(
-        content.icons.map(({ icon, href }) =>
-          readFile(join(__dirname, `../src/assets/${icon}.svg`)).then(data => ({
-            icon: String(data),
-            href
-          }))
-        )
-      ).then(newIcons => ({
-        icons: newIcons
-      }))
-    ]).then(results =>
-      results.reduce((acc, res) => ({ ...acc, ...res }), content)
-    )
-  );
+  readFile(contentPath)
+    .then(contents => {
+      return JSON5.parse(contents.toString());
+    })
+    .then(content =>
+      Promise.all([
+        readFile(backgroundImagePath).then(backgroundImageBuffer => ({
+          backgroundImage: imageDataURI.encode(backgroundImageBuffer, "JPEG")
+        })),
+        Promise.all(
+          content.icons.map(({ icon, href }) =>
+            readFile(join(__dirname, `../src/assets/${icon}.svg`)).then(
+              data => ({
+                icon: String(data),
+                href
+              })
+            )
+          )
+        ).then(newIcons => ({
+          icons: newIcons
+        }))
+      ]).then(results =>
+        results.reduce((acc, res) => ({ ...acc, ...res }), content)
+      )
+    );
 
 getRenderData()
   .then(data => ejs.renderFile(templatePath, data, { async: true }))
