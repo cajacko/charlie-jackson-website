@@ -8,7 +8,7 @@
   "title": "Charlie Jackson",
   "heading": "Comedian & JavaScript Developer",
   "now": [
-    "You may see me bumbling about London, UK doing improvised comedy a bit of stand-up and the occasional clowning performance. Any shows and such should be on my <a target=\"_blank\" href=\"https://twitter.com/charliejackson\">Twitter</a> if you wanna come and throw some overly ripe apples.",
+    "You may see me bumbling about London, UK doing improvised comedy, a bit of stand-up and the occasional clowning performance. Any shows and such should be on my <a target=\"_blank\" href=\"https://twitter.com/charliejackson\">Twitter</a> if you wanna come and throw some overly ripe apples.",
     "I'm also a software developer. I build websites and mobile apps with JavaScript (mainly React and React Native). Find out more of that on <a target=\"_blank\" href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a> or <a target=\"_blank\" href=\"https://github.com/cajacko\">GitHub</a>.",
     "Outside of that I have a lot of personal projects all documented on my <a target=\"_blank\" href=\"https://projects.charliejackson.com\">Project Journal</a>. And do a bunch of writing which you can find <a target=\"_blank\" href=\"https://writing.charliejackson.com\">here</a>."
   ],
@@ -44,7 +44,7 @@
     }
   ],
   "newsletter": {
-    "text": "I have an email newsletter for my shows, writing and projects.",
+    "text": "Stay updated! I have an email newsletter for my shows, writing and projects.",
     "buttonText": "Sign up here",
     "href": "http://eepurl.com/dp1Qo9"
   },
