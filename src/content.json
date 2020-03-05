@@ -50,13 +50,13 @@
   },
   "showsHeading": "Upcoming Shows",
   "shows": [
-    {
-      "title": "Improv and Hosting @ The Sharknasium in Talks with the Shark Trust",
-      "date": "Wednesday, 4 March 2020 19:00 - 22:00",
-      "location": "The Trinity Bell, 18-22 Creechurch Ln, London EC3A 5AY, UK",
-      "price": "£10",
-      "link": "https://www.ticketsource.co.uk/clidive/the-sharknasium-in-talks-with-the-shark-trust/e-lrggom"
-    },
+    // {
+    //   "title": "Improv and Hosting @ The Sharknasium in Talks with the Shark Trust",
+    //   "date": "Wednesday, 4 March 2020 19:00 - 22:00",
+    //   "location": "The Trinity Bell, 18-22 Creechurch Ln, London EC3A 5AY, UK",
+    //   "price": "£10",
+    //   "link": "https://www.ticketsource.co.uk/clidive/the-sharknasium-in-talks-with-the-shark-trust/e-lrggom"
+    // },
     {
       "title": "Graduation Show - Hoopla Standup Level 2 Course",
       "date": "Thursday, 5 March 2020 19:30 - 22:00",
