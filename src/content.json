@@ -48,6 +48,7 @@
     "buttonText": "Sign up here",
     "href": "http://eepurl.com/dp1Qo9"
   },
+  "showsNoShows": "I don't have any upcoming shows. Boo! Coronavirus has made that a bit tricky.",
   "showsHeading": "Upcoming Shows",
   "shows": [
     // {
@@ -64,12 +65,12 @@
     //   "price": "Free!",
     //   "link": "https://www.facebook.com/events/3008063092572589/"
     // },
-    {
-      "title": "Graduation Show - Improvised Hip Hop",
-      "date": "Thursday, 14 May 2020 19:30 - 22:00",
-      "location": "London (TBC)",
-      "price": "Free!"
-    }
+    // {
+    //   "title": "Graduation Show - Improvised Hip Hop",
+    //   "date": "Thursday, 14 May 2020 19:30 - 22:00",
+    //   "location": "London (TBC)",
+    //   "price": "Free!"
+    // }
   ]
   // "shows": [
   //   {

@@ -298,37 +298,46 @@
       >
     </div>
     </section>
-    <% if (shows && shows.length) { %>
+    
     <section class="shows section section--paper">
       <div class="content">
       <h3 class="shows__heading"><%- showsHeading %></h3>
+      
       <ul class="shows__list">
-        <% shows.forEach(function(show){ %>
-        <li class="show">
-          <h4 class="show__heading">
-            <% if (show.link) { %><a target="_blank" class="show__link" href="<%- show.link %>"
-              ><%- show.title %></a
-            ><% } else { %><%- show.title %><% } %>
-          </h4>
-          <ul class="show__list">
-            <li class="show__date">- Date: <%- show.date %></li>
-            <% if (show.location) { %>
-            <li class="show__location">- Location: <%- show.location %></li>
-            <% } %> <% if (show.price) { %>
-            <li class="show__price">- Price: <%- show.price %></li>
-            <% } %> <% if (show.link) { %>
-            <li class="show__linkitem">
-              - Link:
-              <a class="show__link" target="_blank" href="<%- show.link %>"><%- show.link %></a>
+        <% if (shows && shows.length) { %>
+          <% shows.forEach(function(show){ %>
+          <li class="show">
+            <h4 class="show__heading">
+              <% if (show.link) { %><a target="_blank" class="show__link" href="<%- show.link %>"
+                ><%- show.title %></a
+              ><% } else { %><%- show.title %><% } %>
+            </h4>
+            <ul class="show__list">
+              <li class="show__date">- Date: <%- show.date %></li>
+              <% if (show.location) { %>
+              <li class="show__location">- Location: <%- show.location %></li>
+              <% } %> <% if (show.price) { %>
+              <li class="show__price">- Price: <%- show.price %></li>
+              <% } %> <% if (show.link) { %>
+              <li class="show__linkitem">
+                - Link:
+                <a class="show__link" target="_blank" href="<%- show.link %>"><%- show.link %></a>
+              </li>
+              <% } %>
+            </ul>
+          </li>
+          <% }); %>
+        <% } else { %>
+          <li class="show">
+            <h4 class="show__heading">
+              <%- showsNoShows %>
+            </h4>
             </li>
-            <% } %>
-          </ul>
-        </li>
-        <% }); %>
+          <% } %>
       </ul>
     </div>
     </section>
-    <% } %>
+    
   </main>
 
     <footer id="links" class="section links">
