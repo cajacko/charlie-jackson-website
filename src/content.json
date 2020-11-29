@@ -8,9 +8,9 @@
   "title": "Charlie Jackson",
   "heading": "Comedian & JavaScript Developer",
   "now": [
-    "You may see me bumbling about London, UK doing improvised comedy, a bit of stand-up and the occasional clowning performance. Any upcoming shows will be shown at the bottom of this page if you wanna come and throw some overly ripe apples. Otherwise you can find all my comedy projects and history <a target=\"_blank\" href=\"https://projects.charliejackson.com/projects/comedy\">here</a>.",
+    "You may see me bumbling about London, UK doing improvised comedy, a bit of stand-up and the occasional clowning performance. Any upcoming shows will be shown at the bottom of this page if you wanna come and throw some overly ripe apples. Otherwise you can find all my comedy projects and history <a target=\"_blank\" href=\"https://journal.charliejackson.com/projects/comedy\">here</a>.",
     "I'm also a software developer currently working at <a target=\"_blank\" href=\"https://walkup.tech/\">WalkUp</a>. I build websites and mobile apps with JavaScript (mainly React and React Native). Find out more of that on <a target=\"_blank\" href=\"https://uk.linkedin.com/in/charliejackson9\">LinkedIn</a> or <a target=\"_blank\" href=\"https://github.com/cajacko\">GitHub</a>.",
-    "Outside of that I have a lot of personal projects all documented on my <a target=\"_blank\" href=\"https://projects.charliejackson.com\">Project Journal</a>. And do a bunch of writing which you can find <a target=\"_blank\" href=\"https://writing.charliejackson.com\">here</a>."
+    "Outside of that I have a lot of personal projects all documented on my <a target=\"_blank\" href=\"https://journal.charliejackson.com\">Project Journal</a>. And do a bunch of writing which you can find <a target=\"_blank\" href=\"https://journal.charliejackson.com\">here</a>."
   ],
   "contact": "Contact me at <a href=\"mailto:contact@charliejackson.com\">contact@charliejackson.com</a>",
   "icons": [
@@ -36,11 +36,11 @@
     },
     {
       "icon": "project",
-      "href": "https://projects.charliejackson.com"
+      "href": "https://journal.charliejackson.com/"
     },
     {
       "icon": "book",
-      "href": "https://writing.charliejackson.com"
+      "href": "https://journal.charliejackson.com/"
     }
   ],
   "newsletter": {
