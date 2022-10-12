@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Button from "./Button";
+import SocialIcon from "./SocialIcon";
+import Typography from "./Typography";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <img src="" alt="Charlie Jackson" />
+      <Typography variant="h1">Charlie Jackson</Typography>
+      <Typography variant="h2">
+        Comedian and freelance software developer
+      </Typography>
+      <Button title="Comedy" href="/" />
+      <Button title="Freelance software developer" href="/" />
+      <Button title="Journal" href="/" />
+      <Button title="Email" href="/" />
+      <SocialIcon icon="instagram" href="/" />
+      <SocialIcon icon="linkedin" href="/" />
+      <SocialIcon icon="twitter" href="/" />
+      <SocialIcon icon="tiktok" href="/" />
+      <SocialIcon icon="youtube" href="/" />
+      <SocialIcon icon="facebook" href="/" />
+    </>
   );
 }
 
